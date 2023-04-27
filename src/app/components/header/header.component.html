@@ -1,0 +1,47 @@
+<header class="header">
+    <div class="header__layout">
+      <div class="header-menu">
+        <button>
+          <mat-icon class="burger-icon header-icon" (click)="openMenu()">menu</mat-icon>
+        </button>
+      </div>
+      <a class="header-logo">
+        <picture>
+          <source srcset="../assets/rozetka.png" media="(max-width: 1200px)">
+          <img class="header-logo__main" src="../assets/rozetka.svg" alt="rozetka-logo">
+        </picture>
+      </a>
+      <div class="header-catalog" (click)="openDialog()">
+        <button>
+          <mat-icon *ngIf="openedDialog === 'product'; else catalog">close</mat-icon>
+          <ng-template #catalog>
+            <mat-icon>dashboard</mat-icon>
+          </ng-template>
+        </button>
+        <span>Каталог</span>
+      </div>
+      <div class="header-search">
+        <div class="header-search__wrapper">
+          <mat-icon class="header-search__icon">search</mat-icon>
+          <input type="text" placeholder="Я шукаю..." class="header-search__input">
+        </div>
+        <button class="btn-search">Знайти</button>
+      </div>
+      <ul class="header-actions">
+        <li class="header-actions__item languages">
+          <ul class="languages__list">
+            <li class="languages__item languages__item-ru languages__item-active">RU</li>
+            <li class="languages__item languages__item-ua">UA</li>
+          </ul>
+        </li>
+        <li class="header-actions__item">
+          <mat-icon class="header-icon header-icon-user">person</mat-icon>
+        </li>
+        <li class="header-actions__item">
+          <mat-icon  class="header-icon">shopping_cart</mat-icon>
+        </li>
+      </ul>
+    </div>
+    <app-side-menu></app-side-menu>
+  </header>
+

@@ -1,0 +1,80 @@
+@import './mixins.sass'
+@import './variables.sass'
+
+.btn-search
+    background-color: $main-green
+    border-radius: 0 3px 3px 0
+    padding: 0 1.6rem
+    text-align: center
+    height: 4rem
+    font-size: 1.6rem
+    @include respond(phoneXL)
+        display: none
+    &:hover
+        background: #0abe58
+        transition: all .4s ease-in-out
+// btn-large
+.btn-large
+    background: #00a046
+    color: #fff
+    background: #00a046
+    height: 48px
+    width: 100%
+    border-radius: 8px
+    margin-bottom: 16px
+    font-size: 1.8rem
+    &:hover
+        background: #0abe58
+        transition: all .4s ease-in-out
+.btn-link
+    display: block
+    background: none
+    font-size: 1.6rem
+    border: none
+    color: #3e77aa
+    cursor: pointer
+    margin: 0 auto
+    padding: 0
+    text-decoration: none
+    &:hover
+        color: #f777ac
+        transition: all .2s ease
+// textBtn
+.textBtn
+    display: flex
+    align-items: center
+    &__icon
+        width: 40px
+        height: 40px
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: 50%
+        background-color: #f5f5f5
+        margin-right: 1.6rem
+        transition: all .3s ease
+.welcome-block__btn
+    margin-bottom: 14px
+    padding-left: 16px
+    padding-right: 16px
+    font-size: 15px
+    background-color: #3e77aa
+    color: #fff
+    height: 32px
+    border: none
+    border-radius: 8px
+    box-sizing: border-box
+    display: inline-block
+    font-family: Rozetka,BlinkMacSystemFont,-apple-system,Arial,Segoe UI,Roboto,Helvetica,sans-serif
+    margin: 0
+    outline: none
+    padding-left: 16px
+    padding-right: 16px
+    position: relative
+    text-align: center
+    transition-duration: .2s
+    transition-property: color,background-color,border-color
+    transition-timing-function: ease-in-out
+    &:hover
+        background-color: #4096e3
+        color: #fff

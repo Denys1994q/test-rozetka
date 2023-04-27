@@ -1,0 +1,37 @@
+<div class="carousel">
+    <div class="carousel__container">
+        <div #slideImg class="carousel__slide transformAnim" 
+        [ngStyle]="{'transform': 'translateX('+ val + 'px)'}"
+        (mouseenter)="stopCarousel()"
+        (mouseleave)="continueCarousel()"
+        >
+            <img  *ngFor="let slide of slidesArr" src={{slide.url}} alt="carousel__image" class="carousel__image">
+        </div>
+    </div>
+    <div class="btnWrap">
+        <button class="controller controller__prev" (click)="showPrev()">
+            <mat-icon class="controller__prev-icon">chevron_left</mat-icon>
+        </button>
+        <button class="controller controller__next" (click)="showNext()">
+            <mat-icon class="controller__next-icon">chevron_right</mat-icon>
+        </button>
+    </div>
+    <div class="indicators">
+        <span 
+            *ngFor="let slide of slidesArr; let i = index" 
+            [class.indicators__item-active]="i == counter" 
+            class="indicators__item"
+            [class.indicators__item-shown]="
+            counter == 0 ? 
+            i == counter-1 || i == counter+1 || i == counter+2 || i == counter+3 || i == counter+4 : 
+            counter == 1 ? 
+            i == counter-1 || i == counter+1 || i == counter+2 || i == counter+3 : 
+            counter == slidesArr.length - 2 ? 
+            i == counter-1 || i == counter-2 || i == counter-3 || i == counter+1 : 
+            counter == slidesArr.length - 1 ? 
+            i == counter-1 || i == counter-2 || i == counter-3 || i == counter-4 : 
+            i == counter-1 || i == counter-2 || i == counter+1 || i == counter+2"
+            >
+        </span>
+    </div>
+</div>

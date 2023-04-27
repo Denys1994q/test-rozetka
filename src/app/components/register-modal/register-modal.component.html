@@ -1,0 +1,158 @@
+<mat-dialog-content>
+    <div class="modal-login modal-register">
+        <header class="modal-login__header header">
+            <h3 class="header__title">Реєстрація</h3>
+            <button>
+                <mat-icon class="modal-login__close" (click)="closeDialog()">close</mat-icon>
+            </button>
+        </header>
+        <div class="modal-login__content modal-register__content">
+            <form action="#" #userForm="ngForm" (ngSubmit)="register(userForm)" class="modal-login__form form">
+                <div class="form__item">
+                    <label for="auth_name" class="form__label">Ім'я</label>
+                    <input 
+                        type="text" 
+                        required 
+                        pattern="[А-Яа-я,і,є,ї,І,Є,Ї]*"
+                        minlength="2"
+                        #userName="ngModel" 
+                        id="auth_name" 
+                        [class.is-invalid]="userName.invalid && (userForm.submitted || userName.dirty)" 
+                        class="form__input" 
+                        name="userName" 
+                        [(ngModel)]="name"
+                    >
+                    <small class="is-invalid__text" [class.is-invalid__text-show]="userName.invalid && (userForm.submitted || userName.dirty)">Введіть своє ім'я кирилицею</small>
+                </div>
+                <div class="form__item">
+                    <label for="auth_surname" class="form__label">Прізвище</label>
+                    <input 
+                        type="text" 
+                        required
+                        pattern="[А-Яа-я,і,є,ї,І,Є,Ї]*"
+                        minlength="2"
+                        #userSurname="ngModel" 
+                        id="auth_surname" 
+                        [class.is-invalid]="userSurname.invalid && (userForm.submitted || userSurname.dirty)" 
+                        class="form__input"
+                        name="userSurname" 
+                        [(ngModel)]="surname"
+                    >
+                    <small class="is-invalid__text" [class.is-invalid__text-show]="userSurname.invalid && (userForm.submitted || userSurname.dirty)">Введіть своє прізвище кирилицею</small>
+                </div>
+                <div class="form__item">
+                    <label for="auth_phone" class="form__label">Номер телефону</label>
+                    <input 
+                        type="text" 
+                        required
+                        pattern="^((0|380)+(97|95|67|50|63|68|91|92|98|99)\d{3}\d{2}\d{2})+$"
+                        prefix="+38 " 
+                        mask='000 000 00 00' 
+                        minlength="10"
+                        #userPhone="ngModel" 
+                        id="auth_phone" 
+                        [class.is-invalid]="userPhone.invalid && (userForm.submitted || userPhone.dirty)"
+                        class="form__input"
+                        name="userPhone" 
+                        [showMaskTyped]="true" 
+                        [(ngModel)]="phone"
+                    >
+                    <small class="is-invalid__text" [class.is-invalid__text-show]="userPhone.invalid && (userForm.submitted || userPhone.dirty)">Введіть номер мобільного телефону</small>
+                </div>
+                <div class="form__item">
+                    <label for="auth_email" class="form__label">Ел. пошта</label>
+                    <input 
+                        type="email" 
+                        required
+                        minlength="2"
+                        email
+                        #userEmail="ngModel"
+                        id="auth_email" 
+                        [class.is-invalid]="userEmail.invalid && (userForm.submitted || userEmail.dirty)"
+                        class="form__input"
+                        name="userEmail" 
+                        [(ngModel)]="email"
+                    >
+                    <small class="is-invalid__text" [class.is-invalid__text-show]="userEmail.invalid && (userForm.submitted || userEmail.dirty)">Введіть свою ел. пошту</small>
+                </div>
+                <div class="form__item input-icon">
+                    <label for="auth_password" class="form__label">Придумайте пароль</label>
+                    <div class="input-icon__wrapper">
+                        <input 
+                            passAllowedNamesValidator
+                            passDigitsValidator
+                            passBigLetters
+                            passValName={{name}}
+                            passValMail={{email}}
+                            type={{inputType}}
+                            required
+                            minlength="6"
+                            pattern="[a-zA-Z 0-9 ]*"
+                            id="auth_password" 
+                            #userPassword="ngModel"
+                            [class.is-invalid]="userPassword.invalid && (userForm.submitted || userPassword.dirty)"
+                            class="form__input"
+                            name="userPassword" 
+                            [(ngModel)]="password"
+                        >
+                        <button *ngIf="inputType === 'password'; else visible">
+                            <mat-icon class="visibility-icon" (click)="showPassword()">visibility_off</mat-icon>
+                        </button>
+                        <ng-template #visible>
+                            <button >
+                                <mat-icon class="visibility-icon" (click)="hidePassword()">visibility</mat-icon>
+                            </button>
+                        </ng-template>
+                    </div>
+                    <div *ngIf="userPassword.errors && userPassword.dirty && password">
+                        <!-- {{userPassword.errors | json}} -->
+                        <small 
+                            class="is-invalid__password" 
+                            [class.is-invalid__password-error]="userPassword.errors['forbiddenPassword']">
+                            Не співпадати з іменем та ел. поштою
+                        </small>
+                        <small 
+                            class="is-invalid__password" 
+                            [class.is-invalid__password-error]="userPassword.errors['pattern']">
+                            Використовуйте літери латиниці 
+                        </small>
+                        <small 
+                            class="is-invalid__password" 
+                            [class.is-invalid__password-error]="userPassword.errors['minlength']">
+                            Не менше 6 символів 
+                        </small>
+                        <small 
+                            class="is-invalid__password" 
+                            [class.is-invalid__password-error]="userPassword.errors['noDigitsInPass']">
+                            Містити цифри
+                        </small>
+                        <small 
+                            class="is-invalid__password" 
+                            [class.is-invalid__password-error]="userPassword.errors['noBigLettersInPass']">
+                            Містити великі літери
+                    </small>
+                    </div>
+                </div>
+                <div class="form__item">
+                    <p class="agreement">Реєструючись, ви погоджуєтесь з умовами <a class="agreement__link" href="https://rozetka.com.ua/ua/pages/privacy/" target="_blank">положення про обробку і захист персональних даних та угодою користувача</a></p>
+                </div>
+                <div class="form__item-send">
+                    <button type="submit" class="btn-large">Зареструватися</button>
+                    <button class="btn-link" (click)="openDialog()">Я вже зареєстрований</button>
+                </div>
+                <span class="modal-login__divider">або</span>
+            </form>
+            <div class="modal-login__platforms platforms">
+               <p class="platforms__title">Увійти як користувач</p>
+               <button class="platforms__fb">
+                    <mat-icon class="platforms__icon">facebook</mat-icon>
+                    Facebook
+                </button>
+               <button class="platforms__google">
+                    <mat-icon class="platforms__icon">email</mat-icon>
+                    Google
+                </button>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>

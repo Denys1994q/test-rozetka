@@ -1,0 +1,75 @@
+<mat-dialog-content>
+    <div class="modal-login">
+        <header class="modal-login__header header">
+            <h3 class="header__title">Вхід</h3>
+            <button>
+                <mat-icon class="modal-login__close" (click)="closeDialog()">close</mat-icon>
+            </button>
+        </header>
+        <div class="modal-login__content">
+            <form 
+                action="#" 
+                #userForm="ngForm" 
+                (ngSubmit)="register(userForm)" 
+                class="modal-login__form form">
+                <div class="form__item">
+                    <label for="auth_email" class="form__label">Ел. пошта або телефон</label>
+                    <input 
+                        type="email"
+                        required 
+                        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$|^((0|380)+(97|95|67|50|63|68|91|92|98|99)\d{3}\d{2}\d{2})+$"
+                        name="email" 
+                        #userEmail="ngModel" 
+                        [(ngModel)]="email"
+                        id="auth_email" 
+                        [class.is-invalid]="userEmail.invalid && (userForm.submitted || userEmail.dirty)" 
+                        class="form__input">
+                    <small class="is-invalid__text" [class.is-invalid__text-show]="userEmail.invalid && (userForm.submitted || userEmail.dirty)">Введено невірну адресу ел. пошти або номер телефону</small>
+                </div>
+                <div class="form__item input-icon">
+                    <label for="auth_password" class="form__label">Пароль</label>
+                    <div class="input-icon__wrapper">
+                        <input 
+                            type={{inputType}} 
+                            required 
+                            name="password" 
+                            #userPassword="ngModel" 
+                            [(ngModel)]="password"
+                            id="auth_password" 
+                            [class.is-invalid]="userPassword.invalid && (userForm.submitted || userPassword.dirty)" 
+                            class="form__input">
+                        <button *ngIf="inputType === 'password'; else visible">
+                            <mat-icon class="visibility-icon" (click)="showPassword()">visibility_off</mat-icon>
+                        </button>
+                        <ng-template #visible>
+                            <button >
+                                <mat-icon class="visibility-icon" (click)="hidePassword()">visibility</mat-icon>
+                            </button>
+                        </ng-template>
+                    </div>
+                </div>
+                <div class="form__item remember-input">
+                    <input type="checkbox" id="auth_rememberMe">
+                    <label for="auth_rememberMe">Запам'ятати мене</label>
+                    <a href="">Нагадати пароль</a>
+                </div>
+                <div class="form__item-send">
+                    <button type="submit" class="btn-large">Увійти</button>
+                    <button class="btn-link" (click)="openRegisterDialog()">Зареєструватися</button>
+                </div>
+                <span class="modal-login__divider">або</span>
+            </form>
+            <div class="modal-login__platforms platforms">
+               <p class="platforms__title">Увійти як користувач</p>
+               <button class="platforms__fb">
+                    <mat-icon class="platforms__icon">facebook</mat-icon>
+                    Facebook
+                </button>
+               <button class="platforms__google">
+                    <mat-icon class="platforms__icon">email</mat-icon>
+                    Google
+                </button>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>

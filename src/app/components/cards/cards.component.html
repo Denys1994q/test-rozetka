@@ -1,0 +1,58 @@
+<div class="cards">
+    <h2 class="cards__title">{{discounts.category}}</h2>
+    <ul class="cards__wrapper">
+       <li class="card" *ngFor="let prod of discounts.products">
+            <button class="card__btn btn-icon">
+                <mat-icon class="btn-icon__img">favorite_border</mat-icon>
+            </button>
+            <a href="#">
+                <img src={{prod.image}} class="card__image" alt="prod-image">
+            </a>
+            <a href="#">
+                <h3 class="card__title">{{prod.title}}</h3>
+            </a>
+            <div *ngIf="prod.price.old; else onePrice" class="card__price">
+                <span *ngIf="prod.price.old" class="card__price-old">{{prod.price.old}} &#x20b4;</span>
+                <span class="card__price-new">{{prod.price.new}} &#x20b4;</span>
+            </div>
+            <ng-template #onePrice>
+                <div class="card__price">
+                    <span class="card__price-regular">{{prod.price.new}} &#x20b4;</span>
+                </div>            
+            </ng-template>
+        </li> 
+    </ul>
+    <button class="showMoreBtn">
+        Показати ще
+        <mat-icon class="showMoreBtn__icon">arrow_downward</mat-icon>
+    </button>
+</div>
+<div class="cards">
+    <h2 class="cards__title">{{newProds.category}}</h2>
+    <ul class="cards__wrapper">
+       <li class="card" *ngFor="let prod of newProds.products">
+            <button class="card__btn btn-icon">
+                <mat-icon class="btn-icon__img">favorite_border</mat-icon>
+            </button>
+            <a href="#">
+                <img src={{prod.image}} class="card__image" alt="prod-image">
+            </a>
+            <a href="#">
+                <h3 class="card__title">{{prod.title}}</h3>
+            </a>
+            <div *ngIf="prod.price.old; else onePrice" class="card__price">
+                <span *ngIf="prod.price.old" class="card__price-old">{{prod.price.old}} &#x20b4;</span>
+                <span class="card__price-new">{{prod.price.new}} &#x20b4;</span>
+            </div>
+            <ng-template #onePrice>
+                <div class="card__price">
+                    <span class="card__price-regular">{{prod.price.new}} &#x20b4;</span>
+                </div>            
+            </ng-template>
+        </li> 
+    </ul>
+    <button class="showMoreBtn">
+        Показати ще
+        <mat-icon class="showMoreBtn__icon">arrow_downward</mat-icon>
+    </button>
+</div>
