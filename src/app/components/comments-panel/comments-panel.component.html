@@ -1,0 +1,41 @@
+<div class="comments" *ngIf="!withFilters">
+    <div class="comments__header">
+        <h3>Відгуки покупців <span>1453</span></h3>
+        <button class="btn btn-grey btn-medium">Написати відгук</button>
+    </div>
+    <ul class="comments__list">
+        <li *ngFor="let comment of comments">
+            <app-comment [comment]="comment" ></app-comment>
+        </li>
+        <a href="">
+            <button class="showMoreBtn">
+                Дивитися усі відгуки до товару
+                <mat-icon class="showMoreBtn__icon">arrow_right_alt</mat-icon>
+            </button>
+        </a>
+    </ul>
+</div>
+
+<ng-container *ngIf="withFilters">
+    <div class="mb16 filters">
+        <button class="btn btn-medium iconed-btn btn-blue" (click)="openDialog('filters')">
+            <mat-icon class="iconed-btn__icon">filter_alt</mat-icon>
+            Фільтри
+        </button>
+        <div class="filters__select-wrapper">
+            <select class="filters__select" name="" id="">
+                <option value="">З фото і відео</option>
+                <option value="">За датою</option>
+                <option value="">Найкорисніші</option>
+            </select>
+            <mat-icon class="filters__select-icon">expand_more</mat-icon>
+        </div>
+    </div>
+    <div>
+        <ul>
+            <li *ngFor="let comment of comments">
+                <app-comment [comment]="comment" ></app-comment>
+            </li>
+        </ul>
+    </div>
+</ng-container>

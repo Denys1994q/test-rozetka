@@ -1,0 +1,9 @@
+<div class="color-palette">
+    <p class="color-palette__title">
+        <span> Колір : </span>{{colors[clickedIndex].name}}</p>
+    <ul class="color-palette__list">
+        <li (click)="setColor(i)" [class.color-palette__item-active]="i === clickedIndex" *ngFor="let color of colors; let i = index" class="color-palette__item" >
+            <span [ngStyle]="{background: color.palette}"></span>
+        </li>
+    </ul>
+</div>

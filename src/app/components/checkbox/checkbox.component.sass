@@ -1,0 +1,99 @@
+.checkbox-wrapper
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &--services
+        justify-content: start
+        margin-bottom: 1rem
+        label
+            margin-right: 1rem
+        button
+            &:hover
+                color: orange
+                transition: all .2s ease-in-out
+    input
+        display: none
+        &:checked+label::before
+            background-color: #00a046
+            background-image: url('../../../assets/check.svg')
+            background-position: 50%
+            background-repeat: no-repeat
+            background-size: 10px 8px
+            border-color: #00a046
+    &__label
+        padding-left: 24px
+        display: inline-block
+        position: relative
+        cursor: pointer
+        margin: 0
+        font-weight: normal
+        font-size: 1.2rem
+        &::before
+            background-color: #fff
+            border: 1px solid #d2d2d2
+            border-radius: 4px
+            box-sizing: border-box
+            content: ""
+            display: block
+            height: 16px
+            left: 0
+            position: absolute
+            top: 0px
+            transition: background-color .2s ease-in-out,border .2s ease-in-out
+            width: 16px
+    a
+        font-size: 1.2rem
+        color: #3e77aa
+        &:hover
+            color: red
+            text-decoration: underline
+// services
+.services-label
+    padding-left: 40px
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 24px
+    font-size: 1.4rem
+    &::before
+        width: 24px
+        height: 24px
+.services
+    &__details
+        height: 2.4rem
+        padding-left: 8rem
+        position: relative
+        display: flex
+        align-items: center
+        &::before
+            margin-left: 4rem
+            background-color: #fff
+            border: 1px solid #d2d2d2
+            border-radius: 50%
+            content: ""
+            display: block
+            height: 2.4rem
+            left: 0
+            position: absolute
+            top: 0px
+            transition: background-color .2s ease-in-out,border .2s ease-in-out
+            width: 2.4rem
+        &-active
+            &::after
+                margin-left: 4rem
+                background-color: #00a046
+                border: 1px solid #d2d2d2
+                border-radius: 50%
+                content: ""
+                display: block
+                height: 1.4rem
+                left: .5rem
+                position: absolute
+                top: 50%
+                transform: translate(0, -50%)
+                transition: background-color .2s ease-in-out,border .2s ease-in-out
+                width: 1.4rem
+        span
+            font-size: 16px
+            color: #797878
+            margin-left: 3rem

@@ -1,0 +1,18 @@
+<div class="raiting-wrapper" *ngIf="fixed; else dynamic">
+    <mat-icon class="raiting__icon" *ngFor="let item of icons; let i = index">
+        {{showIcon(i)}}
+    </mat-icon>
+</div>
+<ng-template #dynamic>
+    <div class="raiting-wrapper">
+        <mat-icon 
+        class="raiting__icon" 
+        (mouseenter)="fillStar(i)"
+        (mouseleave)="removeStar()"
+        (click)="fixStar(i)"
+        *ngFor="let item of icons; let i = index"
+    >
+        {{showIcon(i)}}
+    </mat-icon>
+    </div>
+</ng-template>

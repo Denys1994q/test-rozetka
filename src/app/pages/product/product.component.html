@@ -1,0 +1,65 @@
+<section class="product">
+    <app-breadcrumbs [data]="['Смартфони, ТВ і електроніка', 'Навушники та аксесуари']"></app-breadcrumbs>
+    <h1 class="product__title">Навушники Defunc True Music TWS Blue (D4274M)</h1>
+    <div class="product__rating">
+        <app-rating></app-rating>
+        <a href="">
+            1436 відгуків
+        </a>
+        <p class="product__code">
+            <span>
+                Код:
+            </span>
+            11111111
+        </p>
+    </div>
+    <app-tabs [data]="routes"></app-tabs>
+    <ng-container *ngIf="allProducts; else other">
+        <router-outlet></router-outlet>
+    </ng-container>
+    <ng-template #other>
+        <div class="product-section">
+            <div class="product-section__info">
+                <router-outlet></router-outlet>
+            </div>
+            <div class="product-section__card">
+                <div class="info__item mb16 card">
+                    <div class="card__image">
+                        <img src="../../../assets/defunc.webp" alt="good">
+                    </div>
+                    <p class="card__title">Навушники Defunc True Music TWS Black (D4271M) </p>
+                </div>
+                <div class="info__item mb16">
+                    <div class="price">
+                        <div class="trade__price">
+                            <app-price [price]="price" [big]='true'></app-price>
+                            <p class="trade__price-status">Є в наявності</p>
+                        </div>
+                        <div class="trade__btns">
+                            <button class="btn btn-icon btn-icon-grey">
+                                <mat-icon class="btn-icon__icon">balance</mat-icon>
+                            </button>
+                            <button class="btn btn-icon btn-icon-orange">
+                                <mat-icon class="btn-icon__icon">favorite_border</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="trade__buy">
+                        <button class="btn iconed-btn btn-medium btn-green width100">
+                         <mat-icon class="iconed-btn__icon">shopping_cart</mat-icon>
+                         Купити
+                         </button>
+                    </div>
+                </div>
+                <div class="info__item mb16 seller">
+                    <p class="seller__title">Продавець: <span>Rozetka</span></p>
+                    <div class="seller__image">
+                        <img src="../../../assets/rozetka-seller.svg" alt="rozetka">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <app-cards [data]="newProds"></app-cards>
+    </ng-template>
+</section>
+

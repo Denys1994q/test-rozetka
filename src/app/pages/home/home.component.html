@@ -3,7 +3,7 @@
         <ul class="categories__list">
             <li class="categories__item categories__item-basic" *ngFor="let product of data">
               <mat-icon class="categories__icon">{{product.icon}}</mat-icon>
-              <a href="#">{{product.category}}</a>
+              <a routerLink="telefony-tv-i-ehlektronika/c4627949">{{product.category}}</a>
             </li>
         </ul>
         <div class="side-menu__infoBlock infoBlock welcome-block">
@@ -18,13 +18,7 @@
         </div>
         <div class="side-menu__media media media-bordered side-menu__infoBlock">
             <p class="infoBlock__title">Ми в соціальних мережах</p>
-            <ul class="media__list">
-              <li class="media__item"><img class="media__icon" src="../assets/fb.png" alt="fb-icon"></li>
-              <li class="media__item"><img class="media__icon" src="../assets/youtube.png" alt="youtube-icon"></li>
-              <li class="media__item"><img class="media__icon" src="../assets/instagram.png" alt="instagram-icon"></li>
-              <li class="media__item"><img class="media__icon" src="../assets/twitter.png" alt="twitter-icon"></li>
-              <li class="media__item"><img class="media__icon" src="../assets/telegram.png" alt="telegram-icon"></li>
-            </ul>
+            <app-social-media></app-social-media>
         </div>
         <div class="side-menu__infoBlock infoBlock">
             <p class="infoBlock__title">Інформація про компанію</p>
@@ -57,9 +51,9 @@
         </div>
     </aside>
     <main class="products__list prodlist">
-        <app-carousel></app-carousel>
-        <app-cards></app-cards>
-        <app-cards></app-cards>
-        <app-cards></app-cards>
+        <app-carousel [slidesArr]="slides"></app-carousel>
+        <app-cards [data]="discounts"></app-cards>
+        <app-cards [data]="newProds"></app-cards>
+        <app-video-cards></app-video-cards>
     </main>
 </div>

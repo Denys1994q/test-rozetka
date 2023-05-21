@@ -1,13 +1,24 @@
 .carousel
     position: relative
+    width: 100%
+    height: 100%
+    &-extended
+        height: 85%
+    &-extendedBig
+        height: 70%
     &__container
         width: 100%
+        height: 100%
         overflow: hidden
     &__image
         display: block
+        min-width: 100%
+        object-fit: contain
+        padding: 0 .6rem
     &__slide
         display: flex
-        height: 30rem
+        width: 100%
+        height: 100%
 
 .transformAnim
     transition: .5s all ease-in-out
@@ -62,6 +73,7 @@
 .indicators
     position: absolute
     left: 50%
+    transform: translate(-50%)
     bottom: 2px
     width: 10rem
     &__item
@@ -79,3 +91,68 @@
         &-shown
             background-color: #a6a5a5
             display: inline-block
+// dots-row
+.dots-row
+    margin-top: 1rem
+    &-big
+        // margin-left: -22%
+        // margin-right: -22%
+        margin-top: 1rem
+    &__list
+        display: flex
+        overflow-x: hidden
+        scroll-behavior: smooth
+        &-big
+            gap: 2rem
+    &__item
+        width: 65px
+        cursor: pointer
+        margin-bottom: .5rem
+        &-active
+            box-shadow: inset 0 0 0 1px #00a046
+        &-big
+            width: 23rem
+            height: 18rem
+            cursor: pointer
+            &-btn
+                position: relative
+                &::before
+                    content: ''
+                    background: url('../../../assets/play_btn1.png') no-repeat center
+                    background-size: contain
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    width: 40px
+                    height: 40px
+    &__img
+        width: 54px
+        height: 54px
+        padding: 4px
+        max-width: none
+        &-big
+            width: 23rem
+            height: 18rem
+            padding: 4px
+            max-width: none
+            object-fit: contain
+// video
+.video-slide
+    margin: auto
+    object-fit: cover
+
+// scroll
+/* width */
+// ::-webkit-scrollbar
+//     width: 10px
+//     height: 3px
+// /* Track */
+// ::-webkit-scrollbar-track
+//     background: #f1f1f1
+// /* Handle */
+// ::-webkit-scrollbar-thumb
+//     background: #888
+// /* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover
+//     background: #555

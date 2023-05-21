@@ -1,0 +1,28 @@
+<mat-dialog-content>
+    <div class="filters-modal">
+        <header class="filters-modal__header">
+            <h3 class="filters-modal__title bold">Фiльтрацiя вiдгукiв</h3>
+            <button>
+                <mat-icon class="filters-modal__close" (click)="closeDialog()">close</mat-icon>
+            </button>
+        </header>
+    </div>
+</mat-dialog-content>
+<div class="filters-modal__content content">
+    <form action="">
+        <fieldset>
+            <legend class="content__title bold">Оцінка користувачів</legend>
+        </fieldset>
+        <div class="content__list">
+            <div class="content__item" *ngFor="let item of items; let i = index">
+                <input type="radio" id="rating{{i}}" name="rating" value="{{i}}">
+                <label for="rating{{i}}">{{item.label}}</label>
+                <mat-icon *ngFor="let it of item.icons" class="content__icon">star</mat-icon>
+            </div>
+        </div>
+        <div class="content__btns">
+            <button class="btn btn-link btn-medium margin-zero"  (click)="closeDialog()">Скасувати</button>
+            <button class="btn btn-medium iconed-btn btn-blue">Фільтрувати</button>
+        </div>
+    </form>
+</div>

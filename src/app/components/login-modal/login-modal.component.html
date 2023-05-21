@@ -48,10 +48,8 @@
                         </ng-template>
                     </div>
                 </div>
-                <div class="form__item remember-input">
-                    <input type="checkbox" id="auth_rememberMe">
-                    <label for="auth_rememberMe">Запам'ятати мене</label>
-                    <a href="">Нагадати пароль</a>
+                <div class="form__item">
+                    <app-checkbox [auth]="true" [label]="'Запам`ятати мене'"></app-checkbox>
                 </div>
                 <div class="form__item-send">
                     <button type="submit" class="btn-large">Увійти</button>

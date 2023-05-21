@@ -17,8 +17,33 @@ import { passAllowedNamesValidatorDirective } from './pass-allowed-names-validat
 import { passDigitsValidatorDirective } from './pass-digits-validator.directive';
 import { passBigLettersValidatorDirective } from './pass-bigLetters-validator.directive';
 import { emailPhoneValidatorDirective } from './email-phone-validator.directive';
+import { CachedSrcDirective } from './iframe.directive';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CardsComponent } from './components/cards/cards.component';
+import { VideoCardsComponent } from './components/video-cards/video-cards.component';
+import { CategoryComponent } from './pages/category/category.component';
+import { ErrorComponent } from './pages/error/error.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SocialMediaComponent } from './components/social-media/social-media.component';
+import { ProductComponent } from './pages/product/product.component';
+import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
+import { RatingComponent } from './components/rating/rating.component';
+import { ColorPaletteComponent } from './components/color-palette/color-palette.component';
+import { PriceComponent } from './components/price/price.component';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
+import { ServicesModalComponent } from './components/services-modal/services-modal.component';
+import { CommentsPanelComponent } from './components/comments-panel/comments-panel.component';
+import { TabsComponent } from './components/tabs/tabs.component';
+import { ProductCharacteristicsComponent } from './pages/product-characteristics/product-characteristics.component';
+import { ProductAllComponent } from './pages/product-all/product-all.component';
+import { CharacteristicsBlockComponent } from './components/characteristics-block/characteristics-block.component';
+import { ProductCommentsComponent } from './pages/product-comments/product-comments.component';
+import { CommentComponent } from './components/comment/comment.component';
+import { CommentsModalComponent } from './components/comments-modal/comments-modal.component';
+import { FiltersModalComponent } from './components/filters-modal/filters-modal.component';
+import { ProductVideoComponent } from './pages/product-video/product-video.component';
+import { ProductPhotosComponent } from './pages/product-photos/product-photos.component';
+// import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -33,8 +58,32 @@ import { CardsComponent } from './components/cards/cards.component';
     passDigitsValidatorDirective,
     passBigLettersValidatorDirective,
     emailPhoneValidatorDirective,
+    CachedSrcDirective,
     CarouselComponent,
-    CardsComponent
+    CardsComponent,
+    VideoCardsComponent,
+    CategoryComponent,
+    ErrorComponent,
+    FooterComponent,
+    SocialMediaComponent,
+    ProductComponent,
+    BreadcrumbsComponent,
+    RatingComponent,
+    ColorPaletteComponent,
+    PriceComponent,
+    CheckboxComponent,
+    ServicesModalComponent,
+    CommentsPanelComponent,
+    TabsComponent,
+    ProductCharacteristicsComponent,
+    ProductAllComponent,
+    CharacteristicsBlockComponent,
+    ProductCommentsComponent,
+    CommentComponent,
+    CommentsModalComponent,
+    FiltersModalComponent,
+    ProductVideoComponent,
+    ProductPhotosComponent,
   ],
   imports: [
     BrowserModule,

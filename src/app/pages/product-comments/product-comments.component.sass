@@ -1,0 +1,36 @@
+@import '../../components/comment/comment.component.sass'
+@import '../../../variables.sass'
+
+.comment
+    &__sliderWrapper
+        display: flex
+        justify-content: space-between
+    &__sliderList
+        display: flex
+        flex-wrap: wrap
+        gap: 8px
+        height: 170px
+        overflow: hidden
+        width: calc(100% - 8.1rem)
+    &__sliderItem
+        width: 8.1rem
+        height: 17rem
+        margin-right: .2rem
+        cursor: pointer
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            object-position: center
+            border-radius: 8px
+    &__sliderBtn
+            color: $main-blue
+            font-size: 16px
+            &:hover
+                border-color: #4c485e
+                transition: all .4s ease
+    &__leaveComment
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 1.6rem

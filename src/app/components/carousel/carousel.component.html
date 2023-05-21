@@ -1,37 +1,146 @@
-<div class="carousel">
-    <div class="carousel__container">
-        <div #slideImg class="carousel__slide transformAnim" 
-        [ngStyle]="{'transform': 'translateX('+ val + 'px)'}"
-        (mouseenter)="stopCarousel()"
-        (mouseleave)="continueCarousel()"
-        >
-            <img  *ngFor="let slide of slidesArr" src={{slide.url}} alt="carousel__image" class="carousel__image">
+<div
+  class="carousel"
+  [class.carousel-extended]="extended"
+  [class.carousel-extendedBig]="extendedBig"
+>
+  <div class="carousel__container">
+    <div
+      #slideImg
+      class="carousel__slide transformAnim"
+      [ngStyle]="{ transform: 'translateX(' + val + 'px)' }"
+      (mouseenter)="stopCarousel()"
+      (mouseleave)="continueCarousel()"
+    >
+      <ng-container *ngFor="let slide of slidesArr">
+        <img
+          *ngIf="slide.url"
+          src="{{ slide.url }}"
+          alt="carousel__image"
+          class="carousel__image"
+        />
+        <div>
+          <video
+            class="video-slide"
+            width="{{ +slideWidth }}"
+            height="{{ +slideHeight }}"
+            *ngIf="slide.video_url"
+            controls=""
+            poster="https://xl-static.rozetka.com.ua/assets/img/design/video_thmb/big.png"
+          >
+            <source type="video/mp4" src="{{ slide.video_url }}" />
+          </video>
         </div>
+        <div class="iframe-wrapper">
+          <iframe
+            *ngIf="slide.video_youtubeUrl"
+            width="{{ slideWidth }}"
+            height="{{ slideHeight }}"
+            style="{{ extendedBigWide ? 'padding: 0 140px;border:none' : null }}"
+            allowfullscreen="allowfullscreen"
+            allow="accelerometer; autoplay; encallowfullscreenrypted-media; gyroscope;"
+            [cachedSrc]="slide.video_youtubeUrl"
+          >
+          </iframe>
+        </div>
+      </ng-container>
     </div>
-    <div class="btnWrap">
-        <button class="controller controller__prev" (click)="showPrev()">
-            <mat-icon class="controller__prev-icon">chevron_left</mat-icon>
-        </button>
-        <button class="controller controller__next" (click)="showNext()">
-            <mat-icon class="controller__next-icon">chevron_right</mat-icon>
-        </button>
-    </div>
-    <div class="indicators">
-        <span 
-            *ngFor="let slide of slidesArr; let i = index" 
-            [class.indicators__item-active]="i == counter" 
-            class="indicators__item"
-            [class.indicators__item-shown]="
-            counter == 0 ? 
-            i == counter-1 || i == counter+1 || i == counter+2 || i == counter+3 || i == counter+4 : 
-            counter == 1 ? 
-            i == counter-1 || i == counter+1 || i == counter+2 || i == counter+3 : 
-            counter == slidesArr.length - 2 ? 
-            i == counter-1 || i == counter-2 || i == counter-3 || i == counter+1 : 
-            counter == slidesArr.length - 1 ? 
-            i == counter-1 || i == counter-2 || i == counter-3 || i == counter-4 : 
-            i == counter-1 || i == counter-2 || i == counter+1 || i == counter+2"
-            >
-        </span>
-    </div>
+  </div>
+  <div class="btnWrap" *ngIf="show_btns">
+    <button class="controller controller__prev" (click)="showPrev()">
+      <mat-icon class="controller__prev-icon">chevron_left</mat-icon>
+    </button>
+    <button class="controller controller__next" (click)="showNext()">
+      <mat-icon class="controller__next-icon">chevron_right</mat-icon>
+    </button>
+  </div>
+  <div *ngIf="show_indicators" class="indicators">
+    <span
+      *ngFor="let slide of slidesArr; let i = index"
+      [class.indicators__item-active]="i == counter"
+      class="indicators__item"
+      [class.indicators__item-shown]="
+        counter == 0
+          ? i == counter - 1 ||
+            i == counter + 1 ||
+            i == counter + 2 ||
+            i == counter + 3 ||
+            i == counter + 4
+          : counter == 1
+          ? i == counter - 1 ||
+            i == counter + 1 ||
+            i == counter + 2 ||
+            i == counter + 3
+          : counter == slidesArr.length - 2
+          ? i == counter - 1 ||
+            i == counter - 2 ||
+            i == counter - 3 ||
+            i == counter + 1
+          : counter == slidesArr.length - 1
+          ? i == counter - 1 ||
+            i == counter - 2 ||
+            i == counter - 3 ||
+            i == counter - 4
+          : i == counter - 1 ||
+            i == counter - 2 ||
+            i == counter + 1 ||
+            i == counter + 2
+      "
+    >
+    </span>
+  </div>
+</div>
+<div *ngIf="extended" class="dots-row">
+  <ul class="dots-row__list" #row_list>
+    <li
+      #row_item
+      class="dots-row__item"
+      [class.dots-row__item-active]="i == counter"
+      (click)="selectSlide(i)"
+      *ngFor="let slide of slidesArr; let i = index"
+    >
+      <img
+        *ngIf="slide.url"
+        class="dots-row__img"
+        src="{{ slide.url }}"
+        alt="slide-image"
+      />
+      <img
+        class="dots-row__img"
+        *ngIf="slide.video_url || slide.video_youtubeUrl"
+        class="dots-row__img"
+        src="../../../assets/products/video-player.png"
+        alt="slide-image"
+      />
+    </li>
+  </ul>
+</div>
+<div *ngIf="extendedBig" class="dots-row-big">
+  <ul class="dots-row__list dots-row__list-big" #row_list>
+    <li
+      #row_item
+      class="dots-row__item-big"
+      [class.dots-row__item-big-btn]="slide.video_youtubeUrl"
+      (click)="selectSlide(i)"
+      *ngFor="let slide of slidesArr; let i = index"
+    >
+      <img
+        *ngIf="slide.url"
+        class="dots-row__img"
+        src="{{ slide.url }}"
+        alt="slide-image"
+      />
+      <img
+        class="dots-row__img-big"
+        *ngIf="slide.video_youtubeUrl"
+        src="{{ slide.video_screen }}"
+        alt="slide-image"
+      />
+      <img
+        class="dots-row__img-big"
+        *ngIf="slide.video_url"
+        src="../../../assets/products/video-player.png"
+        alt="slide-image"
+      />
+    </li>
+  </ul>
 </div>

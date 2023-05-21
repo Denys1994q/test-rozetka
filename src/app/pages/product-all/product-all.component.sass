@@ -1,0 +1,68 @@
+@import '../product/product.component.sass'
+@import '../../../btns.sass'
+@import '../../../typography.sass'
+
+// characteristics
+.characteristic
+    position: relative
+    margin-top: 2rem
+    max-height: 28rem
+    overflow: hidden
+    &:not(:first-child)
+        margin-top: 4.8rem
+    &-full
+        max-height: none
+    &__title
+        font-size: 2.8rem
+        margin-bottom: 2.4rem
+        word-break: break-word
+        line-height: 1.4
+        span
+            color: $main-grey
+    &__subtitle
+        span
+            font-weight: 700
+    &__textBlock
+        margin: 2.4rem 0
+    &__textItem
+        margin-bottom: 1.2rem
+    &-after
+        &::after
+            position: absolute
+            bottom: 0
+            left: 0
+            display: block
+            width: 100%
+            height: 100px
+            background: linear-gradient(180deg,hsla(0,0%,100%,0),#fff)
+            content: ""
+    &__fullItem
+        display: flex
+//
+.fullItem
+    margin-bottom: 2.4rem
+    &__title
+        width: 40%
+        position: relative
+        display: flex
+        span
+            margin: 0 1rem
+            flex: 1
+            width: 100%
+            position: relative
+            &::before
+                position: absolute
+                left: 0
+                bottom: 4px
+                display: block
+                width: 100%
+                border-bottom: 1px dotted $main-grey
+                content: ""
+    &__text
+        width: 60%
+        color: $main-blue
+
+:host
+    ::ng-deep app-carousel
+        .video-slide
+            padding: 0 14%

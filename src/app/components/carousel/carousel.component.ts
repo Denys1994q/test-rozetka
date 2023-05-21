@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
-import { ElementRef } from '@angular/core';
-import { ViewChild } from '@angular/core';
-import { AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, ElementRef, ViewChild, Output, EventEmitter } from '@angular/core';
+import { AfterViewInit, OnDestroy, Input, OnInit, OnChanges, SimpleChanges, ViewChildren, QueryList } from '@angular/core';
 
-type Slide = {
-    url: string
+export type Slide = {
+    url?: string,
+    video_url?: string,
+    video_youtubeUrl?: string,
+    video_screen?: string
 }
 
 @Component({
@@ -15,19 +16,22 @@ type Slide = {
 export class CarouselComponent implements AfterViewInit, OnDestroy {
   constructor() { }
 
+  @Input() slidesArr!: Slide[]
+  @Input() show_btns: boolean = true
+  @Input() show_indicators: boolean = true
+  @Input() extended: boolean = false
+  @Input() extendedBig: boolean = false
+  @Input() extendedBigWide: boolean = false
+  @Input() startSlideIndex: any
+
+  @Output() activeSlideEvent = new EventEmitter<any>()
+
+  slideWidth!: number
+  slideHeight!: number
   counter: number = 0
   val: number = 0
   res: any 
   int: any
-
-  slidesArr: Slide[] = [
-    {url: '../../../assets/slide1.jpg'},
-    {url: '../../../assets/slide2.jpg'},
-    {url: '../../../assets/slide3.jpg'},
-    {url: '../../../assets/slide4.jpg'},
-    {url: '../../../assets/slide5.jpg'},
-    {url: '../../../assets/slide6.jpg'},
-  ]
 
   showPrev() {
     if (this.counter <= 0) {
@@ -35,6 +39,9 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
     }
     this.counter--
     this.val = this.res * this.counter
+    this.scrollRow(this.counter)
+
+    this.activeSlideEvent.emit(this.counter)
   }
 
   showNext() {
@@ -43,10 +50,15 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
     }
     this.counter++
     this.val = this.res * this.counter
+    this.scrollRow(this.counter)
+
+    this.activeSlideEvent.emit(this.counter)
   }
 
   st() {
     this.res = - this.slideImg.nativeElement.offsetWidth;
+    this.slideWidth = this.slideImg.nativeElement.offsetWidth;
+    this.slideHeight = this.slideImg.nativeElement.offsetHeight;
     // this.int = setInterval(() => {
     //   this.showNext()
     // }, 4000)
@@ -54,8 +66,15 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     this.st()
+    if (this.startSlideIndex) {
+      this.activeSlideEvent.emit(this.startSlideIndex)
+      this.selectSlide(this.startSlideIndex)
+    }
   }
   @ViewChild('slideImg') slideImg!: ElementRef;
+  @ViewChild('row_list') row_list!: ElementRef;
+  // @ViewChild('row_item') row_item!: ElementRef;
+  @ViewChildren("row_item", { read: ElementRef }) elements!: QueryList<ElementRef>;
 
   stopCarousel() {
     clearInterval(this.int);
@@ -67,5 +86,26 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
 
   ngOnDestroy() {
     clearInterval(this.int);
+  }
+
+  selectSlide(i: number) {
+    this.scrollRow(i)
+
+    this.counter = i
+    this.val = this.res * this.counter
+  }
+
+  scrollRow(i: number) {
+    if (this.elements) {
+      this.elements.forEach((element, index) => {
+        if (i === index) {
+          element.nativeElement.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center"
+          });        
+        }
+      });
+    }
   }
 }

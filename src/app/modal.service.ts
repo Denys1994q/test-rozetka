@@ -4,30 +4,38 @@ import {MatDialog} from '@angular/material/dialog';
 import { ProductsModalComponent } from './components/products-modal/products-modal.component';
 import { LoginModalComponent } from './components/login-modal/login-modal.component';
 import { RegisterModalComponent } from './components/register-modal/register-modal.component';
+import { ServicesModalComponent } from './components/services-modal/services-modal.component';
+import { CommentsModalComponent } from './components/comments-modal/comments-modal.component';
+import { FiltersModalComponent } from './components/filters-modal/filters-modal.component';
 
 @Injectable({ providedIn: 'root' })
 
 export class ModalService {
     openedDialog:Subject<any> = new Subject<any>();
+    data!: any
 
     constructor(public dialog: MatDialog) {}
 
-    data = [
-        {category: 'Ноутбуки та комп`ютери', icon: 'laptop', products: [
-          {title: 'Ноутбуки', items: ['Asus', 'Acer', 'HP', 'Lenovo', 'Dell', 'Apple Macbook']},
-          {title: 'Планшети', items: ['Apple IPad', 'Samsung', 'Lenovo', 'Xiaomi']},
-          {title: 'Комплектуючі', items: ['Відеокарти', 'SSD', 'Процесори', 'Жорсткі диски']},
-          {title: 'Офісна техніка', items: ['Принтери', 'Шредери', 'Телефони']}
-        ]},    
-        {category: 'Смартфони, ТВ і електроніка', icon: 'smartphone', products: [
-          {title: 'Телефони', items: ['Apple', 'Samsung', 'Xiaomi', 'Nokia']},
-          {title: 'Телевізори та аксесуари', items: ['LG', 'Samsung', 'Xiaomi']},
-        ]},  
-        {category: 'Товари для геймерів', icon: 'sports_esports', products: [
-          {title: 'PlayStation', items: ['Ігрові приставки PlayStation5', 'Ігрові приставки PlayStation4', 'Гарнітури PlayStation']},
-          {title: 'Ігрові приставки XBox', items: ['Ігри для XBox']},
-        ]},  
-    ]
+    // data = [
+    //     {category: 'Ноутбуки та комп`ютери', icon: 'laptop', products: [
+    //       {title: 'Ноутбуки', items: ['Asus', 'Acer', 'HP', 'Lenovo', 'Dell', 'Apple Macbook']},
+    //       {title: 'Планшети', items: ['Apple IPad', 'Samsung', 'Lenovo', 'Xiaomi']},
+    //       {title: 'Комплектуючі', items: ['Відеокарти', 'SSD', 'Процесори', 'Жорсткі диски']},
+    //       {title: 'Офісна техніка', items: ['Принтери', 'Шредери', 'Телефони']}
+    //     ]},    
+    //     {category: 'Смартфони, ТВ і електроніка', icon: 'smartphone', products: [
+    //       {title: 'Телефони', items: ['Apple', 'Samsung', 'Xiaomi', 'Nokia']},
+    //       {title: 'Телевізори та аксесуари', items: ['LG', 'Samsung', 'Xiaomi']},
+    //     ]},  
+    //     {category: 'Товари для геймерів', icon: 'sports_esports', products: [
+    //       {title: 'PlayStation', items: ['Ігрові приставки PlayStation5', 'Ігрові приставки PlayStation4', 'Гарнітури PlayStation']},
+    //       {title: 'Ігрові приставки XBox', items: ['Ігри для XBox']},
+    //     ]},  
+    // ]
+
+    getData(data: any) {
+      this.data = data
+    }
 
     openDialog(variant: string) {
         let modalVariant: any
@@ -57,7 +65,35 @@ export class ModalService {
                     modalVariant = RegisterModalComponent
                     modalStyles = {
                       panelClass: 'modal-register',
-                      // minHeight: '500px',
+                    }
+                }
+                break
+            case 'services': 
+                if (variant == 'services') {
+                    modalVariant = ServicesModalComponent
+                    modalStyles = {
+                      panelClass: 'modal-services',
+                      paddingBottom: 0
+                    }
+                }
+                break
+            case 'comments': 
+                if (variant == 'comments') {
+                    modalVariant = CommentsModalComponent
+                    modalStyles = {
+                      panelClass: 'modal-comments',
+                      width: '90vw',
+                      maxWidth: '90vw',
+                      minHeight: '500px',
+                      data: this.data
+                    }
+                }
+                break
+            case 'filters': 
+                if (variant == 'filters') {
+                    modalVariant = FiltersModalComponent
+                    modalStyles = {
+                      panelClass: 'modal-filters',
                     }
                 }
                 break

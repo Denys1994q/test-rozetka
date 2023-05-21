@@ -22,3 +22,4 @@ export class ProductsModalComponent {
     this.activeCategoryIndex = i
   }
 }
+

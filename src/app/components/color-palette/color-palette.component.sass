@@ -1,0 +1,42 @@
+.color-palette
+    &__title
+        margin-bottom: .8rem
+        span
+            color: #797878
+    &__list
+        display: flex
+        flex-wrap: wrap
+    &__item
+        margin-bottom: 4px
+        padding: 4px
+        border: 1px solid #d2d2d2
+        border-radius: 4px
+        transition: all .2s ease-in-out
+        cursor: pointer
+        &:hover
+            border: 1px solid #1a632c
+        &:not(:last-child)
+            margin-right: .4rem
+        &-active
+            background-color: #00a0460d
+        span
+            position: relative
+            display: block
+            width: 24px
+            height: 24px
+            border-radius: 4px
+            overflow: hidden
+            background-color: rgb(228, 49, 49)
+        ::before
+            position: absolute
+            left: 50%
+            top: 50%
+            z-index: 2
+            display: block
+            width: 36px
+            height: 1px
+            background-color: #d2d2d2
+            transform: rotate(45deg) translate(-50%,-50%)
+            transform-origin: 0
+            transition: all .2s ease-in-out
+            content: ""

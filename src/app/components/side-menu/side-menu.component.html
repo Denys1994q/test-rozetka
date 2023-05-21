@@ -72,13 +72,7 @@
     </div>
     <div class="side-menu__media media side-menu__infoBlock">
       <p class="infoBlock__title">Ми в соціальних мережах</p>
-      <ul class="media__list">
-        <li class="media__item"><img class="media__icon" src="../assets/fb.png" alt="fb-icon"></li>
-        <li class="media__item"><img class="media__icon" src="../assets/youtube.png" alt="youtube-icon"></li>
-        <li class="media__item"><img class="media__icon" src="../assets/instagram.png" alt="instagram-icon"></li>
-        <li class="media__item"><img class="media__icon" src="../assets/twitter.png" alt="twitter-icon"></li>
-        <li class="media__item"><img class="media__icon" src="../assets/telegram.png" alt="telegram-icon"></li>
-      </ul>
+      <app-social-media></app-social-media>
     </div>
   </div>
   <div class="overlay" [class.overlay-active]="openedMenu" (click)="closeMenu()"></div>

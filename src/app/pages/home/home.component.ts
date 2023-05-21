@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalService } from 'src/app/modal.service';
+import { Slide } from 'src/app/components/carousel/carousel.component';
 
 @Component({
   selector: 'app-home',
@@ -51,6 +52,50 @@ export class HomeComponent {
       {title: 'Ігрові приставки XBox', items: ['Ігри для XBox']},
     ]},  
   ]
+
+  slides: Slide[] = [
+      {url: '../../../assets/slide1.jpg'},
+      {url: '../../../assets/slide2.jpg'},
+      {url: '../../../assets/slide3.jpg'},
+      {url: '../../../assets/slide4.jpg'},
+      {url: '../../../assets/slide5.jpg'},
+      {url: '../../../assets/slide6.jpg'},
+  ]
+
+  discounts = {
+    category: 'Акційні пропозиції', 
+    products: [
+      {
+        title: 'Навушники Defunc True Music TWS Black', 
+        image: '../../../assets/defunc.webp', 
+        price: {old: 1199, new: 999}
+      },
+      {
+        title: 'Навушники Defunc True Music TWS Black', 
+        image: '../../../assets/defunc.webp', 
+        price: {old: null, new: 899}
+      },
+  ]}    
+
+  newProds = {
+    category: 'Гарячі новинки', 
+    products: [
+      {
+        title: 'Набір для прибирання', 
+        image: '../../../assets/vileda.webp', 
+        price: {old: 2405, new: 1539}
+      },
+      {
+        title: 'Шорти AVRORA сірі', 
+        image: '../../../assets/shorts.webp', 
+        price: {old: 480, new: 229}
+      },
+      {
+        title: 'Ноутбук ASUS ROG', 
+        image: '../../../assets/asus_rog.webp', 
+        price: {old: null, new: 82199}
+      },
+    ]}    
 
   constructor(private modalService: ModalService) {}
 

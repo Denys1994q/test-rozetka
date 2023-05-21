@@ -1,0 +1,30 @@
+<div class="video-cards">
+    <div class="video-cards__header">
+        <h2 class="video-cards__heading">Нові відео на каналі <a href="https://www.youtube.com/channel/UCr7r1-z79TYfqS2IPeRR47A" target="_blank" class="video-cards__heading-link">ROZETKA</a></h2>
+        <a href="https://www.youtube.com/channel/UCr7r1-z79TYfqS2IPeRR47A" target="_blank">
+            <img class="video-cards__icon" src="../../../assets/youtube.webp" alt="youtube-logo">
+        </a>
+    </div>
+    <ul class="video-cards__list">
+        <li class="video-cards__item video" *ngFor="let video of videosData; let i = index">
+            <div class="video-wrapper" (click)="showIframe(i)">
+                <div *ngIf="this.clickedVideoIndexArr.indexOf(i) > -1; else base">
+                    <iframe width="100%"      height="125px"
+                        allowfullscreen="allowfullscreen" 
+                        allow="accelerometer; autoplay; encallowfullscreenrypted-media; gyroscope;" 
+                        [cachedSrc]="video.url">
+                    </iframe>
+                </div>
+                <ng-template #base>
+                    <button class="video-wrapper__btn">
+                        <img src="../../../assets/play_btn.svg" alt="play_btn">
+                    </button>
+                    <img class="video-wrapper__img" src={{video.img}} alt="video-screenshot">
+                    <time class="video-wrapper__time">{{video.duration}}</time>
+                </ng-template>
+            </div>
+            <p class="video__title">{{video.title}}</p>
+            <time class="video__time">{{video.time}}</time>
+        </li>
+    </ul>
+</div>

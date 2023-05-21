@@ -1,0 +1,18 @@
+<mat-dialog-content>
+    <div class="comments-modal">
+        <header class="comments-modal__header">
+            <h3 class="comments-modal__title bold">Фотографії та відео покупців - Навушники Defunc True Music TWS Black (D4271M)</h3>
+            <button>
+                <mat-icon class="comments-modal__close" (click)="closeDialog()">close</mat-icon>
+            </button>
+        </header>
+    </div>
+</mat-dialog-content>
+<div class="comments-modal__content">
+    <div class="comments-modal__slider">
+        <app-carousel [slidesArr]="slides" startSlideIndex={{data.startSlideIndex}} (activeSlideEvent)="receiveActiveSlideIndex($event)"></app-carousel>
+    </div>
+    <div class="comments-modal__comment">
+        <app-comment [comment]="activeSlide || activeSlide === 0 ? data.slides[activeSlide] : data.slides[data.startSlideIndex]"></app-comment>
+    </div>
+</div>

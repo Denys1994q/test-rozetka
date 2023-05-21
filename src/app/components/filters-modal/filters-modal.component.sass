@@ -1,0 +1,88 @@
+@import '../../../btns.sass'
+@import '../../../typography.sass'
+
+.filters-modal
+    width: 64rem
+    &__header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        height: 5.7rem
+        border-bottom: 1px solid #e9e9e9
+        padding: 0 2.4rem
+    &__title
+        font-family: 'Roboto'
+        color: #221f1f
+    &__content
+        padding: 2rem 2.4rem
+        margin-bottom: 1rem
+    &__close
+        &:hover
+            color: red
+            transition: all .2s ease-in-out
+//
+.content
+    &__title
+        font-size: 1.8rem
+        border: none
+    &__list
+    &__item
+        margin-bottom: 1.4rem
+        display: flex
+        align-items: center
+        input
+            display: none
+            &:checked+label::after
+                display: block
+        label
+            padding-left: 40px
+            display: inline-block
+            position: relative
+            cursor: pointer
+            margin: 0
+            font-size: 1.4rem
+            font-weight: normal
+            min-width: 65px
+            height: 24px
+            display: flex
+            justify-content: center
+            align-items: center
+            margin-right: 2rem
+            &:hover
+                &::before
+                    border: 1px solid #505050
+            &::before
+                content: ""
+                background-color: #fff
+                border: 1px solid #d2d2d2
+                border-radius: 50%
+                display: block
+                width: 24px
+                height: 24px
+                left: 0
+                position: absolute
+                top: 0
+                transition: background-color .2s ease-in-out,border .2s ease-in-out
+            &::after
+                display: none
+                background-color: #00a046
+                border: 1px solid #d2d2d2
+                border-radius: 50%
+                content: ""
+                height: 1.4rem
+                left: 0.5rem
+                position: absolute
+                top: 0.5rem
+                transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out
+                width: 1.4rem
+    &__icon
+        color: #ffa900
+    &__btns
+        margin-top: 2.4rem
+        display: flex
+        align-items: center
+        gap: 1.6rem
+
+::ng-deep .modal-filters
+    .mdc-dialog .mdc-dialog__content
+        padding: 0

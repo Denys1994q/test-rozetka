@@ -1,0 +1,139 @@
+<div class="product__info info">
+    <div class="info__main">
+        <ng-container>
+            <div class="info__image">
+                <app-carousel [slidesArr]="slides" [extended]="true" [show_indicators]="false"></app-carousel>
+            </div>
+            <button class="info__videoBtn" (click)="scrollToBlock('videoBlock')">
+                <mat-icon>play_circle</mat-icon>
+            </button>
+            <div class="characteristics-top">
+                <p class="characteristics-top__item">Тип навушників: TWS (2 окремо)</p>
+                <p class="characteristics-top__item">Діапазон частот навушників 20 Гц - 20 кГц</p>
+                <p class="characteristics-top__item">Вага: 40 г</p>
+            </div>
+            <div class="info__guarantee">
+                <img src="../../../assets/guarantee_2years.png" alt="guarantee_term">
+            </div>
+            <button class="showMoreBtn" (click)="scrollToBlock('characteristicsAndReviewsBlock')">
+                Детальніше про товар
+            </button>
+        </ng-container>
+    </div>
+    <div class="info__desc">
+        <div class="info__desc__colors">
+            <app-color-palette></app-color-palette>
+        </div>
+        <div class="info__item mb24 info__desc__trade trade">
+            <div class="trade__price">
+                <app-price [price]="price" [big]='true'></app-price>
+                <p class="trade__price-status">Є в наявності</p>
+            </div>
+            <div class="trade__buy">
+               <button class="btn iconed-btn btn-medium btn-green">
+                <mat-icon class="iconed-btn__icon">shopping_cart</mat-icon>
+                Купити
+                </button>
+            </div>
+            <div class="trade__btns">
+                <button class="btn btn-icon btn-icon-grey">
+                    <mat-icon class="btn-icon__icon">balance</mat-icon>
+                </button>
+                <button class="btn btn-icon btn-icon-orange">
+                    <mat-icon class="btn-icon__icon">favorite_border</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div class="info__item mb24 services">
+            <app-checkbox [services]="true" [label]="'Сервіси продовження гарантії'"></app-checkbox>
+        </div>
+        <div class="info__item mb24 seller">
+            <p class="seller__title">Продавець: <span>Rozetka</span></p>
+            <div class="seller__image">
+                <img src="../../../assets/rozetka-seller.svg" alt="rozetka">
+            </div>
+        </div>
+        <div class="info__item payment payment-main">
+            <div class="payment__info">
+                <button class="payment__info-btn"><mat-icon>credit_card</mat-icon></button>
+                <p class="payment__info-text"><span>Оплата. </span>Оплата під час отримання товару, Картою онлайн, Google Pay, -5% знижки при оплаті від 500 грн карткою Mastercard Універсальна/Універсальна Gold від ПриватБанк, Безготівковими для юридичних осіб, Оплатити онлайн соціальною картою "Пакунок малюка", Безготівковий для фізичних осіб, Apple Pay, Visa, Оплатити онлайн картою "єПідтримка", Mastercard</p>
+            </div>
+        </div>
+        <div class="info__item payment payment-last">
+            <div class="payment__info">
+                <button class="payment__info-btn"><mat-icon>security</mat-icon></button>
+                <p class="payment__info-text"><span>Гарантія. </span>24 місяці Обмін/повернення товару впродовж 14 днів </p>
+            </div>
+        </div>
+    </div>
+</div>
+<app-cards [data]="newProds"></app-cards>
+<div class="product__characteristicsAndReviews info" #characteristicsAndReviewsBlock>
+    <div class="info__main">
+        <div [class.characteristic-full]='showFullText' [class.characteristic-after]='!showFullText' class="characteristic">
+            <h3 class="characteristic__title">Опис <span>Навушники Defunc True Music TWS Blue (D4274M)</span></h3>
+            <p class="characteristic__subtitle characteristic__textItem"><span>Defunc True Music </span>– це безкомпромісне поєднання інноваційного дизайну, шведської якості та новітніх технологій!</p>
+            <div class="characteristic__textBlock">
+                <p class="characteristic__textItem bold">Ексклюзивна, анатомічна форма</p>
+                <p class="characteristic__textItem">Настав час відчувати музику, а не навушники! <span class="bold">Defunc True Music</span>, завдяки своїй ексклюзивній формі, адаптовані до анатомічних особливостей, забезпечуючи надійну фіксацію у вусі та, водночас, практично не відчуваються. </p>
+            </div>
+            <div class="characteristic__textBlock">
+                <p class="characteristic__textItem bold">Bluetooth 5.2.</p>
+                <p class="characteristic__textItem"><span class="bold">Defunc True Music</span> отримали найсучаснішу версію <span class="bold">Bluetooth 5.2.</span>, яка орієнтована в основному на аудіопристрої. Це означає, що замість використання стандартного Bluetooth у навушників буде особливий стандарт, щоб приділяти більше уваги всьому, що пов'язане зі звуком. Швидке підключення, бездоганна якість та стабільність передачі бездротового аудіосигналу, а також покращена енергоефективність.</p>
+            </div>
+            <div class="characteristic__textBlock">
+                <p class="characteristic__textItem bold">Потужність у компактному корпусі</p>
+                <p class="characteristic__textItem">Компактний зарядний кейс вагою всього 45 грамів поєднує мініатюрний, мінімалістичний дизайн і батарею ємністю 400 mAh. Час роботи таких компактних і одночасно потужних навушників становитиме до 5 годин без підзарядки та до <span class="bold">22 годин</span> разом із зарядним кейсом.</p>
+            </div>
+        </div>
+        <button [class.displayNone]="hideBtn" class="btn btn-link margin-zero" (click)="showFullBlock()">Читати повністю</button>
+        <app-characteristics-block [limited]="true"></app-characteristics-block>
+        <div class="characteristic">
+            <h3 class="characteristic__title">Додаткові матеріали <span>Навушники Defunc True Music TWS Blue (D4274M)</span></h3>
+            <ul class="documents">
+                <li class="documents__item">
+                    <div class="documents__left">
+                        <button>
+                            <mat-icon>attach_file</mat-icon>
+                        </button>
+                        <p>Інструкція користувача</p>
+                    </div>
+                    <div class="documents__right">
+                        <span>PDF 5.5 Mb</span>
+                        <a href="https://content1.rozetka.com.ua/goods/documents/original/243882776.pdf" target="_blank" class="btn btn-small btn-grey iconed-btn">
+                            Завантажити
+                        </a>
+                    </div>
+                </li>
+                <li class="documents__item">
+                    <div class="documents__left">
+                        <button>
+                            <mat-icon>attach_file</mat-icon>
+                        </button>
+                        <p>Інструкція користувача</p>
+                    </div>
+                    <div class="documents__right">
+                        <span>PDF 5.5 Mb</span>
+                        <a href="https://content1.rozetka.com.ua/goods/documents/original/243882776.pdf" target="_blank" class="btn btn-small btn-grey iconed-btn">
+                            Завантажити
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="comments info__desc">
+        <app-comments-panel [comments]="comments"></app-comments-panel>
+    </div>
+</div>
+<div class="product__video video">
+    <div class="video__wrapper" #videoBlock>
+        <app-carousel [slidesArr]="videoSlides" [extendedBig]="true" [extendedBigWide]="true" [show_indicators]="false" [show_btns]="false"></app-carousel>
+    </div>
+    <div class="video__link">Підпишіться на наш канал
+        <a href="https://www.youtube.com/channel/UCr7r1-z79TYfqS2IPeRR47A" target="_blank">
+            <img src="../../../assets/youtube.png" alt="youtube-logo"> 
+        </a>
+    </div>
+</div>
+<app-cards [data]="newProds"></app-cards>
