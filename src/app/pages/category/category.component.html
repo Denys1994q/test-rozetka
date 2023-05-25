@@ -26,13 +26,7 @@
     </div>
     <ul class="category__list list">
         <li class="list__item" *ngFor="let category of category.list">
-            <a href="" class="list__image">
-                <img src={{category.img}} alt={{category.title}}>
-            </a>
-            <a href="" class="list__title" [class.startText]="category.subitems">{{category.title}}</a>
-            <ul *ngIf="category.subitems" class="list__item-extraList">
-                <li *ngFor="let item of category.subitems"><a href="">{{item}}</a></li>
-            </ul>
+            <app-category-card [data]="category"></app-category-card>
         </li>
     </ul>
     <div *ngIf="category.title == 'Смартфони, ТВ і електроніка'" class="category__info infoBlock">

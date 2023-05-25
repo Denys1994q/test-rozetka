@@ -1,0 +1,15 @@
+<div class="card">
+  <a href="" class="card__link">
+    <span class="card__imageWrapper">
+      <img class="card__image" src="{{ data.img }}" alt="{{ data.title }}" />
+    </span>
+  </a>
+  <a href="" class="card__link card__title" [class.startText]="data.subitems">
+    {{ data.title }}
+  </a>
+  <ul *ngIf="data.subitems" class="card-extraList">
+    <li *ngFor="let item of data.subitems">
+      <a href="">{{ item }}</a>
+    </li>
+  </ul>
+</div>

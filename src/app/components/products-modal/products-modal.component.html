@@ -4,14 +4,16 @@
         <ul class="categories__list">
           <li class="categories__item" [class.categories__item-active]="i === activeCategoryIndex" *ngFor="let product of products; let i = index" (mouseenter)="onMouseEnter(i)">
             <mat-icon class="categories__icon">{{product.icon}}</mat-icon>
-            <a href="#">{{product.category}}</a>
+            <a routerLink="telefony-tv-i-ehlektronika/c4627949" (click)="closeDialog()">{{product.category}}</a>
             <mat-icon class="categories__icon-chevron">chevron_right</mat-icon>
           </li>
         </ul>
       </div>
       <div class="modall-prod__products products">
         <div *ngFor="let product of products[activeCategoryIndex].products" class="products__item product">
-            <h2 class="product__title">{{product.title}}</h2>
+            <h2 class="product__title">
+              <a routerLink="office-equipment/c80254" (click)="closeDialog()">{{product.title}}</a>
+            </h2>
             <ul class="product__list">
                 <li *ngFor="let prod of product.items" class="product__item"><a href="#">{{prod}}</a></li>
             </ul>

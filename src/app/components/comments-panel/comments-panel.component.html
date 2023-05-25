@@ -22,14 +22,7 @@
             <mat-icon class="iconed-btn__icon">filter_alt</mat-icon>
             Фільтри
         </button>
-        <div class="filters__select-wrapper">
-            <select class="filters__select" name="" id="">
-                <option value="">З фото і відео</option>
-                <option value="">За датою</option>
-                <option value="">Найкорисніші</option>
-            </select>
-            <mat-icon class="filters__select-icon">expand_more</mat-icon>
-        </div>
+        <app-select [name]="'filters'" [options]="['З фото і відео', 'За датою', 'Найкорисніші']"></app-select>
     </div>
     <div>
         <ul>

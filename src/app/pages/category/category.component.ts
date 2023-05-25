@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
 import { Slide } from 'src/app/components/carousel/carousel.component';
+import { CategoryItem } from 'src/app/components/category-card/category-card.component';
 
-type CategoryItem = {
-  title: string,
-  img: string,
-  subitems?: string[]
-}
 type Brend = {
   img: string
 }

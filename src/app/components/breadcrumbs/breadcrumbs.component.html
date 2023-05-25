@@ -1,6 +1,8 @@
 <ul class="breadcrumbs">
     <li class="breadcrumbs__start">
-        <mat-icon class="breadcrumbs__homeIcon">home</mat-icon>
+        <a routerLink="/">
+            <mat-icon class="breadcrumbs__homeIcon">home</mat-icon>
+        </a>
     </li>
     <li class="breadcrumbs__item" *ngFor="let item of data">
         <mat-icon class="breadcrumbs__chevronIcon">chevron_right</mat-icon>

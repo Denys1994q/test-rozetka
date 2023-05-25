@@ -43,6 +43,10 @@ import { CommentsModalComponent } from './components/comments-modal/comments-mod
 import { FiltersModalComponent } from './components/filters-modal/filters-modal.component';
 import { ProductVideoComponent } from './pages/product-video/product-video.component';
 import { ProductPhotosComponent } from './pages/product-photos/product-photos.component';
+import { SubcategoryScreenComponent } from './pages/subcategory-screen/subcategory-screen.component';
+import { CategoryCardComponent } from './components/category-card/category-card.component';
+import { SelectComponent } from './components/select/select.component';
+import { SearchPanelComponent } from './components/search-panel/search-panel.component';
 // import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
@@ -84,6 +88,10 @@ import { ProductPhotosComponent } from './pages/product-photos/product-photos.co
     FiltersModalComponent,
     ProductVideoComponent,
     ProductPhotosComponent,
+    SubcategoryScreenComponent,
+    CategoryCardComponent,
+    SelectComponent,
+    SearchPanelComponent,
   ],
   imports: [
     BrowserModule,
