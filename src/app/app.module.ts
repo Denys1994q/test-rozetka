@@ -47,6 +47,8 @@ import { SubcategoryScreenComponent } from './pages/subcategory-screen/subcatego
 import { CategoryCardComponent } from './components/category-card/category-card.component';
 import { SelectComponent } from './components/select/select.component';
 import { SearchPanelComponent } from './components/search-panel/search-panel.component';
+import { InputTextComponent } from './components/input-text/input-text.component';
+import { AlphabetBlockComponent } from './components/alphabet-block/alphabet-block.component';
 // import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
@@ -92,6 +94,8 @@ import { SearchPanelComponent } from './components/search-panel/search-panel.com
     CategoryCardComponent,
     SelectComponent,
     SearchPanelComponent,
+    InputTextComponent,
+    AlphabetBlockComponent,
   ],
   imports: [
     BrowserModule,

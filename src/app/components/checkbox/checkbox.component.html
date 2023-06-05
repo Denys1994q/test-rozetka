@@ -1,15 +1,23 @@
-<div *ngIf="services" >
-    <div class="checkbox-wrapper checkbox-wrapper--services">
-        <input type="checkbox" id='services' (change)="onCheck($event)">
-        <label class="checkbox-wrapper__label services-label" for='services'>{{label}}</label>
-        <button (click)="openDialog()">
-            <mat-icon>info</mat-icon>
-        </button>
-    </div>
-    <p [class.services__details-active]='service' class="services__details">Подовження гарантії на 1 рік <span>99 &#x20b4;</span> </p>
+<div *ngIf="services">
+  <div class="checkbox-wrapper checkbox-wrapper--services">
+    <input type="checkbox" id="services" (change)="onCheck($event)" />
+    <label class="checkbox-wrapper__label services-label" for="services">{{
+      label
+    }}</label>
+    <button (click)="openDialog()">
+      <mat-icon>info</mat-icon>
+    </button>
+  </div>
+  <p [class.services__details-active]="service" class="services__details">
+    Подовження гарантії на 1 рік <span>99 &#x20b4;</span>
+  </p>
 </div>
 <div *ngIf="auth" class="checkbox-wrapper">
-    <input type="checkbox" id='auth'>
-    <label class="checkbox-wrapper__label" for='auth'>{{label}}</label>
-    <a href="">Нагадати пароль</a>
+  <input type="checkbox" id="auth" />
+  <label class="checkbox-wrapper__label" for="auth">{{ label }}</label>
+  <a href="">Нагадати пароль</a>
+</div>
+<div *ngIf="search" class="checkbox-wrapper">
+  <input type="checkbox" id={{searchId}} />
+  <label class="checkbox-wrapper__label" for={{searchId}}>{{ label }}</label>
 </div>

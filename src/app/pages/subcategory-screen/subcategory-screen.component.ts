@@ -8,22 +8,71 @@ import { Component } from '@angular/core';
 export class SubcategoryScreenComponent {
   btns: any = [{icon: 'view_module'}, {icon: 'apps'}]
   activeBtn: number = 0
+
+  // дату нормальну зробити для сторінки... не завжди мають генерувати чекбокси, іноді як в ціні, хоча в основному чекбокси
   data=[
     {
       title: 'Продавець',
-      optionsNumber: 2,
+      options: [
+        {label: 'Rozetka', id: '1232'},
+        {label: 'Інші', id: '1234'},
+      ]
     },
     {
-      title: '2',
-      optionsNumber: 2,
+      title: 'Бренд',
+      options: [
+        {label: '2E', id: '12321'},
+        {label: 'Epson', id: '12346'},
+        {label: 'HP', id: '12347'},
+        {label: 'Agent', id: '12349'},
+        {label: 'Canon', id: '12344'},
+        {label: 'ColorWay', id: '12345'},
+        {label: 'Magic', id: '12348'},
+        {label: 'Barva', id: '12343'},
+        {label: 'HiTi', id: '1234112'},
+        {label: 'Aver', id: '12341122'},
+        {label: 'Barva', id: '12343'},
+        {label: 'HiTi', id: '1234112'},
+        {label: 'Aurora', id: '123411222'},
+      ]
+    },
+    // {
+    //   title: 'Ціна',
+    //   optionsNumber: 2,
+    // },
+    {
+      title: 'Готовий до відправлення',
+      options: [
+        {label: 'Готовий до відправлення', id: '123233'},
+      ]
     },
     {
-      title: '3',
-      optionsNumber: 2,
+      title: 'Товари з акціями',
+      options: [
+        {label: 'Акція', id: '12323311'},
+      ]
     },
     {
-      title: '4',
-      optionsNumber: 2,
+      title: 'Програма лояльності',
+      options: [
+        {label: 'З бонусами', id: '12323422'},
+      ]
+    },
+    {
+      title: 'Новий - б/в',
+      options: [
+        {label: 'Новий', id: '12323534'},
+        {label: 'Б/в', id: '123235543'},
+      ]
+    },
+        {
+      title: 'Статус товару',
+      options: [
+        {label: 'Немає в наявності', id: '123236'},
+        {label: 'Є в наявності', id: '123237'},
+        {label: 'Закінчився', id: '123238'},
+        {label: 'Закінчується', id: '123239'},
+      ]
     }
   ]
   

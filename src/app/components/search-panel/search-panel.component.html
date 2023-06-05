@@ -1,28 +1,46 @@
 <ul class="list">
-  <li *ngFor="let item of data; let i = index">
+  <li *ngFor="let item of data; let i = index" class="list__item-wrapper">
     <div
       class="list__item"
       (mouseenter)="makeActiveTitle(i)"
       (mouseleave)="makeDisactiveTitle()"
       (click)="openBlock(i)"
     >
-      <p class="list__itemTitle" [class.list__itemTitle-active]="activeTitleIndex === i">
+      <p
+        class="list__itemTitle"
+        [class.list__itemTitle-active]="activeTitleIndex === i"
+      >
         {{ item.title }}
-        <span>{{ item.optionsNumber }}</span>
+        <span>{{ item.options.length }}</span>
       </p>
       <mat-icon
         class="list__itemBtn"
-        [class.rotate]="showLess"
-        [class.rotateBack]="!showLess"
+        [class.rotate]="this.activeIndexArr.indexOf(i) === -1"
+        [class.rotateBack]="this.activeIndexArr.indexOf(i) > -1"
       >
         expand_less
       </mat-icon>
     </div>
     <div
-      [class.list__item-full-active]="this.activeIndexArr && this.activeIndexArr.indexOf(i) > -1"
+      [class.list__item-full-active]="
+        this.activeIndexArr && this.activeIndexArr.indexOf(i) > -1
+      "
       class="list__item-full"
     >
-      222222222222
+      <ul class="checkbox-list">
+        <div *ngIf="item.options.length > 10; else all">
+          <app-alphabet-block [data]="brendData"></app-alphabet-block>
+        </div>
+        <ng-template #all>
+          <div *ngFor="let op of item.options">
+            <app-checkbox
+              [search]="true"
+              [label]="op.label"
+              [searchId]="op.id"
+            />
+          </div>
+        </ng-template>
+      </ul>
     </div>
   </li>
 </ul>

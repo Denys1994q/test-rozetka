@@ -11,7 +11,9 @@ export class CheckboxComponent {
   @Input() label!: string 
   @Input() auth!: boolean
   @Input() services!: boolean
-
+  @Input() search!: boolean
+  @Input() searchId: string = ''
+  
   service: boolean = false
 
   onCheck(e: any) {
