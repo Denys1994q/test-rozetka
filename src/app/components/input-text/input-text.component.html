@@ -1,12 +1,17 @@
 <div class="input-wrapper">
   <input
     type="text"
-    [(ngModel)]="text"
+    name="searchInput"
+    [(ngModel)]="inpVal"
     class="input"
     placeholder="Пошук"
-    (change)="addNewItem($event)"
+    (input)="getValue()"
   />
-  <mat-icon (click)="resetValue()" *ngIf="text.length > 0" class="input-close"
-    >close</mat-icon
+  <mat-icon
+    (click)="resetValue()"
+    *ngIf="inpVal.length > 0"
+    class="input-close"
   >
+    close
+  </mat-icon>
 </div>

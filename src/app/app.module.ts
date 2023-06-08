@@ -49,6 +49,8 @@ import { SelectComponent } from './components/select/select.component';
 import { SearchPanelComponent } from './components/search-panel/search-panel.component';
 import { InputTextComponent } from './components/input-text/input-text.component';
 import { AlphabetBlockComponent } from './components/alphabet-block/alphabet-block.component';
+import { PricePanelComponent } from './components/price-panel/price-panel.component';
+import { InputNumberComponent } from './components/input-number/input-number.component';
 // import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
@@ -96,6 +98,8 @@ import { AlphabetBlockComponent } from './components/alphabet-block/alphabet-blo
     SearchPanelComponent,
     InputTextComponent,
     AlphabetBlockComponent,
+    PricePanelComponent,
+    InputNumberComponent,
   ],
   imports: [
     BrowserModule,

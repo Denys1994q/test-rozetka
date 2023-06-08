@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter} from '@angular/core';
+import { Component, Input, Output, EventEmitter, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-input-text',
@@ -6,16 +6,23 @@ import { Component, Output, EventEmitter} from '@angular/core';
   styleUrls: ['./input-text.component.sass']
 })
 export class InputTextComponent {
-  text = ''
+  @Input() inpVal: string = ''
+  @Output() inputValue = new EventEmitter<string>();
 
   resetValue() {
-    this.text = ''
+    this.inpVal = ''
+    this.getValue()
   }
 
-  @Output() newItemEvent = new EventEmitter<string>();
+  getValue() {
+    this.inputValue.emit(this.inpVal);
+  }
 
-  addNewItem(event: any) {
-    // this.newItemEvent.emit(this.text);
-    this.newItemEvent.emit(event.target.value);
+  ngOnInit() {
+    this.getValue()
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.getValue()
   }
 }

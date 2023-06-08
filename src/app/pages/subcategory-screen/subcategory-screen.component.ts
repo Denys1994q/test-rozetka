@@ -21,57 +21,61 @@ export class SubcategoryScreenComponent {
     {
       title: 'Бренд',
       options: [
-        {label: '2E', id: '12321'},
-        {label: 'Epson', id: '12346'},
-        {label: 'HP', id: '12347'},
-        {label: 'Agent', id: '12349'},
-        {label: 'Canon', id: '12344'},
-        {label: 'ColorWay', id: '12345'},
-        {label: 'Magic', id: '12348'},
-        {label: 'Barva', id: '12343'},
-        {label: 'HiTi', id: '1234112'},
-        {label: 'Aver', id: '12341122'},
-        {label: 'Barva', id: '12343'},
-        {label: 'HiTi', id: '1234112'},
-        {label: 'Aurora', id: '123411222'},
+        {label: '2E', id: '123211'},
+        {label: 'Epson', id: '123462'},
+        {label: 'HP', id: '123473'},
+        {label: 'Agent', id: '123494'},
+        {label: 'Abentik', id: '12349434'},
+        {label: 'Canon', id: '123445'},
+        {label: 'ColorWay', id: '123456'},
+        {label: 'Magic', id: '1234867'},
+        {label: 'Barva', id: '123438'},
+        {label: 'HiTi', id: '12341129'},
+        {label: 'Aver', id: '1234112211'},
+        {label: 'Bers', id: '1234312'},
+        {label: 'HiSi', id: '123411213'},
+        {label: 'Aurora', id: '12341122214'},
       ]
     },
-    // {
-    //   title: 'Ціна',
-    //   optionsNumber: 2,
-    // },
+    {
+      title: 'Ціна',
+      options: {
+        start: 1,
+        end: 1000
+      }
+    },
     {
       title: 'Готовий до відправлення',
       options: [
-        {label: 'Готовий до відправлення', id: '123233'},
+        {label: 'Готовий до відправлення', id: '123233as'},
       ]
     },
     {
       title: 'Товари з акціями',
       options: [
-        {label: 'Акція', id: '12323311'},
+        {label: 'Акція', id: '12323311das'},
       ]
     },
     {
       title: 'Програма лояльності',
       options: [
-        {label: 'З бонусами', id: '12323422'},
+        {label: 'З бонусами', id: '12323422w'},
       ]
     },
     {
       title: 'Новий - б/в',
       options: [
-        {label: 'Новий', id: '12323534'},
-        {label: 'Б/в', id: '123235543'},
+        {label: 'Новий', id: '12323534ds'},
+        {label: 'Б/в', id: '123235543qwwiyu'},
       ]
     },
         {
       title: 'Статус товару',
       options: [
-        {label: 'Немає в наявності', id: '123236'},
-        {label: 'Є в наявності', id: '123237'},
-        {label: 'Закінчився', id: '123238'},
-        {label: 'Закінчується', id: '123239'},
+        {label: 'Немає в наявності', id: '123236iuyi'},
+        {label: 'Є в наявності', id: '123237nj'},
+        {label: 'Закінчився', id: '123238vcx'},
+        {label: 'Закінчується', id: '123239xzx'},
       ]
     }
   ]

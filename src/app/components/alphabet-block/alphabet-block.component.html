@@ -1,19 +1,15 @@
-<app-input-text (newItemEvent)="addItem($event)"/>
+<app-input-text (inputValue)="showItems($event)" [inpVal]="letter" />
 <p (click)="setShowBlock()" class="info-item">Алфавітний вказівник</p>
 <div *ngIf="showBlock" class="alphabet-wrapper">
-  <span class="info-item info-item-underlined" *ngFor="let item of firstLetters">{{
-    item
-  }}</span>
+  <span class="info-item info-item-underlined" *ngFor="let item of firstLetters" (click)="letter = item"
+    >{{ item }}
+  </span>
 </div>
 <ul class="checkbox-items">
-  <li *ngFor="let option of alphabetArr" class="checkbox-item">
+  <li *ngFor="let option of filteredAlphabetArr" class="checkbox-item">
     <p class="checkbox-title">{{ option.letter }}</p>
     <div *ngFor="let op of option.items">
-      <app-checkbox
-        [search]="true"
-        [label]="op.label"
-        [searchId]="op.id"
-      />
+      <app-checkbox [search]="true" [label]="op.label" [searchId]="op.id" />
     </div>
   </li>
 </ul>
