@@ -4,25 +4,34 @@
       class="list__item"
       (mouseenter)="makeActiveTitle(i)"
       (mouseleave)="makeDisactiveTitle()"
-      (click)="openBlock(i)" >
+      (click)="openBlock(i)"
+    >
       <p
         class="list__itemTitle"
-        [class.list__itemTitle-active]="activeTitleIndex === i" >
+        [class.list__itemTitle-active]="activeTitleIndex === i"
+      >
         {{ item.title }}
         <span>{{ item.options.length }}</span>
       </p>
       <mat-icon
         class="list__itemBtn"
         [class.rotate]="this.activeIndexArr.indexOf(i) === -1"
-        [class.rotateBack]="this.activeIndexArr.indexOf(i) > -1" >
+        [class.rotateBack]="this.activeIndexArr.indexOf(i) > -1"
+      >
         expand_less
       </mat-icon>
     </div>
     <div
-      [class.list__item-full-active]="this.activeIndexArr && this.activeIndexArr.indexOf(i) > -1"
-      class="list__item-full" >
+      [class.list__item-full-active]="
+        this.activeIndexArr && this.activeIndexArr.indexOf(i) > -1
+      "
+      class="list__item-full"
+    >
       <ng-container *ngIf="item.title === 'Ціна'">
-        <app-price-panel />
+        <app-price-panel
+          [startPrice]="priceDataStart"
+          [endPrice]="priceDataEnd"
+        />
       </ng-container>
       <ul class="checkbox-list">
         <li *ngIf="item.options.length > 10; else all">
@@ -33,7 +42,8 @@
             <app-checkbox
               [search]="true"
               [label]="op.label"
-              [searchId]="op.id" />
+              [searchId]="op.id"
+            />
           </li>
         </ng-template>
       </ul>

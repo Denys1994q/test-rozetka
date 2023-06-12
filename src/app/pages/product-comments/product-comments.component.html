@@ -4,23 +4,35 @@
             <p class="bold">Фотографії та відео покупців</p>
         </div>
         <div class="comment__main comment__sliderWrapper">
-            <ul #sliderList class="comment__sliderList">
-                <li 
-                #sliderItem
-                *ngFor="let it of commentsWithPhotoVideo; let i = index" 
-                class="comment__sliderItem"
-                (click)="openDialog('comments', i)">
-                    <img src= {{it.photo}} alt="">
+            <ul
+                #sliderList
+                class="comment__sliderList">
+                <li
+                    #sliderItem
+                    *ngFor="let it of commentsWithPhotoVideo; let i = index"
+                    class="comment__sliderItem"
+                    (click)="openDialog('comments', i)">
+                    <img
+                        src="{{ it.photo }}"
+                        alt="" />
                 </li>
             </ul>
-            <button class="comments__item comment__sliderBtn comment__sliderItem" (click)="openDialog('comments', moreIndex)">
+            <button
+                class="comments__item comment__sliderBtn comment__sliderItem"
+                (click)="openDialog('comments', moreIndex)">
                 Ще
             </button>
         </div>
     </div>
     <div class="comments__item comment__leaveComment">
         <p class="fs20">Залиште свій відгук про цей товар</p>
-        <button class="btn btn-medium btn-grey" (click)="openDialog('login')">Написати відгук</button>
+        <button
+            class="btn btn-medium btn-grey"
+            (click)="openDialog('login')">
+            Написати відгук
+        </button>
     </div>
-    <app-comments-panel [withFilters]="true" [comments]="comments"></app-comments-panel>
+    <app-comments-panel
+        [withFilters]="true"
+        [comments]="comments"></app-comments-panel>
 </div>

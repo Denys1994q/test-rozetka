@@ -1,4 +1,5 @@
 @import '../../../variables.sass'
+@import '../../../btns.sass'
 
 .subcategory
     margin-top: 2rem
@@ -25,34 +26,10 @@
         border-bottom: 1px solid #e9e9e9
     &__main
         display: flex
-        flex-wrap: wrap
     &__search-aside
         width: 25rem
+        flex-shrink: 0
         border-right: 1px solid #e9e9e9
-    &__cards
-        flex-grow: 1
-// 
-.btns-wrapper
-    margin-left: 1rem
-.btn-big
-    border: 1px solid #d2d2d2
-    border-radius: 4px 0 0 4px
-    border-right: none
-.btn-small
-    border: 1px solid #d2d2d2
-    border-radius: 0px 4px 4px 0px
-.btn-icon
-    width: 4rem
-    height: 3.2rem
-    display: flex
-    justify-content: center
-    align-items: center
-    color: $main-blue
-    &-active
-        background: $main-blue
-        color: $main-white
-        border: 1px solid $main-blue
-        transition: all .4s ease
 
 :host
     ::ng-deep app-category-card
@@ -66,3 +43,20 @@
     ::ng-deep app-select
         .select
             height: 3.2rem
+    ::ng-deep app-cards
+        .cards
+            margin-top: 1rem
+            border-top: 1px solid #e9e9e9
+        .card
+            &__image
+                width: 19rem
+                height: 14rem
+                margin-bottom: 5rem
+                &-big
+                    width: 24rem
+                    height: 24rem
+        .card__price
+            margin-top: 1rem
+            display: flex
+            justify-content: space-between
+            align-items: flex-end

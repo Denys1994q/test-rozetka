@@ -1,32 +1,53 @@
 <div class="subcategory">
-    <app-breadcrumbs [data]="['Смартфони, ТВ і електроніка', 'Офісна техніка']"></app-breadcrumbs>
+    <!-- pseudo-url-panel -->
+    <app-breadcrumbs
+        [data]="[
+            'Смартфони, ТВ і електроніка',
+            'Офісна техніка'
+        ]"></app-breadcrumbs>
     <h3 class="subcategory__title">Офісна техніка</h3>
     <ul class="subcategory__list">
-        <li class="subcategory__item" *ngFor="let category of category.list">
+        <li
+            class="subcategory__item"
+            *ngFor="let category of category.list">
             <app-category-card [data]="category"></app-category-card>
         </li>
     </ul>
+    <!-- ОСНОВНА ЧАСТИНА СТОРІНКИ -->
     <div class="subcategory__catalog catalog">
         <div class="catalog__settings">
-            <app-select [name]="'filters'" [options]="['За рейтингом', 'Від дешевих до дорогих', 'Від дорогих до дешевих', 'Новинки']"></app-select>
-            <div class="btns-wrapper">
-                <button (click)="chooseBtn(i)" *ngFor="let btn of btns; let i = index">
-                    <mat-icon 
-                        class="btn-icon"
-                        [class.btn-big]="btn.icon === 'view_module'" 
-                        [class.btn-small]="btn.icon === 'apps'"
-                        [class.btn-icon-active]="i === activeBtn" >
-                    {{btn.icon}}
-                    </mat-icon>
-                </button>
-            </div>
+            <!-- фільтри -->
+            <app-select
+                [name]="'filters'"
+                [options]="[
+                    'За рейтингом',
+                    'Від дешевих до дорогих',
+                    'Від дорогих до дешевих',
+                    'Новинки'
+                ]"
+                (selectChange)="onFilterChange($event)">
+            </app-select>
+            <!-- кнопки: великі, малі карточки -->
+            <app-btns-grid-panel
+                (btnsGridPanelChange)="
+                    onBtnsGridPanelChange($event)
+                "></app-btns-grid-panel>
         </div>
         <section class="catalog__main">
+            <!-- бокова панель з пошуком -->
             <aside class="catalog__search-aside search-aside">
                 <app-search-panel [data]="data"></app-search-panel>
             </aside>
+            <!-- панель з карточками -->
             <div class="catalog__cards">
-                323
+                <app-cards
+                    [full]="true"
+                    [data]="goods"
+                    [size]="activeBtn"></app-cards>
+                <button class="btn loadMore-btn">
+                    <mat-icon class="loadMore-btn__icon">refresh</mat-icon> Показати
+                    ще
+                </button>
             </div>
         </section>
     </div>

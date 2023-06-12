@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-price-panel',
@@ -6,6 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./price-panel.component.sass']
 })
 export class PricePanelComponent {
-  startPrice: number = 1
-  endPrice: number = 100
+  @Input() startPrice!: number
+  @Input() endPrice!: number
+  startPriceInp!: number 
+  endPriceInp!: number 
+
+  ngOnInit() {
+    this.startPriceInp = this.startPrice
+    this.endPriceInp = this.endPrice
+  }
+
+  setMinValue(e: any) {
+    this.startPriceInp = e.target.value
+  }
+
+  setMaxValue(e: any) {
+    this.endPriceInp = e.target.value
+  }
 }

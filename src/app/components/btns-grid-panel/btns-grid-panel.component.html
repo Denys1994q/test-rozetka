@@ -1,0 +1,11 @@
+<div class="btns-wrapper">
+    <button (click)="chooseBtn(btn.name)" *ngFor="let btn of btns; let i = index">
+        <mat-icon 
+            class="btn-icon"
+            [class.btn-big]="btn.icon === 'view_module'" 
+            [class.btn-small]="btn.icon === 'apps'"
+            [class.btn-icon-active]="btn.name === activeBtn" >
+        {{btn.icon}}
+        </mat-icon>
+    </button>
+</div>

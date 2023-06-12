@@ -12,9 +12,13 @@ export class SearchPanelComponent implements OnInit {
   activeTitleIndex!: number | null 
   @Input() data!: any
   brendData: any = []
+  priceDataStart!: number  
+  priceDataEnd!: number
 
   ngOnInit() {
     this.brendData = this.data.filter((item: any) => item.title === 'Бренд')[0].options
+    this.priceDataStart = this.data.filter((item: any) => item.title === 'Ціна')[0].options.start
+    this.priceDataEnd = this.data.filter((item: any) => item.title === 'Ціна')[0].options.end
   }
 
   openBlock(i: number) {

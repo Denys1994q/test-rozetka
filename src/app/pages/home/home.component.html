@@ -1,59 +1,82 @@
 <div class="products">
-    <aside class="products__catalog catalog">
-        <ul class="categories__list">
-            <li class="categories__item categories__item-basic" *ngFor="let product of data">
-              <mat-icon class="categories__icon">{{product.icon}}</mat-icon>
-              <a routerLink="telefony-tv-i-ehlektronika/c4627949">{{product.category}}</a>
-            </li>
-        </ul>
-        <div class="side-menu__infoBlock infoBlock welcome-block">
-           <h3 class="welcome-block__title">Ласкаво просимо!</h3>
-           <p class="welcome-block__text">Увійдіть, щоб отримувати рекомендації, персональні бонуси і знижки.</p>
-           <button class="welcome-block__btn" (click)="openDialog()">Увійдіть в особистий кабінет</button>
-        </div>
-        <div class="side-menu__media media media-bordered side-menu__infoBlock uploadApps-block">
-            <p class="infoBlock__title">Встановлюйте наші додатки</p>
-            <a target="_blank" href="https://play.google.com/store/apps/details/?id=ua.com.rozetka.shop&referrer=utm_source%3Dfullversion%26utm_medium%3Dsite%26utm_campaign%3Dfullversion"><img src="../../../assets/button-google-play.svg" alt="download-from-google-play"></a>
-            <a target="_blank" href="https://apps.apple.com/app/apple-store/id740469631"><img src="../../../assets/button-appstore.svg" alt="download-from-app-store"></a>
-        </div>
-        <div class="side-menu__media media media-bordered side-menu__infoBlock">
-            <p class="infoBlock__title">Ми в соціальних мережах</p>
-            <app-social-media></app-social-media>
-        </div>
-        <div class="side-menu__infoBlock infoBlock">
-            <p class="infoBlock__title">Інформація про компанію</p>
-            <ul class="infoBlock__list">
-              <li class="infoBlock__item">Про нас</li>
-              <li class="infoBlock__item">Умови використання сайту</li>
-              <li class="infoBlock__item">Вакансії</li>
-              <li class="infoBlock__item">Контакти</li>
-              <li class="infoBlock__item">Усі категорії</li>
-            </ul>
-        </div>
-        <div class="side-menu__infoBlock infoBlock">
-            <p class="infoBlock__title">Допомога</p>
-            <ul class="infoBlock__list">
-              <li class="infoBlock__item">Доставка та оплата</li>
-              <li class="infoBlock__item">Кредит</li>
-              <li class="infoBlock__item">Гарантія</li>
-              <li class="infoBlock__item">Повернення товару</li>
-              <li class="infoBlock__item">Сервісні центри</li>
-            </ul>
-        </div>
-        <div class="side-menu__infoBlock infoBlock">
-            <p class="infoBlock__title">Сервіси</p>
-            <ul class="infoBlock__list">
-              <li class="infoBlock__item">Бонусний рахунок</li>
-              <li class="infoBlock__item">Rozetka Premium</li>
-              <li class="infoBlock__item">Подарункові сертифікати</li>
-              <li class="infoBlock__item">Rozetka Обмін</li>
-            </ul>
-        </div>
-    </aside>
-    <main class="products__list prodlist">
-        <app-carousel [slidesArr]="slides"></app-carousel>
-        <app-cards [data]="discounts"></app-cards>
-        <app-cards [data]="newProds"></app-cards>
-        <app-video-cards></app-video-cards>
-    </main>
+  <aside class="products__catalog catalog">
+    <ul class="categories__list">
+      <li
+        class="categories__item categories__item-basic"
+        *ngFor="let product of data">
+        <mat-icon class="categories__icon">{{ product.icon }}</mat-icon>
+        <a routerLink="telefony-tv-i-ehlektronika/c4627949">{{
+          product.category
+        }}</a>
+      </li>
+    </ul>
+    <div class="side-menu__infoBlock infoBlock welcome-block">
+      <h3 class="welcome-block__title">Ласкаво просимо!</h3>
+      <p class="welcome-block__text">
+        Увійдіть, щоб отримувати рекомендації, персональні бонуси і знижки.
+      </p>
+      <button
+        class="welcome-block__btn"
+        (click)="openDialog()">
+        Увійдіть в особистий кабінет
+      </button>
+    </div>
+    <div
+      class="side-menu__media media media-bordered side-menu__infoBlock uploadApps-block">
+      <p class="infoBlock__title">Встановлюйте наші додатки</p>
+      <a
+        target="_blank"
+        href="https://play.google.com/store/apps/details/?id=ua.com.rozetka.shop&referrer=utm_source%3Dfullversion%26utm_medium%3Dsite%26utm_campaign%3Dfullversion"
+        ><img
+          src="../../../assets/button-google-play.svg"
+          alt="download-from-google-play"
+      /></a>
+      <a
+        target="_blank"
+        href="https://apps.apple.com/app/apple-store/id740469631"
+        ><img
+          src="../../../assets/button-appstore.svg"
+          alt="download-from-app-store"
+      /></a>
+    </div>
+    <div class="side-menu__media media media-bordered side-menu__infoBlock">
+      <p class="infoBlock__title">Ми в соціальних мережах</p>
+      <app-social-media></app-social-media>
+    </div>
+    <div class="side-menu__infoBlock infoBlock">
+      <p class="infoBlock__title">Інформація про компанію</p>
+      <ul class="infoBlock__list">
+        <li class="infoBlock__item">Про нас</li>
+        <li class="infoBlock__item">Умови використання сайту</li>
+        <li class="infoBlock__item">Вакансії</li>
+        <li class="infoBlock__item">Контакти</li>
+        <li class="infoBlock__item">Усі категорії</li>
+      </ul>
+    </div>
+    <div class="side-menu__infoBlock infoBlock">
+      <p class="infoBlock__title">Допомога</p>
+      <ul class="infoBlock__list">
+        <li class="infoBlock__item">Доставка та оплата</li>
+        <li class="infoBlock__item">Кредит</li>
+        <li class="infoBlock__item">Гарантія</li>
+        <li class="infoBlock__item">Повернення товару</li>
+        <li class="infoBlock__item">Сервісні центри</li>
+      </ul>
+    </div>
+    <div class="side-menu__infoBlock infoBlock">
+      <p class="infoBlock__title">Сервіси</p>
+      <ul class="infoBlock__list">
+        <li class="infoBlock__item">Бонусний рахунок</li>
+        <li class="infoBlock__item">Rozetka Premium</li>
+        <li class="infoBlock__item">Подарункові сертифікати</li>
+        <li class="infoBlock__item">Rozetka Обмін</li>
+      </ul>
+    </div>
+  </aside>
+  <main class="products__list prodlist">
+    <app-carousel [slidesArr]="slides"></app-carousel>
+    <app-cards [data]="discounts"></app-cards>
+    <app-cards [data]="newProds"></app-cards>
+    <app-video-cards></app-video-cards>
+  </main>
 </div>

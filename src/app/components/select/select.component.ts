@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-select',
@@ -8,4 +8,14 @@ import { Component, Input } from '@angular/core';
 export class SelectComponent {
   @Input() options!: string[]
   @Input() name!: string
+  selectValue: string = 'За рейтингом'
+  @Output() selectChange = new EventEmitter<string>();
+
+  ngOnInit() {
+    this.selectChange.emit(this.selectValue)
+  }
+
+  onSelectChange() {
+    this.selectChange.emit(this.selectValue)
+  }
 }

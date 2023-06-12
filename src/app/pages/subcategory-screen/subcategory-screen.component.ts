@@ -6,10 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./subcategory-screen.component.sass']
 })
 export class SubcategoryScreenComponent {
-  btns: any = [{icon: 'view_module'}, {icon: 'apps'}]
-  activeBtn: number = 0
-
-  // дату нормальну зробити для сторінки... не завжди мають генерувати чекбокси, іноді як в ціні, хоча в основному чекбокси
+  activeBtn!: string
   data=[
     {
       title: 'Продавець',
@@ -41,7 +38,7 @@ export class SubcategoryScreenComponent {
       title: 'Ціна',
       options: {
         start: 1,
-        end: 1000
+        end: 10000
       }
     },
     {
@@ -80,10 +77,6 @@ export class SubcategoryScreenComponent {
     }
   ]
   
-  chooseBtn(index: number) {
-    this.activeBtn = index
-  }
-
   // напевно тут субайтемс бути не може впринципі, бо це нижній рівень
   category = {
     title: 'Смартфони, ТВ і електроніка',
@@ -108,5 +101,79 @@ export class SubcategoryScreenComponent {
       {title: 'Тюнери', img: '../../../assets/tuner.jpg'},
       {title: 'Ресивери', img: '../../../assets/recivers.webp'},
     ]
+  }
+
+  goods = {
+    products: [
+      {
+        title: '3D-принтер Neor Professional', 
+        image: '../../../assets/printer.webp', 
+        price: {old: 85750, new: 81463},
+        raiting: 3,
+        reviews: 10,
+        info: [{heading: 'Технологія друку', text: 'Струменевий друк'}, {heading: 'Тип пристрою', text: 'БФП'}],
+        date: 8
+      },
+      {
+        title: 'Canon Pixma', 
+        image: '../../../assets/canon.webp', 
+        image2: '../../../assets/canon2.webp',
+        price: {old: 4599, new: 2999},
+        raiting: 4,
+        reviews: 5,
+        info: [{heading: 'Тип пристрою', text: 'Принтери'}],
+        date: 7
+      },
+      {
+        title: 'Принтер Epson L132', 
+        image: '../../../assets/epson.webp', 
+        image2: '../../../assets/epson2.webp',
+        price: {old: null, new: 6807},
+        raiting: 2,
+        reviews: 158,
+        date:  6
+      },
+      {
+        title: 'Panasonic', 
+        image: '../../../assets/panasonic.webp', 
+        price: {old: null, new: 649},
+        raiting: 2,
+        reviews: 1,
+        date:  3
+      },
+      {
+        title: 'Навушники Defunc', 
+        image: '../../../assets/defunc.webp', 
+        price: {old: 1199, new: 999},
+        raiting: 5,
+        reviews: 2,
+        date:  4
+      },
+      {
+        title: 'Принтер Pantum P2207', 
+        image: '../../../assets/pantum.webp', 
+        image2: '../../../assets/pantum2.webp',
+        price: {old: null, new: 4200},
+        raiting: 3,
+        reviews: 21,
+        date:  5
+      },
+  ]}    
+
+  // повинно сортувати на бекенді
+  onFilterChange(event: string) {
+    if (event === 'За рейтингом') {
+      this.goods.products.sort((a: any,b: any) => b.raiting - a.raiting)
+    } else if (event === 'Від дорогих до дешевих') {
+      this.goods.products.sort((a: any,b: any) => b.price.new - a.price.new)
+    } else if (event === 'Від дешевих до дорогих') {
+      this.goods.products.sort((a: any,b: any) => a.price.new - b.price.new)
+    } else if (event === 'Новинки') {
+      this.goods.products.sort((a: any,b: any) => a.date - b.date)
+    }
+  }
+
+  onBtnsGridPanelChange(event: string) {
+    this.activeBtn = event
   }
 }

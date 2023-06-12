@@ -1,18 +1,22 @@
+<!-- Статичний рейтинг без можливості змінювати значення -->
 <div class="raiting-wrapper" *ngIf="fixed; else dynamic">
-    <mat-icon class="raiting__icon" *ngFor="let item of icons; let i = index">
-        {{showIcon(i)}}
-    </mat-icon>
+  <mat-icon class="raiting__icon" *ngFor="let item of icons; let i = index">
+    {{ showIcon(i) }}
+  </mat-icon>
+  <a *ngIf="numReviews > 0" href="#" class="reviews">{{ numReviews }} відгуків</a>
 </div>
+
+<!-- Динамічний рейтинг з можливістю змінювати значення -->
 <ng-template #dynamic>
-    <div class="raiting-wrapper">
-        <mat-icon 
-        class="raiting__icon" 
-        (mouseenter)="fillStar(i)"
-        (mouseleave)="removeStar()"
-        (click)="fixStar(i)"
-        *ngFor="let item of icons; let i = index"
-    >
-        {{showIcon(i)}}
+  <div class="raiting-wrapper">
+    <mat-icon
+      class="raiting__icon"
+      (mouseenter)="fillStar(i)"
+      (mouseleave)="removeStar()"
+      (click)="fixStar(i)"
+      *ngFor="let item of icons; let i = index" >
+      {{ showIcon(i) }}
     </mat-icon>
-    </div>
+    <a *ngIf="numReviews > 0" href="#" class="reviews">{{ numReviews }} відгуків</a>
+  </div>
 </ng-template>

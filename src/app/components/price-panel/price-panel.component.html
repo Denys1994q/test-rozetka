@@ -2,14 +2,14 @@
   <div class="price-panel__main">
     <input
       type="number"
-      [(ngModel)]="startPrice"
+      [(ngModel)]="startPriceInp"
       class="price-panel__input"
       [class.price-panel__input-error]="!startPrice || !endPrice"
     />
     <span>-</span>
     <input
       type="number"
-      [(ngModel)]="endPrice"
+      [(ngModel)]="endPriceInp"
       class="price-panel__input"
       [class.price-panel__input-error]="!startPrice || !endPrice"
     />
@@ -20,5 +20,8 @@
       OK
     </button>
   </div>
-    <input type="range" min="0" max="100" value="0" class="inp1"/>
+  <mat-slider min="{{ startPrice }}" max="{{ endPrice }}">
+    <input matSliderStartThumb (input)="setMinValue($event)" />
+    <input matSliderEndThumb (input)="setMaxValue($event)" />
+  </mat-slider>
 </div>

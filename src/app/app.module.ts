@@ -4,6 +4,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { NgxMaskPipe, NgxMaskDirective, provideNgxMask } from 'ngx-mask';
+import {MatSliderModule} from '@angular/material/slider'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -51,6 +52,7 @@ import { InputTextComponent } from './components/input-text/input-text.component
 import { AlphabetBlockComponent } from './components/alphabet-block/alphabet-block.component';
 import { PricePanelComponent } from './components/price-panel/price-panel.component';
 import { InputNumberComponent } from './components/input-number/input-number.component';
+import { BtnsGridPanelComponent } from './components/btns-grid-panel/btns-grid-panel.component';
 // import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
@@ -100,6 +102,7 @@ import { InputNumberComponent } from './components/input-number/input-number.com
     AlphabetBlockComponent,
     PricePanelComponent,
     InputNumberComponent,
+    BtnsGridPanelComponent,
   ],
   imports: [
     BrowserModule,
@@ -108,7 +111,8 @@ import { InputNumberComponent } from './components/input-number/input-number.com
     MatDialogModule,
     FormsModule,
     NgxMaskDirective,
-    NgxMaskPipe
+    NgxMaskPipe,
+    MatSliderModule
   ],
   providers: [provideNgxMask()],
   bootstrap: [AppComponent]

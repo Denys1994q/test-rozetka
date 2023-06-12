@@ -6,8 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./rating.component.sass']
 })
 export class RatingComponent {
-  @Input('activeIconIndex') activeIconIndex: any = null
-  @Input('fixed') fixed: boolean = false
+  @Input() activeIconIndex: any = null
+  @Input() fixed: boolean = false
+  @Input() numReviews!: any
 
   icon: string = 'star_border'
   icons = [1,2,3,4,5]
@@ -32,5 +33,10 @@ export class RatingComponent {
     } else {
       return 'star_border'
     }
+  }
+
+  ngOnInit() {
+    this.activeIconIndex =this.activeIconIndex -1
+    console.log(this.activeIconIndex)
   }
 }
