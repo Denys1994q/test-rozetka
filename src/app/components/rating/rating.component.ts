@@ -37,6 +37,5 @@ export class RatingComponent {
 
   ngOnInit() {
     this.activeIconIndex =this.activeIconIndex -1
-    console.log(this.activeIconIndex)
   }
 }

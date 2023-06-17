@@ -1,0 +1,13 @@
+<button
+    *ngIf="cancelBtn; else basicBtn"
+    (click)="cancelAll()"
+    class="btn cancel-btn">
+    Скасувати
+</button>
+
+<ng-template #basicBtn>
+    <button class="btn">
+        {{ text }}
+        <mat-icon class="btn__icon" (click)="cancelOne(text)">close</mat-icon>
+    </button>
+</ng-template>

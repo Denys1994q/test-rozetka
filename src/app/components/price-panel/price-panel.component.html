@@ -1,5 +1,6 @@
 <div class="price-panel">
   <div class="price-panel__main">
+    <!-- мінімальна ціна -->
     <input
       type="number"
       [(ngModel)]="startPriceInp"
@@ -7,19 +8,23 @@
       [class.price-panel__input-error]="!startPrice || !endPrice"
     />
     <span>-</span>
+    <!-- максимальна ціна -->
     <input
       type="number"
       [(ngModel)]="endPriceInp"
       class="price-panel__input"
       [class.price-panel__input-error]="!startPrice || !endPrice"
     />
+    <!-- кнопка ОК -->
     <button
       [disabled]="!startPrice || !endPrice"
+      (click)="onChange()"
       class="btn btn-grey btn-small price-panel__btn"
     >
       OK
     </button>
   </div>
+  <!-- слайдер для вибору діапазону ціни -->
   <mat-slider min="{{ startPrice }}" max="{{ endPrice }}">
     <input matSliderStartThumb (input)="setMinValue($event)" />
     <input matSliderEndThumb (input)="setMaxValue($event)" />

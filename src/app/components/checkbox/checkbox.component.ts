@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ModalService } from 'src/app/modal.service';
+import { SearchResultsService } from 'src/app/services/search-results.service';
 
 @Component({
   selector: 'app-checkbox',
@@ -7,13 +8,14 @@ import { ModalService } from 'src/app/modal.service';
   styleUrls: ['./checkbox.component.sass']
 })
 export class CheckboxComponent {
-  constructor(private modalService: ModalService) {}
+  constructor(private modalService: ModalService, public SearchResultsService: SearchResultsService) {}
   @Input() label!: string 
   @Input() auth!: boolean
   @Input() services!: boolean
   @Input() search!: boolean
   @Input() searchId: string = ''
-  
+  @Output() checkboxChange = new EventEmitter<string>();
+
   service: boolean = false
 
   onCheck(e: any) {
@@ -23,5 +25,9 @@ export class CheckboxComponent {
   openDialog() {
     this.modalService.closeDialog()
     this.modalService.openDialog('services')
+  }
+
+  getValue(e: any, label: string) {
+    this.checkboxChange.emit(label)
   }
 }

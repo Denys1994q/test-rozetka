@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 interface AlphabetItem {
   label: string,
@@ -17,12 +17,11 @@ interface AlphabetObj {
 })
 export class AlphabetBlockComponent implements OnInit {
   @Input() data!: AlphabetItem[]
-
+  @Output() alphabetBlockChange = new EventEmitter<string>();
   showBlock: boolean = false
   firstLetters: string[] = []
   alphabetArr: AlphabetObj[] = []
   filteredAlphabetArr: AlphabetObj[] = []
-
   letter: string = ''
 
   setShowBlock = () => {
@@ -88,6 +87,10 @@ export class AlphabetBlockComponent implements OnInit {
       })
       this.filteredAlphabetArr = newArr
     }
+  }
+
+  onCheckboxChange(changedInput: string) {
+    this.alphabetBlockChange.emit(changedInput)
   }
 
 }

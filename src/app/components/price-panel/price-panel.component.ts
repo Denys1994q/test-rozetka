@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-price-panel',
@@ -6,10 +6,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./price-panel.component.sass']
 })
 export class PricePanelComponent {
-  @Input() startPrice!: number
-  @Input() endPrice!: number
   startPriceInp!: number 
   endPriceInp!: number 
+  @Input() startPrice!: number
+  @Input() endPrice!: number
+  @Output() pricePanelChange = new EventEmitter<any>();
 
   ngOnInit() {
     this.startPriceInp = this.startPrice
@@ -22,5 +23,10 @@ export class PricePanelComponent {
 
   setMaxValue(e: any) {
     this.endPriceInp = e.target.value
+  }
+
+  onChange() {
+    const priceString: string = this.startPriceInp.toString() + ' - ' + this.endPriceInp.toString() + ' грн'
+    this.pricePanelChange.emit(priceString)
   }
 }

@@ -9,7 +9,7 @@
   <li *ngFor="let option of filteredAlphabetArr" class="checkbox-item">
     <p class="checkbox-title">{{ option.letter }}</p>
     <div *ngFor="let op of option.items">
-      <app-checkbox [search]="true" [label]="op.label" [searchId]="op.id" />
+      <app-checkbox [search]="true" [label]="op.label" [searchId]="op.id" (checkboxChange)="onCheckboxChange($event)" />
     </div>
   </li>
 </ul>

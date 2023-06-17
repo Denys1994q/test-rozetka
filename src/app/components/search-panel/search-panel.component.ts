@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-search-panel',
@@ -14,6 +14,7 @@ export class SearchPanelComponent implements OnInit {
   brendData: any = []
   priceDataStart!: number  
   priceDataEnd!: number
+  @Output() searchPanelChange = new EventEmitter<string>();
 
   ngOnInit() {
     this.brendData = this.data.filter((item: any) => item.title === 'Бренд')[0].options
@@ -35,6 +36,10 @@ export class SearchPanelComponent implements OnInit {
 
   makeDisactiveTitle() {
     this.activeTitleIndex = null
+  }
+
+  onCheckboxChange(changedInput: string) {
+    this.searchPanelChange.emit(changedInput)
   }
 
 }

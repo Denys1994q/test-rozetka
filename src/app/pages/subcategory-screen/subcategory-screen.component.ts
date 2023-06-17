@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
+import { SearchResultsService } from 'src/app/services/search-results.service';
 
 @Component({
   selector: 'app-subcategory-screen',
   templateUrl: './subcategory-screen.component.html',
   styleUrls: ['./subcategory-screen.component.sass']
 })
+
 export class SubcategoryScreenComponent {
-  activeBtn!: string
-  data=[
+    activeBtn!: string
+
+    data=[
     {
       title: 'Продавець',
       options: [
@@ -75,10 +78,12 @@ export class SubcategoryScreenComponent {
         {label: 'Закінчується', id: '123239xzx'},
       ]
     }
-  ]
+    ]
+
+    constructor(public SearchResultsService: SearchResultsService) {}
   
   // напевно тут субайтемс бути не може впринципі, бо це нижній рівень
-  category = {
+    category = {
     title: 'Смартфони, ТВ і електроніка',
     banners: [
       {url: '../../../assets/smartphones_slide1.jpg'},
@@ -101,9 +106,9 @@ export class SubcategoryScreenComponent {
       {title: 'Тюнери', img: '../../../assets/tuner.jpg'},
       {title: 'Ресивери', img: '../../../assets/recivers.webp'},
     ]
-  }
+    }
 
-  goods = {
+    goods = {
     products: [
       {
         title: '3D-принтер Neor Professional', 
@@ -158,22 +163,24 @@ export class SubcategoryScreenComponent {
         reviews: 21,
         date:  5
       },
-  ]}    
+    ]}    
 
-  // повинно сортувати на бекенді
-  onFilterChange(event: string) {
-    if (event === 'За рейтингом') {
-      this.goods.products.sort((a: any,b: any) => b.raiting - a.raiting)
-    } else if (event === 'Від дорогих до дешевих') {
-      this.goods.products.sort((a: any,b: any) => b.price.new - a.price.new)
-    } else if (event === 'Від дешевих до дорогих') {
-      this.goods.products.sort((a: any,b: any) => a.price.new - b.price.new)
-    } else if (event === 'Новинки') {
-      this.goods.products.sort((a: any,b: any) => a.date - b.date)
+    // повинно сортувати на бекенді
+    onFilterChange(event: string) {
+        if (event === 'За рейтингом') {
+        this.goods.products.sort((a: any,b: any) => b.raiting - a.raiting)
+        } else if (event === 'Від дорогих до дешевих') {
+        this.goods.products.sort((a: any,b: any) => b.price.new - a.price.new)
+        } else if (event === 'Від дешевих до дорогих') {
+        this.goods.products.sort((a: any,b: any) => a.price.new - b.price.new)
+        } else if (event === 'Новинки') {
+        this.goods.products.sort((a: any,b: any) => a.date - b.date)
+        }
     }
-  }
 
-  onBtnsGridPanelChange(event: string) {
-    this.activeBtn = event
-  }
+    onBtnsGridPanelChange(event: string) {
+        this.activeBtn = event
+    }
+
 }
+

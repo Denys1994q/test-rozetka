@@ -1,0 +1,16 @@
+<div class="results">
+    <!-- кількість знайдених товарів -->
+    <p class="results__amount">Обрано 4000 товарів</p>
+    <ng-container *ngIf="selectedInputs && selectedInputs.length > 0">
+        <!-- кнопка скасувати -->
+        <app-search-result-btn
+            [cancelBtn]="true"
+            />
+        <ul class="results__list">
+            <!-- список обраних інпутів -->
+            <li *ngFor="let selectedInput of selectedInputs">
+                <app-search-result-btn [text]="selectedInput" />
+            </li>
+        </ul>
+    </ng-container>
+</div>

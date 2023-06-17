@@ -53,6 +53,9 @@ import { AlphabetBlockComponent } from './components/alphabet-block/alphabet-blo
 import { PricePanelComponent } from './components/price-panel/price-panel.component';
 import { InputNumberComponent } from './components/input-number/input-number.component';
 import { BtnsGridPanelComponent } from './components/btns-grid-panel/btns-grid-panel.component';
+import { LoadMoreBtnComponent } from './components/btns/load-more-btn/load-more-btn.component';
+import { SearchResultComponent } from './components/search-result/search-result.component';
+import { SearchResultBtnComponent } from './components/btns/search-result-btn/search-result-btn.component';
 // import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
@@ -103,6 +106,9 @@ import { BtnsGridPanelComponent } from './components/btns-grid-panel/btns-grid-p
     PricePanelComponent,
     InputNumberComponent,
     BtnsGridPanelComponent,
+    LoadMoreBtnComponent,
+    SearchResultComponent,
+    SearchResultBtnComponent,
   ],
   imports: [
     BrowserModule,

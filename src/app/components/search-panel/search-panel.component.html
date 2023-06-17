@@ -1,52 +1,57 @@
 <ul class="list">
-  <li *ngFor="let item of data; let i = index" class="list__item-wrapper">
-    <div
-      class="list__item"
-      (mouseenter)="makeActiveTitle(i)"
-      (mouseleave)="makeDisactiveTitle()"
-      (click)="openBlock(i)"
-    >
-      <p
-        class="list__itemTitle"
-        [class.list__itemTitle-active]="activeTitleIndex === i"
-      >
-        {{ item.title }}
-        <span>{{ item.options.length }}</span>
-      </p>
-      <mat-icon
-        class="list__itemBtn"
-        [class.rotate]="this.activeIndexArr.indexOf(i) === -1"
-        [class.rotateBack]="this.activeIndexArr.indexOf(i) > -1"
-      >
-        expand_less
-      </mat-icon>
-    </div>
-    <div
-      [class.list__item-full-active]="
-        this.activeIndexArr && this.activeIndexArr.indexOf(i) > -1
-      "
-      class="list__item-full"
-    >
-      <ng-container *ngIf="item.title === 'Ціна'">
-        <app-price-panel
-          [startPrice]="priceDataStart"
-          [endPrice]="priceDataEnd"
-        />
-      </ng-container>
-      <ul class="checkbox-list">
-        <li *ngIf="item.options.length > 10; else all">
-          <app-alphabet-block [data]="brendData"></app-alphabet-block>
-        </li>
-        <ng-template #all>
-          <li *ngFor="let op of item.options">
-            <app-checkbox
-              [search]="true"
-              [label]="op.label"
-              [searchId]="op.id"
-            />
-          </li>
-        </ng-template>
-      </ul>
-    </div>
-  </li>
+    <li
+        *ngFor="let item of data; let i = index"
+        class="list__item-wrapper">
+        <!-- Назва інпута -->
+        <div
+            class="list__item"
+            (mouseenter)="makeActiveTitle(i)"
+            (mouseleave)="makeDisactiveTitle()"
+            (click)="openBlock(i)">
+            <!-- заголовок -->
+            <p
+                class="list__itemTitle"
+                [class.list__itemTitle-active]="activeTitleIndex === i">
+                {{ item.title }}
+            <!-- кількість позицій -->
+                <span>{{ item.options.length }}</span>
+            </p>
+            <!-- іконка -->
+            <mat-icon
+                class="list__itemBtn"
+                [class.rotate]="this.activeIndexArr.indexOf(i) === -1"
+                [class.rotateBack]="this.activeIndexArr.indexOf(i) > -1">
+                expand_less
+            </mat-icon>
+        </div>
+        <!-- Повна версія інпута -->
+        <div
+            [class.list__item-full-active]="this.activeIndexArr && this.activeIndexArr.indexOf(i) > -1"
+            class="list__item-full">
+            <!-- якщо інпут ціна -->
+            <ng-container *ngIf="item.title === 'Ціна'">
+                <app-price-panel
+                    [startPrice]="priceDataStart"
+                    [endPrice]="priceDataEnd" 
+                    (pricePanelChange)="onCheckboxChange($event)"/>
+            </ng-container>
+            <!-- чекбокси -->
+            <ul class="checkbox-list">
+                <!-- розширений алфавітний чекбокс -->
+                <li *ngIf="item.options.length > 10; else all">
+                    <app-alphabet-block [data]="brendData" (alphabetBlockChange)="onCheckboxChange($event)"></app-alphabet-block>
+                </li>
+                <!-- звичайний чекбокс -->
+                <ng-template #all>
+                    <li *ngFor="let op of item.options">
+                        <app-checkbox
+                            [search]="true"
+                            [label]="op.label"
+                            [searchId]="op.id" 
+                            (checkboxChange)="onCheckboxChange($event)" />
+                    </li>
+                </ng-template>
+            </ul>
+        </div>
+    </li>
 </ul>

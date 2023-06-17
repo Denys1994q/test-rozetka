@@ -1,3 +1,4 @@
+<!-- Інпути для сервісу товару -->
 <div *ngIf="services">
   <div class="checkbox-wrapper checkbox-wrapper--services">
     <input type="checkbox" id="services" (change)="onCheck($event)" />
@@ -12,12 +13,14 @@
     Подовження гарантії на 1 рік <span>99 &#x20b4;</span>
   </p>
 </div>
+<!-- Інпути для авторизації -->
 <div *ngIf="auth" class="checkbox-wrapper">
   <input type="checkbox" id="auth" />
   <label class="checkbox-wrapper__label" for="auth">{{ label }}</label>
   <a href="">Нагадати пароль</a>
 </div>
+<!-- Інпути для пошуку -->
 <div *ngIf="search" class="checkbox-wrapper">
-  <input type="checkbox" id={{searchId}} />
+  <input type="checkbox" id={{searchId}} [checked]="SearchResultsService.selectedInputs.indexOf(label) > -1 " (change)="getValue($event, label)" />
   <label class="checkbox-wrapper__label" for={{searchId}}>{{ label }}</label>
 </div>
