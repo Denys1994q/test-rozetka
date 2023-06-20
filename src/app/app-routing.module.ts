@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Route, RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { CategoryComponent } from './pages/category/category.component';
-import { ErrorComponent } from './pages/error/error.component';
-import { ProductComponent } from './pages/product/product.component';
-import { ProductCharacteristicsComponent } from './pages/product-characteristics/product-characteristics.component';
-import { ProductAllComponent } from './pages/product-all/product-all.component';
-import { ProductCommentsComponent } from './pages/product-comments/product-comments.component';
-import { ProductVideoComponent } from './pages/product-video/product-video.component';
-import { ProductPhotosComponent } from './pages/product-photos/product-photos.component';
-import { SubcategoryScreenComponent } from './pages/subcategory-screen/subcategory-screen.component';
+import { HomeComponent } from './core/pages/home/home.component';
+import { CategoryComponent } from './search/pages/category/category.component';
+import { ErrorComponent } from './core/pages/error/error.component';
+import { ProductComponent } from './product/pages/product/product.component';
+import { ProductCharacteristicsComponent } from './product/pages/product-characteristics/product-characteristics.component';
+import { ProductAllComponent } from './product/pages/product-all/product-all.component';
+import { ProductCommentsComponent } from './product/pages/product-comments/product-comments.component';
+import { ProductVideoComponent } from './product/pages/product-video/product-video.component';
+import { ProductPhotosComponent } from './product/pages/product-photos/product-photos.component';
+import { SubcategoryScreenComponent } from './search/pages/subcategory-screen/subcategory-screen.component';
 
 // const routes: Routes = [
 //   {path: '', component: HomeComponent},

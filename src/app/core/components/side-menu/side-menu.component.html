@@ -1,0 +1,105 @@
+<div
+    class="side-menu"
+    [class.side-menu-active]="openedMenu">
+    <div class="side-menu__header">
+        <a href="#">
+            <img
+                class="side-menu__logo"
+                src="../../../../assets/rozetka.svg"
+                alt="rozetka-logo" />
+        </a>
+        <button>
+            <mat-icon
+                class="side-menu__close header-icon"
+                (click)="closeMenu()"
+                >close</mat-icon
+            >
+        </button>
+    </div>
+    <div class="side-menu__auth auth-panel">
+        <div class="auth-panel__user">
+            <mat-icon class="header-icon auth-panel__icon">person</mat-icon>
+        </div>
+        <div class="auth-panel__enter">
+            <div>
+                <button
+                    class="auth-panel__enter-in"
+                    (click)="openDialog()">
+                    Вхід
+                </button>
+                <button
+                    class="auth-panel__enter-register"
+                    (click)="openRegisterDialog()">
+                    Реєстрація
+                </button>
+            </div>
+            <p class="auth-panel__text">
+                Авторизуйтесь для отримання розширених можливостей
+            </p>
+        </div>
+    </div>
+    <a class="side-menu__banner banner">
+        <img
+            class="banner__icon"
+            src="../../../../assets/war_icon.svg"
+            alt="Повернись_живим_лого" />
+        Повернись живим
+        <mat-icon>chevron_right</mat-icon>
+    </a>
+    <ul class="side-menu__list">
+        <li class="side-menu__item">
+            <div class="side-menu__item-innerWrapper">
+                <button
+                    class="textBtn"
+                    (click)="openProductsDialog()">
+                    <mat-icon class="textBtn__icon">dashboard</mat-icon>
+                    Каталог товарів
+                </button>
+            </div>
+        </li>
+        <li class="side-menu__item">
+            <div class="side-menu__item-innerWrapper">
+                <button class="textBtn">
+                    <mat-icon class="textBtn__icon">help_outline</mat-icon>
+                    Довідковий центр
+                </button>
+            </div>
+        </li>
+        <li class="side-menu__item">
+            <div class="side-menu__item-innerWrapper">
+                <button class="textBtn">
+                    <mat-icon class="textBtn__icon">shopping_cart</mat-icon>
+                    Кошик
+                </button>
+            </div>
+        </li>
+    </ul>
+    <div class="side-menu__infoBlock infoBlock">
+        <p class="infoBlock__title">Інформація про компанію</p>
+        <ul class="infoBlock__list">
+            <li class="infoBlock__item">Про нас</li>
+            <li class="infoBlock__item">Умови використання сайту</li>
+            <li class="infoBlock__item">Вакансії</li>
+            <li class="infoBlock__item">Контакти</li>
+            <li class="infoBlock__item">Усі категорії</li>
+        </ul>
+    </div>
+    <div class="side-menu__infoBlock infoBlock">
+        <p class="infoBlock__title">Допомога</p>
+        <ul class="infoBlock__list">
+            <li class="infoBlock__item">Доставка та оплата</li>
+            <li class="infoBlock__item">Кредит</li>
+            <li class="infoBlock__item">Гарантія</li>
+            <li class="infoBlock__item">Повернення товару</li>
+            <li class="infoBlock__item">Сервісні центри</li>
+        </ul>
+    </div>
+    <div class="side-menu__media media side-menu__infoBlock">
+        <p class="infoBlock__title">Ми в соціальних мережах</p>
+        <app-social-media></app-social-media>
+    </div>
+</div>
+<div
+    class="overlay"
+    [class.overlay-active]="openedMenu"
+    (click)="closeMenu()"></div>

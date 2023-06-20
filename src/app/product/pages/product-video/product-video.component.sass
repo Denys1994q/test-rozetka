@@ -1,0 +1,29 @@
+@import '../../../shared/components/carousel/carousel.component.sass'
+@import '../product/product.component.sass'
+
+.video-wrapper
+    height: 690px
+    padding: .5rem 3.2rem
+    background: #221f1f
+//
+.video__link
+    margin: 1rem 0
+    a
+        img
+            width: 3rem
+
+//    
+:host
+    ::ng-deep app-carousel
+        .dots-row__item-big
+            width: 12.2rem
+            height: 13.5rem
+        .dots-row__list-big
+            gap: 3.2rem
+        .dots-row__img-big
+            width: 12.2rem
+            height: 13.5rem
+            object-fit: cover
+        .dots-row__item-big-btn::before
+            width: 3rem
+            height: 3rem

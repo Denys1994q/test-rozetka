@@ -1,0 +1,147 @@
+@import "variables"
+@import "mixins"
+@import "btns"
+
+.header
+    background: $main-black
+    color: $main-white
+    // position: fixed
+    width: 100%
+    &__layout
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        align-items: center
+        padding: 0 3.2rem
+        height: 5.6rem
+        @include respond(phoneXL)
+            padding: 0 .8rem
+
+.header-logo
+    @include respond(tab-land)
+        margin-right: 2rem
+    @include respond(phoneXL)
+        margin-right: 1rem
+    &__main
+        width: 24rem
+        height: 4rem
+        @include respond(tab-land)
+            width: 4rem
+            margin-top: .5rem
+
+.header-actions
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    &__item
+        margin-right: 2rem
+        cursor: pointer
+        @include respond(phoneXL)
+            margin-right: 1rem
+.header-catalog
+    padding: 0 2rem
+    display: flex
+    align-items: center
+    gap: .7rem
+    background: #fff3
+    border-radius: .4rem
+    font-size: 1.6rem
+    height: 4rem
+    cursor: pointer
+    @include respond(tab-land)
+        display: none
+    &:hover
+        transition: all .2s ease-in-out
+        background: #696969
+.header-search
+    display: flex
+    flex-wrap: wrap
+    position: relative
+    width: 53rem
+    @include respond(phoneXXL)
+        width: auto
+    @include respond(tab-land)
+        margin-right: 2rem
+        flex-grow: 1
+    @include respond(phoneXXL)
+        margin-right: 0
+    &__wrapper
+        flex-grow: 1
+        @include respond(phoneM)
+            max-width: 17rem
+    &__icon
+        position: absolute
+        top: 50%
+        left: 2rem
+        transform: translate(-50%, -50%)
+        color: $main-black
+    &__input
+        background: $main-white
+        width: 100%
+        height: 4rem
+        color: $main-black
+        padding: 0 1rem 0 4rem
+        border-radius: 3px 0 0 3px
+        @include respond(phoneXXL)
+            border-radius: 3px
+// burger 
+.burger-icon
+    font-size: 3rem
+    color: #ddd
+    @include respond(tab-land)
+        margin-right: 2rem
+    @include respond(phoneXL)
+        margin-right: 1rem
+// header-menu
+.header-menu
+    display: flex
+    justify-content: center
+    align-items: center
+// header icons
+.header-icon
+    font-size: 3rem
+    width: 4rem
+    height: 4rem
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: .3rem
+    @include respond(tab-land)
+        margin-right: 2rem
+    @include respond(phoneXXL)
+        margin-right: 0
+    &:hover
+        transition: all .2s ease-in-out
+        background: #696969
+    &-user
+        @include respond(tab-port)
+            display: none
+// languages header panel
+.languages
+    @include respond(tab-land)
+        display: none
+    &__list
+        display: flex
+    &__item
+        text-transform: uppercase
+        color: #797878
+        cursor: pointer
+        &-ru
+            margin-right: 1rem
+        &-ua
+            padding-left: 2.5rem
+            border-left: 1px solid #797878
+            position: relative
+            &::before
+                content: ''
+                width: 2.4rem
+                height: 1.6rem
+                background: url('../../../../assets/flag-ua.svg') no-repeat
+                position: absolute
+                top: 0
+                left: 0
+                margin-left: .5rem
+        &:hover
+            color: white
+        &-active
+            color: white

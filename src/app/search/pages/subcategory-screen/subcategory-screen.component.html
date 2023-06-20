@@ -1,0 +1,66 @@
+<div class="subcategory">
+    <!-- pseudo-url-panel -->
+    <app-breadcrumbs
+        [data]="[
+            'Смартфони, ТВ і електроніка',
+            'Офісна техніка'
+        ]"></app-breadcrumbs>
+    <h3 class="subcategory__title">Офісна техніка</h3>
+    <ul class="subcategory__list">
+        <li
+            class="subcategory__item"
+            *ngFor="let category of category.list">
+            <app-category-card [data]="category"></app-category-card>
+        </li>
+    </ul>
+    <!-- ОСНОВНА ЧАСТИНА СТОРІНКИ -->
+    <div class="subcategory__catalog catalog">
+        <div class="catalog__settings settings">
+            <div class="settings__result">
+                <!-- результати пошуку -->
+                <app-search-result
+                    [selectedInputs]="
+                        SearchResultsService.selectedInputs
+                    "></app-search-result>
+            </div>
+            <div class="settings__options">
+                <!-- фільтри -->
+                <app-select
+                    [name]="'filters'"
+                    [options]="[
+                        'За рейтингом',
+                        'Від дешевих до дорогих',
+                        'Від дорогих до дешевих',
+                        'Новинки'
+                    ]"
+                    (selectChange)="onFilterChange($event)">
+                </app-select>
+                <!-- кнопки: великі, малі карточки -->
+                <app-btns-grid-panel
+                    (btnsGridPanelChange)="
+                        onBtnsGridPanelChange($event)
+                    "></app-btns-grid-panel>
+            </div>
+        </div>
+        <section class="catalog__main">
+            <!-- бокова панель з пошуком -->
+            <aside class="catalog__search-aside search-aside">
+                <app-search-panel
+                    [data]="data"
+                    (searchPanelChange)="
+                        SearchResultsService.addInput($event)
+                    "></app-search-panel>
+            </aside>
+            <!-- панель з карточками -->
+            <div class="catalog__cards">
+                <app-cards
+                    [full]="true"
+                    [data]="goods"
+                    [size]="activeBtn"></app-cards>
+                <div class="catalog__btnWrapper">
+                    <app-load-more-btn></app-load-more-btn>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

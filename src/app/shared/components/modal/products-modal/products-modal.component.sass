@@ -1,0 +1,70 @@
+@import 'mixins'
+@import 'variables'
+
+.modall-prod
+    display: flex
+    flex-wrap: wrap
+    align-items: self-start
+    &__categories
+        flex: 0 30rem
+        margin-top: 2rem
+        margin-right: 2rem
+    &__products
+        flex: 1
+// categories
+.categories
+    &__list
+    &__item
+        color: $main-blue
+        margin-bottom: 1rem
+        position: relative
+        display: flex
+        justify-content: space-between
+        align-items: center
+        cursor: pointer
+        a
+            border-bottom: 1px solid white
+            transition: all .2s ease
+        &:hover
+            background: #fcfcee
+            a
+                color: #f84147
+                border-bottom: 1px solid red
+        &-active
+            background: #fcfcee
+    &__icon
+        color: #adb8c8
+        &-chevron
+            display: flex
+            align-items: center
+            font-size: 2rem
+// products
+.products
+    display: flex
+    flex-wrap: wrap
+    gap: 3.3rem
+    &__item
+// product
+.product
+    &__title
+        margin-bottom: 1rem
+        font-size: 1.6rem
+        line-height: 1.8rem
+        color: $main-blue
+        &:hover
+            a
+                color: #f84147
+                border-bottom: 1px solid #f84147
+    &__list
+    &__item
+        color: #4d4b4b
+        font-size: 1.3rem
+        line-height: 1.8rem
+        margin-bottom: .3rem
+        a
+            border-bottom: 1px solid white
+            transition: all .2s ease
+        &:hover
+            a
+                color: #f84147
+                border-bottom: 1px solid #f84147
