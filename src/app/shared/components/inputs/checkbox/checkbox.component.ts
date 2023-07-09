@@ -29,5 +29,12 @@ export class CheckboxComponent {
 
   getValue(e: any, label: string) {
     this.checkboxChange.emit(label)
+    if (!e.target.checked) {
+      this.SearchResultsService.removeOne(label)
+    }
+  }
+
+  checkIfActive(input: any) {
+    return this.SearchResultsService.selectedInputs.find(k => k.options.find((s: any) => s.label === input))
   }
 }

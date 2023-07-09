@@ -1,9 +1,11 @@
 import { Component, Input } from '@angular/core';
 
 export type CategoryItem = {
-  title: string,
-  img: string,
-  subitems?: string[]
+  name?: string,
+  img?: string,
+  subitems?: string[],
+  engName?: string,
+  id?: string
 }
 
 @Component({

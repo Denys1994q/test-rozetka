@@ -4,9 +4,11 @@ import { SharedModule } from './shared/shared.module';
 import { ProductModule } from './product/product.module';
 import { SearchModule } from './search/search.module';
 import { CoreModule } from './core/core.module';
+import { ModalModule } from './shared/components/modal/modal.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { AppComponent } from './app.component';
     SharedModule,
     ProductModule,
     SearchModule,
-    CoreModule
+    CoreModule,
+    ModalModule
   ],
   bootstrap: [AppComponent]
 })

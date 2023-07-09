@@ -21,6 +21,6 @@
 </div>
 <!-- Інпути для пошуку -->
 <div *ngIf="search" class="checkbox-wrapper">
-  <input type="checkbox" id={{searchId}} [checked]="SearchResultsService.selectedInputs.indexOf(label) > -1 " (change)="getValue($event, label)" />
+  <input type="checkbox" id={{searchId}} [checked]="checkIfActive(label)" (change)="getValue($event, label)" />
   <label class="checkbox-wrapper__label" for={{searchId}}>{{ label }}</label>
 </div>

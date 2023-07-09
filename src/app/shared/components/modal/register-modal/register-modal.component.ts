@@ -15,7 +15,7 @@ export class RegisterModalComponent {
   surname = ''
   phone = ''
   email = ''
-  password: any = ''
+  password: string = ''
 
   // закрити модалку
   register (myForm: NgForm) {

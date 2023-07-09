@@ -1,4 +1,6 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core';
+import { SearchResultsService } from '../../services/search-results.service';
+
 
 @Component({
   selector: 'app-price-panel',
@@ -6,27 +8,43 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./price-panel.component.sass']
 })
 export class PricePanelComponent {
-  startPriceInp!: number 
-  endPriceInp!: number 
-  @Input() startPrice!: number
-  @Input() endPrice!: number
+  start!: number
+  end!: number 
+  priceString!: string
+  @Input() startStaticPrice!: number
+  @Input() endStaticPrice!: number
   @Output() pricePanelChange = new EventEmitter<any>();
 
+  constructor(public SearchResultsService: SearchResultsService) {
+    this.SearchResultsService.resetPriceValue.subscribe(status => {
+      if (status) {
+        this.reset()
+      }
+    });
+
+  }
+
   ngOnInit() {
-    this.startPriceInp = this.startPrice
-    this.endPriceInp = this.endPrice
+    this.start = this.startStaticPrice
+    this.end = this.endStaticPrice
   }
 
   setMinValue(e: any) {
-    this.startPriceInp = e.target.value
+    this.start = e.target.value
   }
 
   setMaxValue(e: any) {
-    this.endPriceInp = e.target.value
+    this.end = e.target.value
   }
 
-  onChange() {
-    const priceString: string = this.startPriceInp.toString() + ' - ' + this.endPriceInp.toString() + ' грн'
-    this.pricePanelChange.emit(priceString)
+  onSubmitPrice() {
+    this.priceString = this.start.toString() + ' - ' + this.end.toString() + ' грн'
+    this.pricePanelChange.emit(this.priceString)
   }
+
+  reset() {
+    this.start = this.startStaticPrice
+    this.end = this.endStaticPrice
+  }
+
 }

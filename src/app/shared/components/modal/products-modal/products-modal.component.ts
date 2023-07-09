@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { Inject } from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ModalService } from 'src/app/shared/components/modal/modal.service';
+import { SearchResultsService } from 'src/app/search/services/search-results.service';
+import {categories} from '../../../../data'
+import { CategoryItem } from '../../../../data';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-products-modal',
@@ -9,28 +13,18 @@ import { ModalService } from 'src/app/shared/components/modal/modal.service';
   styleUrls: ['./products-modal.component.sass']
 })
 
+// кщо немає субайтемс не показувати! 
+
 // де робити запити по дані? На сторінці, звідки відкривається модалка і передавати в модалку дані. Чи в самій вже модалці, яка тоді спочатку відкриється пустою, піде запит, спінер умовно і тоді дані
 export class ProductsModalComponent {
   activeCategoryIndex: number = 0
+  products: CategoryItem[] = categories
 
-  products = [
-    {category: 'Ноутбуки та комп`ютери', icon: 'laptop', products: [
-      {title: 'Ноутбуки', items: ['Asus', 'Acer', 'HP', 'Lenovo', 'Dell', 'Apple Macbook']},
-      {title: 'Планшети', items: ['Apple IPad', 'Samsung', 'Lenovo', 'Xiaomi']},
-      {title: 'Комплектуючі', items: ['Відеокарти', 'SSD', 'Процесори', 'Жорсткі диски']},
-      {title: 'Офісна техніка', items: ['Принтери', 'Шредери', 'Телефони']}
-    ]},    
-    {category: 'Смартфони, ТВ і електроніка', icon: 'smartphone', products: [
-      {title: 'Телефони', items: ['Apple', 'Samsung', 'Xiaomi', 'Nokia']},
-      {title: 'Телевізори та аксесуари', items: ['LG', 'Samsung', 'Xiaomi']},
-    ]},  
-    {category: 'Товари для геймерів', icon: 'sports_esports', products: [
-      {title: 'PlayStation', items: ['Ігрові приставки PlayStation5', 'Ігрові приставки PlayStation4', 'Гарнітури PlayStation']},
-      {title: 'Ігрові приставки XBox', items: ['Ігри для XBox']},
-    ]},  
-]
+  getSubcategories() {
+    return this.products[this.activeCategoryIndex].subCategories.filter((data: any) => data.popular && data.popular.length > 0)
+  }
 
-  constructor(private modalService: ModalService) {}
+  constructor(public modalService: ModalService, public SearchResultsService: SearchResultsService, public router: Router,  public route:ActivatedRoute) {}
   // constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
     
   // ngOnInit() {
@@ -42,6 +36,30 @@ export class ProductsModalComponent {
   }
   
   closeDialog() {
+    this.modalService.closeDialog()
+  }
+
+  closeDialog2(id: any) {
+    
+    // this.SearchResultsService.resetSearchParams()
+    this.SearchResultsService.removeAll()
+    this.SearchResultsService.getCurrentCategory(id)
+    this.modalService.closeDialog()
+    console.log('here ', this.SearchResultsService.searchParams)
+  }
+
+  takeValueAndCloseDialog(value: string, id: string) {
+    const lastLetterBeforeId = this.router.url.lastIndexOf('/')
+    const  routerId = this.router.url.slice(lastLetterBeforeId+1, lastLetterBeforeId+this.router.url.length-1)
+    // якщо перейшли на інший роут, а не в межах свого. Тепер треба кудись інпут записувати і addInput з мідлакатегорі, умова, якщо є записаний такий
+    if (routerId !== id) {
+      this.SearchResultsService.removeAll()
+      this.SearchResultsService.setBaseInput(value)
+    } else {
+      this.SearchResultsService.removeAll()
+      this.SearchResultsService.getCurrentCategory(id)
+      this.SearchResultsService.addInput(value)
+    }
     this.modalService.closeDialog()
   }
 

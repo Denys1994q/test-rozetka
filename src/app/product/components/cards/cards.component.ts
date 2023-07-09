@@ -9,7 +9,8 @@ interface Card {
   title: string,
   image: string,
   image2?: string,
-  price: any,
+  id?: number,
+  // price: any,
   raiting?: number,
   reviews?: number,
   info?: CardInfo[]
@@ -30,9 +31,15 @@ export class CardsComponent {
   @Input() full: boolean = false 
   @Input() data!: Cards 
   @Input() size: string = 'small'
+  @Input() notAvailableProducts!: any
+  // p!: any
 
   ngOnInit() {
+   
+  }
 
+  getPriceObject(prod: any) {
+    return prod.searchStatus.find((status: any) => status.searchPosition === 'price').option
   }
 
   setshowExtendedCard(i: number) {

@@ -184,10 +184,11 @@
                             userPassword.dirty &&
                             password
                         ">
-                        <!-- {{userPassword.errors | json}} -->
                         <small
                             class="is-invalid__password"
                             [class.is-invalid__password-error]="
+                                userPassword &&
+                                userPassword.errors &&
                                 userPassword.errors['forbiddenPassword']
                             ">
                             Не співпадати з іменем та ел. поштою
@@ -195,6 +196,8 @@
                         <small
                             class="is-invalid__password"
                             [class.is-invalid__password-error]="
+                                userPassword &&
+                                userPassword.errors &&
                                 userPassword.errors['pattern']
                             ">
                             Використовуйте літери латиниці
@@ -202,6 +205,8 @@
                         <small
                             class="is-invalid__password"
                             [class.is-invalid__password-error]="
+                                userPassword &&
+                                userPassword.errors &&
                                 userPassword.errors['minlength']
                             ">
                             Не менше 6 символів
@@ -209,6 +214,8 @@
                         <small
                             class="is-invalid__password"
                             [class.is-invalid__password-error]="
+                                userPassword &&
+                                userPassword.errors &&
                                 userPassword.errors['noDigitsInPass']
                             ">
                             Містити цифри
@@ -216,6 +223,8 @@
                         <small
                             class="is-invalid__password"
                             [class.is-invalid__password-error]="
+                                userPassword &&
+                                userPassword.errors &&
                                 userPassword.errors['noBigLettersInPass']
                             ">
                             Містити великі літери

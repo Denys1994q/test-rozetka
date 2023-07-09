@@ -1,0 +1,45 @@
+<section class="category">
+    <!--  -->
+    <app-breadcrumbs [data]="[category.name]"></app-breadcrumbs>
+    <!-- назва категорії -->
+    <h1 class="category__title">{{ category.name }}</h1>
+    <div class="category__widget widget">
+        <!-- карусель -->
+        <div class="widget__slider">
+            <app-carousel [slidesArr]="category.banners"></app-carousel>
+        </div>
+        <!-- список популярних підкатегорій -->
+        <div class="widget__categories">
+            <h2 class="widget__subtitle">Популярні категорії</h2>
+            <ul class="widget__categoriesList">
+                <li *ngFor="let popular of category.popular">
+                    <a href="#">
+                        <img
+                            src="{{ popular.img }}"
+                            alt="{{ popular.name }}" />
+                        <span>{{ popular.name }}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- бренди -->
+    <div class="category__row row">
+        <ul class="row__list">
+            <li *ngFor="let brand of category.brands">
+                <img
+                    class="row__image"
+                    src="{{ brand }}"
+                    alt="brend_image" />
+            </li>
+        </ul>
+    </div>
+    <!-- список всіх підкатегорій -->
+    <ul class="category__list list">
+        <li
+            class="list__item"
+            *ngFor="let category of category.subCategories">
+            <app-category-card [data]="category"></app-category-card>
+        </li>
+    </ul>
+</section>

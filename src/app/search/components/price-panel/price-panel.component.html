@@ -1,32 +1,37 @@
 <div class="price-panel">
-  <div class="price-panel__main">
-    <!-- мінімальна ціна -->
-    <input
-      type="number"
-      [(ngModel)]="startPriceInp"
-      class="price-panel__input"
-      [class.price-panel__input-error]="!startPrice || !endPrice"
-    />
-    <span>-</span>
-    <!-- максимальна ціна -->
-    <input
-      type="number"
-      [(ngModel)]="endPriceInp"
-      class="price-panel__input"
-      [class.price-panel__input-error]="!startPrice || !endPrice"
-    />
-    <!-- кнопка ОК -->
-    <button
-      [disabled]="!startPrice || !endPrice"
-      (click)="onChange()"
-      class="btn btn-grey btn-small price-panel__btn"
-    >
-      OK
-    </button>
-  </div>
-  <!-- слайдер для вибору діапазону ціни -->
-  <mat-slider min="{{ startPrice }}" max="{{ endPrice }}">
-    <input matSliderStartThumb (input)="setMinValue($event)" />
-    <input matSliderEndThumb (input)="setMaxValue($event)" />
-  </mat-slider>
+    <div class="price-panel__main">
+        <!-- мінімальна ціна -->
+        <input
+            type="number"
+            [(ngModel)]="start"
+            class="price-panel__input"
+            [class.price-panel__input-error]="!start || !end" />
+        <span>-</span>
+        <!-- максимальна ціна -->
+        <input
+            type="number"
+            [(ngModel)]="end"
+            class="price-panel__input"
+            [class.price-panel__input-error]="!start || !end" />
+        <!-- кнопка ОК -->
+        <button
+            [disabled]="!start || !end"
+            (click)="onSubmitPrice()"
+            class="btn btn-grey btn-small price-panel__btn">
+            OK
+        </button>
+    </div>
+    <!-- слайдер для вибору діапазону ціни -->
+    <mat-slider
+        min="{{ startStaticPrice }}"
+        max="{{ endStaticPrice }}">
+        <input
+            matSliderStartThumb
+            [(ngModel)]="start"
+            (input)="setMinValue($event)" />
+        <input
+            matSliderEndThumb
+            [(ngModel)]="end"
+            (input)="setMaxValue($event)" />
+    </mat-slider>
 </div>

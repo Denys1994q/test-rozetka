@@ -7,9 +7,10 @@ import { CategoryCardComponent } from './components/category-card/category-card.
 import { PricePanelComponent } from './components/price-panel/price-panel.component';
 import { SearchPanelComponent } from './components/search-panel/search-panel.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
-import { CategoryComponent } from './pages/category/category.component';
-import { SubcategoryScreenComponent } from './pages/subcategory-screen/subcategory-screen.component';
+import { MainCategoryComponent } from './pages/main-category/main-category.component';
+import { MiddleCategoryComponent } from './pages/middle-category/middle-category.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { SmallCategoryComponent } from './pages/small-category/small-category.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +19,9 @@ import { AppRoutingModule } from '../app-routing.module';
     PricePanelComponent,
     SearchPanelComponent,
     SearchResultComponent,
-    CategoryComponent,
-    SubcategoryScreenComponent,
+    MainCategoryComponent,
+    MiddleCategoryComponent,
+    SmallCategoryComponent
   ],
   imports: [
     CommonModule,

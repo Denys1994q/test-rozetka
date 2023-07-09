@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./search-result.component.sass']
 })
 export class SearchResultComponent {
-    @Input() selectedInputs!: string[]
-  
+    @Input() selectedInputs!: any[]
+    @Input() dataLength!: number
 }

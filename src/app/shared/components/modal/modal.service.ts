@@ -8,12 +8,12 @@ import { ServicesModalComponent } from './services-modal/services-modal.componen
 import { CommentsModalComponent } from './comments-modal/comments-modal.component';
 import { FiltersModalComponent } from './filters-modal/filters-modal.component';
 
+
 @Injectable({ providedIn: 'root' })
 
 export class ModalService {
     openedDialog:Subject<any> = new Subject<any>();
     data!: any
-
     constructor(public dialog: MatDialog) {}
     
     getData(data: any) {
@@ -85,7 +85,6 @@ export class ModalService {
         const dialogRef = this.dialog.open(modalVariant, modalStyles);
         dialogRef.afterClosed().subscribe(result => {
           this.openedDialog.next(false)
-          console.log(`Dialog result: ${result}`);
         });
       }
 

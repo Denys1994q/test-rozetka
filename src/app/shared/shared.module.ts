@@ -4,21 +4,10 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import {MatSliderModule} from '@angular/material/slider'
 import { CachedSrcDirective } from './iframe.directive';
 import {MatIconModule} from '@angular/material/icon';
-import { ServicesModalComponent } from './components/modal/services-modal/services-modal.component';
-import { RegisterModalComponent } from './components/modal/register-modal/register-modal.component';
-import { ProductsModalComponent } from './components/modal/products-modal/products-modal.component';
-import { LoginModalComponent } from './components/modal/login-modal/login-modal.component';
-import { CommentsModalComponent } from './components/modal/comments-modal/comments-modal.component';
-import { FiltersModalComponent } from './components/modal/filters-modal/filters-modal.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { CommentComponent } from './components/comment/comment.component';
 import { CheckboxComponent } from './components/inputs/checkbox/checkbox.component';
-import { passAllowedNamesValidatorDirective } from './components/modal/pass-allowed-names-validator.directive';
-import { passBigLettersValidatorDirective } from './components/modal/pass-bigLetters-validator.directive';
-import { passDigitsValidatorDirective } from './components/modal/pass-digits-validator.directive';
-import { emailPhoneValidatorDirective } from './components/modal/email-phone-validator.directive';
-import { NgxMaskPipe, NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { RatingComponent } from './components/rating/rating.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { InputTextComponent } from './components/inputs/input-text/input-text.component';
@@ -29,23 +18,14 @@ import { SocialMediaComponent } from './components/social-media/social-media.com
 import { SelectComponent } from './components/inputs/select/select.component';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 import { InputNumberComponent } from './components/inputs/input-number/input-number.component';
+// import { ModalModule } from './components/modal/modal.module';
 
 @NgModule({
   declarations: [
     CarouselComponent, 
     CachedSrcDirective, 
-    ServicesModalComponent, 
-    RegisterModalComponent, 
-    ProductsModalComponent, 
-    LoginModalComponent, 
-    CommentsModalComponent, 
-    FiltersModalComponent, 
     CommentComponent,
     CheckboxComponent,
-    passAllowedNamesValidatorDirective,
-    passDigitsValidatorDirective,
-    passBigLettersValidatorDirective,
-    emailPhoneValidatorDirective,
     RatingComponent,
     InputTextComponent,
     LoadMoreBtnComponent,
@@ -54,20 +34,18 @@ import { InputNumberComponent } from './components/inputs/input-number/input-num
     SocialMediaComponent,
     SelectComponent,
     BreadcrumbsComponent,
-    InputNumberComponent
+    InputNumberComponent,
+    // ModalModule
   ],
   imports: [
     CommonModule, 
-    // MatSliderModule, 
     MatIconModule, 
     MatDialogModule, 
     FormsModule,
-    NgxMaskDirective,
-    NgxMaskPipe,
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  providers: [provideNgxMask()],
   exports: [
+    CommonModule,
     AppRoutingModule,
     CarouselComponent, 
     InputTextComponent,
@@ -84,7 +62,8 @@ import { InputNumberComponent } from './components/inputs/input-number/input-num
     BtnsGridPanelComponent,
     SocialMediaComponent,
     SelectComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    // ModalModule
   ]
 })
 export class SharedModule { }

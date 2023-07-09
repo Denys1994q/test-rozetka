@@ -13,7 +13,7 @@
                 class="list__itemTitle"
                 [class.list__itemTitle-active]="activeTitleIndex === i">
                 {{ item.title }}
-            <!-- кількість позицій -->
+                <!-- кількість позицій -->
                 <span>{{ item.options.length }}</span>
             </p>
             <!-- іконка -->
@@ -26,30 +26,38 @@
         </div>
         <!-- Повна версія інпута -->
         <div
-            [class.list__item-full-active]="this.activeIndexArr && this.activeIndexArr.indexOf(i) > -1"
+            [class.list__item-full-active]="
+                this.activeIndexArr && this.activeIndexArr.indexOf(i) > -1
+            "
             class="list__item-full">
-            <!-- якщо інпут ціна -->
-            <ng-container *ngIf="item.title === 'Ціна'">
-                <app-price-panel
-                    [startPrice]="priceDataStart"
-                    [endPrice]="priceDataEnd" 
-                    (pricePanelChange)="onCheckboxChange($event)"/>
-            </ng-container>
             <!-- чекбокси -->
             <ul class="checkbox-list">
                 <!-- розширений алфавітний чекбокс -->
-                <li *ngIf="item.options.length > 10; else all">
-                    <app-alphabet-block [data]="brendData" (alphabetBlockChange)="onCheckboxChange($event)"></app-alphabet-block>
+                <li *ngIf="item.options.length > 7; else all">
+                    <app-alphabet-block
+                        [data]="brendData"
+                        (alphabetBlockChange)="
+                            onCheckboxChange($event)
+                        "></app-alphabet-block>
                 </li>
                 <!-- звичайний чекбокс -->
                 <ng-template #all>
-                    <li *ngFor="let op of item.options">
-                        <app-checkbox
-                            [search]="true"
-                            [label]="op.label"
-                            [searchId]="op.id" 
-                            (checkboxChange)="onCheckboxChange($event)" />
+                    <!-- якщо інпут ціна -->
+                    <li *ngIf="item.title === 'Ціна'; else others">
+                        <app-price-panel
+                            [startStaticPrice]="priceDataStart"
+                            [endStaticPrice]="priceDataEnd"
+                            (pricePanelChange)="onCheckboxChange($event)" />
                     </li>
+                    <ng-template #others>
+                        <li *ngFor="let op of item.options">
+                            <app-checkbox
+                                [search]="true"
+                                [label]="op.label"
+                                [searchId]="op.id"
+                                (checkboxChange)="onCheckboxChange($event)" />
+                        </li>
+                    </ng-template>
                 </ng-template>
             </ul>
         </div>
