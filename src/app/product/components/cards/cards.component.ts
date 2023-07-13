@@ -10,6 +10,7 @@ interface Card {
   image: string,
   image2?: string,
   id?: number,
+  engName?: string,
   // price: any,
   raiting?: number,
   reviews?: number,
@@ -32,11 +33,6 @@ export class CardsComponent {
   @Input() data!: Cards 
   @Input() size: string = 'small'
   @Input() notAvailableProducts!: any
-  // p!: any
-
-  ngOnInit() {
-   
-  }
 
   getPriceObject(prod: any) {
     return prod.searchStatus.find((status: any) => status.searchPosition === 'price').option

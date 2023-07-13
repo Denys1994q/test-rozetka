@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Slide } from 'src/app/shared/components/carousel/carousel.component';
 import { Comment } from 'src/app/shared/components/comment/comment.component';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-all',
@@ -10,6 +11,7 @@ import { Comment } from 'src/app/shared/components/comment/comment.component';
 export class ProductAllComponent {
   showFullText: boolean = false
   hideBtn: boolean = false
+  slides: Slide[] = []
 
   showFullBlock() {
     this.showFullText = true
@@ -19,21 +21,30 @@ export class ProductAllComponent {
   @ViewChild('videoBlock') videoBlock!: ElementRef;
   @ViewChild('characteristicsAndReviewsBlock') characteristicsAndReviewsBlock!: ElementRef;
 
-  slides: Slide[] = [
-    { url: '../../../assets/products/slide1.webp' },
-    { url: '../../../assets/products/slide2.webp' },
-    { url: '../../../assets/products/slide3.webp' },
-    { url: '../../../assets/products/slide4.webp' },
-    { url: '../../../assets/products/slide5.webp' },
-    { url: '../../../assets/products/slide6.webp' },
-    { url: '../../../assets/products/slide7.webp' },
-    { url: '../../../assets/products/slide8.webp' },
-    { url: '../../../assets/products/slide9.webp' },
-    { url: '../../../assets/products/slide10.webp' },
-    { url: '../../../assets/products/slide11.webp' },
-    { url: '../../../assets/products/slide12.webp' },
-    { video_url: 'https://video.rozetka.com.ua/video3/smartfony_tv_i_elektronika/aksessuary_dlya_telefonov/naushniki/naushniki_defunc_true_music_tws.mp4' }
-  ]
+  constructor(public ProductService: ProductService ) {}
+
+  ngOnInit() {
+    // const slideObj = {url: this.ProductService.currentProduct.image}
+    // const slideObj2 = {url: this.ProductService.currentProduct.image2}
+    // this.slides.push(slideObj)
+    // this.slides.push(slideObj2)
+  }
+
+  // slides: Slide[] = [
+  //   { url: '../../../assets/products/slide1.webp' },
+  //   { url: '../../../assets/products/slide2.webp' },
+  //   { url: '../../../assets/products/slide3.webp' },
+  //   { url: '../../../assets/products/slide4.webp' },
+  //   { url: '../../../assets/products/slide5.webp' },
+  //   { url: '../../../assets/products/slide6.webp' },
+  //   { url: '../../../assets/products/slide7.webp' },
+  //   { url: '../../../assets/products/slide8.webp' },
+  //   { url: '../../../assets/products/slide9.webp' },
+  //   { url: '../../../assets/products/slide10.webp' },
+  //   { url: '../../../assets/products/slide11.webp' },
+  //   { url: '../../../assets/products/slide12.webp' },
+  //   { video_url: 'https://video.rozetka.com.ua/video3/smartfony_tv_i_elektronika/aksessuary_dlya_telefonov/naushniki/naushniki_defunc_true_music_tws.mp4' }
+  // ]
 
   videoSlides: Slide[] = [
     { video_url: 'https://video.rozetka.com.ua/video3/smartfony_tv_i_elektronika/aksessuary_dlya_telefonov/naushniki/naushniki_defunc_true_music_tws.mp4' },

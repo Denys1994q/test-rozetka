@@ -18,22 +18,24 @@ export class MiddleCategoryComponent {
 
     // тут мав би йти запит на сервер по цьому id
     ngOnInit(): void {
-      this.route.url.subscribe(route => {
-        
-        const lastLetterBeforeId = this.router.url.lastIndexOf('/')
-        const id = this.router.url.slice(lastLetterBeforeId+1, lastLetterBeforeId+this.router.url.length-1)
-        this.SearchResultsService.getCurrentCategory(id)
-        this.SearchResultsService.sortData(this.SearchResultsService.sortType)
-        // масив айді продуктів, яких немає в наявності 
-        this.findUnavailableProducts()
-
-        if (this.SearchResultsService.baseInput) {
-          this.SearchResultsService.addInput(this.SearchResultsService.baseInput)
-        }
-        console.log('route changes ', this.SearchResultsService.searchParams[2].options)
-
-        this.priceDataStart = this.SearchResultsService.searchParams.find((it: any) => it.searchPosition === 'price').options[0].start
-        this.priceDataEnd = this.SearchResultsService.searchParams.find((it: any) => it.searchPosition === 'price').options[0].end
+        this.route.url.subscribe(route => {
+          // console.log('hello from middleCategoryPage')
+            window.scrollTo({
+              top: 1000,
+              behavior: "smooth"
+            });
+            const lastLetterBeforeId = this.router.url.lastIndexOf('/')
+            const id = this.router.url.slice(lastLetterBeforeId+1, lastLetterBeforeId+this.router.url.length-1)
+            this.SearchResultsService.getCurrentCategory(id)
+            this.SearchResultsService.sortData(this.SearchResultsService.sortType)
+            // масив айді продуктів, яких немає в наявності 
+            this.findUnavailableProducts()
+            // якщо є початковий інпут 
+            if (this.SearchResultsService.baseInput) {
+              this.SearchResultsService.addInput(this.SearchResultsService.baseInput)
+            }
+            this.priceDataStart = this.SearchResultsService.searchParams.find((it: any) => it.searchPosition === 'price').options[0].start
+            this.priceDataEnd = this.SearchResultsService.searchParams.find((it: any) => it.searchPosition === 'price').options[0].end
       })
     }
 

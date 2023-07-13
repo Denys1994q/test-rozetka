@@ -10,59 +10,80 @@ import { ProductAllComponent } from './product/pages/product-all/product-all.com
 import { ProductCommentsComponent } from './product/pages/product-comments/product-comments.component';
 import { ProductVideoComponent } from './product/pages/product-video/product-video.component';
 import { ProductPhotosComponent } from './product/pages/product-photos/product-photos.component';
-import { SmallCategoryComponent } from './search/pages/small-category/small-category.component';
 
 import { categories } from './data';
 import { SubCategoryItem } from './data';
 
-interface CategoryRoute {
+interface IRoute {
   title: string,
   id: string
 }
+
 // роути категорій: смартфони, тв і електроніка, ноутбуки та комп'ютери, побутова техніка ...
-const categoriesRoutes: CategoryRoute[] = []
+const categoriesRoutes: IRoute[] = []
 // роути підкатегорій: смартфони, тв і електроніка (телефони, телевізори, аудіотехніка) ...
-const middleCategoriesRoutes: CategoryRoute[] = []
+const middleCategoriesRoutes: IRoute[] = []
+// всі продукти
+export const productsRoutes: IRoute[] = []
 
 categories.map(item => {
   categoriesRoutes.push({title: item.engName, id: item.id})
   item.subCategories.map((middleCat: SubCategoryItem) => {
-  middleCategoriesRoutes.push({title: middleCat.engName, id: middleCat.id})
+      middleCategoriesRoutes.push({title: middleCat.engName, id: middleCat.id})
+      middleCat.products.map((product: any) => {
+        productsRoutes.push({title: product.engName, id: product.id})
+      })
   })
 })
 
 // ці масиви даних мають приходити з беку, щоб при появі нового товару не треба було вручну тут код міняти нижче.
 // для продуктів зробити схожий матчер, бо зараз навіть помилка в категорії буде вести не на ерор, а на сторінку Товару
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {
-    matcher: (url) => {
-    for (let i = 0; i < categoriesRoutes.length; i++) {
-      if (url[0] && url[1]) {
-        if (url[0].path == categoriesRoutes[i].title && url[1].path == categoriesRoutes[i].id) {
-          return {
-            consumed: url
-          }
-        }
-      }
-    }
-    return null
-    }, component: MainCategoryComponent
-  },
-  {
-    matcher: (url) => {
-    for (let i = 0; i < middleCategoriesRoutes.length; i++) {
-      if (url[0] && url[1]) {
-        if (url[0].path == middleCategoriesRoutes[i].title && url[1].path == middleCategoriesRoutes[i].id) {
-          return {
-            consumed: url
-          }
-        }
-      }
-    }
-    return null
-  }, component: MiddleCategoryComponent},
-  {path: 'prod/1', component: ProductComponent, children: [
+    {path: '', component: HomeComponent},
+    {
+        matcher: (url) => {
+            // console.log(0)
+            for (let i = 0; i < categoriesRoutes.length; i++) {
+            if (url[0] && url[1]) {
+                if (url[0].path == categoriesRoutes[i].title && url[1].path == categoriesRoutes[i].id) {
+                return {
+                    consumed: url
+                }
+                }
+            }
+            }
+            return null
+        }, component: MainCategoryComponent
+    },
+    {   
+        matcher: (url) => {
+            // console.log(1)
+            for (let i = 0; i < middleCategoriesRoutes.length; i++) {
+                if (url[0] && url[1]) {
+                    if (url[0].path == middleCategoriesRoutes[i].title && url[1].path == middleCategoriesRoutes[i].id) {
+                    return {
+                        consumed: url
+                    }
+                    }
+                }
+            }
+            // console.log('співпадає 0')
+            return null
+        }, component: MiddleCategoryComponent
+    },
+    {
+        matcher: (url: any) => { 
+            for (let i = 0; i < productsRoutes.length; i++) {
+                if (url[0] && url[1]) {
+                    if (url.length === 2 && url[0].path == productsRoutes[i].title && url[1].path == productsRoutes[i].id) {
+                        return {consumed: url}
+                    } else if (url.length === 3) {
+                        return {consumed: url.slice(0, 2)}
+                    }
+                }
+            }
+            return null
+        }, component: ProductComponent, children: [
     {
       path: '',
       component: ProductAllComponent,
@@ -85,8 +106,6 @@ const routes: Routes = [
     },
     ],
   },
-  // {path: 'kek', component: SmallCategoryComponent},
-  // {path: ':pr/:ds', component: HomeComponent},
   {path: 'error', component: ErrorComponent},
   {path: '**', redirectTo: '/error'},
 ];

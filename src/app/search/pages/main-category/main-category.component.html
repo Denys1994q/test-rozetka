@@ -13,7 +13,7 @@
             <h2 class="widget__subtitle">Популярні категорії</h2>
             <ul class="widget__categoriesList">
                 <li *ngFor="let popular of category.popular">
-                    <a href="#">
+                    <a routerLink="{{ '/' + popular.engName + '/' + popular.id }}">
                         <img
                             src="{{ popular.img }}"
                             alt="{{ popular.name }}" />
@@ -38,7 +38,7 @@
     <ul class="category__list list">
         <li
             class="list__item"
-            *ngFor="let category of category.subCategories">
+            *ngFor="let category of getCategories()">
             <app-category-card [data]="category"></app-category-card>
         </li>
     </ul>

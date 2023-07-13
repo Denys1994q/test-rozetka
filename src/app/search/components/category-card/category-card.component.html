@@ -1,6 +1,6 @@
 <div class="card">
     <a
-        href=""
+        routerLink="{{ '/' + data.engName + '/' + data.id }}"
         class="card__link">
         <span class="card__imageWrapper">
             <img
@@ -10,7 +10,7 @@
         </span>
     </a>
     <a
-        routerLink="{{'/' + data.engName + '/' + data.id }}"
+        routerLink="{{ '/' + data.engName + '/' + data.id }}"
         class="card__link card__title"
         [class.startText]="data.subitems">
         {{ data.name }}
@@ -19,7 +19,7 @@
         *ngIf="data.subitems"
         class="card-extraList">
         <li *ngFor="let item of data.subitems">
-            <a href="">{{ item }}</a>
+            <a routerLink="{{ '/' + item.engName + '/' + item.id }}">{{ item.name }}</a>
         </li>
     </ul>
 </div>

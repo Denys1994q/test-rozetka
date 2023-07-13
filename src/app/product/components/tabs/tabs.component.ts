@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class TabsComponent {
   @Input() data!: any[]
+  @Input() route!: string
 
   activeTab: number = 0
 

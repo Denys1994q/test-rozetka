@@ -3,7 +3,7 @@
         <ng-container>
             <div class="info__image">
                 <app-carousel
-                    [slidesArr]="slides"
+                    [slidesArr]="ProductService.currentProduct.images"
                     [extended]="true"
                     [show_indicators]="false">
                 </app-carousel>
@@ -102,7 +102,7 @@
         </div>
     </div>
 </div>
-<app-cards [data]="newProds"></app-cards>
+<!-- <app-cards [data]="newProds"></app-cards> -->
 <div
     class="product__characteristicsAndReviews info"
     #characteristicsAndReviewsBlock>
@@ -212,7 +212,7 @@
         <app-comments-panel [comments]="comments"></app-comments-panel>
     </div>
 </div>
-<div class="product__video video">
+<!-- <div class="product__video video">
     <div
         class="video__wrapper"
         #videoBlock>
@@ -233,5 +233,5 @@
                 alt="youtube-logo" />
         </a>
     </div>
-</div>
-<app-cards [data]="newProds"></app-cards>
+</div> -->
+<!-- <app-cards [data]="newProds"></app-cards> -->

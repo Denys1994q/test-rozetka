@@ -149,7 +149,6 @@ export class SearchResultsService {
             }
           })
         })
-        console.log(this.searchParams[2].options)
     }
 
     // ф-ія для фільтрації даних 
@@ -183,14 +182,26 @@ export class SearchResultsService {
     // очистити весь список інпутів і фільтрувати
     removeAll() {
         this.selectedInputs = []
-
-        // this.baseInput = ''
+        this.baseInput = ''
+        if (this.currentSubcategory && this.currentSubcategory.products && this.currentCategoryIndex && this.currentSubcategoryIndex) {
+            this.currentSubcategory.products = [...categories[this.currentCategoryIndex].subCategories[this.currentSubcategoryIndex].products] 
+          }
+          
+        // скидаємо на початкові дані 
+        // if (this.selectedInputs.length > 0) {
+        //     this.selectedInputs = []
+        // }
+        // else if (this.baseInput) {
+        //     this.baseInput = ''
+        // } else if (this.currentSubcategory && this.currentSubcategory.products.length>0) {
+        //     this.currentSubcategory.products = [...categories[this.currentCategoryIndex].subCategories[this.currentSubcategoryIndex].products]    
+        // }
         this.resetPriceValue.next(true)
 
-        // скидаємо на початкові дані     
-        this.currentSubcategory.products = [...categories[this.currentCategoryIndex].subCategories[this.currentSubcategoryIndex].products]    
         this.sortType = this.optionsToSort[0]
-        this.sortData(this.sortType)
+        if (this.currentSubcategory) {
+            this.sortData(this.sortType)
+        }
     }
 
     // видалити один інпут і фільтрувати

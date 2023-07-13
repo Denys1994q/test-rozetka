@@ -40,22 +40,29 @@ export class ProductsModalComponent {
   }
 
   closeDialog2(id: any) {
-    
-    // this.SearchResultsService.resetSearchParams()
     this.SearchResultsService.removeAll()
     this.SearchResultsService.getCurrentCategory(id)
     this.modalService.closeDialog()
-    console.log('here ', this.SearchResultsService.searchParams)
   }
 
-  takeValueAndCloseDialog(value: string, id: string) {
+  takeValueAndCloseDialog(value: string, id: string, categoryId: string) {
     const lastLetterBeforeId = this.router.url.lastIndexOf('/')
     const  routerId = this.router.url.slice(lastLetterBeforeId+1, lastLetterBeforeId+this.router.url.length-1)
     // якщо перейшли на інший роут, а не в межах свого. Тепер треба кудись інпут записувати і addInput з мідлакатегорі, умова, якщо є записаний такий
     if (routerId !== id) {
-      this.SearchResultsService.removeAll()
-      this.SearchResultsService.setBaseInput(value)
+      // якщо роут не такий як в головної підкатегорії 
+      if (id !== categoryId) {
+        console.log(1)
+        this.SearchResultsService.removeAll()
+        this.SearchResultsService.getCurrentCategory(id)
+        this.modalService.closeDialog()
+      } else {
+        console.log(2)
+        this.SearchResultsService.removeAll()
+        this.SearchResultsService.setBaseInput(value)
+      }
     } else {
+      console.log(3)
       this.SearchResultsService.removeAll()
       this.SearchResultsService.getCurrentCategory(id)
       this.SearchResultsService.addInput(value)

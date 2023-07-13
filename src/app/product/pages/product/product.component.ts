@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import {filter} from 'rxjs/operators';
+import { productsRoutes } from 'src/app/app-routing.module';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product',
@@ -8,17 +10,31 @@ import {filter} from 'rxjs/operators';
   styleUrls: ['./product.component.sass']
 })
 export class ProductComponent {
-  allProducts!: boolean
+  baseView!: boolean
+  product!: any
+  price!: any
+  sellStatus!: string
+  seller!: string
 
-  constructor(private router: Router ) {
+  constructor(private router: Router, public ProductService: ProductService ) {
     router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     )
       .subscribe((event: any) => {
-        if (event.url == '/prod/1') {
-          this.allProducts = true
+        const lastLetterBeforeId = event.url.lastIndexOf('/')
+        const urlId = event.url.slice(lastLetterBeforeId+1, lastLetterBeforeId+event.url.length-1)
+
+        this.ProductService.getCurrentProduct(urlId)
+
+        this.price = this.ProductService.currentProduct.searchStatus.find((status: any) => status.searchPosition === 'price').option
+        this.sellStatus = this.ProductService.currentProduct.searchStatus.find((status: any) => status.searchPosition === 'sell_status').option
+        this.seller = this.ProductService.currentProduct.searchStatus.find((status: any) => status.searchPosition === 'seller').option
+        
+        // якщо відкрита основна сторінка товару без переходу на таби
+        if (productsRoutes.find(route => route.id == urlId && (route.id.toString().length + route.title.length == event.url.length-2))) {
+          this.baseView = true
         } else {
-          this.allProducts = false
+          this.baseView = false
         }
       });
   }
@@ -30,8 +46,6 @@ export class ProductComponent {
     {name: 'Відео', link: 'video'},
     {name: 'Фото', link: 'photos'},
   ]
-
-  price = {old: 1199, new: 999}
 
   newProds = {
     category: 'Гарячі новинки', 

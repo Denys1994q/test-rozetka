@@ -29,7 +29,7 @@
                         >
                     </button>
                     <!-- Зображення товару -->
-                    <a href="#">
+                    <a routerLink="{{ '/' + prod.engName + '/' + prod.id }}">
                         <img
                             class="card__image"
                             [class.card__image-big]="size === 'big'"
@@ -37,7 +37,7 @@
                             alt="prod-image" />
                     </a>
                     <!-- Заголовок товару -->
-                    <a routerLink="prod/1">
+                    <a routerLink="{{ '/' + prod.engName + '/' + prod.id }}">
                         <h3 class="card__title">{{ prod.title }}</h3>
                     </a>
                     <!-- Рейтинг товару -->
@@ -72,7 +72,7 @@
                         >
                     </button>
                     <!-- Зображення товару -->
-                    <a href="#">
+                    <a routerLink="{{ '/' + prod.engName + '/' + prod.id }}">
                         <img
                             *ngIf="prod.image2; else basicImg"
                             src="{{ prod.image2 }}"
@@ -88,7 +88,7 @@
                         </ng-template>
                     </a>
                     <!-- Заголовок товару -->
-                    <a routerLink="prod/1">
+                    <a routerLink="{{ '/' + prod.engName + '/' + prod.id }}">
                         <h3 class="card__title">{{ prod.title }}</h3>
                     </a>
                     <!-- Рейтинг товару -->
@@ -135,13 +135,13 @@
                 <button class="card__btn btn-icon">
                     <mat-icon class="btn-icon__img">favorite_border</mat-icon>
                 </button>
-                <a href="#">
+                <a routerLink="{{ '/' + prod.engName + '/' + prod.id }}">
                     <img
                         src="{{ prod.image }}"
                         class="card__image"
                         alt="prod-image" />
                 </a>
-                <a routerLink="prod/1">
+                <a routerLink="{{ '/' + prod.engName + '/' + prod.id }}">
                     <h3 class="card__title">{{ prod.title }}</h3>
                 </a>
                 <div class="card__price">

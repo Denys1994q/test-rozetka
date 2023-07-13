@@ -31,10 +31,7 @@ export const categories: CategoryItem[] = [
         id: 'c4627949',
         icon: 'smartphone',
         popular: [
-            {name: 'Apple IPhone', img: '../assets/telefony-tv-i-ehlektronika/apple_iphone.jpg'}, 
-            {name: 'Смартфони Samsung M-серії', img: '../assets/telefony-tv-i-ehlektronika/samsung_m_serii.jpg'}, 
-            {name: 'Бездротові навушники', img: '../assets/telefony-tv-i-ehlektronika/besprovodnye_naushniki.jpg'}, 
-            {name: 'OLED-телевізори', img: '../assets/telefony-tv-i-ehlektronika/qled_televizor.jpg'}, 
+            {name: 'Мобільні телефони', engName: 'mobile-phones', id: 'c80003', img: '../assets/telefony-tv-i-ehlektronika/apple_iphone.jpg'}, 
         ], 
         banners: [
             {url: '../assets/telefony-tv-i-ehlektronika/banner1.jpg'},
@@ -68,9 +65,17 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Мобільний телефон Samsung Galaxy A24', 
-                    id: Math.random(),
+                    engName: 'mobilnij-telefon-samsung-galaxy',
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/phones/samsung galaxy a24 front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/phones/samsung galaxy a24.webp', 
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/phones/samsung galaxy a24 front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/phones/samsung galaxy a24.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/phones/samsung galaxy a24-3.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/phones/samsung galaxy a24-4.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/phones/samsung galaxy a24-5.webp'},
+                    ],
                     raiting: 4,
                     reviews: 26,
                     date: 8,
@@ -92,7 +97,8 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Мобільний телефон Apple iPhone 13 128GB', 
-                    id: Math.random(),
+                    engName: 'mobilnij-telefon-apple-iphone-13-128gb',
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/phones/apple 13 front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/phones/apple 13.webp', 
                     raiting: 4,
@@ -116,7 +122,8 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Мобільний телефон Motorola G32', 
-                    id: Math.random(),
+                    engName: 'mobilnij-telefon-motorola-g32',
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/phones/motorolla front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/phones/motorolla.webp', 
                     raiting: 5,
@@ -140,7 +147,8 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Мобільний телефон Apple iPhone 14 Pro', 
-                    id: Math.random(),
+                    engName: 'mobilnij-telefon-apple-iphone-14-pro',
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/phones/apple 14 front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/phones/apple 14.webp', 
                     raiting: 5,
@@ -164,7 +172,8 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Мобільний телефон Nokia C22', 
-                    id: Math.random(),
+                    engName: 'mobilnij-telefon-nokia-c22',
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/phones/nokia c22.webp', 
                     raiting: 3,
                     reviews: 10,
@@ -187,7 +196,8 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Мобільний телефон Xiaomi Redmi', 
-                    id: Math.random(),
+                    engName: 'mobilnij-telefon-xiaomi-redmi',
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/phones/xiaomi redmi.webp', 
                     raiting: 3,
                     reviews: 5,
@@ -209,7 +219,8 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Мобільний телефон Poco M4 Pro 6', 
-                    id: Math.random(),
+                    engName: 'mobilnij-telefon-poco-m4-pro-6',
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/phones/poco_front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/phones/poco.webp', 
                     raiting: 2,
@@ -232,7 +243,8 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Мобільний телефон ZTE Blade A51', 
-                    id: Math.random(),
+                    engName: 'mobilnij-telefon-zte-blade-a51',
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/phones/zte front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/phones/zte.webp', 
                     raiting: 3,
@@ -254,7 +266,8 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Мобільний телефон Xiaomi 12 Lite 6', 
-                    id: Math.random(),
+                    engName: 'mobilnij-telefon-xiaomi-12-lite-6',
+                    id: 1,
                     image: '../assets/telefony-tv-i-ehlektronika/phones/xiaomi 12 front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/phones/xiaomi 12.webp', 
                     raiting: 5,
@@ -276,7 +289,8 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Мобільний телефон Tecno Spark 10 Pro', 
-                    id: Math.random(),
+                    engName: 'mobilnij-telefon-tecno-spark-10-pro',
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/phones/tecno front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/phones/tecno.webp', 
                     raiting: 5,
@@ -298,7 +312,8 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Мобільний телефон Motorola Edge 30 Neo', 
-                    id: Math.random(),
+                    engName: 'mobilnij-telefon-motorola-edge-30-neo',
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/phones/motorola 30 front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/phones/motorola 30.webp', 
                     raiting: 4,
@@ -340,7 +355,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Телевізор LG', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/tv/lg front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/tv/lg.webp', 
                     raiting: 5,
@@ -361,7 +376,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Телевізор Kivi', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/tv/kivi front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/tv/kivi.webp', 
                     raiting: 2,
@@ -382,7 +397,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Телевізор Sharp 50EQ3EA',
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../assets/telefony-tv-i-ehlektronika/tv/sharp front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/tv/sharp.webp', 
                     raiting: 3,
@@ -403,7 +418,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Кронштейн для телевізора RZTK TVM 32-55',
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../assets/telefony-tv-i-ehlektronika/tv/kronshtein front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/tv/kronshtein.webp', 
                     raiting: 5,
@@ -424,7 +439,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Apple TV 4K 64GB',
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../assets/telefony-tv-i-ehlektronika/tv/apple tv front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/tv/apple tv.webp', 
                     raiting: 5,
@@ -445,7 +460,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Пульт для телевізорів SAMSUNG BN59-01268D',
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../assets/telefony-tv-i-ehlektronika/tv/pult front.webp', 
                     raiting: 3,
                     reviews: 18,
@@ -464,7 +479,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'ТБ-ресивер Т2 Ferguson ARIVA 265',
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../assets/telefony-tv-i-ehlektronika/tv/reciver front.webp', 
                     raiting: 2,
                     reviews: 15,
@@ -483,7 +498,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Цифровий тюнер DVB-Т2',
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../assets/telefony-tv-i-ehlektronika/tv/dvb front.webp', 
                     raiting: 0,
                     reviews: 0,
@@ -512,9 +527,7 @@ export const categories: CategoryItem[] = [
                 {name: 'MP3-плеєри', engName: 'mp3', id: 'c80016'}, 
                 {name: 'Диктофони', engName: 'recorders', id: 'p202591'}, 
                 {name: 'Док-станції', engName: 'docing_stations', id: 'c236805'},
-                {name: 'Apple Watch', engName: '', id: ''},
-                {name: 'Смарт годинники', engName: '', id: ''},
-                {name: 'Планшети', engName: '', id: ''},
+                {name: 'Apple Watch', engName: 'portativnaya-ehlektronika', id: 'c130309'},
             ], 
             subitems: [
                 {name: 'Електронні книги', engName: 'e-books', id: 'c80023',   img: '../assets/telefony-tv-i-ehlektronika/228453319.png'}, 
@@ -525,7 +538,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Електронна книга PocketBook', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/pocketbook front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/pocketbook.webp', 
                     raiting: 3,
@@ -545,7 +558,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Mp3 Плеєр Mrobo', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/mp3 mrobo front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/mp3 mrobo.webp', 
                     raiting: 5,
@@ -565,7 +578,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Диктофон-флешка Volemer', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/volemer front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/volemer.webp', 
                     raiting: 4,
@@ -588,7 +601,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Бездротова док-станція Marks з годинником 4in1', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/doc front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/doc.webp', 
                     raiting: 5,
@@ -612,7 +625,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Смарт-годинник Apple Watch SE (2022)', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/apple watch front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/apple watch.webp', 
                     raiting: 4,
@@ -623,7 +636,7 @@ export const categories: CategoryItem[] = [
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 13199, new: 12599}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
-                        {searchPosition: 'producer', title: 'Бренд', option: 'Apple'},
+                        {searchPosition: 'producer', title: 'Бренд', option: 'Apple Watch'},
                         {searchPosition: 'ready-to-depart', title: 'Готовий до відправлення', option: 'Готовий до відправлення'},
                         {searchPosition: 'discount', title: 'Товари з акціями', option: 'Акція'},
                         {searchPosition: 'loyalty-program', title: 'Програма лояльності', option: false},
@@ -635,7 +648,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'MP3-плеєр FiiO M11s Black', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/FiiO front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/FiiO.webp', 
                     raiting: 5,
@@ -661,6 +674,7 @@ export const categories: CategoryItem[] = [
         },
         {
             name: 'Повербанки та зарядні станції', 
+            img: '../assets/telefony-tv-i-ehlektronika/zaryadnye_stancii.png',
             engName: 'portativnaya-ehlektronika', 
             id: 'c130310',  
             popular: [
@@ -676,7 +690,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'УМБ Samsung', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/samsung front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/powerbanks/samsung.webp', 
                     raiting: 4,
@@ -698,7 +712,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'УМБ Denver', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/denver front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/powerbanks/denver.webp', 
                     raiting: 3,
@@ -720,7 +734,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Зарядна станція Carku PB-20D 600W', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/station front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/powerbanks/station.webp', 
                     raiting: 5,
@@ -742,7 +756,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'УМБ RZTK Power Bank 20000', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/rztk front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/powerbanks/rztk.webp', 
                     raiting: 5,
@@ -764,7 +778,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Зарядна станція Bluetti PowerOak', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/bluetti front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/powerbanks/bluetti.webp', 
                     raiting: 3,
@@ -787,7 +801,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Портативна сонячна панель 100w Suaoki', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/suaoki front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/powerbanks/suaoki.webp', 
                     raiting: 5,
@@ -813,7 +827,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Електронна книга PocketBook 628 Touch', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/e-books/pocketBook front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/e-books/pocketBook.webp', 
                     raiting: 5,
@@ -835,7 +849,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Електронна книга з підсвічуванням PocketBook 632', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/e-books/pocketBook touch front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/e-books/pocketBook touch.webp', 
                     raiting: 4,
@@ -857,7 +871,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Електронна книга Onyx Boox Nova Air 2', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/e-books/onyx front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/e-books/onyx.webp', 
                     raiting: 5,
@@ -886,7 +900,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'MP3-плеєр Shanling M0 Pro Black', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/mp3/shanling front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/mp3/shanling.webp', 
                     raiting: 4,
@@ -908,7 +922,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'MP3 плеєр Mrobo A6 Bluetooth Hi-Fi', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/mp3/mrobo front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/mp3/mrobo.webp', 
                     raiting: 3,
@@ -934,7 +948,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Zoom H2n', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/recorders/zoom front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/recorders/zoom.webp', 
                     raiting: 5,
@@ -956,7 +970,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Рекордер Tascam DR-10CS', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/recorders/tascan front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/recorders/tascan.webp', 
                     raiting: 3,
@@ -982,7 +996,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Док-станція HP USB-C G5 Essential Dock', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/doc-stations/hp front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/doc-stations/hp.webp', 
                     raiting: 4,
@@ -1001,7 +1015,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Док-станція Acer 12в1 Type C dongle', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/doc-stations/acer front.webp', 
                     raiting: 4,
                     reviews: 26,
@@ -1027,7 +1041,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Xiaomi TV Stick 4K ', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/tv/dvd-players/xiaomi front.webp', 
                     raiting: 4,
                     reviews: 42,
@@ -1045,7 +1059,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Apple TV 4K 64GB', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/tv/dvd-players/apple.webp', 
                     raiting: 5,
                     reviews: 6,
@@ -1070,7 +1084,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Цифровий супутниковий приймач XTRA BOX STB', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/tv/recivers/xtra front.webp', 
                     raiting: 4,
                     reviews: 12,
@@ -1088,7 +1102,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Комплект Т2(ТВ-тюнер DVB-T2 + антена', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/tv/dvd-players/apple.webp', 
                     raiting: 5,
                     reviews: 326,
@@ -1113,7 +1127,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Цифровий тюнер DVB-Т2 MEGOGO', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/tv/tuners/dvb front.webp', 
                     raiting: 4,
                     reviews: 15,
@@ -1138,7 +1152,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'УМБ Trust Primo ECO 20000 mAh', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/universal-bateries/trimo front.webp', 
                     raiting: 4,
                     reviews: 15,
@@ -1154,6 +1168,24 @@ export const categories: CategoryItem[] = [
                     ],
                     date: 8
                 },
+                {
+                    title: 'Xiaomi Mi Power Bank 3 20000 mAh', 
+                    id: Math.floor(Math.random() * 1000),
+                    image: '../assets/telefony-tv-i-ehlektronika/powerbanks/universal-bateries/xiaomi front.webp', 
+                    raiting: 5,
+                    reviews: 1,
+                    searchStatus: [
+                        {searchPosition: 'price', title: 'Ціна', option: {old: 2199, new: 799}},
+                        {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
+                        {searchPosition: 'producer', title: 'Бренд', option: 'Xiaomi'},
+                        {searchPosition: 'ready-to-depart', title: 'Готовий до відправлення', option: 'Готовий до відправлення'},
+                        {searchPosition: 'discount', title: 'Товари з акціями', option: 'Акція'},
+                        {searchPosition: 'loyalty-program', title: 'Програма лояльності', option: false},
+                        {searchPosition: 'new', title: 'Новий - б/в', option: 'Новий'},
+                        {searchPosition: 'sell_status', title: 'Статус товару', option: 'Є в наявності'},
+                    ],
+                    date: 8
+                },
             ]
         },
         {
@@ -1163,7 +1195,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Зарядна станція VigorPool Captain 1200W', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/power-stations/vigorpool front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/powerbanks/power-stations/vigorpool.webp',
                     raiting: 5,
@@ -1182,7 +1214,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Зарядна станція ECTIVE BlackBox-5 500 W', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/power-stations/ective front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/powerbanks/power-stations/ective.webp',
                     raiting: 4,
@@ -1208,7 +1240,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Сонячна складна панель FlexSolar 20W', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/solar-panels/flexsolar front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/powerbanks/solar-panels/flexsolar.webp', 
                     raiting: 5,
@@ -1227,7 +1259,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Сонячна батарея Risen 410 Вт 24 В', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/solar-panels/risen front.webp', 
                     raiting: 3,
                     reviews: 1,
@@ -1253,8 +1285,9 @@ export const categories: CategoryItem[] = [
         id: 'c80253',
         icon: 'laptop',
         popular: [
-            {name: 'Акустичні системи', img: '../assets/computers-notebooks/akusticheskie-sistemy.png'}, 
-            {name: 'Серверне обладнання', img: '../assets/computers-notebooks/servernoe-oborudovanie.png'}, 
+            {name: 'Ноутбуки', engName: 'notebooks', id: 'c800041', img: '../assets/computers-notebooks/noutbuki.png'}, 
+            {name: 'Планшети', engName: 'tablets', id: 'c802554', img: '../assets/computers-notebooks/planshety.png'}, 
+            {name: 'Сканери', engName: 'scanners', id: 'c80028', img: '../assets/computers-notebooks/scanners.jpg'}, 
         ], 
         banners: [
             {url: '../assets/computers-notebooks/banner1.jpg'},
@@ -1287,7 +1320,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Ноутбук Acer Aspire 7 A715-42G-R3EZ', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/notebooks/acer front.webp', 
                     image2: '../assets/computers-notebooks/notebooks/acer.webp', 
                     raiting: 4,
@@ -1309,7 +1342,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Ноутбук HP Laptop 15s-fq5000ua', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/notebooks/hp front.webp', 
                     image2: '../assets/computers-notebooks/notebooks/hp.webp', 
                     raiting: 5,
@@ -1331,7 +1364,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Ноутбук Lenovo IdeaPad Gaming 3 15IAH7', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/notebooks/lenovo front.webp', 
                     image2: '../assets/computers-notebooks/notebooks/lenovo.webp', 
                     raiting: 3,
@@ -1353,7 +1386,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Ноутбук Apple MacBook Air 13', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/notebooks/apple front.webp', 
                     image2: '../assets/computers-notebooks/notebooks/apple.webp', 
                     raiting: 5,
@@ -1375,7 +1408,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Ноутбук ASUS TUF Gaming F1', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/notebooks/asus f1 front.webp', 
                     image2: '../assets/computers-notebooks/notebooks/asus f1.webp', 
                     raiting: 3,
@@ -1397,7 +1430,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Ноутбук Lenovo IdeaPad 5 15IAL7', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/notebooks/lenono 5 front.webp', 
                     image2: '../assets/computers-notebooks/notebooks/lenono 5.webp', 
                     raiting: 5,
@@ -1419,7 +1452,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Ноутбук Acer Aspire 5 A515-56G-59YJ', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/notebooks/acer 5 front.webp', 
                     image2: '../assets/computers-notebooks/notebooks/acer 5.webp', 
                     raiting: 4,
@@ -1441,7 +1474,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Ноутбук Acer Nitro 5 AN515-57-53P6', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/notebooks/acer nitro front.webp', 
                     image2: '../assets/computers-notebooks/notebooks/acer nitro.webp', 
                     raiting: 5,
@@ -1484,7 +1517,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Оперативна пам`ять Kingston Fury DDR4-3200', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/memory.webp', 
                     raiting: 5,
                     reviews: 950,
@@ -1502,7 +1535,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Жорсткий диск Transcend StoreJet', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/disc.webp', 
                     raiting: 3,
                     reviews: 50,
@@ -1520,7 +1553,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Процесор AMD Ryzen 5 5600', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/ryzen.webp', 
                     raiting: 5,
                     reviews: 52,
@@ -1542,7 +1575,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Комплект бездротовий Logitech MK270', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/logitech.webp', 
                     raiting: 2,
                     reviews: 5,
@@ -1560,7 +1593,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Asus PCI-Ex GeForce RTX 3060', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/asus.webp', 
                     raiting: 5,
                     reviews: 156,
@@ -1578,7 +1611,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Материнська плата Gigabyte B550M', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/gigabyte.webp', 
                     raiting: 3,
                     reviews: 15,
@@ -1596,7 +1629,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Комплект бездротовий RZTK Wireless', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/rztk.webp', 
                     raiting: 2,
                     reviews: 42,
@@ -1631,7 +1664,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Картридж PrintPro NS Canon 725', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/office/cartridge front.webp', 
                     image2: '../assets/computers-notebooks/office/cartridge.webp', 
                     raiting: 4,
@@ -1650,7 +1683,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Шредер 2E S-509CC', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/office/shreder front.webp', 
                     image2: '../assets/computers-notebooks/office/shreder.webp', 
                     raiting: 5,
@@ -1669,7 +1702,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'БФП Canon Pixma MG3640S with Wi-Fi', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/office/canon front.webp', 
                     image2: '../assets/computers-notebooks/office/canon.webp', 
                     raiting: 3,
@@ -1691,7 +1724,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: '3D-принтер Neor Professional', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../../../assets/printer.webp', 
                     raiting: 3,
                     reviews: 10,
@@ -1710,7 +1743,7 @@ export const categories: CategoryItem[] = [
                   },
                   {
                     title: 'Принтер Epson L132', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../../../assets/epson.webp', 
                     image2: '../../../assets/epson2.webp',
                     raiting: 2,
@@ -1729,7 +1762,7 @@ export const categories: CategoryItem[] = [
                   },
                   {
                     title: 'Panasonic',
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../../../assets/panasonic.webp', 
                     raiting: 2,
                     reviews: 1,
@@ -1747,7 +1780,7 @@ export const categories: CategoryItem[] = [
                   },
                   {
                     title: 'Принтер Pantum P2207',
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../../../assets/pantum.webp', 
                     image2: '../../../assets/pantum2.webp',
                     raiting: 3,
@@ -1780,7 +1813,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Планшет Apple iPad 10.2" 2021 ', 
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../assets/computers-notebooks/tablets/ipad front.webp', 
                     image2: '../assets/computers-notebooks/tablets/ipad.webp', 
                     raiting: 5,
@@ -1799,7 +1832,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Планшет Samsung Galaxy Tab S8', 
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../assets/computers-notebooks/tablets/samsung front.webp', 
                     image2: '../assets/computers-notebooks/tablets/samsung.webp', 
                     raiting: 4,
@@ -1818,7 +1851,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Планшет Lenovo Tab M10 Plus', 
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../assets/computers-notebooks/tablets/lenovo front.webp', 
                     image2: '../assets/computers-notebooks/tablets/lenovo.webp', 
                     raiting: 3,
@@ -1837,7 +1870,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Планшет Oscal Pad 10', 
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../assets/computers-notebooks/tablets/oscal front.webp', 
                     image2: '../assets/computers-notebooks/tablets/oscal.webp', 
                     price: {old: 7299, new: 5999},
@@ -1864,7 +1897,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Материнська плата Asus Prime H510M-K', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/motherboards/asus front.webp', 
                     image2: '../assets/computers-notebooks/complects/motherboards/asus.webp',  
                     raiting: 3,
@@ -1886,7 +1919,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Материнська плата Asus TUF Gaming B550-Plus', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/motherboards/asus tuf front.webp', 
                     image2: '../assets/computers-notebooks/complects/motherboards/asus tuf.webp',  
                     raiting: 4,
@@ -1913,7 +1946,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Процесор Intel Core i5-13600K', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/processors/intel.webp', 
                     raiting: 5,
                     reviews: 12,
@@ -1934,7 +1967,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Процесор AMD Ryzen 7 7700X', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/processors/amd.webp', 
                     raiting: 4,
                     reviews: 13,
@@ -1960,7 +1993,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Звукова карта Asus Xonar U7 MKII', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/sound-cards/asus.webp', 
                     raiting: 5,
                     reviews: 42,
@@ -1978,7 +2011,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Звукова карта Manli C-Media 8738 PCI-E', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/sound-cards/manli.webp', 
                     raiting: 4,
                     reviews: 10,
@@ -2004,7 +2037,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'ASUS PCI-Ex GeForce RTX 4070 DUAL', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/videocards/asus.webp', 
                     raiting: 5,
                     reviews: 2,
@@ -2022,7 +2055,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Gigabyte PCI-Ex GeForce RTX 3060', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/videocards/gigabyte.webp', 
                     raiting: 4,
                     reviews: 31,
@@ -2048,7 +2081,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Жорсткий диск Toshiba Canvio Basics', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/hdd/toshiba front.webp', 
                     image2: '../assets/computers-notebooks/complects/hdd/toshiba.webp', 
                     raiting: 5,
@@ -2067,7 +2100,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Жорсткий диск Western Digital Blue', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/hdd/western front.webp', 
                     raiting: 5,
                     reviews: 32,
@@ -2092,7 +2125,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Samsung 980 Pro 500GB', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/ssd/samsung.webp', 
                     raiting: 5,
                     reviews: 3,
@@ -2110,7 +2143,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Kingston FURY Renegade with Heatsink 2TB', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/ssd/kingston.webp', 
                     raiting: 5,
                     reviews: 32,
@@ -2135,7 +2168,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Принтер HP LaserJet M211dw', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/office/printers/hp front.webp', 
                     image2: '../assets/computers-notebooks/office/printers/hp.webp', 
                     raiting: 4,
@@ -2154,7 +2187,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Принтер Canon LASER SFP I-S LBP122', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/office/printers/canon front.webp', 
                     image2: '../assets/computers-notebooks/office/printers/canon.webp', 
                     raiting: 4,
@@ -2180,7 +2213,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Plustek OpticSlim 2610 Plus', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/office/scanners/plustek front.webp', 
                     image2: '../assets/computers-notebooks/office/scanners/plustek.webp', 
                     raiting: 4,
@@ -2199,7 +2232,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Kodak i940', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/office/scanners/kodak.webp', 
                     raiting: 1,
                     reviews: 4,
@@ -2224,7 +2257,7 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Panasonic KX-TG1611UAR Red', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/office/phones/panasonic front.webp', 
                     raiting: 4,
                     reviews: 11,
@@ -2242,7 +2275,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Gigaset A116 Black', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/office/phones/gigaset.webp', 
                     raiting: 5,
                     reviews: 8,
@@ -2260,7 +2293,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Дротовий телефон 2E AP-210B', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/office/phones/2e front.webp', 
                     raiting: 4,
                     reviews: 14,
@@ -2286,11 +2319,8 @@ export const categories: CategoryItem[] = [
         id: 'c80254',
         icon: 'kitchen',
         popular: [
-            {name: 'Роботи пилососи', img: '../assets/household-appliances/325501598.png'}, 
-            {name: 'Кавомашини', img: '../assets/household-appliances/325501596.png'}, 
-            {name: 'Блендери', img: '../assets/household-appliances/325501594.png'}, 
-            {name: 'Пральні машини', img: '../assets/household-appliances/325501588.png'}, 
-            {name: 'Кондиціонери', img: '../assets/household-appliances/325501501.png'},
+            {name: 'Роботи пилососи', engName: 'clean_robots', id: 'c237815', img: '../assets/household-appliances/325501598.png'}, 
+            {name: 'Кавомашини', engName: 'coffee_machines', id: 'c80164', img: '../assets/household-appliances/325501596.png'}, 
         ], 
         banners: [
             {url: '../assets/household-appliances/banner1.jpg'},
@@ -2327,7 +2357,7 @@ export const categories: CategoryItem[] = [
               products: [
                 {
                     title: 'Холодильник INDESIT LI6 S1E W', 
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../assets/household-appliances/large household appliances/indesit front.webp', 
                     image2: '../assets/household-appliances/large household appliances/indesit.webp', 
                     raiting: 4,
@@ -2346,7 +2376,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Вбудована посудомийна машина HOTPOINT', 
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../assets/household-appliances/large household appliances/hotpoint front.webp', 
                     image2: '../assets/household-appliances/large household appliances/hotpoint.webp', 
                     raiting: 5,
@@ -2365,7 +2395,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Плита комбінована GORENJE GK5C40WF', 
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../assets/household-appliances/large household appliances/gorenje front.webp', 
                     image2: '../assets/household-appliances/large household appliances/gorenje.webp', 
                     raiting: 5,
@@ -2384,7 +2414,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Двокамерний холодильник BEKO', 
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../assets/household-appliances/large household appliances/beko front.webp', 
                     image2: '../assets/household-appliances/large household appliances/beko.webp', 
                     raiting: 5,
@@ -2403,7 +2433,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Пральна машина вузька SAMSUNG WW', 
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../assets/household-appliances/large household appliances/samsung front.webp', 
                     image2: '../assets/household-appliances/large household appliances/samsung.webp', 
                     raiting: 3,
@@ -2432,11 +2462,8 @@ export const categories: CategoryItem[] = [
               engName: 'tehnika-dlya-kuhni', 
               id: 'c435974',  
               popular: [
-                {name: 'Кавоварки', engName: 'coffee_machines', id: 'c80164'}, 
-                // {name: 'Блендери', engName: 'refrigerators', id: 'c80125'}, 
-                // {name: 'Грилі', engName: 'refrigerators', id: 'c80125'}, 
-                // {name: 'Мультиварки', engName: 'refrigerators', id: 'c80125'}, 
-                // {name: 'Електрочайники', engName: 'refrigerators', id: 'c80125'}, 
+                {name: 'Кавоварки', engName: 'coffee_machines', id: 'c80164'},
+                {name: 'Tefal', engName: 'tehnika-dlya-kuhni', id: 'c435974'}, 
             ],
               subitems: [
                 // {name: 'Блендери', img: '../assets/household-appliances/blenders.jpg'}, 
@@ -2445,7 +2472,7 @@ export const categories: CategoryItem[] = [
               products: [
                 {
                     title: 'М`ясорубка BOSCH MFW3640A', 
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../assets/household-appliances/kitchen/bosch front.webp', 
                     image2: '../assets/household-appliances/kitchen/bosch.webp', 
                     raiting: 4,
@@ -2468,7 +2495,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Кавомашина KRUPS Essential EA816570', 
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../assets/household-appliances/kitchen/krups front.webp', 
                     image2: '../assets/household-appliances/kitchen/krups.webp', 
                     raiting: 5,
@@ -2491,7 +2518,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Блендер TEFAL HB656838', 
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../assets/household-appliances/kitchen/blender front.webp', 
                     image2: '../assets/household-appliances/kitchen/blender.webp', 
                     raiting: 5,
@@ -2514,7 +2541,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Електрочайник TEFAL LOFT KO250830', 
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../assets/household-appliances/kitchen/tefal front.webp', 
                     image2: '../assets/household-appliances/kitchen/tefal.webp', 
                     raiting: 3,
@@ -2533,7 +2560,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Кухонна машина Kenwood', 
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../assets/household-appliances/kitchen/kenwood front.webp', 
                     image2: '../assets/household-appliances/kitchen/kenwood.webp', 
                     raiting: 4,
@@ -2552,7 +2579,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Мультимейкер RUSSELL HOBBS', 
-                    id: Math.random(), 
+                    id: Math.floor(Math.random() * 1000), 
                     image: '../assets/household-appliances/kitchen/russel front.webp', 
                     image2: '../assets/household-appliances/kitchen/russel.webp', 
                     raiting: 5,
@@ -2582,7 +2609,7 @@ export const categories: CategoryItem[] = [
               products: [
                 {
                     title: 'Пилосос без мішка BOSCH BGC05AAA1', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/household-appliances/cleaning/bosch front.webp', 
                     image2: '../assets/household-appliances/cleaning/bosch.webp',  
                     raiting: 5,
@@ -2591,7 +2618,7 @@ export const categories: CategoryItem[] = [
                         {heading: 'Тип пилососа', text: 'Контейнерного типу (без мішка)'},
                     ],
                     searchStatus: [
-                        {searchPosition: 'price', title: 'Ціна', option: {old: 4899, new: 3399}},
+                        {searchPosition: 'price', title: 'Ціна', option: {old: 7899, new: 5499}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
                         {searchPosition: 'producer', title: 'Бренд', option: 'Bosch'},
                         {searchPosition: 'ready-to-depart', title: 'Готовий до відправлення', option: 'Готовий до відправлення'},
@@ -2604,7 +2631,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Прасувальна система TEFAL IXEO', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/household-appliances/cleaning/ixeo.webp', 
                     raiting: 4,
                     reviews: 230,
@@ -2636,7 +2663,7 @@ export const categories: CategoryItem[] = [
               products: [
                 {
                     title: 'Електрична зубна щітка PHILIPS Sonicare', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/household-appliances/beauty/philips front.webp', 
                     image2: '../assets/household-appliances/beauty/philips.webp', 
                     raiting: 4,
@@ -2655,7 +2682,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Фен PHILIPS 5000 series BHD512/00', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/household-appliances/beauty/fen front.webp', 
                     image2: '../assets/household-appliances/beauty/fen.webp', 
                     raiting: 5,
@@ -2674,7 +2701,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Лампа SUNUV 5SE UV/LED', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/household-appliances/beauty/sunuv front.webp', 
                     image2: '../assets/household-appliances/beauty/sunuv.webp', 
                     raiting: 3,
@@ -2693,7 +2720,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Фен-щітка Rowenta KARL LAGERFELD', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/household-appliances/beauty/rowenta.webp', 
                     raiting: 5,
                     reviews: 64,
@@ -2711,7 +2738,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Електробритва Xiaomi MSN', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/household-appliances/beauty/xiaomi front.webp', 
                     image2: '../assets/household-appliances/beauty/xiaomi.webp', 
                     raiting: 3,
@@ -2734,7 +2761,7 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Епілятор BRAUN SE 3170', 
-                    id: Math.random(),
+                    id: Math.floor(Math.random() * 1000),
                     image: '../assets/household-appliances/beauty/braun.webp', 
                     raiting: 3,
                     reviews: 277,
@@ -2759,7 +2786,7 @@ export const categories: CategoryItem[] = [
                 products: [
                     {
                         title: 'Холодильник INDESIT LI7 S1E W', 
-                        id: Math.random(),
+                        id: Math.floor(Math.random() * 1000),
                         image: '../assets/household-appliances/large household appliances/fridges/indesit.webp', 
                         raiting: 5,
                         reviews: 35,
@@ -2777,7 +2804,7 @@ export const categories: CategoryItem[] = [
                     },
                     {
                         title: 'Холодильник BOSCH KGN36VL326', 
-                        id: Math.random(),
+                        id: Math.floor(Math.random() * 1000),
                         image: '../assets/household-appliances/large household appliances/fridges/bosch front.webp', 
                         image2: '../assets/household-appliances/large household appliances/fridges/bosch.webp',
                         raiting: 4,
@@ -2803,7 +2830,7 @@ export const categories: CategoryItem[] = [
                 products: [
                     {
                         title: 'Пральна машина вузька BEKO WUE 5411', 
-                        id: Math.random(),
+                        id: Math.floor(Math.random() * 1000),
                         image: '../assets/household-appliances/large household appliances/washing machines/beko front.webp', 
                         image2: '../assets/household-appliances/large household appliances/washing machines/beko.webp', 
                         raiting: 5,
@@ -2822,7 +2849,7 @@ export const categories: CategoryItem[] = [
                     },
                     {
                         title: 'Пральна машина повногабаритна BOSCH', 
-                        id: Math.random(),
+                        id: Math.floor(Math.random() * 1000),
                         image: '../assets/household-appliances/large household appliances/washing machines/bosch front.webp', 
                         image2: '../assets/household-appliances/large household appliances/washing machines/bosch.webp', 
                         raiting: 4,
@@ -2841,7 +2868,7 @@ export const categories: CategoryItem[] = [
                     },
                     {
                         title: 'Пральна машина вузька WHIRLPOOL WRSB', 
-                        id: Math.random(),
+                        id: Math.floor(Math.random() * 1000),
                         image: '../assets/household-appliances/large household appliances/washing machines/whirpool front.webp', 
                         image2: '../assets/household-appliances/large household appliances/washing machines/whirpool.webp', 
                         raiting: 5,
@@ -2867,7 +2894,7 @@ export const categories: CategoryItem[] = [
                 products: [
                     {
                         title: 'Морозильна камера VESTFROST VD', 
-                        id: Math.random(),
+                        id: Math.floor(Math.random() * 1000),
                         image: '../assets/household-appliances/large household appliances/washing machines/vestfrost.webp', 
                         raiting: 5,
                         reviews: 135,
@@ -2892,7 +2919,7 @@ export const categories: CategoryItem[] = [
                 products: [
                     {
                         title: 'Кавомашина PHILIPS Series 2200', 
-                        id: Math.random(),
+                        id: Math.floor(Math.random() * 1000),
                         image: '../assets/household-appliances/kitchen/coffee machines/philips front.webp', 
                         image2: '../assets/household-appliances/kitchen/coffee machines/philips.webp', 
                         raiting: 4,
@@ -2911,7 +2938,7 @@ export const categories: CategoryItem[] = [
                     },
                     {
                         title: 'Кавомашина KRUPS Evidence Eco-design', 
-                        id: Math.random(),
+                        id: Math.floor(Math.random() * 1000),
                         image: '../assets/household-appliances/kitchen/coffee machines/krups front.webp', 
                         image2: '../assets/household-appliances/kitchen/coffee machines/krups.webp', 
                         raiting: 3,
@@ -2937,7 +2964,7 @@ export const categories: CategoryItem[] = [
                 products: [
                     {
                         title: 'Електробритва BRAUN Series 3 3020', 
-                        id: Math.random(),
+                        id: Math.floor(Math.random() * 1000),
                         image: '../assets/household-appliances/beauty/brytvy/braun front.webp', 
                         image2: '../assets/household-appliances/beauty/brytvy/braun.webp', 
                         raiting: 4,
@@ -2954,6 +2981,25 @@ export const categories: CategoryItem[] = [
                         ],
                         date: 8
                     },
+                    {
+                        title: 'Електробритва Xiaomi Enchen Steel 3S Shaver', 
+                        id: Math.floor(Math.random() * 1000),
+                        image: '../assets/household-appliances/beauty/brytvy/xiaomi front.webp', 
+                        image2: '../assets/household-appliances/beauty/brytvy/xiaomi.webp', 
+                        raiting: 5,
+                        reviews: 26,
+                        searchStatus: [
+                            {searchPosition: 'price', title: 'Ціна', option: {old: 1199, new: 899}},
+                            {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
+                            {searchPosition: 'producer', title: 'Бренд', option: 'Xiaomi'},
+                            {searchPosition: 'ready-to-depart', title: 'Готовий до відправлення', option: 'Готовий до відправлення'},
+                            {searchPosition: 'discount', title: 'Товари з акціями', option: false},
+                            {searchPosition: 'loyalty-program', title: 'Програма лояльності', option: 'З бонусами'},
+                            {searchPosition: 'new', title: 'Новий - б/в', option: 'Новий'},
+                            {searchPosition: 'sell_status', title: 'Статус товару', option: 'Є в наявності'},
+                        ],
+                        date: 8
+                    },
                 ]
             },
             {
@@ -2963,7 +3009,7 @@ export const categories: CategoryItem[] = [
                 products: [
                     {
                         title: 'Робот-пилосос SAMSUNG VR05R5050WK/EV', 
-                        id: Math.random(),
+                        id: Math.floor(Math.random() * 1000),
                         image: '../assets/household-appliances/beauty/clean_robots/samsung.webp', 
                         raiting: 5,
                         reviews: 9,
@@ -2971,6 +3017,24 @@ export const categories: CategoryItem[] = [
                             {searchPosition: 'price', title: 'Ціна', option: {old: 11199, new: 9999}},
                             {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
                             {searchPosition: 'producer', title: 'Бренд', option: 'Samsung'},
+                            {searchPosition: 'ready-to-depart', title: 'Готовий до відправлення', option: 'Готовий до відправлення'},
+                            {searchPosition: 'discount', title: 'Товари з акціями', option: false},
+                            {searchPosition: 'loyalty-program', title: 'Програма лояльності', option: false},
+                            {searchPosition: 'new', title: 'Новий - б/в', option: 'Новий'},
+                            {searchPosition: 'sell_status', title: 'Статус товару', option: 'Є в наявності'},
+                        ],
+                        date: 8
+                    },
+                    {
+                        title: 'Робот-пилосос Xiaomi Robot Vacuum S10+', 
+                        id: Math.floor(Math.random() * 1000),
+                        image: '../assets/household-appliances/beauty/clean_robots/xiaomi.webp', 
+                        raiting: 4,
+                        reviews: 34,
+                        searchStatus: [
+                            {searchPosition: 'price', title: 'Ціна', option: {old: 17199, new: 15999}},
+                            {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
+                            {searchPosition: 'producer', title: 'Бренд', option: 'Xiaomi'},
                             {searchPosition: 'ready-to-depart', title: 'Готовий до відправлення', option: 'Готовий до відправлення'},
                             {searchPosition: 'discount', title: 'Товари з акціями', option: false},
                             {searchPosition: 'loyalty-program', title: 'Програма лояльності', option: false},

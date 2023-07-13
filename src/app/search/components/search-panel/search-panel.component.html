@@ -35,7 +35,7 @@
                 <!-- розширений алфавітний чекбокс -->
                 <li *ngIf="item.options.length > 7; else all">
                     <app-alphabet-block
-                        [data]="brendData"
+                        [data]="getBrends()"
                         (alphabetBlockChange)="
                             onCheckboxChange($event)
                         "></app-alphabet-block>

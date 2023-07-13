@@ -10,7 +10,6 @@ import { SearchResultComponent } from './components/search-result/search-result.
 import { MainCategoryComponent } from './pages/main-category/main-category.component';
 import { MiddleCategoryComponent } from './pages/middle-category/middle-category.component';
 import { AppRoutingModule } from '../app-routing.module';
-import { SmallCategoryComponent } from './pages/small-category/small-category.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,6 @@ import { SmallCategoryComponent } from './pages/small-category/small-category.co
     SearchResultComponent,
     MainCategoryComponent,
     MiddleCategoryComponent,
-    SmallCategoryComponent
   ],
   imports: [
     CommonModule,

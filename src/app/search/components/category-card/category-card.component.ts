@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 export type CategoryItem = {
   name?: string,
   img?: string,
-  subitems?: string[],
+  subitems?: any[],
   engName?: string,
   id?: string
 }

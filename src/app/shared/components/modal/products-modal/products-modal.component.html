@@ -31,14 +31,31 @@
                 *ngFor="let subcategory of getSubcategories()"
                 class="products__item product">
                 <h2 class="product__title">
-                    <a routerLink="{{subcategory.engName + '/' + subcategory.id}}" (click)="closeDialog2(subcategory.id)">{{ subcategory.name }}</a
+                    <a
+                        routerLink="{{
+                            subcategory.engName + '/' + subcategory.id
+                        }}"
+                        (click)="closeDialog2(subcategory.id)"
+                        >{{ subcategory.name }}</a
                     >
                 </h2>
                 <ul class="product__list">
                     <li
                         *ngFor="let popularItem of subcategory.popular"
                         class="product__item">
-                        <a routerLink="{{popularItem.engName + '/' + popularItem.id}}" (click)="takeValueAndCloseDialog(popularItem.name, popularItem.id)">{{ popularItem.name }}</a>
+                        <a
+                            routerLink="{{
+                                popularItem.engName + '/' + popularItem.id
+                            }}"
+                            (click)="
+                                takeValueAndCloseDialog(
+                                    popularItem.name,
+                                    popularItem.id,
+                                    subcategory.id
+                                )
+                            "
+                            >{{ popularItem.name }}</a
+                        >
                     </li>
                 </ul>
             </div>
