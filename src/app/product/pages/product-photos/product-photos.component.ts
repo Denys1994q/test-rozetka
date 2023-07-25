@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-photos',
@@ -6,20 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-photos.component.sass']
 })
 export class ProductPhotosComponent {
+  photos!: any
 
-  photos = [
-    {url: '../../../assets/products/slide1.webp'},
-    {url: '../../../assets/products/slide2.webp'},
-    {url: '../../../assets/products/slide3.webp'},
-    {url: '../../../assets/products/slide4.webp'},
-    {url: '../../../assets/products/slide5.webp'},
-    {url: '../../../assets/products/slide6.webp'},
-    {url: '../../../assets/products/slide7.webp'},
-    {url: '../../../assets/products/slide8.webp'},
-    {url: '../../../assets/products/slide9.webp'},
-    {url: '../../../assets/products/slide10.webp'},
-    {url: '../../../assets/products/slide11.webp'},
-    {url: '../../../assets/products/slide12.webp'},
-  ]
+  constructor(public ProductService: ProductService) {}
+
+  ngOnInit() {
+    this.photos = this.ProductService.currentProduct.images.filter((image: any) => image.url)
+  }
 
 }

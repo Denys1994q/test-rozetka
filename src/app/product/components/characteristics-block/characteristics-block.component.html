@@ -1,24 +1,22 @@
 <div
-    class="characteristics characteristics-limited"
+    class="characteristics"
     *ngIf="limited">
-    <h3 class="characteristics__title">
-        Характеристики
-        <span>Навушники Defunc True Music TWS Blue (D4274M)</span>
-    </h3>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Мікрофон<span></span></p>
-        <p class="fullItem__text">Вбудований</p>
+    <div class="characteristics-limited">
+        <h3 class="characteristics__title">
+            Характеристики
+            <span>{{ productTitle }}</span>
+        </h3>
+        <ul>
+            <li
+                *ngFor="let item of textArray"
+                class="characteristics__fullItem fullItem">
+                <p class="fullItem__title">{{ item.heading }}<span></span></p>
+                <p class="fullItem__text">{{ item.text }}</p>
+            </li>
+        </ul>
     </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Тип навушників<span></span></p>
-        <p class="fullItem__text">TWS (2 окремо)</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Тип підключення<span></span></p>
-        <p class="fullItem__text">Бездротові</p>
-    </div>
-    <a href="">
-        <button class="showMoreBtn">
+    <a routerLink="{{ link }}">
+        <button class="showMoreBtn characteristics-limited__btn">
             Дивитися всі характеристики
             <mat-icon class="showMoreBtn__icon">arrow_right_alt</mat-icon>
         </button>
@@ -28,96 +26,12 @@
 <div
     class="characteristics"
     *ngIf="full">
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Мікрофон<span></span></p>
-        <p class="fullItem__text">Вбудований</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Тип навушників<span></span></p>
-        <p class="fullItem__text">TWS (2 окремо)</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Тип підключення<span></span></p>
-        <p class="fullItem__text">Бездротові</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Мікрофон<span></span></p>
-        <p class="fullItem__text">Вбудований</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Тип навушників<span></span></p>
-        <p class="fullItem__text">TWS (2 окремо)</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Тип підключення<span></span></p>
-        <p class="fullItem__text">Бездротові</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Мікрофон<span></span></p>
-        <p class="fullItem__text">Вбудований</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Тип навушників<span></span></p>
-        <p class="fullItem__text">TWS (2 окремо)</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Тип підключення<span></span></p>
-        <p class="fullItem__text">Бездротові</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Мікрофон<span></span></p>
-        <p class="fullItem__text">Вбудований</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Тип навушників<span></span></p>
-        <p class="fullItem__text">TWS (2 окремо)</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Тип підключення<span></span></p>
-        <p class="fullItem__text">Бездротові</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Тип навушників<span></span></p>
-        <p class="fullItem__text">TWS (2 окремо)</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Тип підключення<span></span></p>
-        <p class="fullItem__text">Бездротові</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Мікрофон<span></span></p>
-        <p class="fullItem__text">Вбудований</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Тип навушників<span></span></p>
-        <p class="fullItem__text">TWS (2 окремо)</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Тип підключення<span></span></p>
-        <p class="fullItem__text">Бездротові</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Тип підключення<span></span></p>
-        <p class="fullItem__text">Бездротові</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Тип навушників<span></span></p>
-        <p class="fullItem__text">TWS (2 окремо)</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Тип підключення<span></span></p>
-        <p class="fullItem__text">Бездротові</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Мікрофон<span></span></p>
-        <p class="fullItem__text">Вбудований</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Тип навушників<span></span></p>
-        <p class="fullItem__text">TWS (2 окремо)</p>
-    </div>
-    <div class="characteristics__fullItem fullItem">
-        <p class="fullItem__title">Тип підключення<span></span></p>
-        <p class="fullItem__text">Бездротові</p>
-    </div>
+    <ul>
+        <li
+            *ngFor="let item of textArray"
+            class="characteristics__fullItem fullItem">
+            <p class="fullItem__title">{{ item.heading }}<span></span></p>
+            <p class="fullItem__text">{{ item.text }}</p>
+        </li>
+    </ul>
 </div>

@@ -18,6 +18,7 @@ import { SocialMediaComponent } from './components/social-media/social-media.com
 import { SelectComponent } from './components/inputs/select/select.component';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 import { InputNumberComponent } from './components/inputs/input-number/input-number.component';
+import { SearchResultComponent } from './components/search-result/search-result.component';
 // import { ModalModule } from './components/modal/modal.module';
 
 @NgModule({
@@ -35,6 +36,7 @@ import { InputNumberComponent } from './components/inputs/input-number/input-num
     SelectComponent,
     BreadcrumbsComponent,
     InputNumberComponent,
+    SearchResultComponent
     // ModalModule
   ],
   imports: [
@@ -63,6 +65,7 @@ import { InputNumberComponent } from './components/inputs/input-number/input-num
     SocialMediaComponent,
     SelectComponent,
     BreadcrumbsComponent,
+    SearchResultComponent
     // ModalModule
   ]
 })

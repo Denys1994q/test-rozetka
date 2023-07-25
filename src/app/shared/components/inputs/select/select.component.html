@@ -2,7 +2,7 @@
   <select
     class="select"
     name="{{ name }}"
-    (change)="onSelectChange()"
+    (change)="selectChange()"
     [(ngModel)]="activeOption"
   >
     <option *ngFor="let option of options" value="{{ option }}">

@@ -8,5 +8,7 @@ import { Component, Input } from '@angular/core';
 export class CharacteristicsBlockComponent {
   @Input() limited: boolean = false
   @Input() full: boolean = false
-
+  @Input() productTitle!: any
+  @Input() textArray!: any
+  @Input() link!: string
 }

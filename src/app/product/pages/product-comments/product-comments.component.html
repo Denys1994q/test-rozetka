@@ -18,8 +18,9 @@
                 </li>
             </ul>
             <button
+                *ngIf="commentsWithPhotoVideo.length > 8"
                 class="comments__item comment__sliderBtn comment__sliderItem"
-                (click)="openDialog('comments', moreIndex)">
+                (click)="openDialog('comments')">
                 Ще
             </button>
         </div>
@@ -34,5 +35,6 @@
     </div>
     <app-comments-panel
         [withFilters]="true"
-        [comments]="comments"></app-comments-panel>
+        [comments]="ProductService.comments">
+    </app-comments-panel>
 </div>

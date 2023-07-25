@@ -1,13 +1,17 @@
-<div class="comments" *ngIf="!withFilters">
+<div
+    class="comments"
+    *ngIf="!withFilters">
     <div class="comments__header">
-        <h3>Відгуки покупців <span>1453</span></h3>
+        <h3>
+            Відгуки покупців <span>{{ comments.length }}</span>
+        </h3>
         <button class="btn btn-grey btn-medium">Написати відгук</button>
     </div>
     <ul class="comments__list">
         <li *ngFor="let comment of comments">
-            <app-comment [comment]="comment" ></app-comment>
+            <app-comment [comment]="comment"></app-comment>
         </li>
-        <a href="">
+        <a routerLink="{{ link }}">
             <button class="showMoreBtn">
                 Дивитися усі відгуки до товару
                 <mat-icon class="showMoreBtn__icon">arrow_right_alt</mat-icon>
@@ -18,16 +22,27 @@
 
 <ng-container *ngIf="withFilters">
     <div class="mb16 filters">
-        <button class="btn btn-medium iconed-btn btn-blue" (click)="openDialog('filters')">
+        <button
+            class="btn btn-medium iconed-btn btn-blue"
+            (click)="openDialog('filters')">
             <mat-icon class="iconed-btn__icon">filter_alt</mat-icon>
             Фільтри
         </button>
-        <app-select [name]="'filters'" [options]="['З фото і відео', 'За датою', 'Найкорисніші']"></app-select>
+        <app-select
+            [name]="'filters'"
+            [options]="['З фото і відео', 'За датою', 'Найкорисніші']"
+            [activeOption]="ProductService.sortType"
+            (selectChangeEvent)="onSelectChange($event)">
+        </app-select>
     </div>
+    <!-- результати пошуку -->
+    <app-search-result
+        [selectedInputs]="SearchResultsService.selectedInputs">
+    </app-search-result>
     <div>
         <ul>
             <li *ngFor="let comment of comments">
-                <app-comment [comment]="comment" ></app-comment>
+                <app-comment [comment]="comment"></app-comment>
             </li>
         </ul>
     </div>

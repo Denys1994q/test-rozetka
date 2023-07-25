@@ -1,7 +1,7 @@
 <div class="results">
     <ng-container *ngIf="selectedInputs && selectedInputs.length > 0">
         <!-- кількість знайдених товарів -->
-        <p class="results__amount">Обрано {{dataLength}} товарів</p>
+        <p *ngIf="dataLength" class="results__amount">Обрано {{dataLength}} товарів</p>
         <!-- кнопка скасувати -->
         <app-search-result-btn [cancelBtn]="true" />
         <!-- список обраних інпутів -->

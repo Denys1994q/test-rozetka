@@ -24,10 +24,14 @@
         background-color: #221f1f
 // product info
 .info
-    // background: red
     display: flex
     &__main
         width: 50%
+        &-sticky
+            // display: flex
+            position: sticky
+            top: 120px
+            align-self: flex-start
     &__image
         height: 62rem
         padding-right: 24px
@@ -185,6 +189,11 @@
     display: flex
     justify-content: space-between
     margin-bottom: 1rem
+
+// sticky wrapper
+.stickyWrapper
+    height: 120rem
+    width: 50%
 
 :host
     ::ng-deep app-price

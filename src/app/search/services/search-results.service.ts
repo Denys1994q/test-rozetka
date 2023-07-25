@@ -28,6 +28,8 @@ export class SearchResultsService {
     sortType: string = this.optionsToSort[0]
     // base input
     baseInput!: string 
+    // 
+    selectedRaitingIndex!: any
 
     setBaseInput(val: string) {
         this.baseInput = val
@@ -174,7 +176,12 @@ export class SearchResultsService {
     }
 
     // додати інпут в список обраних для пошуку і фільтрувати
-    addInput(input: string) {
+    addInput(input: string, selectedRaitingIndex?: any) {
+        // якщо запускаємо сервіс зі сторінки відгуків продукту, розділу фільтрів 
+        if (input.indexOf('Оцінка користувачів') > -1) {
+            this.selectedRaitingIndex = selectedRaitingIndex
+            this.selectedInputs = [{options: [{label: input}] }]
+        }
         this.filterSearchParams(input)
         this.filterData()
     }
@@ -236,6 +243,10 @@ export class SearchResultsService {
         } else if (sortType === 'Новинки') {
             this.currentSubcategory.products = [...this.currentSubcategory.products].sort((a: any,b: any) => a.date - b.date)
         }
+    }
+
+    resetRaitingValue() {
+        this.selectedRaitingIndex = null
     }
 
 }

@@ -6,7 +6,7 @@ import { AlphabetBlockComponent } from './components/alphabet-block/alphabet-blo
 import { CategoryCardComponent } from './components/category-card/category-card.component';
 import { PricePanelComponent } from './components/price-panel/price-panel.component';
 import { SearchPanelComponent } from './components/search-panel/search-panel.component';
-import { SearchResultComponent } from './components/search-result/search-result.component';
+import { SearchResultComponent } from '../shared/components/search-result/search-result.component';
 import { MainCategoryComponent } from './pages/main-category/main-category.component';
 import { MiddleCategoryComponent } from './pages/middle-category/middle-category.component';
 import { AppRoutingModule } from '../app-routing.module';
@@ -17,7 +17,7 @@ import { AppRoutingModule } from '../app-routing.module';
     CategoryCardComponent,
     PricePanelComponent,
     SearchPanelComponent,
-    SearchResultComponent,
+    // SearchResultComponent,
     MainCategoryComponent,
     MiddleCategoryComponent,
   ],
@@ -26,6 +26,7 @@ import { AppRoutingModule } from '../app-routing.module';
     SharedModule,
     ProductModule,
     AppRoutingModule
-  ]
+  ],
+
 })
 export class SearchModule { }

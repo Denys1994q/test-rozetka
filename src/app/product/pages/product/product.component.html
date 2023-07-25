@@ -1,19 +1,19 @@
 <section class="product">
     <!-- url товару: категорія, підкатегорія... -->
-    <app-breadcrumbs
+    <!-- <app-breadcrumbs
         [data]="[
-            'Смартфони, ТВ і електроніка',
-            'Навушники та аксесуари'
+            SearchResultsService.currentCategory.name,
+            SearchResultsService.currentSubcategory.name
         ]">
-    </app-breadcrumbs>
+    </app-breadcrumbs> -->
     <!-- назва товару -->
     <h1 class="product__title">
         {{ProductService.currentProduct.title}}
     </h1>
     <!-- панель рейтингу -->
     <div class="product__rating">
-        <app-rating [fixed]="true" [activeIconIndex]="ProductService.currentProduct.raiting"></app-rating>
-        <a href=""> {{ProductService.currentProduct.reviews}} відгуків </a>
+        <app-rating [fixed]="true" [activeIconIndex]="ProductService.raiting"></app-rating>
+        <a href=""> {{ProductService.currentProduct.reviews_data.length}} відгуків </a>
         <p class="product__code">
             <span> Код: </span>
             {{ProductService.currentProduct.id}}

@@ -1,15 +1,18 @@
 <div class="products">
+    <!-- бокова панель з категоріями товарів -->
     <aside class="products__catalog catalog">
+        <!-- список категорій -->
         <ul class="categories__list">
             <li
                 class="categories__item categories__item-basic"
                 *ngFor="let product of data">
                 <mat-icon class="categories__icon">{{ product.icon }}</mat-icon>
-                <a routerLink="telefony-tv-i-ehlektronika/c4627949">{{
-                    product.category
-                }}</a>
+                <a routerLink="{{ product.engName + '/' + product.id }}">
+                    {{ product.name }}
+                </a>
             </li>
         </ul>
+        <!-- кнопка "ласкаво просимо" -->
         <div class="side-menu__infoBlock infoBlock welcome-block">
             <h3 class="welcome-block__title">Ласкаво просимо!</h3>
             <p class="welcome-block__text">
@@ -22,6 +25,7 @@
                 Увійдіть в особистий кабінет
             </button>
         </div>
+        <!-- додатки Розетка -->
         <div
             class="side-menu__media media media-bordered side-menu__infoBlock uploadApps-block">
             <p class="infoBlock__title">Встановлюйте наші додатки</p>
@@ -40,10 +44,12 @@
                     alt="download-from-app-store"
             /></a>
         </div>
+        <!-- соціальні мережі -->
         <div class="side-menu__media media media-bordered side-menu__infoBlock">
             <p class="infoBlock__title">Ми в соціальних мережах</p>
             <app-social-media></app-social-media>
         </div>
+        <!-- інфо про компанію -->
         <div class="side-menu__infoBlock infoBlock">
             <p class="infoBlock__title">Інформація про компанію</p>
             <ul class="infoBlock__list">
@@ -74,10 +80,27 @@
             </ul>
         </div>
     </aside>
+    <!-- основна частина сторінки -->
     <main class="products__list prodlist">
         <app-carousel [slidesArr]="slides"></app-carousel>
-        <!-- <app-cards [data]="discounts"></app-cards> -->
-        <!-- <app-cards [data]="newProds"></app-cards> -->
+        <app-cards
+            [data]="{
+                category: 'Гарячі новинки', 
+                products: data[0].subCategories[0].products.slice(0,5)
+            }">
+        </app-cards>
+        <app-cards
+            [data]="{
+                category: 'Більше товарів для вибору',
+                products: data[1].subCategories[1].products.slice(0, 5)
+            }">
+        </app-cards>
+        <app-cards
+            [data]="{
+                category: 'Рекомендовані',
+                products: data[2].subCategories[1].products.slice(0, 5)
+            }">
+        </app-cards>
         <app-video-cards></app-video-cards>
     </main>
 </div>

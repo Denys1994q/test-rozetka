@@ -1,6 +1,7 @@
 <div class="product__info info">
-    <div class="info__main">
-        <ng-container>
+    <div class="stickyWrapper">
+        <div class="info__main-sticky">
+            <!-- карусель фото і відео -->
             <div class="info__image">
                 <app-carousel
                     [slidesArr]="ProductService.currentProduct.images"
@@ -9,18 +10,14 @@
                 </app-carousel>
             </div>
             <button
+                *ngIf="ProductService.currentProduct.video"
                 class="info__videoBtn"
                 (click)="scrollToBlock('videoBlock')">
                 <mat-icon>play_circle</mat-icon>
             </button>
+            <!-- загальний опис товару -->
             <div class="characteristics-top">
-                <p class="characteristics-top__item">
-                    Тип навушників: TWS (2 окремо)
-                </p>
-                <p class="characteristics-top__item">
-                    Діапазон частот навушників 20 Гц - 20 кГц
-                </p>
-                <p class="characteristics-top__item">Вага: 40 г</p>
+                <p>{{ ProductService.currentProduct.info_brief }}</p>
             </div>
             <div class="info__guarantee">
                 <img
@@ -32,18 +29,24 @@
                 (click)="scrollToBlock('characteristicsAndReviewsBlock')">
                 Детальніше про товар
             </button>
-        </ng-container>
+        </div>
     </div>
     <div class="info__desc">
+        <!-- кольори товару -->
         <div class="info__desc__colors">
             <app-color-palette></app-color-palette>
         </div>
+        <!-- ціна, гарантія, сервіси, оплата -->
         <div class="info__item mb24 info__desc__trade trade">
             <div class="trade__price">
+                <!-- ціна -->
                 <app-price
-                    [price]="price"
+                    [price]="ProductService.price"
                     [big]="true"></app-price>
-                <p class="trade__price-status">Є в наявності</p>
+                <!-- наявність -->
+                <p class="trade__price-status">
+                    {{ ProductService.sellStatus }}
+                </p>
             </div>
             <div class="trade__buy">
                 <button class="btn iconed-btn btn-medium btn-green">
@@ -65,8 +68,11 @@
                 [services]="true"
                 [label]="'Сервіси продовження гарантії'"></app-checkbox>
         </div>
+        <!-- продавець -->
         <div class="info__item mb24 seller">
-            <p class="seller__title">Продавець: <span>Rozetka</span></p>
+            <p class="seller__title">
+                Продавець: <span>{{ ProductService.seller }}</span>
+            </p>
             <div class="seller__image">
                 <img
                     src="../../../assets/rozetka-seller.svg"
@@ -103,6 +109,7 @@
     </div>
 </div>
 <!-- <app-cards [data]="newProds"></app-cards> -->
+<!-- характеристики -->
 <div
     class="product__characteristicsAndReviews info"
     #characteristicsAndReviewsBlock>
@@ -113,50 +120,20 @@
             class="characteristic">
             <h3 class="characteristic__title">
                 Опис
-                <span>Навушники Defunc True Music TWS Blue (D4274M)</span>
+                <span>{{ ProductService.currentProduct.title }}</span>
             </h3>
-            <p class="characteristic__subtitle characteristic__textItem">
-                <span>Defunc True Music </span>– це безкомпромісне поєднання
-                інноваційного дизайну, шведської якості та новітніх технологій!
-            </p>
-            <div class="characteristic__textBlock">
-                <p class="characteristic__textItem bold">
-                    Ексклюзивна, анатомічна форма
-                </p>
-                <p class="characteristic__textItem">
-                    Настав час відчувати музику, а не навушники!
-                    <span class="bold">Defunc True Music</span>, завдяки своїй
-                    ексклюзивній формі, адаптовані до анатомічних особливостей,
-                    забезпечуючи надійну фіксацію у вусі та, водночас, практично
-                    не відчуваються.
-                </p>
-            </div>
-            <div class="characteristic__textBlock">
-                <p class="characteristic__textItem bold">Bluetooth 5.2.</p>
-                <p class="characteristic__textItem">
-                    <span class="bold">Defunc True Music</span>
-                    отримали найсучаснішу версію
-                    <span class="bold">Bluetooth 5.2.</span>, яка орієнтована в
-                    основному на аудіопристрої. Це означає, що замість
-                    використання стандартного Bluetooth у навушників буде
-                    особливий стандарт, щоб приділяти більше уваги всьому, що
-                    пов'язане зі звуком. Швидке підключення, бездоганна якість
-                    та стабільність передачі бездротового аудіосигналу, а також
-                    покращена енергоефективність.
-                </p>
-            </div>
-            <div class="characteristic__textBlock">
-                <p class="characteristic__textItem bold">
-                    Потужність у компактному корпусі
-                </p>
-                <p class="characteristic__textItem">
-                    Компактний зарядний кейс вагою всього 45 грамів поєднує
-                    мініатюрний, мінімалістичний дизайн і батарею ємністю 400
-                    mAh. Час роботи таких компактних і одночасно потужних
-                    навушників становитиме до 5 годин без підзарядки та до
-                    <span class="bold">22 годин</span> разом із зарядним кейсом.
-                </p>
-            </div>
+            <ul>
+                <li
+                    *ngFor="let item of ProductService.currentProduct.info_full"
+                    class="characteristic__textBlock">
+                    <p class="characteristic__textItem bold">
+                        {{ item.heading }}
+                    </p>
+                    <p class="characteristic__textItem">
+                        {{ item.text }}
+                    </p>
+                </li>
+            </ul>
         </div>
         <button
             [class.displayNone]="hideBtn"
@@ -164,11 +141,24 @@
             (click)="showFullBlock()">
             Читати повністю
         </button>
-        <app-characteristics-block [limited]="true"></app-characteristics-block>
+        <!-- блок характеристик товару -->
+        <app-characteristics-block
+            [limited]="true"
+            [productTitle]="ProductService.currentProduct.title"
+            [textArray]="ProductService.currentProduct.info"
+            [link]="
+                '/' +
+                ProductService.currentProduct.engName +
+                '/' +
+                ProductService.currentProduct.id +
+                '/characteristics'
+            ">
+        </app-characteristics-block>
+        <!-- додаткові матеріали -->
         <div class="characteristic">
             <h3 class="characteristic__title">
                 Додаткові матеріали
-                <span>Навушники Defunc True Music TWS Blue (D4274M)</span>
+                <span>{{ProductService.currentProduct.title}}</span>
             </h3>
             <ul class="documents">
                 <li class="documents__item">
@@ -208,20 +198,34 @@
             </ul>
         </div>
     </div>
+    <!-- відгуки -->
     <div class="comments info__desc">
-        <app-comments-panel [comments]="comments"></app-comments-panel>
+        <app-comments-panel
+            [comments]="ProductService.currentProduct.reviews_data"
+            [link]="
+                '/' +
+                ProductService.currentProduct.engName +
+                '/' +
+                ProductService.currentProduct.id +
+                '/comments'
+            ">
+        </app-comments-panel>
     </div>
 </div>
-<!-- <div class="product__video video">
+<!-- відео блок -->
+<div
+    *ngIf="ProductService.currentProduct.video"
+    class="product__video video">
     <div
         class="video__wrapper"
         #videoBlock>
         <app-carousel
-            [slidesArr]="videoSlides"
+            [slidesArr]="ProductService.currentProduct.video"
             [extendedBig]="true"
             [extendedBigWide]="true"
             [show_indicators]="false"
-            [show_btns]="false"></app-carousel>
+            [show_btns]="false">
+        </app-carousel>
     </div>
     <div class="video__link">
         Підпишіться на наш канал
@@ -233,5 +237,5 @@
                 alt="youtube-logo" />
         </a>
     </div>
-</div> -->
-<!-- <app-cards [data]="newProds"></app-cards> -->
+</div>
+<!-- <app-cards [Wdata]="newProds"></app-cards> -->

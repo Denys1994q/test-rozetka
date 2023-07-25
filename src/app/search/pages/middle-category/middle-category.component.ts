@@ -53,7 +53,8 @@ export class MiddleCategoryComponent {
       this.SearchResultsService.addInput(event)
     }
 
-    onFilterChange(event: string) {
+    onFilterChange(event: any) {
+        console.log(event)
         this.SearchResultsService.sortData(event)
     }
 

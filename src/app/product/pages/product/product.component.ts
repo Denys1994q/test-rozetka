@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import {filter} from 'rxjs/operators';
 import { productsRoutes } from 'src/app/app-routing.module';
+// services
 import { ProductService } from '../../services/product.service';
+import { SearchResultsService } from 'src/app/search/services/search-results.service';
 
 @Component({
   selector: 'app-product',
@@ -15,8 +17,10 @@ export class ProductComponent {
   price!: any
   sellStatus!: string
   seller!: string
+  video!: any[]
+  routes!: any
 
-  constructor(private router: Router, public ProductService: ProductService ) {
+  constructor(private router: Router, public ProductService: ProductService, public SearchResultsService: SearchResultsService ) {
     router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     )
@@ -29,7 +33,20 @@ export class ProductComponent {
         this.price = this.ProductService.currentProduct.searchStatus.find((status: any) => status.searchPosition === 'price').option
         this.sellStatus = this.ProductService.currentProduct.searchStatus.find((status: any) => status.searchPosition === 'sell_status').option
         this.seller = this.ProductService.currentProduct.searchStatus.find((status: any) => status.searchPosition === 'seller').option
-        
+        this.video = this.ProductService.currentProduct.video
+
+          
+        // розділ відео, якщо відео є, по іншим хз
+        const allRoutes = [
+          {name: 'Усе про товар', link: ''}, 
+          {name: 'Характеристики', link: 'characteristics'},
+          {name: 'Відгуки', link: 'comments'},
+          {name: 'Фото', link: 'photos'},
+          this.video ? {name: 'Відео', link: 'video'} : null ,
+        ]
+
+        this.routes = allRoutes.filter(route => route)
+
         // якщо відкрита основна сторінка товару без переходу на таби
         if (productsRoutes.find(route => route.id == urlId && (route.id.toString().length + route.title.length == event.url.length-2))) {
           this.baseView = true
@@ -38,14 +55,7 @@ export class ProductComponent {
         }
       });
   }
-  
-  routes = [
-    {name: 'Усе про товар', link: ''}, 
-    {name: 'Характеристики', link: 'characteristics'},
-    {name: 'Відгуки', link: 'comments'},
-    {name: 'Відео', link: 'video'},
-    {name: 'Фото', link: 'photos'},
-  ]
+
 
   newProds = {
     category: 'Гарячі новинки', 

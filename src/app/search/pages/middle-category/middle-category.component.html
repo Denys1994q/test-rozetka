@@ -31,9 +31,8 @@
                             SearchResultsService.currentSubcategoryIndex
                         ].products.length
                     "
-                    [selectedInputs]="
-                        SearchResultsService.selectedInputs
-                    "></app-search-result>
+                    [selectedInputs]="SearchResultsService.selectedInputs">
+                </app-search-result>
             </div>
             <div class="settings__options">
                 <!-- фільтри -->
@@ -41,7 +40,7 @@
                     [name]="'filters'"
                     [options]="SearchResultsService.optionsToSort"
                     [activeOption]="SearchResultsService.sortType"
-                    (selectChange)="onFilterChange($event)">
+                    (selectChangeEvent)="onFilterChange($event)">
                 </app-select>
                 <!-- кнопки: великі, малі карточки -->
                 <app-btns-grid-panel

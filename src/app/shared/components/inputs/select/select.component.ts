@@ -8,10 +8,11 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class SelectComponent {
   @Input() options!: string[]
   @Input() name!: string
-  @Input() activeOption!: string
-  @Output() selectChange = new EventEmitter<string>();
+  @Input() activeOption!: any
+  @Output() selectChangeEvent = new EventEmitter<any>();
 
-  onSelectChange() {
-    this.selectChange.emit(this.activeOption)
+  selectChange() {
+    console.log(this.activeOption)
+    this.selectChangeEvent.emit(this.activeOption)
   }
 }

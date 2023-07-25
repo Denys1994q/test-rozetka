@@ -3,6 +3,7 @@ import { ModalService } from 'src/app/shared/components/modal/modal.service';
 import { Slide } from '../../carousel/carousel.component';
 import { Inject } from '@angular/core';
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { ProductService } from 'src/app/product/services/product.service';
 
 @Component({
   selector: 'app-comments-modal',
@@ -10,8 +11,9 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog';
   styleUrls: ['./comments-modal.component.sass']
 })
 export class CommentsModalComponent {
+  productName!: string
   activeSlide!: number
-  constructor(private modalService: ModalService, @Inject(MAT_DIALOG_DATA) public data: any) {}
+  constructor(private modalService: ModalService, @Inject(MAT_DIALOG_DATA) public data: any, public ProductService: ProductService) {}
 
   closeDialog() {
     this.modalService.closeDialog()
@@ -23,8 +25,6 @@ export class CommentsModalComponent {
 
   receiveActiveSlideIndex = ($event: any) => {
     this.activeSlide = $event
-    console.log(this.activeSlide)
-    console.log(this.data.startSlideIndex)
   }
 
 }

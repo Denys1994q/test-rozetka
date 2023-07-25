@@ -1,0 +1,7 @@
+{
+    "prettier.bracketSameLine": true,
+    "prettier.printWidth": 120,
+    "prettier.tabWidth": 4,
+    "prettier.proseWrap": "never",
+    "prettier.resolveGlobalModules": true
+}
