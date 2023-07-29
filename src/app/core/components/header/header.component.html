@@ -23,15 +23,15 @@
       <div class="header-search">
         <div class="header-search__wrapper">
           <mat-icon class="header-search__icon">search</mat-icon>
-          <input type="text" placeholder="Я шукаю..." class="header-search__input">
+          <input type="text" [(ngModel)]="searchInpValue" placeholder="Я шукаю..." class="header-search__input">
         </div>
-        <button class="btn-search">Знайти</button>
+        <button (click)="findProd()" class="btn-search">Знайти</button>
       </div>
       <ul class="header-actions">
         <li class="header-actions__item languages">
           <ul class="languages__list">
-            <li class="languages__item languages__item-ru languages__item-active">RU</li>
-            <li class="languages__item languages__item-ua">UA</li>
+            <li class="languages__item languages__item-ru">RU</li>
+            <li class="languages__item languages__item-ua languages__item-active">UA</li>
           </ul>
         </li>
         <li class="header-actions__item">

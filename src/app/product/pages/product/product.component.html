@@ -1,26 +1,39 @@
 <section class="product">
     <!-- url товару: категорія, підкатегорія... -->
-    <!-- <app-breadcrumbs
-        [data]="[
-            SearchResultsService.currentCategory.name,
-            SearchResultsService.currentSubcategory.name
-        ]">
-    </app-breadcrumbs> -->
+    <ng-container>
+        <app-breadcrumbs
+            [data]="[
+                SearchResultsService.currentCategory.name,
+                SearchResultsService.currentSubcategory.name
+            ]">
+        </app-breadcrumbs>
+    </ng-container>
     <!-- назва товару -->
     <h1 class="product__title">
-        {{ProductService.currentProduct.title}}
+        {{ ProductService.currentProduct.title }}
     </h1>
     <!-- панель рейтингу -->
     <div class="product__rating">
-        <app-rating [fixed]="true" [activeIconIndex]="ProductService.raiting"></app-rating>
-        <a href=""> {{ProductService.currentProduct.reviews_data.length}} відгуків </a>
+        <app-rating
+            [fixed]="true"
+            [activeIconIndex]="ProductService.raiting">
+        </app-rating>
+        <a href="">
+            {{ ProductService.currentProduct.reviews_data.length }} відгуків
+        </a>
         <p class="product__code">
             <span> Код: </span>
-            {{ProductService.currentProduct.id}}
+            {{ ProductService.currentProduct.id }}
         </p>
     </div>
     <!-- таби: коментарі, відгуки, фото, відео -->
-    <app-tabs [data]="routes" [route]="ProductService.currentProduct.engName + '/' + ProductService.currentProduct.id"></app-tabs>
+    <app-tabs
+        [data]="routes"
+        [route]="
+            ProductService.currentProduct.engName +
+            '/' +
+            ProductService.currentProduct.id
+        "></app-tabs>
     <!-- контент для табів з роутер-аутлету -->
     <ng-container *ngIf="baseView; else tabsView">
         <router-outlet></router-outlet>
@@ -36,39 +49,55 @@
             <div class="product-section__card">
                 <div class="info__item mb16 card">
                     <div class="card__image">
-                        <img src={{ProductService.currentProduct.image}} alt="good" />
+                        <img
+                            src="{{ ProductService.currentProduct.image }}"
+                            alt="good" />
                     </div>
                     <p class="card__title">
-                        {{ProductService.currentProduct.title}}
+                        {{ ProductService.currentProduct.title }}
                     </p>
                 </div>
                 <div class="info__item mb16">
                     <div class="price">
                         <div class="trade__price">
-                            <app-price [price]="price" [big]="true"></app-price>
-                            <p class="trade__price-status">{{sellStatus}}</p>
+                            <app-price
+                                [price]="price"
+                                [big]="true"></app-price>
+                            <p class="trade__price-status">{{ sellStatus }}</p>
                         </div>
                         <div class="trade__btns">
                             <button class="btn btn-icon btn-icon-grey">
-                                <mat-icon class="btn-icon__icon">balance</mat-icon>
+                                <mat-icon class="btn-icon__icon"
+                                    >balance</mat-icon
+                                >
                             </button>
                             <button class="btn btn-icon btn-icon-orange">
-                                <mat-icon class="btn-icon__icon">favorite_border</mat-icon>
+                                <mat-icon class="btn-icon__icon"
+                                    >favorite_border</mat-icon
+                                >
                             </button>
                         </div>
                     </div>
                     <div class="trade__buy">
                         <button
                             class="btn iconed-btn btn-medium btn-green width100">
-                            <mat-icon class="iconed-btn__icon">shopping_cart</mat-icon>
+                            <mat-icon class="iconed-btn__icon"
+                                >shopping_cart</mat-icon
+                            >
                             Купити
                         </button>
                     </div>
                 </div>
                 <div class="info__item mb16 seller">
-                    <p class="seller__title">Продавець: <span>{{seller}}</span></p>
-                    <div class="seller__image" *ngIf="seller === 'Rozetka'">
-                        <img src="../../../assets/rozetka-seller.svg" alt="rozetka" />
+                    <p class="seller__title">
+                        Продавець: <span>{{ seller }}</span>
+                    </p>
+                    <div
+                        class="seller__image"
+                        *ngIf="seller === 'Rozetka'">
+                        <img
+                            src="../../../assets/rozetka-seller.svg"
+                            alt="rozetka" />
                     </div>
                 </div>
             </div>

@@ -15,7 +15,9 @@
             (mouseenter)="setshowExtendedCard(i)"
             (mouseleave)="hideExtendedCard()"
             [class.card-big]="size === 'big'"
-            [class.card-withOpacity]="notAvailableProducts.indexOf(prod.id)>-1"
+            [class.card-withOpacity]="
+                notAvailableProducts.indexOf(prod.id) > -1
+            "
             [class.card-hiddenBorder]="activeIndex === i">
             <!-- передня сторона карточки -->
             <div [ngStyle]="{ opacity: activeIndex === i ? '0' : '1' }">
@@ -41,12 +43,11 @@
                         <h3 class="card__title">{{ prod.title }}</h3>
                     </a>
                     <!-- Рейтинг товару -->
-                    <ng-container *ngIf="prod.reviews && prod.reviews > 0">
-                        <app-rating
-                            [fixed]="true"
-                            [activeIconIndex]="prod.raiting"
-                            [numReviews]="prod.reviews"></app-rating>
-                    </ng-container>
+                    <app-rating
+                        [fixed]="true"
+                        [activeIconIndex]="getRaiting(prod)"
+                        [numReviews]="prod.reviews_data.length">
+                    </app-rating>
                     <!-- Ціна і корзина для товару -->
                     <div class="card__price">
                         <app-price [price]="getPriceObject(prod)"></app-price>
@@ -92,12 +93,11 @@
                         <h3 class="card__title">{{ prod.title }}</h3>
                     </a>
                     <!-- Рейтинг товару -->
-                    <ng-container *ngIf="prod.reviews && prod.reviews > 0">
-                        <app-rating
-                            [fixed]="true"
-                            [activeIconIndex]="prod.raiting"
-                            [numReviews]="prod.reviews"></app-rating>
-                    </ng-container>
+                    <app-rating
+                        [fixed]="true"
+                        [activeIconIndex]="getRaiting(prod)"
+                        [numReviews]="prod.reviews_data.length">
+                    </app-rating>
                     <!-- Ціна і корзина для товару -->
                     <div class="card__price">
                         <app-price [price]="getPriceObject(prod)"></app-price>
@@ -149,7 +149,7 @@
                 </div>
             </li>
         </ul>
-        <button class="cards__btn showMoreBtn showMoreBtn-outlined">
+        <button [ngStyle]="{'display': !showBtn ? 'none' : 'flex'}" (click)="showMoreCards(data.category ? data.category : '')" class="cards__btn showMoreBtn showMoreBtn-outlined">
             Показати ще
             <mat-icon class="showMoreBtn__icon">arrow_downward</mat-icon>
         </button>

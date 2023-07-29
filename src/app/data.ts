@@ -95,8 +95,6 @@ export const categories: CategoryItem[] = [
                         {heading: 'Кількість SIM-карток', text: '2'},
                         {heading: 'Розміри SIM-картки', text: 'Nano-SIM'},
                     ],
-                    raiting: 4,
-                    reviews: 26,
                     reviews_data: [
                         {
                             author: 'Аліна',
@@ -227,7 +225,7 @@ export const categories: CategoryItem[] = [
                         },
                     ],
                     searchStatus: [
-                        {searchPosition: 'price', title: 'Ціна', option: {old: 33499, new: 31499}},
+                        {searchPosition: 'price', title: 'Ціна', option: {new: 31499}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
                         {searchPosition: 'producer', title: 'Бренд', option: 'Apple'},
                         {searchPosition: 'ready-to-depart', title: 'Готовий до відправлення', option: 'Готовий до відправлення'},
@@ -638,8 +636,45 @@ export const categories: CategoryItem[] = [
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/phones/tecno front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/phones/tecno.webp', 
-                    raiting: 5,
-                    reviews: 33,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/phones/tecno front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/phones/tecno.webp'},
+                    ],
+                    info_brief: 'Екран (6.78", IPS, 2460x1080) / MediaTek Helio G88 (2.0 ГГц + 1.8 ГГц) / подвійна основна камера: 50 Мп + AI, фронтальна камера: 32 Мп / RAM 8 ГБ (256 ГБ вбудованої пам`яті + micro ) (до 512 ГБ) / 3G / LTE / GPS / підтримка 2х SIM-карт (Nano-SIM) / Android 13 / 5000 мА * год',
+                    info_full: [
+                        {heading: 'Фронтальна камера 32 Мп для ідеальних селфі', text: 'Роби красиві селфі завдяки більшій роздільній здатності та підвищеній світлочутливості матриці. Покажи новий рівень селфі зі SPARK 10 Pro.'},
+                        {heading: 'Забудьте про низький рівень заряджання', text: 'Енергоємний акумулятор 5000 мА*год (Type-С) та швидке заряджання на 18 Вт – для ефективної та довгої роботи пристрою.'},
+                        {heading: 'Виробничий восьмиядерний процесор. Енергоефективний і потужний.', text: 'Завдяки восьмиядерному процесору дана модель телефону підтримує плавну анімацію, швидке завантаження програм та зйомку чітких фотографій. Невеликий процесор з високою продуктивністю.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'Spark'},
+                        {heading: 'Стандарт зв`язку', text: '2G (GPRS/EDGE) 3G (WCDMA/UMTS/HSPA) 4G (LTE) 5G'},
+                        {heading: 'Діагональ екрана', text: '6.5'},
+                        {heading: 'Роздільна здатність дисплея', text: '2532x1170'},
+                        {heading: 'Тип матриці', text: 'OLED (Super Retina XDR)'},
+                        {heading: 'Кількість SIM-карток', text: '1'},
+                        {heading: 'Розміри SIM-картки', text: 'Nano-SIM'},
+                        {heading: 'Матеріал екрана', text: 'Ceramic Shield'},
+                        {heading: 'Вбудована пам`ять', text: '256 ГБ'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Світлана',
+                            date: new Date(),
+                            text: 'Усім, рекомендую дану модель. Андроїд літає, всі зручні функції у наявності) Батарея може тримати 2 дні',
+                            rating: 4,
+                            likes: 1,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Юлія',
+                            date: new Date(),
+                            text: 'Все сподобалось! І дизайн, і екран, і швидкість памʼяті. А акумулятор так і взагалі супер, при активному користуванні вистачає надовго! Великий плюс комплектація!',
+                            rating: 4,
+                            likes: 1,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 7999}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -661,8 +696,57 @@ export const categories: CategoryItem[] = [
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/phones/motorola 30 front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/phones/motorola 30.webp', 
-                    raiting: 4,
-                    reviews: 105,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/phones/motorola 30 front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/phones/motorola 30.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/phones/motorola 30-3.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/phones/motorola 30-4.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/phones/motorola 30-5.webp'},
+                    ],
+                    info_brief: 'Екран (6.28", P-OLED, 2400x1080) / Qualcomm Snapdragon 695 (2.2 ГГц + 1.7 ГГц) / основна подвійна камера: 64 Мп + 13 Мп, фронтальна камера: 32 Мп / RAM 8 ГБ / 128 ГБ вбудованої памʼяті / 3G / LTE / 5G / GPS / підтримка 2х SIM-карт (Nano-SIM) / Android 12 / 4020 мА*год',
+                    info_full: [
+                        {heading: 'Кольори, що задають нові тренди', text: 'Унікальні кольори від світового авторитету в галузі кольорів Pantone, які можна застосувати до інтерфейсу телефону, відображатимуть ваш особистий стиль, виділяючи з-поміж інших. '},
+                        {heading: 'Кінематографічні кольори + DOLBY ATMOS', text: 'OLED-дисплей з діагоналлю 6.28 дюйма з кінематографічною точністю відтворює глибокі та насичені кольори. Відкрийте новий рівень емоцій у своїй улюбленій музиці з багатовимірним звуком Dolby Atmos. '},
+                        {heading: 'Швидке заряджання TURBOPOWER', text: 'Зарядний пристрій на 68 Вт із технологією TurboPower дає змогу поповнити заряд на весь день усього за 10 хвилин⁵. Бездротове заряджання допоможе уникнути безладу з кабелями⁵. '},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'Motorolla'},
+                        {heading: 'Стандарт зв`язку', text: '2G (GPRS/EDGE) 3G (WCDMA/UMTS/HSPA) 4G (LTE) 5G'},
+                        {heading: 'Діагональ екрана', text: '6.5'},
+                        {heading: 'Роздільна здатність дисплея', text: '2532x1170'},
+                        {heading: 'Тип матриці', text: 'OLED (Super Retina XDR)'},
+                        {heading: 'Кількість SIM-карток', text: '1'},
+                        {heading: 'Розміри SIM-картки', text: 'Nano-SIM'},
+                        {heading: 'Матеріал екрана', text: 'Ceramic Shield'},
+                        {heading: 'Вбудована пам`ять', text: '256 ГБ'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Сергій',
+                            date: new Date(),
+                            text: 'Дуже добрий телефон. Батарея тримає довго. Телефон не глючить, працює швидко.Через 2 дні сам оновився до 13 версії Андроїд (липень 2023). Усі "фічі" телефонів Моторола збережені.',
+                            rating: 5,
+                            likes: 1,
+                            dislikes: 0,
+                            photo: '../assets/telefony-tv-i-ehlektronika/phones/motorola 30.webp'
+                        },
+                        {
+                            author: 'Артем',
+                            date: new Date(),
+                            text: 'Повернув через брак камери, крапочка в верхньому лівому кутку яка не зникає',
+                            rating: 3,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Олена',
+                            date: new Date(),
+                            text: 'Легенький, зручний у керуванні, швидка зарядка, чутливий до моїх забаганок.... Надійний',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 12999}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -699,12 +783,59 @@ export const categories: CategoryItem[] = [
             ],
             products: [
                 {
-                    title: 'Телевізор LG', 
+                    title: 'Телевізор LG 55UQ75006LF', 
+                    engName: 'lg-55UQ75006LF',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/tv/lg front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/tv/lg.webp', 
-                    raiting: 5,
-                    reviews: 132,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/tv/lg front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/tv/lg.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/tv/lg-3.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/tv/lg-4.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Отримуйте нові враження від перегляду', text: 'Процесор α5 5-го покоління з функціями штучного інтелекту. Телевізор LG UHD обладнано потужним процесором α5 5-го покоління з функціями штучного інтелекту, який дарує незабутні враження від перегляду.'},
+                        {heading: 'Підійміть якість зображення до 4K', text: 'Дивіться зображення, що не дотягує до стандарту 4K на великому екрані UHD у форматі 4K. Насолоджуючись чіткістю та точністю кожної секунди.'},
+                        {heading: 'AI Brightness Control', text: 'Технологія керування яскравістю AI Brightness Control за допомогою штучного інтелекту забезпечує ідеальний рівень яскравості, адаптуючись до умов навколишнього освітлення.'},
+                    ],
+                    info: [
+                        {heading: 'Діагональ екрана', text: '55'},
+                        {heading: 'Підтримка Smart TV', text: 'з Smart TV'},
+                        {heading: 'Роздільна здатність', text: '3840x2160'},
+                        {heading: 'Бездротові можливості', text: 'Bluetooth Wi-Fi'},
+                        {heading: 'Платформа', text: 'WebOS'},
+                        {heading: 'Особливі властивості', text: 'LCD телевізор (LED)'},
+                        {heading: 'Рік випуску', text: '2022'},
+                        {heading: 'ТВ-тюнер', text: 'Супутниковий'},
+                        {heading: 'Колір рамки', text: 'Чорний'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Сергій',
+                            date: new Date(),
+                            text: 'Телевізор купив нещодавно, дуже подобається картинка і габарити, по звуку теж чудовий, операційна система зручна , до цього був теж ЛЖ але зі старішим вебосом, не подобається те що у старій системі можно було одночасно дивитися тв і клацати програми, тут такого нема.',
+                            rating: 5,
+                            likes: 1,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Юля',
+                            date: new Date(),
+                            text: 'Очень крутой телевизор даже неожиданно получилось) ми очень доволены. Рекомендую за такую цену он великолепный. Покупайте не пожалеете',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Ірина',
+                            date: new Date(),
+                            text: 'Через 2 міс користування перестали оновлюватись всі додатки («додаток не інстальовано. Повторіть спробу пізніше.23.20.SM»). Перезавантаження телевізора та роутера безрезультатні, памʼяті достатньо, кеш та кукіс видалені, апдейт OS було проведено задовго до проблеми, свіжих оновлень немає. Зʼєднання та швидкість інтернету в порядку. Всі сервісні рекомендації виконані. Результату нуль.',
+                            rating: 3,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 20999}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -721,11 +852,59 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Телевізор Kivi', 
+                    engName: 'televizor-kivi-50u740nb',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/tv/kivi front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/tv/kivi.webp', 
-                    raiting: 2,
-                    reviews: 27,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/tv/kivi front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/tv/kivi.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/tv/kivi-3.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/tv/kivi-4.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Тонкі металеві підставки', text: 'Витончені металеві підставки підкреслюють мінімалізм дизайну та надійно утримують корпус. Телевізори KIVI Smart TV 2022 гармонійно доповнять будь-яке оточення та стануть стильним акцентом в інтер`єрі.'},
+                        {heading: 'Більше кольорів завдяки технології HDR', text: 'Завдяки підтримці технології HDR зображення на екрані Smart TV KIVI 2022 має природний вигляд. HDR-контент розпізнається автоматично, тому зображення миттєво та у найкращій якості передається на екран.'},
+                        {heading: 'Чітке й деталізоване зображення', text: 'Насолоджуйтеся чітким зображенням з максимальною деталізацією. Технологія Ultra Clear опрацьовує кожен фрагмент кадру, підвищуючи різкість об`єктів та їх контраст.'},
+                    ],
+                    info: [
+                        {heading: 'Діагональ екрана', text: '55'},
+                        {heading: 'Підтримка Smart TV', text: 'з Smart TV'},
+                        {heading: 'Роздільна здатність', text: '3840x2160'},
+                        {heading: 'Бездротові можливості', text: 'Bluetooth Wi-Fi'},
+                        {heading: 'Платформа', text: 'WebOS'},
+                        {heading: 'Особливі властивості', text: 'LCD телевізор (LED)'},
+                        {heading: 'Рік випуску', text: '2022'},
+                        {heading: 'ТВ-тюнер', text: 'Супутниковий'},
+                        {heading: 'Колір рамки', text: 'Чорний'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Олена',
+                            date: new Date(),
+                            text: 'Добрий вечір! Купили і дуже задоволенні кольорова гама супер.рекомендую',
+                            rating: 4,
+                            likes: 1,
+                            dislikes: 0,
+                            photo: '../assets/telefony-tv-i-ehlektronika/tv/kivi-comment1.webp'
+                        },
+                        {
+                            author: 'Валерій',
+                            date: new Date(),
+                            text: 'Швидкість перемикань і роботи на тверду 4. Якість зображення не вогонь , але за ці гроші цілком гідна. Є lan ,але використовую вай фай 5 гц. 4К політ хороший.',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Георгій',
+                            date: new Date(),
+                            text: 'Мой первый телевизор за многие годы. Брал чтобы смотреть ютуб и предварительно скачанное аниме. Не знаю как я жил раньше.',
+                            rating: 3,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 8399, new: 6399}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -742,11 +921,57 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Телевізор Sharp 50EQ3EA',
+                    engName: 'televizor-sharp-50eq3ea',
                     id: Math.floor(Math.random() * 1000), 
                     image: '../assets/telefony-tv-i-ehlektronika/tv/sharp front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/tv/sharp.webp', 
-                    raiting: 3,
-                    reviews: 4,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/tv/sharp front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/tv/sharp.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Відмінний звук та чіткі діалоги завдяки аудіосистемі HiFi-рівню Harman Kardon', text: 'Аудіосистема телевізора створювалися також з метою зробити її стильною та функціональною водночас. Так, решітка гриля, що прикриває динаміки, сконструйована таким чином, аби звук залишався чистим та неспотвореним. У співпраці з Harman Kardon компанія Sharp створила унікальну двоканальну аудіосистему: середньочастотні динаміки та твітери спрямовані прямо, а низькочастотники — донизу. Завдяки такій конфігурації високі звуки дістаються ваших вух напряму, забезпечуючи кришталево чисті діалоги, тоді як низькі звуки відбиваються від поверхні, на яку встановлено телевізор, роблячи фонову музику насиченою та об`ємною.'},
+                        {heading: 'Підтримка передових стандартів об`ємного звучання — Dolby Atmos та DTS:X', text: 'І без того довершена аудіосистема телевізорів Sharp серії EQ була покращена ще й вбудованою підтримкою передових технологій об`єктно-орієнтованого об`ємного звучання — Dolby Atmos та DTS:X. Вони заповнять вашу кімнату таким об`ємним звуком, який ідеально відповідатиме тому, що відбувається на екрані.'},
+                        {heading: 'Технологія Quantum Color: яскраві кольори та відмінна динаміка зображення', text: 'У телевізорах Sharp нової серії EQ використовується надсучасна рідкокристалічна VA-матриця з прямим світлодіодним підсвічуванням і шаром Quantum Dot (Quantum Color). Тому вони мають найширший серед рідкокристалічних телевізорів діапазон кольорів, що можуть відображатися на екрані.'},
+                    ],
+                    info: [
+                        {heading: 'Діагональ екрана', text: '55'},
+                        {heading: 'Підтримка Smart TV', text: 'з Smart TV'},
+                        {heading: 'Роздільна здатність', text: '3840x2160'},
+                        {heading: 'Бездротові можливості', text: 'Bluetooth Wi-Fi'},
+                        {heading: 'Платформа', text: 'WebOS'},
+                        {heading: 'Особливі властивості', text: 'LCD телевізор (LED)'},
+                        {heading: 'Рік випуску', text: '2022'},
+                        {heading: 'ТВ-тюнер', text: 'Супутниковий'},
+                        {heading: 'Колір рамки', text: 'Чорний'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Олена',
+                            date: new Date(),
+                            text: 'Магазин не связывается со мной относительно моей заявки. Просьба позвонить.',
+                            rating: 1,
+                            likes: 1,
+                            dislikes: 0,
+                            photo: '../assets/telefony-tv-i-ehlektronika/tv/kivi-comment1.webp'
+                        },
+                        {
+                            author: 'Anna',
+                            date: new Date(),
+                            text: 'отличный телевизор, по сравнению с киви небо и земля) прекрасное изображение, глубокий насыщенный звук, куча настроек для видео и аудио, в общем покупкой довольна) посмотрим как будет работать дальше)',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Георгій',
+                            date: new Date(),
+                            text: 'Купили телевизор Изображение отличное Звук _ супер',
+                            rating: 3,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 25990, new: 22799}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -763,11 +988,50 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Кронштейн для телевізора RZTK TVM 32-55',
+                    engName: 'kronshtejn-dlya-televizora-rztk-tvm-32-55',
                     id: Math.floor(Math.random() * 1000), 
                     image: '../assets/telefony-tv-i-ehlektronika/tv/kronshtein front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/tv/kronshtein.webp', 
-                    raiting: 5,
-                    reviews: 83,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/tv/kronshtein front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/tv/kronshtein.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Регулювання кута нахилу', text: 'Для зручності використання кут нахилу телевізора на кронштейні можна відрегулювати в межах від 0° до −20°.'},
+                        {heading: 'Регулювання кута повороту', text: 'Для зручності використання кут повороту телевізора на кронштейні можна відрегулювати в межах від +3° до −3°.'},
+                        {heading: 'Міцність і надійність конструкції', text: 'Виріб виготовлено з якісної міцної сталі, що забезпечує високу надійність конструкції.'},
+                    ],
+                    info: [
+                        {heading: 'Місце встановлення', text: 'Настінні'},
+                        {heading: 'Регулювання', text: 'Похило-поворотні'},
+                        {heading: 'Кількість встановлюваних екранів', text: '1'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Сергій',
+                            date: new Date(),
+                            text: 'Отличный мощный кронштейн',
+                            rating: 5,
+                            likes: 1,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Руслан',
+                            date: new Date(),
+                            text: 'Хороший удобный надёжный',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Ірина',
+                            date: new Date(),
+                            text: 'Кронштейн отличного качества, выглядит и в действительности надёжный и крепкий, аккуратно изготовлен, нет ни одной зазубрины, полный комплект комплектующих плюс нормальная скидка! Надеемся прослужит долго. Спасибо «Розетке» за оперативно налаженную работу сервиса! Пользуемся услугами «Розетки» всей семьей.',
+                            rating: 5,
+                            likes: 2,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 1490, new: 799}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -784,11 +1048,51 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Apple TV 4K 64GB',
+                    engName: 'apple-tv-4k-64gb',
                     id: Math.floor(Math.random() * 1000), 
                     image: '../assets/telefony-tv-i-ehlektronika/tv/apple tv front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/tv/apple tv.webp', 
-                    raiting: 5,
-                    reviews: 6,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/tv/apple tv front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/tv/apple tv.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Ви не впізнаєте свій телевізор', text: 'Новий Apple TV 4K об`єднує найкращий телевізійний контент із гігантським потенціалом пристроїв і сервісів Apple. Тепер ваша вітальня по-справжньому зміниться.'},
+                        {heading: 'Ціла коробка приголомшливих можливостей для вашого телевізора', text: 'Картинка та звук, як у реальному житті. Apple TV 4K з Dolby Vision зробить усі ваші розваги незабутніми. А якщо ваша звукова система підтримує стандарт Dolby Atmos, Apple TV 4K перетворить ваш будинок у справжній кінотеатр і ви зможете повністю зануритися в об`ємний звук.'},
+                        {heading: 'HDR з високою частотою кадрів. Зовсім інша гра', text: 'Apple TV 4K може відтворювати відео з частотою кадрів, яка удвічі перевищує вимоги стандарту HDR, тому кольори мають ще реалістичніший вигляд, а зображення — чіткіший. Навіть стрімкі події, наприклад, під час спортивної трансляції, можна розглянути у всіх деталях. Природа на екрані має неймовірно реалістичний вигляд. А ролики YouTube буквально оживають.'},
+                    ],
+                    info: [
+                        {heading: 'Підтримувані формати', text: 'Apple TV+ Apple Arcade Amediateka ivi'},
+                        {heading: 'OS', text: 'tvOS'},
+                        {heading: 'Максимальна роздільна здатність', text: '4K Ultra HD (3840x2160)'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Андрій',
+                            date: new Date(),
+                            text: 'Як пристрій - чудовий. Синхронізація з іншими пристроями від Apple - просто прекрасна. Мінуси складаються з обмежень tvOS: відсутність більшості хмарних сервісів ігор, неможливість, без болю, встановити застосунки поза межами App Store, неможливість переключитись на Wi-Fi якщо підʼєднано кабель інтернету.',
+                            rating: 5,
+                            likes: 1,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Олексій',
+                            date: new Date(),
+                            text: 'Став першим власником,придбавши в Розетці. Дякую за швидку доставку і приємну вартість. Товар оригінальний,ще не вмикав(немає світла).Пізніше доповню відгук.',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                            photo: '../assets/telefony-tv-i-ehlektronika/tv/apple tv-comment1.webp'
+                        },
+                        {
+                            author: 'Ірина',
+                            date: new Date(),
+                            text: 'Товаром задоволена',
+                            rating: 5,
+                            likes: 2,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 7099}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Інша'},
@@ -805,10 +1109,27 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Пульт для телевізорів SAMSUNG BN59-01268D',
+                    engName: 'pult-dlya-televizoriv-samsung-bn59-01268d',
                     id: Math.floor(Math.random() * 1000), 
                     image: '../assets/telefony-tv-i-ehlektronika/tv/pult front.webp', 
-                    raiting: 3,
-                    reviews: 18,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/tv/pult front.webp'},
+                    ],
+                    info_brief: 'Сумісна модель: MU8000, MU9000, Q7C, Q7F, Q8C, QN65Q7FD, QN75Q9FAMFXZA, T24H390SIX, T27H390SIX, UA55LS003AKXXS, UA65LS003AKXXS, UE32M5503AU, UE40MU6100, UE40MU6103U, UE40MU6120, UE40MU6195, UE40MU6199, UE43LS003AU, UE43M5513AU, UE43MU6100, UE43MU6103U, UE43MU6105, UE43M',
+                    info: [
+                        {heading: 'Сумісна техніка', text: 'Телевізори'},
+                        {heading: 'Колір', text: 'Black'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Евгений',
+                            date: new Date(),
+                            text: 'Все працює. Дякую!',
+                            rating: 5,
+                            likes: 1,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 199}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Інша'},
@@ -824,10 +1145,36 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'ТБ-ресивер Т2 Ferguson ARIVA 265',
+                    engName: 'tb-resiver-t2-ferguson-ariva-265',
                     id: Math.floor(Math.random() * 1000), 
                     image: '../assets/telefony-tv-i-ehlektronika/tv/reciver front.webp', 
-                    raiting: 2,
-                    reviews: 15,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/tv/reciver front.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'НАЗЕМНИЙ ТВ-ТЮНЕР (РЕСІВЕР) FERGUSON ARIVA T265', text: 'Ferguson Ariva T265 це ресивер, який підтримує останній (трансляція лише у декількох країнах світу) стандарт стиснення відео H. 265 / HEVC! Цей стандарт скоро стане широко використовуваним методом стиснення за рахунок дуже хорошої якості зображення, пропонується видеокодеком H. 265 / HEVC.'},
+                    ],
+                    info: [
+                        {heading: 'Стандарти цифрового ТБ', text: 'DVB-T2'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Віктор',
+                            date: new Date(),
+                            text: 'Не працює',
+                            rating: 2,
+                            likes: 1,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Руслан',
+                            date: new Date(),
+                            text: 'Хороший удобный надёжный',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 1400, new: 693}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Інша'},
@@ -843,10 +1190,25 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Цифровий тюнер DVB-Т2',
+                    engName: 'tsifrovij-tyuner-dvb-t2',
                     id: Math.floor(Math.random() * 1000), 
                     image: '../assets/telefony-tv-i-ehlektronika/tv/dvb front.webp', 
-                    raiting: 0,
-                    reviews: 0,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/tv/dvb front.webp'},
+                    ],
+                    info: [
+                        {heading: 'Стандарти цифрового ТБ', text: 'DVB-T2'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Ангдрій',
+                            date: new Date(),
+                            text: 'Працює добре',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 1000, new: 790}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Інша'},
@@ -883,11 +1245,41 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Електронна книга PocketBook', 
+                    engName: 'elektronna-kniga-pocketbook-12s',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/pocketbook front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/pocketbook.webp', 
-                    raiting: 3,
-                    reviews: 62,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/pocketbook front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/pocketbook.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'PocketBook 970', text: 'чудова альтернатива традиційному друкованому виданню, може подарувати книгоманам можливість проводити більше часу, займаючись своїм улюбленим заняттям. Тепер ви можете легко читати, лежачи на пляжі. Вам більше не набридатимуть сонячні відблиски, що засліплюють екран портативних пристроїв з LCD-дисплеями, або морський бриз, який так любить гортати паперові сторінки. Ви можете читати, не створюючи незручності своєму попутнику в нічному поїзді, оскільки в електронній книзі PocketBook 970 є якісна підсвітка. '},
+                    ],
+                    info: [
+                        {heading: 'Діагональ дисплея', text: '9.7'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Кількість градацій сірого', text: '16'},
+                        {heading: 'Тип матриці', text: 'E Ink Carta'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Віктор',
+                            date: new Date(),
+                            text: 'Отличная книга. Рекомендуется приобрести обложку.',
+                            rating: 5,
+                            likes: 1,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Руслан',
+                            date: new Date(),
+                            text: 'Супер книга, гарний функціонал, зручна!',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 6500, new: 5599}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Інша'},
@@ -903,11 +1295,41 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Mp3 Плеєр Mrobo', 
+                    engName: 'mp3-pleyer-mrobo',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/mp3 mrobo front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/mp3 mrobo.webp', 
-                    raiting: 5,
-                    reviews: 38,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/mp3 mrobo front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/mp3 mrobo.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Mrobo', text: 'MP3 плеєр Mrobo A6 Bluetooth Hi-Fi 4Gb із зовнішнім динаміком. Mrobo є одним із провідних світових виробників МР3 плеєрів, диктофонів та іншої подібної продукції.'},
+                    ],
+                    info: [
+                        {heading: 'Підтримка форматів', text: 'microSD'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Кількість градацій сірого', text: '16'},
+                        {heading: 'Тип матриці', text: 'E Ink Carta'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Денис',
+                            date: new Date(),
+                            text: 'Плеєр прийшов швидко, дякую продавцю. Якість для своєї ціни достойна - хорший звук, яскравий дісплей, зручна навігація по меню. Окрема подяка за додаткові подаруночки - навушники та чехол) це також було приємно)',
+                            rating: 5,
+                            likes: 1,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Руслан',
+                            date: new Date(),
+                            text: 'Супер',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 1200, new: 899}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Інша'},
@@ -923,13 +1345,38 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Диктофон-флешка Volemer', 
+                    engName: 'diktofon-fleshka-volemer',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/volemer front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/volemer.webp', 
-                    raiting: 4,
-                    reviews: 16,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/volemer front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/volemer.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Диктофон-флешка Volemer SK-868 Чорний 8 Гб пам`яті', text: 'простий і компактний пристрій, створений на основі сучасних технологій. Невеликі розміри диктофона дозволяють легко переносити його в кишенях одягу. Зовні пристрій нагадує флеш-пам`ять. Ця обставина буде доречною для тих, хто хоче зробити запис без зайвої уваги, адже звичайна флешка навряд чи викличе підозри.'},
+                    ],
                     info: [
-                        {heading: 'Пам`ять', text: '4 Гб'},
+                        {heading: 'Тривалість запису', text: '15 годин'},
+                        {heading: 'Колір', text: 'Чорний'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Игорь',
+                            date: new Date(),
+                            text: 'За пол года практически не использовал, просто носил в кармане. В один прекрасный момент заметил, что переключатель микрофона в положении вкл. Ну думаю случайно ключами зацепил. Потом ситуация повторилась, снял с ключей. Сегодня вынул из зарядки, а кнопочка просто не закреплена и переходит в сторону наклона флешки, микрофон при этом уже не включается. Имею флешку на 8 гиг по цене 528 грн.',
+                            rating: 1,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Світлана',
+                            date: new Date(),
+                            text: 'Акумулятор дозволив протягом майже 12 годин вести запис (ще залишалось). За замовчуванням ріже на файли у 1 годину.',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 495}},
@@ -946,14 +1393,30 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Бездротова док-станція Marks з годинником 4in1', 
+                    engName: 'bezdrotova-dok-stantsiya-marks-z-godinnikom-4in1',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/doc front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/doc.webp', 
-                    raiting: 5,
-                    reviews: 2,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/doc front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/doc.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Бездротова зарядка', text: 'дозволяє одночасно заряджати iPhone та Apple Watch та AirPords в одному місці, використовуючи бездротову технологію заряджання. Пристрій виготовлений з якісного пластику, який не нагрівається через довгий час роботи.'},
+                    ],
                     info: [
-                        {heading: 'Загальна вихідна потужність (RMS)', text: '30 Вт'},
-                        {heading: 'Джерело живлення', text: 'Мережа'},
+                        {heading: 'Інтерфейси', text: 'USB'},
+                        {heading: 'Колір', text: 'Чорний'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Святослав',
+                            date: new Date(),
+                            text: 'Працює чудово',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 2499, new: 2199}},
@@ -970,13 +1433,34 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Смарт-годинник Apple Watch SE (2022)', 
+                    engName: 'smart-godinnik-apple-watch-se-2022',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/apple watch front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/apple watch.webp', 
-                    raiting: 4,
-                    reviews: 59,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/apple watch front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/apple watch.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'До 20% швидший за попередній Apple Watch SE'},
+                        {heading: 'Відповідайте на дзвінки та повідомлення просто із зап`ястя', text: 'Слухайте улюблену музику, подкасти й аудіокниги (для використання в моделях GPS)'},
+                        {heading: 'Розширені функції безпеки, зокрема Виявлення падіння, Сигнал SOS і Виявлення аварій', text: 'Відстежуйте свою активність протягом дня з Apple Watch, а потім переглядайте тенденції в додатку «Фітнес» на iPhone'},
+                    ],
                     info: [
-                        {heading: 'Розмір корпусу, мм', text: '44'},
+                        {heading: 'Серія', text: 'Apple Watch SE'},
+                        {heading: 'Тип', text: 'Розумний годинник'},
+                        {heading: 'Сумісна ОС', text: 'iOS'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Людмила',
+                            date: new Date(),
+                            text: 'працюють, зарядка на два- три дні, задоволені , нарікань немає',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 13199, new: 12599}},
@@ -993,14 +1477,32 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'MP3-плеєр FiiO M11s Black', 
+                    engName: 'mp3-pleyer-fiio-m11s-black',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/FiiO front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/FiiO.webp', 
-                    raiting: 5,
-                    reviews: 1,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/FiiO front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/FiiO.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Що нового?', text: 'FiiO M11S нагадує інші моделі серії M11, особливо FiiO M11 Plus. Однак має 5-дюймовий дисплей з роздільною здатністю 1280 x 720 пікселів і ширші рамки, ніж FiiO M11 Plus. FiiO M11S має клавішу регулювання гучності, незвичайний хід для медіаплеєра. Крім того, FiiO увімкнув елементи керування відтворенням на правій стороні, розташовані поруч із пристроєм для читання карт microSD.'},
+                    ],
                     info: [
-                        {heading: 'Чіпсет', text: 'Qualcomm Snapdragon 660'},
-                        {heading: 'Підсилювач', text: 'OPA926 x 2'},
+                        {heading: 'Серія', text: 'FiiO'},
+                        {heading: 'Тип', text: 'Еквалайзер'},
+                        {heading: 'Сумісна ОС', text: 'iOS'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Катерина',
+                            date: new Date(),
+                            text: 'Доволі швидкий, після сучасних телефонів не викликає неприємних відчуттів. В сплячому режимі за ніч зникає 1% заряду. При прослуховуванні пару годин в день вистачає майже на тиждень. В комплекті непоганий силіконовий чохол, але додатково можна докупити фірмовий чорний з єко шкіри.',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 24999}},
@@ -1035,13 +1537,33 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'УМБ Samsung', 
+                    engName: 'umb-samsung',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/samsung front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/powerbanks/samsung.webp', 
-                    raiting: 4,
-                    reviews: 52,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/powerbanks/samsung front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/powerbanks/samsung.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Висока якість, велика ємність', text: 'Акумулятор Samsung ємністю 20 000 мАч задовольняє ваші високі щоденні потреби в енергії. Вища ємність дає вам впевненість у тому, що ви можете перезаряджати свої пристрої кілька разів, коли це потрібно.'},
+                        {heading: 'Надшвидка зарядка для вашого стрімкого способу життя', text: 'Надшвидка зарядка з вихідною потужністю 25 Вт означає, що ви можете швидко заряджатися в дорозі. Сам акумулятор також можна заряджати потужністю 25 Вт, тому вам не доведеться витрачати час на очікування. Він також відповідає стандартам Samsung AFC, Quick Charge 2.0 та Power Delivery 3.0 для швидкої та безпечної зарядки.'},
+                    ],
                     info: [
-                        {heading: 'Індикація', text: 'З індикатором рівня заряду'},
+                        {heading: 'Ємність батареї мА*год', text: '20000'},
+                        {heading: 'Призначення', text: 'Для телефонів'},
+                        {heading: 'Сумісна ОС', text: 'iOS'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'О. Шевчук',
+                            date: new Date(),
+                            text: 'Уже замовивше прочитав що для швидкої зарядки потрібна рідна зарядка, та маю іншу 65ватну, і все працює ок, зарядився від 25% до ста за години 4. Тому задоволений. Зарядив планшет самсунг гелексі tab7 й вистачило ще на дві зарядки мі9 лайт телефону, тому заявлені цифри відповідають дійсності.',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 2499, new: 1499}},
@@ -1057,13 +1579,32 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'УМБ Denver', 
+                    engName: 'umb-denver',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/denver front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/powerbanks/denver.webp', 
-                    raiting: 3,
-                    reviews: 12,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/powerbanks/denver front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/powerbanks/denver.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Denver PBS-30007 powerbank', text: 'Denver PBS-30007 powerbank у компактному чорному корпусі з літій-полімерним акумулятором. Акумулятор має ємність 30 000 мАг та оснащений 2 портами USB-A для наснаження ваших пристроїв. Ви можете наснажувати батарею через USB-C або Micro USB, і ви завжди зможете побачити, коли потрібно донаснажити пристрій завдяки індикатору часу автономної роботи.'},
+                    ],
                     info: [
-                        {heading: 'Індикація', text: 'З індикатором рівня заряду'},
+                        {heading: 'Ємність батареї мА*год', text: '21000'},
+                        {heading: 'Призначення', text: 'Для телефонів'},
+                        {heading: 'Сумісна ОС', text: 'iOS'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Глеб',
+                            date: new Date(),
+                            text: 'Не стоит покупать! Сам павербанк не соотвецтвует заявленым ха-кам! Его самого заряжать чаще нужно чем гаджеты...',
+                            rating: 2,
+                            likes: 0,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 1749}},
@@ -1079,13 +1620,32 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Зарядна станція Carku PB-20D 600W', 
+                    engName: 'zaryadna-stantsiya-carku-pb-20d-600w',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/station front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/powerbanks/station.webp', 
-                    raiting: 5,
-                    reviews: 5,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/powerbanks/station front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/powerbanks/station.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'CARKU', text: 'Портативна електростанція CARKUPB-20D 600W (640Wh) це акумуляторний генератор потужністю 600 Вт (max peak до 1200 Вт) та ємністю 640 Вт/год, забезпечений сучасними системами безпеки та довговічності. Має систему захисту LIFEBMS, яка забезпечує множинний захист акумулятора, включаючи захист від перезаряджання, перерозряджання, перенапруги, перевантаження струмом, короткого замикання та захисту від високих температур. А завдяки наявності блоку живлення та від перепадів напруги.'},
+                    ],
                     info: [
-                        {heading: 'Вихідна потужність', text: '600 Вт'},
+                        {heading: 'Місткість зарядної станції, кВт/год', text: '0.644 кВт/год'},
+                        {heading: 'Тип акумуляторів', text: 'Літій-залізо-фосфатні (LiFePO4)'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Валерий',
+                            date: new Date(),
+                            text: 'Станция за свои деньги супер.',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 11249}},
@@ -1101,13 +1661,32 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'УМБ RZTK Power Bank 20000', 
+                    engName: 'umb-rztk-power-bank-20000',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/rztk front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/powerbanks/rztk.webp', 
-                    raiting: 5,
-                    reviews: 73,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/powerbanks/rztk front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/powerbanks/rztk.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'RZTK Power Bank', text: 'Портативна електростанція RZTK Power Bank (640Wh) це акумуляторний генератор потужністю 600 Вт (max peak до 1200 Вт) та ємністю 640 Вт/год, забезпечений сучасними системами безпеки та довговічності. Має систему захисту LIFEBMS, яка забезпечує множинний захист акумулятора, включаючи захист від перезаряджання, перерозряджання, перенапруги, перевантаження струмом, короткого замикання та захисту від високих температур. А завдяки наявності блоку живлення та від перепадів напруги.'},
+                    ],
                     info: [
-                        {heading: 'Індикація', text: 'З індикатором рівня заряду'},
+                        {heading: 'Місткість зарядної станції, кВт/год', text: '0.644 кВт/год'},
+                        {heading: 'Тип акумуляторів', text: 'Літій-залізо-фосфатні (LiFePO4)'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Юрій',
+                            date: new Date(),
+                            text: 'Все працює добре',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 1112, new: 649}},
@@ -1123,14 +1702,32 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Зарядна станція Bluetti PowerOak', 
+                    engName: 'umb-rztk-power-powerOak-20000',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/bluetti front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/powerbanks/bluetti.webp', 
-                    raiting: 3,
-                    reviews: 18,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/powerbanks/bluetti front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/powerbanks/bluetti.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Bluetti Power Bank', text: 'Портативна електростанція Bluetti Power Bank (640Wh) це акумуляторний генератор потужністю 600 Вт (max peak до 1200 Вт) та ємністю 640 Вт/год, забезпечений сучасними системами безпеки та довговічності. Має систему захисту LIFEBMS, яка забезпечує множинний захист акумулятора, включаючи захист від перезаряджання, перерозряджання, перенапруги, перевантаження струмом, короткого замикання та захисту від високих температур. А завдяки наявності блоку живлення та від перепадів напруги.'},
+                    ],
                     info: [
-                        {heading: 'Вихідна потужність (загальна), Вт', text: '300'},
-                        {heading: 'Тип акумулятора', text: 'Літій-іонні (Li-ion)'},
+                        {heading: 'Місткість зарядної станції, кВт/год', text: '0.644 кВт/год'},
+                        {heading: 'Тип акумуляторів', text: 'Літій-залізо-фосфатні (LiFePO4)'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Андрій',
+                            date: new Date(),
+                            text: 'Не сподобався',
+                            rating: 2,
+                            likes: 0,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 14499, new: 13499}},
@@ -1146,11 +1743,34 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Портативна сонячна панель 100w Suaoki', 
+                    engName: 'portativna-sonyachna-panel-100w-suaoki',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/suaoki front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/powerbanks/suaoki.webp', 
-                    raiting: 5,
-                    reviews: 124,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/powerbanks/suaoki front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/powerbanks/suaoki.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Suaoki', text: 'Приємно мати можливість планувати заздалегідь, наприклад, коли ви вирушаєте до сімейного походу, який планували кілька місяців тому. Але іноді відключення електрики може вразити вас, коли ви найменше цього очікуєте'},
+                        {heading: 'Якість', text: 'Чи збираєтесь ви в похід або просто хочете підготуватися, генератор SUAOKI потужністю 1000 Вт-год допоможе вам забезпечити живлення ваших пристроїв практично у будь-якому сценарії. Використовуйте його зарядні розетки постійного струму, USB та змінного струму для живлення ноутбука, мобільного телефону, планшета або всього, що вам потрібно.'},
+                    ],
+                    info: [
+                        {heading: 'Місткість зарядної станції, кВт/год', text: '0.644 кВт/год'},
+                        {heading: 'Тип акумуляторів', text: 'Літій-залізо-фосфатні (LiFePO4)'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Женя',
+                            date: new Date(),
+                            text: 'Дорого, але працює добре',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 8499, new: 5896}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1172,13 +1792,33 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Електронна книга PocketBook 628 Touch', 
+                    engName: 'elektronna-kniga-pocketbook-628-touch',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/e-books/pocketBook front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/e-books/pocketBook.webp', 
-                    raiting: 5,
-                    reviews: 62,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/e-books/pocketBook front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/e-books/pocketBook.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Перевірений хіт із новими суперздатностями', text: 'Ридер має 6-дюймовий HD екран E Ink Carta з оптичними властивостями, максимально наближеними до друкованої книжкової сторінки. Регулюйте яскравість і температуру кольору монітора за допомогою розумної підсвітки SMARTlight.'},
+                    ],
                     info: [
-                        {heading: 'Індикація', text: 'З індикатором рівня заряду'},
+                        {heading: 'Діагональ дисплея', text: '6'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Кількість градацій сірого', text: '16'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Степан Бойчишин',
+                            date: new Date(),
+                            text: 'Легка. Зручно сидить в руці. Спочатку дивували тугі кнопки. Але потім зрозумів що вони такі щоб не натискати їх випадково.',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 5599}},
@@ -1194,13 +1834,33 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Електронна книга з підсвічуванням PocketBook 632', 
+                    engName: 'elektronna-kniga-z-pidsvichuvannyam-pocketbook-632',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/e-books/pocketBook touch front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/e-books/pocketBook touch.webp', 
-                    raiting: 4,
-                    reviews: 53,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/e-books/pocketBook touch front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/e-books/pocketBook touch.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Перевірений хіт PocketBook із новими суперздатностями', text: 'Ридер має 6-дюймовий HD екран E Ink Carta з оптичними властивостями, максимально наближеними до друкованої книжкової сторінки. Регулюйте яскравість і температуру кольору монітора за допомогою розумної підсвітки SMARTlight.'},
+                    ],
                     info: [
-                        {heading: 'Тип матриці', text: 'E Ink Carta'},
+                        {heading: 'Діагональ дисплея', text: '6'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Кількість градацій сірого', text: '16'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Віктор',
+                            date: new Date(),
+                            text: 'Якість, сподобався',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 7249}},
@@ -1216,13 +1876,33 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Електронна книга Onyx Boox Nova Air 2', 
+                    engName: 'elektronna-kniga-onyx-boox-nova-air-2',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/e-books/onyx front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/e-books/onyx.webp', 
-                    raiting: 5,
-                    reviews: 13,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/e-books/onyx front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/e-books/onyx.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Опис', text: 'Экран: 7.8" E Ink Carta Plus (1872x1404) / 300 ppi / 256 градаций серого / Функция SNOW Field / Встроенная память, ГБ: 32 / Беспроводные возможности: Wi-Fi (IEEE 802.11 b/g/n/ac) / Bluetooth 5.0 / Вес: 235 г'},
+                    ],
                     info: [
-                        {heading: 'Вага', text: '235'},
+                        {heading: 'Діагональ дисплея', text: '7'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Кількість градацій сірого', text: '16'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Андрій І.',
+                            date: new Date(),
+                            text: 'Не сподобався',
+                            rating: 2,
+                            likes: 0,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 21999, new: 14950}},
@@ -1244,14 +1924,35 @@ export const categories: CategoryItem[] = [
             id: 'c80016',  
             products: [
                 {
-                    title: 'MP3-плеєр Shanling M0 Pro Black', 
+                    title: 'MP3-плеєр Shanling M0 Pro Black',
+                    engName: 'mp3-pleyer-shanling-m0-pro-black', 
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/mp3/shanling front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/mp3/shanling.webp', 
-                    raiting: 4,
-                    reviews: 162,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/mp3/shanling front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/mp3/shanling.webp'},
+                    ],
+                    info_brief: 'Короткі характеристики. Сенсорний екран 1.54", 240х240 пікселів/2xES9219C/70 мВт @ 32 Ом/до 14.5 годин на 1 заряді/Bluetooth 5.0/Вага - 36.8 г/Підтримка форматів ISO, DSF, DFF, DTS, APE, FLAC , OGG, MP3, WAV, AIFF, DXD, AIF, MP2, M4A, AC3, DSD',
+                    info_full: [
+                        {heading: 'Shanling M0 Pro', text: 'портативний плеєр на чіпах ES9219C. M0 був найпопулярнішим продуктом, який Shanling колись випускали. Він переконав людей перейти зі своїх Sansa Clips на справжній Hi-Fi плеєр, його використовували як USB-транспорт для ЦАПів, які коштували в 10 разів дорожче, його навіть приклеювали до корпусу навушників, перетворюючи їх на DIY-установку "все в одному". І він заповнив порожній простір, що залишився після легендарного iPod Nano.'},
+                    ],
                     info: [
-                        {heading: 'Індикація', text: 'З індикатором рівня заряду'},
+                        {heading: 'Короткі характеристики', text: 'Сенсорний екран 1.54", 240х240'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Кількість градацій сірого', text: '16'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Анна.',
+                            date: new Date(),
+                            text: 'Плеєр працює добре',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 5957}},
@@ -1267,11 +1968,35 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'MP3 плеєр Mrobo A6 Bluetooth Hi-Fi', 
+                    engName: 'mp3-pleyer-mrobo-a6-bluetooth-hi-fi', 
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/mp3/mrobo front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/mp3/mrobo.webp', 
-                    raiting: 3,
-                    reviews: 26,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/mp3/mrobo front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/mp3/mrobo.webp'},
+                    ],
+                    info_brief: 'Короткі характеристики. Сенсорний екран 1.54", 240х240 пікселів/2xES9219C/70 мВт @ 32 Ом/до 14.5 годин на 1 заряді/Bluetooth 5.0/Вага - 36.8 г/Підтримка форматів ISO, DSF, DFF, DTS, APE, FLAC , OGG, MP3, WAV, AIFF, DXD, AIF, MP2, M4A, AC3, DSD',
+                    info_full: [
+                        {heading: 'Mrobo A6', text: 'портативний плеєр на чіпах ES9219C. M0 був найпопулярнішим продуктом, який Mrobo колись випускали. Він переконав людей перейти зі своїх Sansa Clips на справжній Hi-Fi плеєр, його використовували як USB-транспорт для ЦАПів, які коштували в 10 разів дорожче, його навіть приклеювали до корпусу навушників, перетворюючи їх на DIY-установку "все в одному". І він заповнив порожній простір, що залишився після легендарного iPod Nano.'},
+                    ],
+                    info: [
+                        {heading: 'Короткі характеристики', text: 'Сенсорний екран 1.54", 240х240'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Кількість градацій сірого', text: '16'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Катерина',
+                            date: new Date(),
+                            text: 'Зламався через тиждень',
+                            rating: 1,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 2000, new: 1357}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1293,13 +2018,34 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Zoom H2n', 
+                    engName: 'zoom-h2n', 
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/recorders/zoom front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/recorders/zoom.webp', 
-                    raiting: 5,
-                    reviews: 36,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/recorders/zoom front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/recorders/zoom.webp'},
+                    ],
+                    info_brief: 'WAV 16/24-bit, 44.1/48/96 кГц MP3 48/56/64/80/96/112/128/160/192/224/256/320 кб/сек VBR, 44.1 кГц',
+                    info_full: [
+                        {heading: 'Опис', text: 'П`ять вбудованих конденсаторних мікрофонів «студійної якості», завдяки чому можна вибирати між різними діаграмами спрямованості та навіть використовувати диктофон як мікрофон-гармату. Окрім того, пристрій обладнаний 1.8-дюймовим екраном, входом для зовнішнього мікрофона, лінійним входом і виходом, вбудованим динаміком та інтерфейсом USB 2.0, а час автономної роботи від пари AA-акумуляторів становить 20 годин. Як носій інформації використовуються карти пам`яті SD/SDHC. Окрім того, Zoom H2n можна використовувати з будь-яким комп`ютером як USB-мікрофон.'},
+                    ],
                     info: [
-                        {heading: 'Пам`ять', text: 'Немає вбудованої пам`яті'},
+                        {heading: 'Вид', text: 'Диктофони'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Кількість градацій сірого', text: '16'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Віталій',
+                            date: new Date(),
+                            text: 'Очень хороший рекердер! Жена довольна.',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 8424, new: 6655}},
@@ -1315,11 +2061,35 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Рекордер Tascam DR-10CS', 
+                    engName: 'tascam-dr10cs', 
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/recorders/tascan front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/recorders/tascan.webp', 
-                    raiting: 3,
-                    reviews: 26,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/recorders/tascan front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/recorders/tascan.webp'},
+                    ],
+                    info_brief: 'WAV 16/24-bit, 44.1/48/96 кГц MP3 48/56/64/80/96/112/128/160/192/224/256/320 кб/сек VBR, 44.1 кГц',
+                    info_full: [
+                        {heading: 'Tascam', text: 'лінійний поясний рекордер для запису з петличного мікрофона. Модифікація DR-10CS призначена для роботи з мікрофонами Sennheiser. У рекордера є як вхід, так і вихід на 3.5 мм mini-Jack: отже, він може бути використаний автономно або з бездротовим передавачем.'},
+                    ],
+                    info: [
+                        {heading: 'Вид', text: 'Диктофони'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Кількість градацій сірого', text: '16'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Арсеній',
+                            date: new Date(),
+                            text: 'Працює без зауважень',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 10650}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1341,11 +2111,35 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Док-станція HP USB-C G5 Essential Dock', 
+                    engName: 'dok-stantsiya-hp-usb-c-g5-essential-dock', 
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/doc-stations/hp front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/electronics/doc-stations/hp.webp', 
-                    raiting: 4,
-                    reviews: 1,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/doc-stations/hp front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/doc-stations/hp.webp'},
+                    ],
+                    info_brief: 'WAV 16/24-bit, 44.1/48/96 кГц MP3 48/56/64/80/96/112/128/160/192/224/256/320 кб/сек VBR, 44.1 кГц',
+                    info_full: [
+                        {heading: 'HP USB-C G5', text: 'Приступайте к работе, просто подключив свой ноутбук с помощью всего одного кабеля через порт USB-C к мониторам, к другим устройствам, проводным сетям. Эта док-станция совместима с ноутбуками как HP, так и с ноутбуками других производителей.'},
+                    ],
+                    info: [
+                        {heading: 'Підтримувана ОС', text: 'Windows 10'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Кількість градацій сірого', text: '16'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Артем',
+                            date: new Date(),
+                            text: 'Можливо, товар і хороший, але я не можу їм користуватись, бо він прийшов з британською вилкою',
+                            rating: 2,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 10424, new: 9159}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1360,10 +2154,33 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Док-станція Acer 12в1 Type C dongle', 
+                    engName: 'dok-stantsiya-acer-12v1-type-c-dongle', 
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/electronics/doc-stations/acer front.webp', 
-                    raiting: 4,
-                    reviews: 26,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/doc-stations/acer front.webp'},
+                    ],
+                    info_brief: 'WAV 16/24-bit, 44.1/48/96 кГц MP3 48/56/64/80/96/112/128/160/192/224/256/320 кб/сек VBR, 44.1 кГц',
+                    info_full: [
+                        {heading: 'Acer 12в1', text: 'Приступайте к работе, просто подключив свой ноутбук с помощью всего одного кабеля через порт USB-C к мониторам, к другим устройствам, проводным сетям. Эта док-станция совместима с ноутбуками как HP, так и с ноутбуками других производителей.'},
+                    ],
+                    info: [
+                        {heading: 'Підтримувана ОС', text: 'Windows 10'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Кількість градацій сірого', text: '16'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Людмила',
+                            date: new Date(),
+                            text: 'Товар не сподобався',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 3999, new: 3399}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1386,10 +2203,41 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Xiaomi TV Stick 4K ', 
+                    engName: 'dok-stantsiya-acer-12v1-type-c-dongle', 
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/tv/dvd-players/xiaomi front.webp', 
-                    raiting: 4,
-                    reviews: 42,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/tv/dvd-players/xiaomi front.webp'},
+                    ],
+                    info_brief: 'WAV 16/24-bit, 44.1/48/96 кГц MP3 48/56/64/80/96/112/128/160/192/224/256/320 кб/сек VBR, 44.1 кГц',
+                    info_full: [
+                        {heading: 'Xiaomi', text: 'Смарт TV приставка Xiaomi TV Stick 4K оснащена 2 ГБ оперативної пам`яті, підтримкою Bluetooth 5.0 та оновленим процесором Amlogic S905Y4 та графічним процесором GPU Arm Mali-G31 MP2. Xiaomi TV Stick 4K підключається до телевізора через порт HDMI та має роз`єм для кабелю живлення micro-USB. Працює на платформі Android TV 11. Переваги нової TV приставки від Xiaomi складаються в компактних розмірах, зручній операційній системі, сертифікації Google, ліцензійному Netflix та підтримці голосового керування.'},
+                    ],
+                    info: [
+                        {heading: 'Підтримувані формати', text: 'Відео декодер: AV1, VP9, H.265, H.264, MPEG-2, MPEG-1'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Кількість градацій сірого', text: '16'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Вадим Гром',
+                            date: new Date(),
+                            text: 'Все круто, телевізором стало набагато приємніше користуватись',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Олег',
+                            date: new Date(),
+                            text: 'Телік ожив!',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 2499, new: 1999}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1404,10 +2252,42 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Apple TV 4K 64GB', 
+                    engName: 'apple-tv-4k-64gb', 
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/tv/dvd-players/apple.webp', 
-                    raiting: 5,
-                    reviews: 6,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/tv/dvd-players/apple.webp'},
+                    ],
+                    info_brief: 'WAV 16/24-bit, 44.1/48/96 кГц MP3 48/56/64/80/96/112/128/160/192/224/256/320 кб/сек VBR, 44.1 кГц',
+                    info_full: [
+                        {heading: 'Ви не впізнаєте свій телевізор', text: 'Новий Apple TV 4K об`єднує найкращий телевізійний контент із гігантським потенціалом пристроїв і сервісів Apple. Тепер ваша вітальня по-справжньому зміниться.'},
+                        {heading: 'Ціла коробка приголомшливих можливостей для вашого телевізора', text: 'Картинка та звук, як у реальному житті. Apple TV 4K з Dolby Vision зробить усі ваші розваги незабутніми. А якщо ваша звукова система підтримує стандарт Dolby Atmos, Apple TV 4K перетворить ваш будинок у справжній кінотеатр і ви зможете повністю зануритися в об`ємний звук.'},
+                    ],
+                    info: [
+                        {heading: 'Підтримувані формати', text: 'Apple TV+'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Кількість градацій сірого', text: '16'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Петро',
+                            date: new Date(),
+                            text: 'Усе супер - значно швидший ніж версія 2017 року, більше памяті для додатків',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Андрій',
+                            date: new Date(),
+                            text: 'В основному всі переваги - результат роботи всієї екосистеми Apple, а не самої приставки. Думаю, якщо використовувати її окремо значну їх частину буде втрачено. А так, підключив: вона всі налаштування взяла з телефона і працює швидко і без проблем.',
+                            rating: 3,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 7099}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1429,10 +2309,33 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Цифровий супутниковий приймач XTRA BOX STB', 
+                    engName: 'tsifrovij-suputnikovij-prijmach-xtra-box-stb', 
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/tv/recivers/xtra front.webp', 
-                    raiting: 4,
-                    reviews: 12,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/tv/recivers/xtra front.webp'},
+                    ],
+                    info_brief: 'WAV 16/24-bit, 44.1/48/96 кГц MP3 48/56/64/80/96/112/128/160/192/224/256/320 кб/сек VBR, 44.1 кГц',
+                    info_full: [
+                        {heading: 'Тюнер STRONG SRT-7601', text: 'призначений для перегляду безкоштовних каналів на супутниковій антені (супутники: Амос, Астра, Хотбірд). Тюнер нового покоління MPEG4. '},
+                    ],
+                    info: [
+                        {heading: 'Стандарти цифрового ТБ', text: 'DVB-S'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Кількість градацій сірого', text: '16'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Петро',
+                            date: new Date(),
+                            text: 'Працює чітко',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 499, new: 299}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1447,10 +2350,32 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Комплект Т2(ТВ-тюнер DVB-T2 + антена', 
+                    engName: 'komplekt-t2tv-tyuner-dvb-t2---antena', 
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/tv/dvd-players/apple.webp', 
-                    raiting: 5,
-                    reviews: 326,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/apple.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'DVB-T2', text: 'Абсолютно будь-який Т2 ресивер необхідно доповнити кімнатною антеною. Наш комплект-це вже готове рішення!'},
+                    ],
+                    info: [
+                        {heading: 'Стандарти цифрового ТБ', text: 'DVB-S'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Кількість градацій сірого', text: '16'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Максим Гармата',
+                            date: new Date(),
+                            text: 'Все добре',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 799}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1472,10 +2397,32 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Цифровий тюнер DVB-Т2 MEGOGO', 
+                    engName: 'tsifrovij-tyuner-dvb-t2-megogo',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/tv/tuners/dvb front.webp', 
-                    raiting: 4,
-                    reviews: 15,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/tv/tuners/dvb front.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'DVB-T2', text: 'Абсолютно будь-який Т2 ресивер необхідно доповнити кімнатною антеною. Наш комплект-це вже готове рішення!'},
+                    ],
+                    info: [
+                        {heading: 'Стандарти цифрового ТБ', text: 'DVB-S'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Кількість градацій сірого', text: '16'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Геннадій',
+                            date: new Date(),
+                            text: 'Працює через раз.',
+                            rating: 3,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 499, new: 299}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1497,10 +2444,32 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'УМБ Trust Primo ECO 20000 mAh', 
+                    engName: 'umb-trust-primo-eco-20000-mah',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/universal-bateries/trimo front.webp', 
-                    raiting: 4,
-                    reviews: 15,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/powerbanks/universal-bateries/trimo front.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Для акумуляторів та довкілля', text: 'Блок живлення Primo ECO ємністю 20000 мА*год — створений з урахуванням часу автономної роботи від акумулятора та захисту довкілля - виготовлений з повторно перероблених матеріалів та забезпечує до 92 додаткових годин роботи без підзарядки.'},
+                        {heading: '2 в 1', text: 'Одночасно можна заряджати 3 телефони або планшета - через 2 порти USB-A та 1 порт USB-C, щоб завжди знаходитись на зв`язку й бути готовим до роботи (або гри). Зарядіть саму зовнішню батарею за допомогою кабелю microUSB (в комплекті) або USB-C.'},
+                    ],
+                    info: [
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Кількість градацій сірого', text: '16'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Алина',
+                            date: new Date(),
+                            text: 'К сожалению товар оказался бракованным...вздутая батарея. Надеюсь со мной свяжутся, чтобы сделать возврат!',
+                            rating: 2,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 1299, new: 499}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1515,10 +2484,41 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Xiaomi Mi Power Bank 3 20000 mAh', 
+                    engName: 'xiaomi-mi-power-bank-3-20000-mah',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/universal-bateries/xiaomi front.webp', 
-                    raiting: 5,
-                    reviews: 1,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/xiaomi front.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Xiaomi Mi Power Bank', text: 'це портативна батарея, яка допоможе зарядити ваш смартфон або планшет, якщо ви опинитеся далеко від розетки. Завдяки компактному розміру її зручно брати із собою в поїздки та використовувати в разі потреби.'},
+                        {heading: 'Потужність', text: 'Зовнішній акумулятор може похвалитися потужним обсягом пам`яті на 20 000 мА*год, якого вистачить для роботи, повсякденного життя, відпустки й не тільки. Завдяки величезній ємності та 3 інтерфейсним портам (1xUSB-C, 2xUSB-A), Xiaomi Mi Power Bank 3 здатний заряджати декілька пристроїв одночасно.'},
+                    ],
+                    info: [
+                        {heading: 'Ємність батареї мА*год', text: '20000'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Кількість градацій сірого', text: '16'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Сергій К.',
+                            date: new Date(),
+                            text: 'Провівши свій тест зарядив три різні смартфони без нарікань зарядка успішна і швидка.Заряджав повербанк зарядкою від Нокіа 8 . Повністю за 7 годин.Моя думка не чим не поступається супер дорогими повербанками . Думаю що можливо комусь і попали браковані але скажу прямо не гірше за Samsung чи другі фірми в яких в тричі ціна вища.',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Елена',
+                            date: new Date(),
+                            text: 'Отличный повербанк',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 2199, new: 799}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1540,11 +2540,35 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Зарядна станція VigorPool Captain 1200W', 
+                    engName: 'zaryadna-stantsiya-vigorpool-captain-1200w',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/power-stations/vigorpool front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/powerbanks/power-stations/vigorpool.webp',
-                    raiting: 5,
-                    reviews: 8,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/powerbanks/power-stations/vigorpool front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/powerbanks/power-stations/vigorpool.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Місткість зарядної станції, кВт/год', text: '1.28 кВт/год'},
+                        {heading: 'Потужність', text: 'Зовнішній акумулятор може похвалитися потужним обсягом пам`яті на 20 000 мА*год, якого вистачить для роботи, повсякденного життя, відпустки й не тільки. Завдяки величезній ємності та 3 інтерфейсним портам (1xUSB-C, 2xUSB-A), Xiaomi Mi Power Bank 3 здатний заряджати декілька пристроїв одночасно.'},
+                    ],
+                    info: [
+                        {heading: 'Ємність батареї мА*год', text: '22000'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Кількість градацій сірого', text: '16'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Андрій',
+                            date: new Date(),
+                            text: 'Станція чудова, але є неприємний "сюрприз": потроху розряджає батарею (приблизно 5-7% на добу) коли працює від мережі. Якщо не увімкнути "захист батареї" в додатку, то буде постійно намагатися її дозарядити. Тому режим UPS тут під великим питанням, адже в теорії може вплинути на довговічність батареї, про що також є згадка в інструкції.',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 55299, new: 54499}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1559,11 +2583,34 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Зарядна станція ECTIVE BlackBox-5 500 W', 
+                    engName: 'zaryadna-stantsiya-ective-blackbox-5-500-w',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/power-stations/ective front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/powerbanks/power-stations/ective.webp',
-                    raiting: 4,
-                    reviews: 108,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/ective front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/ective.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'ECTIVE BlackBox', text: '512Wh ємності, 500W сумарної потужності, 2 розетки на 230V, EC5 для запуску двигуна, 2 роз`єми DC5521 та USB-C/USB-A порти відкривають безмежні можливості підключення електроприладів на природі, рибалці чи полюванні.'},
+                    ],
+                    info: [
+                        {heading: 'Ємність батареї мА*год', text: '24000'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Кількість градацій сірого', text: '16'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Сергей',
+                            date: new Date(),
+                            text: 'Необходимо было питать роутер, Gpon терминал и два ноутбука (общая нагрузка примерно 50-60 Ватт) в течение 6 часов при отключении света и возможность зарядить станцию за три часа при его появлении (именно такие графики отключения света действовали в Одессе во время блэкаута).',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 30299, new: 27899}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1585,11 +2632,34 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Сонячна складна панель FlexSolar 20W', 
+                    engName: 'zaryadna-stantsiya-ective-blackbox-5-500-w',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/solar-panels/flexsolar front.webp', 
                     image2: '../assets/telefony-tv-i-ehlektronika/powerbanks/solar-panels/flexsolar.webp', 
-                    raiting: 5,
-                    reviews: 38,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/powerbanks/solar-panels/flexsolar front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/powerbanks/solar-panels/flexsolar.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Виходи USB QC 3.0 та DC.', text: 'Сонячна панель FLEXSOLAR має 2 вихідні порти: 1*USB QC3.0 (5 В/3 А, 9 В/2 А, 12 В/1,5 А макс.), і 1 порт для заряджання постійного струму (19 В/1 ,1 А макс.), USB-порт може швидко заряджати ваш смартфон, планшети, iPad, GPS, USB-вентилятор, камеру або інші USB-пристрої. А вихід постійного струму може заряджати пристрої постійного струму 19 В.'},
+                    ],
+                    info: [
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Кількість градацій сірого', text: '16'},
+                        {heading: 'Вихідна потужність (загальна), Вт', text: '600'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Виктор',
+                            date: new Date(),
+                            text: 'Все сподобалося',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 3199}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1604,10 +2674,30 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Сонячна батарея Risen 410 Вт 24 В', 
+                    engName: 'sonyachna-batareya-risen-410-vt-24-v',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/solar-panels/risen front.webp', 
-                    raiting: 3,
-                    reviews: 1,
+                    images: [
+                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/risen front.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Основні переваги сонячних батарей Risen:', text: 'найменший у галузі температурний коефіцієнт – 0,34%; торгова марка входить до списку  Tier 1  із незалежним сертифікованим сучасним автоматизованим виробництвом; висока стійкість до деградації PID'},
+                    ],
+                    info: [
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Дмитро',
+                            date: new Date(),
+                            text: 'Якісний товар, прийшов швидко.',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 5899}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1665,11 +2755,45 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Ноутбук Acer Aspire 7 A715-42G-R3EZ', 
+                    engName: 'noutbuk-acer-aspire-7-a715-42g-r3ez',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/notebooks/acer front.webp', 
                     image2: '../assets/computers-notebooks/notebooks/acer.webp', 
-                    raiting: 4,
-                    reviews: 216,
+                    images: [
+                        {url: '../assets/computers-notebooks/notebooks/acer front.webp'},
+                        {url: '../assets/computers-notebooks/notebooks/acer.webp'},
+                    ],
+                    info_brief: 'Екран 15.6" IPS (1920x1080) Full HD, матовий / AMD Ryzen 5 5500U (2.1 - 4.0 ГГц) / RAM 16 ГБ / SSD 512 ГБ / nVidia GeForce GTX 1650, 4 ГБ / без ОД / LAN / Wi-Fi / Bluetooth / веб-камера / без ОС / 2.15 кг / чорний',
+                    info_full: [
+                        {heading: 'Технології', text: 'Широкий вибір портів дає змогу підключати різноманітну периферію, а порти USB Type-C і USB 3.2 забезпечують максимальну швидкість та сумісність із найсучаснішими пристроями. За допомогою одного з портів USB можна заряджати інші пристрої від ноутбука у вимкненому стані. Порт HDMI забезпечує підключення зовнішніх моніторів і проекторів. Зручне розташування портів для комфортної роботи.'},
+                        {heading: 'Звук', text: 'Чіткий і потужний звук завдяки двом динамікам і технології Acer TrueHarmony.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'Aspire 7'},
+                        {heading: 'Діагональ екрана', text: '15.6" (1920x1080) Full HD'},
+                        {heading: 'Тип екрана', text: 'IPS'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Дмитро',
+                            date: new Date(),
+                            text: 'Отличная рабочая машинка,спасибо',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Ярослав',
+                            date: new Date(),
+                            text: 'Очень быстро и надёжно доставили доволен',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 34999, new: 28999}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1687,11 +2811,45 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Ноутбук HP Laptop 15s-fq5000ua', 
+                    engName: 'noutbuk-hp-laptop-15s-fq5000ua',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/notebooks/hp front.webp', 
                     image2: '../assets/computers-notebooks/notebooks/hp.webp', 
-                    raiting: 5,
-                    reviews: 9,
+                    images: [
+                        {url: '../assets/computers-notebooks/notebooks/hp front.webp'},
+                        {url: '../assets/computers-notebooks/notebooks/hp.webp'},
+                    ],
+                    info_brief: 'Екран 15.6" IPS (1920x1080) Full HD, матовий / AMD Ryzen 5 5500U (2.1 - 4.0 ГГц) / RAM 16 ГБ / SSD 512 ГБ / nVidia GeForce GTX 1650, 4 ГБ / без ОД / LAN / Wi-Fi / Bluetooth / веб-камера / без ОС / 2.15 кг / чорний',
+                    info_full: [
+                        {heading: 'Технології', text: 'Широкий вибір портів дає змогу підключати різноманітну периферію, а порти USB Type-C і USB 3.2 забезпечують максимальну швидкість та сумісність із найсучаснішими пристроями. За допомогою одного з портів USB можна заряджати інші пристрої від ноутбука у вимкненому стані. Порт HDMI забезпечує підключення зовнішніх моніторів і проекторів. Зручне розташування портів для комфортної роботи.'},
+                        {heading: 'Звук', text: 'Чіткий і потужний звук завдяки двом динамікам і технології Acer TrueHarmony.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'HP'},
+                        {heading: 'Діагональ екрана', text: '15.6" (1920x1080) Full HD'},
+                        {heading: 'Тип екрана', text: 'IPS'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Дмитро',
+                            date: new Date(),
+                            text: 'Отличная рабочая машинка,спасибо',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Ярослав',
+                            date: new Date(),
+                            text: 'Очень быстро и надёжно доставили доволен',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 22999, new: 20999}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1709,11 +2867,45 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Ноутбук Lenovo IdeaPad Gaming 3 15IAH7', 
+                    engName: 'noutbuk-lenovo-ideapad-gaming-3-15iah7',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/notebooks/lenovo front.webp', 
                     image2: '../assets/computers-notebooks/notebooks/lenovo.webp', 
-                    raiting: 3,
-                    reviews: 41,
+                    images: [
+                        {url: '../assets/computers-notebooks/notebooks/lenovo front.webp'},
+                        {url: '../assets/computers-notebooks/notebooks/lenovo.webp'},
+                    ],
+                    info_brief: 'Екран 15.6" IPS (1920x1080) Full HD, матовий / AMD Ryzen 5 5500U (2.1 - 4.0 ГГц) / RAM 16 ГБ / SSD 512 ГБ / nVidia GeForce GTX 1650, 4 ГБ / без ОД / LAN / Wi-Fi / Bluetooth / веб-камера / без ОС / 2.15 кг / чорний',
+                    info_full: [
+                        {heading: 'Технології', text: 'Широкий вибір портів дає змогу підключати різноманітну периферію, а порти USB Type-C і USB 3.2 забезпечують максимальну швидкість та сумісність із найсучаснішими пристроями. За допомогою одного з портів USB можна заряджати інші пристрої від ноутбука у вимкненому стані. Порт HDMI забезпечує підключення зовнішніх моніторів і проекторів. Зручне розташування портів для комфортної роботи.'},
+                        {heading: 'Звук', text: 'Чіткий і потужний звук завдяки двом динамікам і технології Acer TrueHarmony.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'Lenovo'},
+                        {heading: 'Діагональ екрана', text: '15.6" (1920x1080) Full HD'},
+                        {heading: 'Тип екрана', text: 'IPS'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Дмитро',
+                            date: new Date(),
+                            text: 'Отличная рабочая машинка,спасибо',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Ярослав',
+                            date: new Date(),
+                            text: 'Очень быстро и надёжно доставили доволен',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 44999, new: 37999}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1731,11 +2923,45 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Ноутбук Apple MacBook Air 13', 
+                    engName: 'noutbuk-apple-macbook-air-13',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/notebooks/apple front.webp', 
                     image2: '../assets/computers-notebooks/notebooks/apple.webp', 
-                    raiting: 5,
-                    reviews: 432,
+                    images: [
+                        {url: '../assets/computers-notebooks/notebooks/apple front.webp'},
+                        {url: '../assets/computers-notebooks/notebooks/apple.webp'},
+                    ],
+                    info_brief: 'Екран 15.6" IPS (1920x1080) Full HD, матовий / AMD Ryzen 5 5500U (2.1 - 4.0 ГГц) / RAM 16 ГБ / SSD 512 ГБ / nVidia GeForce GTX 1650, 4 ГБ / без ОД / LAN / Wi-Fi / Bluetooth / веб-камера / без ОС / 2.15 кг / чорний',
+                    info_full: [
+                        {heading: 'Технології', text: 'Широкий вибір портів дає змогу підключати різноманітну периферію, а порти USB Type-C і USB 3.2 забезпечують максимальну швидкість та сумісність із найсучаснішими пристроями. За допомогою одного з портів USB можна заряджати інші пристрої від ноутбука у вимкненому стані. Порт HDMI забезпечує підключення зовнішніх моніторів і проекторів. Зручне розташування портів для комфортної роботи.'},
+                        {heading: 'Звук', text: 'Чіткий і потужний звук завдяки двом динамікам і технології Acer TrueHarmony.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'Apple'},
+                        {heading: 'Діагональ екрана', text: '15.6" (1920x1080) Full HD'},
+                        {heading: 'Тип екрана', text: 'IPS'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Дмитро',
+                            date: new Date(),
+                            text: 'Отличная рабочая машинка,спасибо',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Ярослав',
+                            date: new Date(),
+                            text: 'Очень быстро и надёжно доставили доволен',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 47999, new: 42999}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1753,11 +2979,45 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Ноутбук ASUS TUF Gaming F1', 
+                    engName: 'noutbuk-asus-tuf-gaming-f1',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/notebooks/asus f1 front.webp', 
                     image2: '../assets/computers-notebooks/notebooks/asus f1.webp', 
-                    raiting: 3,
-                    reviews: 46,
+                    images: [
+                        {url: '../assets/computers-notebooks/notebooks/asus f1 front.webp'},
+                        {url: '../assets/computers-notebooks/notebooks/asus f1.webp'},
+                    ],
+                    info_brief: 'Екран 15.6" IPS (1920x1080) Full HD, матовий / AMD Ryzen 5 5500U (2.1 - 4.0 ГГц) / RAM 16 ГБ / SSD 512 ГБ / nVidia GeForce GTX 1650, 4 ГБ / без ОД / LAN / Wi-Fi / Bluetooth / веб-камера / без ОС / 2.15 кг / чорний',
+                    info_full: [
+                        {heading: 'Технології', text: 'Широкий вибір портів дає змогу підключати різноманітну периферію, а порти USB Type-C і USB 3.2 забезпечують максимальну швидкість та сумісність із найсучаснішими пристроями. За допомогою одного з портів USB можна заряджати інші пристрої від ноутбука у вимкненому стані. Порт HDMI забезпечує підключення зовнішніх моніторів і проекторів. Зручне розташування портів для комфортної роботи.'},
+                        {heading: 'Звук', text: 'Чіткий і потужний звук завдяки двом динамікам і технології Acer TrueHarmony.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'ASUS'},
+                        {heading: 'Діагональ екрана', text: '15.6" (1920x1080) Full HD'},
+                        {heading: 'Тип екрана', text: 'IPS'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Дмитро',
+                            date: new Date(),
+                            text: 'Отличная рабочая машинка,спасибо',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Ярослав',
+                            date: new Date(),
+                            text: 'Очень быстро и надёжно доставили доволен',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 31999, new: 29999}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1775,11 +3035,45 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Ноутбук Lenovo IdeaPad 5 15IAL7', 
+                    engName: 'noutbuk-lenovo-ideapad-5-15ial7',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/notebooks/lenono 5 front.webp', 
                     image2: '../assets/computers-notebooks/notebooks/lenono 5.webp', 
-                    raiting: 5,
-                    reviews: 103,
+                    images: [
+                        {url: '../assets/computers-notebooks/notebooks/lenono 5 front.webp'},
+                        {url: '../assets/computers-notebooks/notebooks/lenono 5.webp'},
+                    ],
+                    info_brief: 'Екран 15.6" IPS (1920x1080) Full HD, матовий / AMD Ryzen 5 5500U (2.1 - 4.0 ГГц) / RAM 16 ГБ / SSD 512 ГБ / nVidia GeForce GTX 1650, 4 ГБ / без ОД / LAN / Wi-Fi / Bluetooth / веб-камера / без ОС / 2.15 кг / чорний',
+                    info_full: [
+                        {heading: 'Технології', text: 'Широкий вибір портів дає змогу підключати різноманітну периферію, а порти USB Type-C і USB 3.2 забезпечують максимальну швидкість та сумісність із найсучаснішими пристроями. За допомогою одного з портів USB можна заряджати інші пристрої від ноутбука у вимкненому стані. Порт HDMI забезпечує підключення зовнішніх моніторів і проекторів. Зручне розташування портів для комфортної роботи.'},
+                        {heading: 'Звук', text: 'Чіткий і потужний звук завдяки двом динамікам і технології Acer TrueHarmony.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'Lenovo'},
+                        {heading: 'Діагональ екрана', text: '15.6" (1920x1080) Full HD'},
+                        {heading: 'Тип екрана', text: 'IPS'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Дмитро',
+                            date: new Date(),
+                            text: 'Отличная рабочая машинка,спасибо',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Ярослав',
+                            date: new Date(),
+                            text: 'Очень быстро и надёжно доставили доволен',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 33500, new: 31499}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1797,11 +3091,45 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Ноутбук Acer Aspire 5 A515-56G-59YJ', 
+                    engName: 'noutbuk-acer-aspire-5-a515-56g-59yj',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/notebooks/acer 5 front.webp', 
                     image2: '../assets/computers-notebooks/notebooks/acer 5.webp', 
-                    raiting: 4,
-                    reviews: 10,
+                    images: [
+                        {url: '../assets/computers-notebooks/notebooks/lenono 5 front.webp'},
+                        {url: '../assets/computers-notebooks/notebooks/lenono 5.webp'},
+                    ],
+                    info_brief: 'Екран 15.6" IPS (1920x1080) Full HD, матовий / AMD Ryzen 5 5500U (2.1 - 4.0 ГГц) / RAM 16 ГБ / SSD 512 ГБ / nVidia GeForce GTX 1650, 4 ГБ / без ОД / LAN / Wi-Fi / Bluetooth / веб-камера / без ОС / 2.15 кг / чорний',
+                    info_full: [
+                        {heading: 'Технології', text: 'Широкий вибір портів дає змогу підключати різноманітну периферію, а порти USB Type-C і USB 3.2 забезпечують максимальну швидкість та сумісність із найсучаснішими пристроями. За допомогою одного з портів USB можна заряджати інші пристрої від ноутбука у вимкненому стані. Порт HDMI забезпечує підключення зовнішніх моніторів і проекторів. Зручне розташування портів для комфортної роботи.'},
+                        {heading: 'Звук', text: 'Чіткий і потужний звук завдяки двом динамікам і технології Acer TrueHarmony.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'Lenovo'},
+                        {heading: 'Діагональ екрана', text: '15.6" (1920x1080) Full HD'},
+                        {heading: 'Тип екрана', text: 'IPS'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Дмитро',
+                            date: new Date(),
+                            text: 'Отличная рабочая машинка,спасибо',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Ярослав',
+                            date: new Date(),
+                            text: 'Очень быстро и надёжно доставили доволен',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 25500, new: 24499}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1819,11 +3147,45 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Ноутбук Acer Nitro 5 AN515-57-53P6', 
+                    engName: 'noutbuk-acer-nitro-5-an515-57-53p6',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/notebooks/acer nitro front.webp', 
                     image2: '../assets/computers-notebooks/notebooks/acer nitro.webp', 
-                    raiting: 5,
-                    reviews: 15,
+                    images: [
+                        {url: '../assets/computers-notebooks/notebooks/acer nitro front.webp'},
+                        {url: '../assets/computers-notebooks/notebooks/acer nitro.webp'},
+                    ],
+                    info_brief: 'Екран 15.6" IPS (1920x1080) Full HD, матовий / AMD Ryzen 5 5500U (2.1 - 4.0 ГГц) / RAM 16 ГБ / SSD 512 ГБ / nVidia GeForce GTX 1650, 4 ГБ / без ОД / LAN / Wi-Fi / Bluetooth / веб-камера / без ОС / 2.15 кг / чорний',
+                    info_full: [
+                        {heading: 'Технології', text: 'Широкий вибір портів дає змогу підключати різноманітну периферію, а порти USB Type-C і USB 3.2 забезпечують максимальну швидкість та сумісність із найсучаснішими пристроями. За допомогою одного з портів USB можна заряджати інші пристрої від ноутбука у вимкненому стані. Порт HDMI забезпечує підключення зовнішніх моніторів і проекторів. Зручне розташування портів для комфортної роботи.'},
+                        {heading: 'Звук', text: 'Чіткий і потужний звук завдяки двом динамікам і технології Acer TrueHarmony.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'Acer'},
+                        {heading: 'Діагональ екрана', text: '15.6" (1920x1080) Full HD'},
+                        {heading: 'Тип екрана', text: 'IPS'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Дмитро',
+                            date: new Date(),
+                            text: 'Отличная рабочая машинка,спасибо',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Ярослав',
+                            date: new Date(),
+                            text: 'Очень быстро и надёжно доставили доволен',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 39500, new: 37499}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1862,10 +3224,50 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Оперативна пам`ять Kingston Fury DDR4-3200', 
+                    engName: 'operativna-pamyat-kingston-fury-ddr4-3200',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/memory.webp', 
-                    raiting: 5,
-                    reviews: 950,
+                    images: [
+                        {url: '../assets/computers-notebooks/complects/memory.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Преимущества:', text: 'Невероятно надежные и долговечные модули оперативной памяти с превосходными показателями рабочей частоты и эффективными схемами таймингов, способны поднять игровую или рабочую систему на новый уровень, обеспечивая существенный прирост производительности в играх, редактировании видео и рендеров, решении других задач с высокими системными требованиями — надежный и мощный апгрейд для систем на базе процессоров Intel или AMD.'},
+                        {heading: 'Звук', text: 'Чіткий і потужний звук завдяки двом динамікам і технології Acer TrueHarmony.'},
+                    ],
+                    info: [
+                        {heading: 'Обсяг пам`яті', text: '16ГБ'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'Kingston'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Дмитро',
+                            date: new Date(),
+                            text: 'На msi плате в связке ryzen 3600, без проблем взяла 3200 через xmp профиль',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Ярослав',
+                            date: new Date(),
+                            text: 'добре працює, прикольно виглядає',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Артем',
+                            date: new Date(),
+                            text: 'Працює добре',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 1999, new: 1899}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1880,10 +3282,49 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Жорсткий диск Transcend StoreJet', 
+                    engName: 'zhorstkij-disk-transcend-storejet',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/disc.webp', 
-                    raiting: 3,
-                    reviews: 50,
+                    images: [
+                        {url: '../assets/computers-notebooks/complects/disc.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'StoreJet', text: 'Портативний пристрій StoreJet 25M3S від компанії Transcend поєднує в собі переваги нагородженої ударостійкої серії зовнішніх жорстких дисків StoreJet М і новітньої технології надшвидкісного передавання інформації USB 3.1 Gen 1, що забезпечить максимальну швидкість передавання даних і надзвичайну ударостійкість пристрою для користувача. Крім усіх перерахованих вище переваг, StoreJet 25M3S має кнопку миттєвого резервного копіювання. Тепер користувач може виконати миттєве резервне копіювання, синхронізацію й копіювання великих файлів без втрати часу.'},
+                    ],
+                    info: [
+                        {heading: 'Обсяг пам`яті', text: '16ГБ'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Дмитро',
+                            date: new Date(),
+                            text: 'На msi плате в связке ryzen 3600, без проблем взяла 3200 через xmp профиль',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Ярослав',
+                            date: new Date(),
+                            text: 'добре працює, прикольно виглядає',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Артем',
+                            date: new Date(),
+                            text: 'Працює добре',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 2999, new: 2399}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1898,13 +3339,52 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Процесор AMD Ryzen 5 5600', 
+                    engName: 'protsesor-amd-ryzen-5-5600',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/ryzen.webp', 
-                    raiting: 5,
-                    reviews: 52,
+                    images: [
+                        {url: '../assets/computers-notebooks/complects/ryzen.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Найшвидший виграє', text: 'Цей найкращий у світі процесор для настільних ПК гарантує прекрасну продуктивність в іграх.'},
+                        {heading: 'Технологія AMD StoreMI', text: 'Простий і швидкий спосіб розширити сховище даних настільного ПК із процесором AMD Ryzen і прискорити його роботу.'},
+                        {heading: 'Програма AMD Ryzen Master', text: 'Проста і потужна програма для розгону процесорів AMD Ryzen.'},
+                    ],
                     info: [
                         {heading: 'Сімейство процесора', text: 'AMD Ryzen 5'},
-                        {heading: 'Кількість ядер', text: '0'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Євген',
+                            date: new Date(),
+                            text: 'Апгрейднув свій Ryzen 5 1600 (AF) з 2020 року. Перші враження позитивні, в середньому приріст до 40%. Материнська плата MSI B450M Mortar MAX, через PBO додав +100GHz, а також налаштовано Curve Optimizer -20. Середнє споживання 60-70W, піковий вольтаж - до 1,2V.',
+                            rating: 5,
+                            likes: 2,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Ярослав',
+                            date: new Date(),
+                            text: 'добре працює, прикольно виглядає',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Олександр',
+                            date: new Date(),
+                            text: 'Користуюсь процесором 3 місяці, жодних нарікань. Замовлення прийшло вчасно , проблем не було. Замінив ryzen 2400g приріст продуктивності відчутний, наприклад в warzone 2 fps виріс з 60 до 80 при тому що крім процесора конфігурація ПК не змінювалась.',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 2999, new: 2399}},
@@ -1920,10 +3400,55 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Комплект бездротовий Logitech MK270', 
+                    engName: 'komplekt-bezdrotovij-logitech-mk270',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/logitech.webp', 
-                    raiting: 2,
-                    reviews: 5,
+                    images: [
+                        {url: '../assets/computers-notebooks/complects/logitech.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Удосконалена технологія бездротового зв`язку на частоті 2.4 ГГц', text: 'Можна працювати та грати де завгодно, наприклад на дивані, — бездротовий зв`зок дає змогу практично унеможливити будь-які затримки, збої та перешкоди під час роботи в радіусі 10 метрів.'},
+                        {heading: 'Простота технології Plug-and-Play', text: 'Налаштування триватиме всього кілька секунд — досить просто вставити бездротовий приймач в USB-порт комп`ютера, щоб розпочати роботу з клавіатурою й мишкою без жодного програмного забезпечення.'},
+                        {heading: 'Вологозахищена клавіатура', text: 'Рідина витікає з клавіатури, даючи змогу не турбуватися про пошкодження обладнання через випадкове потрапляння рідини.'},
+                    ],
+                    info: [
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Розкладка', text: 'Eng / Ukr'},
+                        {heading: 'Сімейство процесора', text: 'AMD Ryzen 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Євген',
+                            date: new Date(),
+                            text: 'За місяць використання напівстерлися найбільш популярні кириличні літери.',
+                            rating: 3,
+                            likes: 2,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Ярослав',
+                            date: new Date(),
+                            text: 'добре працює, прикольно виглядає',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Олександр',
+                            date: new Date(),
+                            text: 'Для всіх, хто купив логітек, повідомляю, що на куплених 3 комплекта клавіатур - жодна не запрацювала з коробки, як зазвичай. Треба було скачувати програмне забезпечення і "переприв"язувати" клавіатуру з мишкою до модуля. Інколи з першого разу не вдавалося цього зробити.',
+                            rating: 1,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 2999, new: 2399}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1938,10 +3463,56 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Asus PCI-Ex GeForce RTX 3060', 
+                    engName: 'asus-pci-ex-geforce-rtx-3060',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/asus.webp', 
-                    raiting: 5,
-                    reviews: 156,
+                    images: [
+                        {url: '../assets/computers-notebooks/complects/asus.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Мікроархітектура NVIDIA Ampere', text: 'Нова мікроархітектура NVIDIA Ampere виводить гру на новий рівень завдяки поліпшеним функційним блокам, включно з RT-ядрами другого покоління й тензорними ядрами третього покоління.'},
+                        {heading: 'Вмикаємо RTX!', text: 'Фантастичний реалізм і висока швидкість, що стали можливими завдяки технологіям трасування променів і штучного інтелекту, — в іграх нового покоління!'},
+                        {heading: 'Технологія DLSS', text: 'Технологія згладжування з алгоритмами глибокого навчання NVIDIA DLSS забезпечує безкомпромісну якість зображення завдяки використанню наявних у відеокартах GeForce RTX тензорних ядер. Водночас вона мало впливає на швидкість гри, що дасть змогу викрутити настроювання на максимум. Штучний інтелект — на службі в геймерів!'},
+                    ],
+                    info: [
+                        {heading: 'Графічний чип', text: 'GeForce RTX 3060'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Розкладка', text: 'Eng / Ukr'},
+                        {heading: 'Сімейство процесора', text: 'AMD Ryzen 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Євген',
+                            date: new Date(),
+                            text: 'Пожалуй лучшая видеокарта по соотношению цена - производительность!',
+                            rating: 5,
+                            likes: 2,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Ярослав',
+                            date: new Date(),
+                            text: 'добре працює, прикольно виглядає',
+                            rating: 4,
+                            likes: 3,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Іван',
+                            date: new Date(),
+                            text: 'Забрав нову відеокарту і при поспаковці помітив, що один конденсатор взагалі не припаяний',
+                            rating: 1,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 15499}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1956,10 +3527,56 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Материнська плата Gigabyte B550M', 
+                    engName: 'materinska-plata-gigabyte-b550m',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/gigabyte.webp', 
-                    raiting: 3,
-                    reviews: 15,
+                    images: [
+                        {url: '../assets/computers-notebooks/complects/gigabyte.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Цифровий VRM-модуль на базі силових МОП-транзисторів Low RDS (on), схема живлення 5 + 3 фази', text: 'Підсистема живлення материнських плат Gigabyte сімейства AORUS у складі цифрового PWM-контролера та силових МОН-транзисторів Low RDS (on) організована за схемою 5 + 3 фази, забезпечує гарантовану працездатність процесорів AMD Ryzen 3-го покоління й інших енергоємних компонентів материнської плати, а також підвищену продуктивність і апаратну масштабованість платформи загалом.'},
+                        {heading: 'Вмикаємо RTX!', text: 'Фантастичний реалізм і висока швидкість, що стали можливими завдяки технологіям трасування променів і штучного інтелекту, — в іграх нового покоління!'},
+                        {heading: 'Технологія DLSS', text: 'Технологія згладжування з алгоритмами глибокого навчання NVIDIA DLSS забезпечує безкомпромісну якість зображення завдяки використанню наявних у відеокартах GeForce RTX тензорних ядер. Водночас вона мало впливає на швидкість гри, що дасть змогу викрутити настроювання на максимум. Штучний інтелект — на службі в геймерів!'},
+                    ],
+                    info: [
+                        {heading: 'Графічний чип', text: 'Gigabyte RTX 3060'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Розкладка', text: 'Eng / Ukr'},
+                        {heading: 'Сімейство процесора', text: 'AMD Ryzen 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Євген',
+                            date: new Date(),
+                            text: 'Плата з вигляду добротна .Користуюсь 4 місяць все гарно працює без збоїв в парі з райзен 5600. Процесор запустився з коробкі хоч біос всерівно оновив. Проц розігнав через пбо 4650 озу на 3600 все норм літає . По платі в стрес тесті на зоні врм були малі температури вона повинна і 8 ядерникі тягнути якщо не гнати до упора',
+                            rating: 5,
+                            likes: 6,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Ярослав',
+                            date: new Date(),
+                            text: 'добре працює, прикольно виглядає',
+                            rating: 4,
+                            likes: 3,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Стас',
+                            date: new Date(),
+                            text: 'Дуже хороша материнська плата поставив сюди процесор Ryzen 5 5600g Все чудово працює',
+                            rating: 1,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 4300, new: 3999}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -1973,11 +3590,58 @@ export const categories: CategoryItem[] = [
                     date: 8
                 },
                 {
-                    title: 'Комплект бездротовий RZTK Wireless', 
+                    title: 'Комплект бездротовий RZTK Wireless',
+                    engName: 'komplekt-bezdrotovij-rztk-wireless', 
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/rztk.webp', 
-                    raiting: 2,
-                    reviews: 42,
+                    images: [
+                        {url: '../assets/computers-notebooks/complects/rztk.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'RZTK Wireless Set', text: 'компактний та ергономічний бездротовий комплект клавіатури й миші, призначений для швидкого та зручного введення інформації в комп’ютер. Набір цієї моделі придатний для роботи вдома та в офісі.'},
+                        {heading: 'Бездротове використання', text: 'Почати використання клавіатури та миші дуже просто: достатньо під’єднати їх USB-приймач, передбачений в комплекті, до USB-порту комп’ютера — підготовка до роботи здійсниться автоматично. Максимальна дальність дії становить 10 м.'},
+                        {heading: 'Вмикаємо RTX!', text: 'Фантастичний реалізм і висока швидкість, що стали можливими завдяки технологіям трасування променів і штучного інтелекту, — в іграх нового покоління!'},
+                        {heading: 'Технологія DLSS', text: 'Технологія згладжування з алгоритмами глибокого навчання NVIDIA DLSS забезпечує безкомпромісну якість зображення завдяки використанню наявних у відеокартах GeForce RTX тензорних ядер. Водночас вона мало впливає на швидкість гри, що дасть змогу викрутити настроювання на максимум. Штучний інтелект — на службі в геймерів!'},
+                    ],
+                    info: [
+                        {heading: 'Графічний чип', text: 'RZTK RTX 3060'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Розкладка', text: 'Eng / Ukr'},
+                        {heading: 'Сімейство процесора', text: 'AMD Ryzen 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Виктор',
+                            date: new Date(),
+                            text: 'Подключение без проблем,все работает',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 1,
+                        },
+                        {
+                            author: 'Ярослав',
+                            date: new Date(),
+                            text: 'добре працює, прикольно виглядає',
+                            rating: 4,
+                            likes: 3,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Стас',
+                            date: new Date(),
+                            text: 'Дуже хороша материнська плата поставив сюди процесор Ryzen 5 5600g Все чудово працює',
+                            rating: 1,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 1200, new: 599}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Інші'},
@@ -2009,11 +3673,40 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Картридж PrintPro NS Canon 725', 
+                    engName: 'kartridzh-printpro-ns-canon-725', 
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/office/cartridge front.webp', 
                     image2: '../assets/computers-notebooks/office/cartridge.webp', 
-                    raiting: 4,
-                    reviews: 225,
+                    images: [
+                        {url: '../assets/computers-notebooks/office/cartridge front.webp'},
+                        {url: '../assets/computers-notebooks/office/cartridge.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'PrintPro', text: 'Картриджі PrintPro NS годяться для всіх різновидів популярних моделей принтерів, копірів і МФП. Чудово підходять для експлуатації як вдома, так і в офісі. У виробництві картриджів використовуються тільки нові комплектуючі та висококласний тонер — це дає змогу домогтися якісних відбитків за мінімальних вкладень.'},
+                    ],
+                    info: [
+                        {heading: 'Графічний чип', text: 'Canon'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Ryzen 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Микола',
+                            date: new Date(),
+                            text: 'Картридж супер, спеціаліст із відновлення рекомендував мені і я також рекомендую',
+                            rating: 1,
+                            likes: 0,
+                            dislikes: 1,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 379}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Інші'},
@@ -2028,11 +3721,40 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Шредер 2E S-509CC', 
+                    engName: 'shreder-2e-s-509cc', 
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/office/shreder front.webp', 
                     image2: '../assets/computers-notebooks/office/shreder.webp', 
-                    raiting: 5,
-                    reviews: 14,
+                    images: [
+                        {url: '../assets/computers-notebooks/office/shreder front.webp'},
+                        {url: '../assets/computers-notebooks/office/shreder.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'PrintPro', text: 'Картриджі PrintPro NS годяться для всіх різновидів популярних моделей принтерів, копірів і МФП. Чудово підходять для експлуатації як вдома, так і в офісі. У виробництві картриджів використовуються тільки нові комплектуючі та висококласний тонер — це дає змогу домогтися якісних відбитків за мінімальних вкладень.'},
+                    ],
+                    info: [
+                        {heading: 'Графічний чип', text: 'Canon'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Ryzen 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Віктор',
+                            date: new Date(),
+                            text: 'Покупкою задоволений',
+                            rating: 1,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 1908}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2047,13 +3769,39 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'БФП Canon Pixma MG3640S with Wi-Fi', 
+                    engName: 'bfp-canon-pixma-mg3640s-with-wi-fi', 
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/office/canon front.webp', 
                     image2: '../assets/computers-notebooks/office/canon.webp', 
-                    raiting: 3,
-                    reviews: 152,
+                    images: [
+                        {url: '../assets/computers-notebooks/office/canon front.webp'},
+                        {url: '../assets/computers-notebooks/office/canon.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'PrintPro', text: 'Картриджі PrintPro NS годяться для всіх різновидів популярних моделей принтерів, копірів і МФП. Чудово підходять для експлуатації як вдома, так і в офісі. У виробництві картриджів використовуються тільки нові комплектуючі та висококласний тонер — це дає змогу домогтися якісних відбитків за мінімальних вкладень.'},
+                    ],
                     info: [
-                        {heading: 'Технологія друку', text: 'Струменевий друк'},
+                        {heading: 'Графічний чип', text: 'Canon'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Ryzen 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Віктор',
+                            date: new Date(),
+                            text: 'Покупкою задоволений',
+                            rating: 1,
+                            likes: 0,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 3999, new: 3499}},
@@ -2069,11 +3817,38 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: '3D-принтер Neor Professional', 
+                    engName: '3d-printer-neor-professional', 
                     id: Math.floor(Math.random() * 1000),
                     image: '../../../assets/printer.webp', 
-                    raiting: 3,
-                    reviews: 10,
-                    info: [{heading: 'Технологія друку', text: 'Струменевий друк'}, {heading: 'Тип пристрою', text: 'БФП'}],
+                    images: [
+                        {url: '../../../assets/printer.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'PrintPro', text: 'Картриджі PrintPro NS годяться для всіх різновидів популярних моделей принтерів, копірів і МФП. Чудово підходять для експлуатації як вдома, так і в офісі. У виробництві картриджів використовуються тільки нові комплектуючі та висококласний тонер — це дає змогу домогтися якісних відбитків за мінімальних вкладень.'},
+                    ],
+                    info: [
+                        {heading: 'Графічний чип', text: 'Neor'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Ryzen 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Віктор',
+                            date: new Date(),
+                            text: 'Покупкою задоволений',
+                            rating: 1,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 85750, new: 81463}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2088,11 +3863,39 @@ export const categories: CategoryItem[] = [
                   },
                   {
                     title: 'Принтер Epson L132', 
+                    engName: '3d-printer-epson-professional', 
                     id: Math.floor(Math.random() * 1000),
                     image: '../../../assets/epson.webp', 
                     image2: '../../../assets/epson2.webp',
-                    raiting: 2,
-                    reviews: 158,
+                    images: [
+                        {url: '../../../assets/printer.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Epson', text: 'Картриджі Epson NS годяться для всіх різновидів популярних моделей принтерів, копірів і МФП. Чудово підходять для експлуатації як вдома, так і в офісі. У виробництві картриджів використовуються тільки нові комплектуючі та висококласний тонер — це дає змогу домогтися якісних відбитків за мінімальних вкладень.'},
+                    ],
+                    info: [
+                        {heading: 'Графічний чип', text: 'Epson'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Ryzen 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Віктор',
+                            date: new Date(),
+                            text: 'Покупкою задоволений',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 7807, new: 6807}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2107,10 +3910,38 @@ export const categories: CategoryItem[] = [
                   },
                   {
                     title: 'Panasonic',
+                    engName: '3d-printer-panasonic-professional',
                     id: Math.floor(Math.random() * 1000), 
                     image: '../../../assets/panasonic.webp', 
-                    raiting: 2,
-                    reviews: 1,
+                    images: [
+                        {url: '../../../assets/panasonic.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Panasonic', text: 'Картриджі Panasonic NS годяться для всіх різновидів популярних моделей принтерів, копірів і МФП. Чудово підходять для експлуатації як вдома, так і в офісі. У виробництві картриджів використовуються тільки нові комплектуючі та висококласний тонер — це дає змогу домогтися якісних відбитків за мінімальних вкладень.'},
+                    ],
+                    info: [
+                        {heading: 'Графічний чип', text: 'Panasonic'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Panasonic 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Ігор',
+                            date: new Date(),
+                            text: 'Працює нормально',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 649}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2125,11 +3956,40 @@ export const categories: CategoryItem[] = [
                   },
                   {
                     title: 'Принтер Pantum P2207',
+                    engName: 'printer-pantum',
                     id: Math.floor(Math.random() * 1000), 
                     image: '../../../assets/pantum.webp', 
                     image2: '../../../assets/pantum2.webp',
-                    raiting: 3,
-                    reviews: 21,
+                    images: [
+                        {url: '../../../assets/pantum.webp'},
+                        {url: '../../../assets/pantum2.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Pantum', text: 'Картриджі Pantum NS годяться для всіх різновидів популярних моделей принтерів, копірів і МФП. Чудово підходять для експлуатації як вдома, так і в офісі. У виробництві картриджів використовуються тільки нові комплектуючі та висококласний тонер — це дає змогу домогтися якісних відбитків за мінімальних вкладень.'},
+                    ],
+                    info: [
+                        {heading: 'Графічний чип', text: 'Pantum'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Ігор',
+                            date: new Date(),
+                            text: 'Працює нормально',
+                            rating: 3,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 4200}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2157,12 +4017,44 @@ export const categories: CategoryItem[] = [
             ],
             products: [
                 {
-                    title: 'Планшет Apple iPad 10.2" 2021 ', 
+                    title: 'Планшет Apple iPad 10.2" 2021', 
+                    engName: 'planshet-apple-ipad-102-2021',
                     id: Math.floor(Math.random() * 1000), 
                     image: '../assets/computers-notebooks/tablets/ipad front.webp', 
                     image2: '../assets/computers-notebooks/tablets/ipad.webp', 
-                    raiting: 5,
-                    reviews: 132,
+                    images: [
+                        {url: '../assets/computers-notebooks/tablets/ipad front.webp'},
+                        {url: '../assets/computers-notebooks/tablets/ipad.webp'},
+                    ],
+                    info_brief: 'Екран 10.2" IPS (2160x1620) MultiTouch / Apple A13 Bionic (2.65 ГГц) / 64 ГБ вбудованої пам`яті / Wi-Fi / Bluetooth 4.2 / основна камера 8 Мп, фронтальна — 12 Мп / iPadOS 15 / 487 г / сріблястий',
+                    info_full: [
+                        {heading: 'Чудовий дисплей', text: 'Touch ID для безпечної автентифікації'},
+                        {heading: 'iPad', text: 'Новий iPad має чудовий дисплей Retina 10,2 дюйма, потужний чип A13 Bionic надширококутну фронтальну камеру із функцією «Центрування в кадрі» й підтримує Apple Pencil і Smart Keyboard.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'iPad 2021'},
+                        {heading: 'Вид екрана', text: 'Ємнісний'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Кирилл Дрозд',
+                            date: new Date(),
+                            text: 'брав рік тому. забрав з магазину розетка на наступний день після замовлення,все в нормі та відповідає опису',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 16999, new: 12999}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2176,12 +4068,44 @@ export const categories: CategoryItem[] = [
                     date: 8
                 },
                 {
-                    title: 'Планшет Samsung Galaxy Tab S8', 
+                    title: 'Планшет Samsung Galaxy Tab S8',
+                    engName: 'planshet-samsung-galaxy-tab-s8', 
                     id: Math.floor(Math.random() * 1000), 
                     image: '../assets/computers-notebooks/tablets/samsung front.webp', 
                     image2: '../assets/computers-notebooks/tablets/samsung.webp', 
-                    raiting: 4,
-                    reviews: 35,
+                    images: [
+                        {url: '../assets/computers-notebooks/tablets/samsung front.webp'},
+                        {url: '../assets/computers-notebooks/tablets/samsung.webp'},
+                    ],
+                    info_brief: 'Екран 10.2" IPS (2160x1620) MultiTouch / Apple A13 Bionic (2.65 ГГц) / 64 ГБ вбудованої пам`яті / Wi-Fi / Bluetooth 4.2 / основна камера 8 Мп, фронтальна — 12 Мп / iPadOS 15 / 487 г / сріблястий',
+                    info_full: [
+                        {heading: 'Чудовий дисплей', text: 'Touch ID для безпечної автентифікації'},
+                        {heading: 'Samsung', text: 'Новий Samsung має чудовий дисплей Retina 10,2 дюйма, потужний чип A13 Bionic надширококутну фронтальну камеру із функцією «Центрування в кадрі» й підтримує Apple Pencil і Smart Keyboard.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'Samsung Galaxy Tab S8'},
+                        {heading: 'Вид екрана', text: 'Ємнісний'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Карина',
+                            date: new Date(),
+                            text: 'Донька задоволена,рекомендую!',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 31999, new: 27999}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2196,11 +4120,43 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Планшет Lenovo Tab M10 Plus', 
+                    engName: 'planshet-lenovo-galaxy-tab-m10', 
                     id: Math.floor(Math.random() * 1000), 
                     image: '../assets/computers-notebooks/tablets/lenovo front.webp', 
                     image2: '../assets/computers-notebooks/tablets/lenovo.webp', 
-                    raiting: 3,
-                    reviews: 95,
+                    images: [
+                        {url: '../assets/computers-notebooks/tablets/lenovo front.webp'},
+                        {url: '../assets/computers-notebooks/tablets/lenovo.webp'},
+                    ],
+                    info_brief: 'Екран 10.61" IPS (2000x1200), MultiTouch / Qualcomm Snapdragon 680 (2.4 ГГц + 1.9 ГГц) / RAM 4 ГБ / 128 ГБ вбудованої пам`яті + microSD / 3G / LTE / Wi-Fi / Bluetooth 5.1 / основна камера 8 Мп + фронтальна - 8 Мп / GPS / ГЛОНАСС / Android 12 / 465 г / сірий',
+                    info_full: [
+                        {heading: 'Найкорисніші програми Google вже у твоєму планшеті', text: 'Захоплення астрономією, фотографією чи просто спілкування з друзями — у Google Play легко знайти потрібну програму для таких і безлічі інших завдань. До того ж про твою безпеку та захист даних від шкідливого ПЗ турбується Google Play Protect, скануючи щодня більше 100 мільярдів програм.'},
+                        {heading: 'Стиль, що відрізняється від інших', text: 'Сміливий, ультрасучасний і технологічний вигляд Tab M10 Plus Gen 3 притягує погляди. Цей надтонкий пристрій (лише 7.45 мм) важить лише 465 г. Легкий корпус вирізняється міцністю завдяки алюмінієвій задній кришці, доступній у одному з двох кольорів: вибирай сірий або блакитний варіант. Стильний пристрій справді відрізняється від інших планшетів свого класу.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'Tab M10'},
+                        {heading: 'Вид екрана', text: 'Ємнісний'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Олена Шевчук',
+                            date: new Date(),
+                            text: 'Купляли планшет на подарунок для дитини, вибрали бо був чехол та стилус у подарунок.',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 10999, new: 9999}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2215,12 +4171,43 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Планшет Oscal Pad 10', 
+                    engName: 'planshet-oscal-galaxy-tab-10', 
                     id: Math.floor(Math.random() * 1000), 
                     image: '../assets/computers-notebooks/tablets/oscal front.webp', 
                     image2: '../assets/computers-notebooks/tablets/oscal.webp', 
-                    price: {old: 7299, new: 5999},
-                    raiting: 4,
-                    reviews: 5,
+                    images: [
+                        {url: '../assets/computers-notebooks/tablets/oscal front.webp'},
+                        {url: '../assets/computers-notebooks/tablets/oscal.webp'},
+                    ],
+                    info_brief: 'Екран 10.61" IPS (2000x1200), MultiTouch / Qualcomm Snapdragon 680 (2.4 ГГц + 1.9 ГГц) / RAM 4 ГБ / 128 ГБ вбудованої пам`яті + microSD / 3G / LTE / Wi-Fi / Bluetooth 5.1 / основна камера 8 Мп + фронтальна - 8 Мп / GPS / ГЛОНАСС / Android 12 / 465 г / сірий',
+                    info_full: [
+                        {heading: 'Найкорисніші програми Google вже у твоєму планшеті', text: 'Захоплення астрономією, фотографією чи просто спілкування з друзями — у Google Play легко знайти потрібну програму для таких і безлічі інших завдань. До того ж про твою безпеку та захист даних від шкідливого ПЗ турбується Google Play Protect, скануючи щодня більше 100 мільярдів програм.'},
+                        {heading: 'Стиль, що відрізняється від інших', text: 'Сміливий, ультрасучасний і технологічний вигляд Tab M10 Plus Gen 3 притягує погляди. Цей надтонкий пристрій (лише 7.45 мм) важить лише 465 г. Легкий корпус вирізняється міцністю завдяки алюмінієвій задній кришці, доступній у одному з двох кольорів: вибирай сірий або блакитний варіант. Стильний пристрій справді відрізняється від інших планшетів свого класу.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'Oscal Pad 10'},
+                        {heading: 'Вид екрана', text: 'Ємнісний'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Марина',
+                            date: new Date(),
+                            text: 'Купували дитині .все супер.',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 7299, new: 5999}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2242,13 +4229,49 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Материнська плата Asus Prime H510M-K', 
+                    engName: 'materinska-plata-asus-prime-h510m-k', 
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/motherboards/asus front.webp', 
                     image2: '../assets/computers-notebooks/complects/motherboards/asus.webp',  
-                    raiting: 3,
-                    reviews: 32,
+                    images: [
+                        {url: '../assets/computers-notebooks/complects/motherboards/asus front.webp'},
+                        {url: '../assets/computers-notebooks/complects/motherboards/asus.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'PRIME', text: 'Серія материнських плат ASUS Prime розроблена для розкриття максимальних можливостей новітніх процесорів Intel 10-го та 11-го поколінь. Модель PRIME H510M-K поєднує в собі потужну систему живлення, ефективне охолодження та інтелектуальні функції налаштування параметрів за допомогою інтуїтивного програмного забезпечення й ексклюзивних функцій BIOS.'},
+                        {heading: 'Ефективне охолодження', text: 'Щоб забезпечити стабільну роботу комп`ютера під високими навантаженнями, материнські плати серії Prime H510 наділені численними роз`ємами для вентиляторів.'},
+                    ],
                     info: [
-                        {heading: 'Індикація', text: 'З індикатором рівня заряду'},
+                        {heading: 'Сокет', text: 'Socket 1200'},
+                        {heading: 'Вид екрана', text: 'Ємнісний'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Марина',
+                            date: new Date(),
+                            text: 'Крутая материнка, всё топ!',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Роман',
+                            date: new Date(),
+                            text: 'Відмінний товар на 1200 сокеті',
+                            rating: 3,
+                            likes: 0,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 2629}},
@@ -2264,11 +4287,50 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Материнська плата Asus TUF Gaming B550-Plus', 
+                    engName: 'materinska-plata-asus-prime-B550', 
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/motherboards/asus tuf front.webp', 
                     image2: '../assets/computers-notebooks/complects/motherboards/asus tuf.webp',  
-                    raiting: 4,
-                    reviews: 151,
+                    images: [
+                        {url: '../assets/computers-notebooks/complects/motherboards/asus tuf front.webp'},
+                        {url: '../assets/computers-notebooks/complects/motherboards/asus tuf.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Asus', text: 'Серія материнських плат ASUS Prime розроблена для розкриття максимальних можливостей новітніх процесорів Intel 10-го та 11-го поколінь. Модель PRIME H510M-K поєднує в собі потужну систему живлення, ефективне охолодження та інтелектуальні функції налаштування параметрів за допомогою інтуїтивного програмного забезпечення й ексклюзивних функцій BIOS.'},
+                        {heading: 'Ефективне охолодження', text: 'Щоб забезпечити стабільну роботу комп`ютера під високими навантаженнями, материнські плати серії Prime H510 наділені численними роз`ємами для вентиляторів.'},
+                    ],
+                    info: [
+                        {heading: 'Сокет', text: 'Asus 1200'},
+                        {heading: 'Вид екрана', text: 'Ємнісний'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Марина',
+                            date: new Date(),
+                            text: 'Крутая материнка, всё топ!',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Роман',
+                            date: new Date(),
+                            text: 'Відмінний товар на 1200 сокеті',
+                            rating: 3,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 5645}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2291,12 +4353,47 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Процесор Intel Core i5-13600K', 
+                    engName: 'protsesor-intel-core-i5-13600k',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/processors/intel.webp', 
-                    raiting: 5,
-                    reviews: 12,
+                    images: [
+                        {url: '../assets/computers-notebooks/complects/processors/intel.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Intel', text: 'Серія материнських плат ASUS Prime розроблена для розкриття максимальних можливостей новітніх процесорів Intel 10-го та 11-го поколінь. Модель PRIME H510M-K поєднує в собі потужну систему живлення, ефективне охолодження та інтелектуальні функції налаштування параметрів за допомогою інтуїтивного програмного забезпечення й ексклюзивних функцій BIOS.'},
+                        {heading: 'Ефективне охолодження', text: 'Щоб забезпечити стабільну роботу комп`ютера під високими навантаженнями, материнські плати серії Prime H510 наділені численними роз`ємами для вентиляторів.'},
+                    ],
                     info: [
-                        {heading: 'Індикація', text: 'З індикатором рівня заряду'},
+                        {heading: 'Сокет', text: 'Intel'},
+                        {heading: 'Вид екрана', text: 'Ємнісний'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Марина',
+                            date: new Date(),
+                            text: 'Крутая материнка, всё топ!',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Роман',
+                            date: new Date(),
+                            text: 'Відмінний товар на 1200 сокеті',
+                            rating: 3,
+                            likes: 0,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 15399, new: 13629}},
@@ -2312,10 +4409,48 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Процесор AMD Ryzen 7 7700X', 
+                    engName: 'protsesor-ryzen-core-i5-13600k',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/processors/amd.webp', 
-                    raiting: 4,
-                    reviews: 13,
+                    images: [
+                        {url: '../assets/computers-notebooks/complects/processors/amd.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Ryzen', text: 'Серія материнських плат ASUS Prime розроблена для розкриття максимальних можливостей новітніх процесорів Intel 10-го та 11-го поколінь. Модель PRIME H510M-K поєднує в собі потужну систему живлення, ефективне охолодження та інтелектуальні функції налаштування параметрів за допомогою інтуїтивного програмного забезпечення й ексклюзивних функцій BIOS.'},
+                        {heading: 'Ефективне охолодження', text: 'Щоб забезпечити стабільну роботу комп`ютера під високими навантаженнями, материнські плати серії Prime H510 наділені численними роз`ємами для вентиляторів.'},
+                    ],
+                    info: [
+                        {heading: 'Сокет', text: 'Ryzen'},
+                        {heading: 'Вид екрана', text: 'Ємнісний'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Марина',
+                            date: new Date(),
+                            text: 'Крутая материнка, всё топ!',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Роман',
+                            date: new Date(),
+                            text: 'Відмінний товар на 1200 сокеті',
+                            rating: 3,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 14789}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2328,7 +4463,6 @@ export const categories: CategoryItem[] = [
                     ],
                     date: 8
                 },
-                
             ]
         },
         {
@@ -2338,10 +4472,47 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Звукова карта Asus Xonar U7 MKII', 
+                    engName: 'zvukova-karta-asus-xonar-u7-mkii',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/sound-cards/asus.webp', 
-                    raiting: 5,
-                    reviews: 42,
+                    images: [
+                        {url: '../assets/computers-notebooks/complects/sound-cards/asus.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Asus', text: 'Високоякісна зовнішня звукова карта Asus Xonar U7 MKII з інтерфейсом USB і співвідношенням сигнал/шум на рівні 114 дБ'},
+                    ],
+                    info: [
+                        {heading: 'Звуковий чип', text: 'C-Media USB2.0 6632AX High-Definition Sound Processor'},
+                        {heading: 'Вид екрана', text: 'Ємнісний'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Марина',
+                            date: new Date(),
+                            text: 'В цілому гарна звукова, багато виходів, є SPDIFF, зручне регулювання на переключення наушників та колонок. Чомусь у мене коли ноутбук виходить з режиму сну звук стоїть 100%, не знаю хто винуватий, виправав через скрипт на виході зі сну.',
+                            rating: 3,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Юрий Р.',
+                            date: new Date(),
+                            text: 'Драйвера не обновлялись с 2020-го года на сайте производителя есть только бета версия драйвера Xonar U7 MKII Driver V1.1.19 for Windows 10/11 64-bit. (beta). В утилите нет настройки которая должна была позволить проигрывать стерео-аудио через все 4 динамика в системе 5.1, такая настройка была во всех аудикартах уже 10 лет назад, но АСУС умудрился пробить новое дно. Купил мусорный товар который не поддерживается даже производителем, что теперь с ним делать не понятно.',
+                            rating: 1,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 3699, new: 3529}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2356,10 +4527,47 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Звукова карта Manli C-Media 8738 PCI-E', 
+                    engName: 'zvukova-karta-manli-c-media-8738-pci-e',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/sound-cards/manli.webp', 
-                    raiting: 4,
-                    reviews: 10,
+                    images: [
+                        {url: '../assets/computers-notebooks/complects/sound-cards/manli.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Manli', text: 'Високоякісна зовнішня звукова карта Asus Xonar U7 MKII з інтерфейсом USB і співвідношенням сигнал/шум на рівні 114 дБ'},
+                    ],
+                    info: [
+                        {heading: 'Звуковий чип', text: 'C-Media USB2.0 6632AX High-Definition Sound Processor'},
+                        {heading: 'Вид екрана', text: 'Ємнісний'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Марина',
+                            date: new Date(),
+                            text: 'В цілому гарна звукова, багато виходів, є SPDIFF, зручне регулювання на переключення наушників та колонок. Чомусь у мене коли ноутбук виходить з режиму сну звук стоїть 100%, не знаю хто винуватий, виправав через скрипт на виході зі сну.',
+                            rating: 3,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Юрий Р.',
+                            date: new Date(),
+                            text: 'Драйвера не обновлялись с 2020-го года на сайте производителя есть только бета версия драйвера Xonar U7 MKII Driver V1.1.19 for Windows 10/11 64-bit. (beta). В утилите нет настройки которая должна была позволить проигрывать стерео-аудио через все 4 динамика в системе 5.1, такая настройка была во всех аудикартах уже 10 лет назад, но АСУС умудрился пробить новое дно. Купил мусорный товар который не поддерживается даже производителем, что теперь с ним делать не понятно.',
+                            rating: 1,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 789}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Інші'},
@@ -2382,10 +4590,47 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'ASUS PCI-Ex GeForce RTX 4070 DUAL', 
+                    engName: 'asus-pci-ex-geforce-rtx-4070-dual',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/videocards/asus.webp', 
-                    raiting: 5,
-                    reviews: 2,
+                    images: [
+                        {url: '../assets/computers-notebooks/complects/videocards/asus.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'GeForce', text: 'ASUS Dual GeForce RTX 4070 OC Edition 12GB GDDR6X з двома потужними вентиляторами Axial-tech та дизайном 2.56 слота для широкої сумісності.'},
+                    ],
+                    info: [
+                        {heading: 'Графічний чип', text: 'GeForce RTX 4070'},
+                        {heading: 'Вид екрана', text: 'Ємнісний'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Марина',
+                            date: new Date(),
+                            text: 'Хороша відеокарта. У 2к усі ігри йдуть більше 60fps (dlss on). Тиха, потужна, звичайний 8-pin розʼєм живлення.',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Юрий Р.',
+                            date: new Date(),
+                            text: 'Драйвера не обновлялись с 2020-го года на сайте производителя есть только бета версия драйвера Xonar U7 MKII Driver V1.1.19 for Windows 10/11 64-bit. (beta). В утилите нет настройки которая должна была позволить проигрывать стерео-аудио через все 4 динамика в системе 5.1, такая настройка была во всех аудикартах уже 10 лет назад, но АСУС умудрился пробить новое дно. Купил мусорный товар который не поддерживается даже производителем, что теперь с ним делать не понятно.',
+                            rating: 1,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 31699, new: 29329}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2400,10 +4645,39 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Gigabyte PCI-Ex GeForce RTX 3060', 
+                    engName: 'gigabyte-pci-ex-geforce-rtx-3060',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/videocards/gigabyte.webp', 
-                    raiting: 4,
-                    reviews: 31,
+                    images: [
+                        {url: '../assets/computers-notebooks/complects/videocards/gigabyte.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Gigabyte', text: 'ASUS Dual Gigabyte RTX 4070 OC Edition 12GB GDDR6X з двома потужними вентиляторами Axial-tech та дизайном 2.56 слота для широкої сумісності.'},
+                    ],
+                    info: [
+                        {heading: 'Графічний чип', text: 'Gigabyte RTX 4070'},
+                        {heading: 'Вид екрана', text: 'Ємнісний'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Глеб',
+                            date: new Date(),
+                            text: 'Дуже гарна відеокартка компактна не треба переживати за pci-e , тиха і енергоефективна, виглядає досить стримано немає зайвих елементів, і саме головне що всі ігри йдуть в 1440p на максимальних з трасуванням променів без проблем навіть трохи з запасом на майбутнє, рекомендую найкращий вибір для 2к геймінгу. Одне тільки погано придбав її а потом вона через 2 дні подешевшала.',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 19789}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Інші'},
@@ -2426,11 +4700,41 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Жорсткий диск Toshiba Canvio Basics', 
+                    engName: 'zhorstkij-disk-toshiba-canvio-basics',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/hdd/toshiba front.webp', 
                     image2: '../assets/computers-notebooks/complects/hdd/toshiba.webp', 
-                    raiting: 5,
-                    reviews: 32,
+                    images: [
+                        {url: '../assets/computers-notebooks/complects/hdd/toshiba front.webp'},
+                        {url: '../assets/computers-notebooks/complects/hdd/toshiba.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Toshiba', text: 'Швидко перенесіть файли за допомогою інтерфейсу SuperSpeed USB 3.2 Gen 1 і зберігайте до 1 ТБ даних на зовнішніх жорстких дисках Canvio Basics. Ці пристрої готові для використання з ОС Microsoft Windows і не вимагають встановлення будь-якого програмного забезпечення, щоб ви без праці могли зберігати всі свої улюблені файли.Сидите ви за своїм робочим столом або вирушили в дорогу, завдяки класичному дизайну диска з матовим покриттям він завжди виглядатиме доречно.Але і це ще не все!Цей жорсткий диск дозволяє підключатися і до старого обладнання завдяки сумісності з інтерфейсом USB 2.0.'},
+                    ],
+                    info: [
+                        {heading: 'Графічний чип', text: 'Gigabyte RTX 4070'},
+                        {heading: 'Місткість накопичувача', text: '1ТБ'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Павло',
+                            date: new Date(),
+                            text: 'Дуже задоволені покупкою, вибирали за відгуками до цього товару. Досить швидко записує. Використовуємо для зберігання фото, відео. Підключається до будь-якого пристрою без проблем. Рекомендуємо.',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 2699, new: 1729}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2445,10 +4749,39 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Жорсткий диск Western Digital Blue', 
+                    engName: 'zhorstkij-disk-western-blue',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/hdd/western front.webp', 
-                    raiting: 5,
-                    reviews: 32,
+                    images: [
+                        {url: '../assets/computers-notebooks/complects/hdd/western front.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Western', text: 'Швидко перенесіть файли за допомогою інтерфейсу SuperSpeed USB 3.2 Gen 1 і зберігайте до 1 ТБ даних на зовнішніх жорстких дисках Canvio Basics. Ці пристрої готові для використання з ОС Microsoft Windows і не вимагають встановлення будь-якого програмного забезпечення, щоб ви без праці могли зберігати всі свої улюблені файли.Сидите ви за своїм робочим столом або вирушили в дорогу, завдяки класичному дизайну диска з матовим покриттям він завжди виглядатиме доречно.Але і це ще не все!Цей жорсткий диск дозволяє підключатися і до старого обладнання завдяки сумісності з інтерфейсом USB 2.0.'},
+                    ],
+                    info: [
+                        {heading: 'Графічний чип', text: 'Western RTX 4070'},
+                        {heading: 'Місткість накопичувача', text: '1ТБ'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Людмила',
+                            date: new Date(),
+                            text: 'Син порадив купити, має точно такий. Ця модель має кращу швидкість передачі даних. Сьогодні отримала, вже під`єднала і менш ніж за 2-3 хв. перемістила більш як 20 гб. інформації. Однозначно раджу купувати. Розетці дякую за доставку і ціну.',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 1699, new: 1449}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2469,11 +4802,42 @@ export const categories: CategoryItem[] = [
             id: 'c80109',  
             products: [
                 {
-                    title: 'Samsung 980 Pro 500GB', 
+                    title: 'Samsung 980 Pro 500GB',
+                    engName: 'samsung-980-pro-500gb',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/ssd/samsung.webp', 
-                    raiting: 5,
-                    reviews: 3,
+                    images: [
+                        {url: '../assets/computers-notebooks/complects/ssd/samsung.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Максимальна швидкість', text: 'Продуктивність SSD 980 PRO оптимізована завдяки використанню фірмового контролера Samsung Elpis, розробленого для PCIe 4.0 SSD. Цей контролер забезпечує швидкість читання до 7000 MБ/с, що у 2 рази перевищує швидкість PCIe 3.0 SSD та у 12.7 разів швидше за SATA SSD. Накопичувач SSD 980 PRO досягає максимальної швидкості на шині PCIe 4.0, яка може залежати від інших параметрів.'},
+                        {heading: 'Плідна співпраця', text: 'Розроблений з урахуванням вимог професійних геймерів та технічно просунутих користувачів SSD 980 PRO забезпечує найвищу продуктивність у найресурсомісткіших ігрових та графічних додатках, у системах аналізу та обробки даних та багатьох інших застосуваннях. Цей SSD прискорює завантаження ігор, тому ви можете грати більше і менше чекати.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: '980 Series'},
+                        {heading: 'Графічний чип', text: 'Western RTX 4070'},
+                        {heading: 'Місткість накопичувача', text: '1ТБ'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Алексей',
+                            date: new Date(),
+                            text: 'Хороший Ssd , очень порадовала цена поэтому и купил , единственно с чем я просчитался так это что в моем ноутбуке PCI-E 3.0 . Так что скорость на чтение и запись в потолок 3500 что означает есть запас на будущее если решу поменять ноут. Сразу зная что буду менять ссд заказал с Али тонкие медные радиаторы и терможвачку для них такие чтоб вошли в корпус. Температура до 70 в максимальных нагрузках , после установки радиаторов до 53 в пике что не может не радовать',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 2299, new: 9729}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2488,10 +4852,41 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Kingston FURY Renegade with Heatsink 2TB', 
+                    engName: 'kingston-fury-renegade-with-heatsink-2tb',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/complects/ssd/kingston.webp', 
-                    raiting: 5,
-                    reviews: 32,
+                    images: [
+                        {url: '../assets/computers-notebooks/complects/ssd/kingston.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Флеш накопичувач No. 1', text: 'Продуктивність SSD 980 PRO оптимізована завдяки використанню фірмового контролера Samsung Elpis, розробленого для PCIe 4.0 SSD. Цей контролер забезпечує швидкість читання до 7000 MБ/с, що у 2 рази перевищує швидкість PCIe 3.0 SSD та у 12.7 разів швидше за SATA SSD. Накопичувач SSD 980 PRO досягає максимальної швидкості на шині PCIe 4.0, яка може залежати від інших параметрів.'},
+                        {heading: 'ПЗ Samsung Magician', text: 'Реалізуйте всю потужність SSD 980 PRO за допомогою інтуїтивних та оптимізованих інструментів програми Samsung Magician. Контролюйте стан вашого SSD накопичувача, оптимізуйте продуктивність, захищайте цінні дані та отримуйте регулярні оновлення за допомогою Magician.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'Kingston Series'},
+                        {heading: 'Графічний чип', text: 'Western RTX 4070'},
+                        {heading: 'Місткість накопичувача', text: '1ТБ'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Тарас',
+                            date: new Date(),
+                            text: 'Чудовий накопичувач за свою ціну: працює на заявлених швидкостях, за що окрема подяка розетці - отримав не версію котра завалилась на складах, а ту що буквально виробили 2 місяці тому на заводі',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 8699, new: 7349}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Інші'},
@@ -2513,11 +4908,51 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Принтер HP LaserJet M211dw', 
+                    engName: 'printer-hp-laserjet-m211dw',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/office/printers/hp front.webp', 
                     image2: '../assets/computers-notebooks/office/printers/hp.webp', 
-                    raiting: 4,
-                    reviews: 21,
+                    images: [
+                        {url: '../assets/computers-notebooks/office/printers/hp front.webp'},
+                        {url: '../assets/computers-notebooks/office/printers/hp.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'LaserJet', text: 'Підвищуйте продуктивність за допомогою цього компактного лазерного принтера, який обладнаний дводіапазонним адаптером Wi-Fi й вирізняється найшвидшим двобічним друком серед пристроїв HP цього класу.'},
+                        {heading: 'Якість', text: 'Успішно справляйтеся з будь-якими проєктами завдяки простому настроюванню та зручності керування процесом друку за допомогою інтуїтивно зрозумілих інтелектуальних кнопок і підсвітки.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'LaserJet Series'},
+                        {heading: 'Графічний чип', text: 'Western RTX 4070'},
+                        {heading: 'Місткість накопичувача', text: '1ТБ'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Тарас',
+                            date: new Date(),
+                            text: 'Принтер жах. Відпрацював один рік. Гарантія скінчилася. Принтер зламався. Офіційний сервісний центр каже, що дані принтери не ремонтують. Лише міняють по гарантії. Тобто пристрій не ремонто-придадний.',
+                            rating: 1,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Сергей',
+                            date: new Date(),
+                            text: 'Розетка вже не та. Принтер зламався гарантійний випадок. Але вони не можуть його відремонтувати. Тепер ні принтера ні грошей нічого. І звернутися нікуди. Отаке відношення.',
+                            rating: 1,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 9299, new: 8696}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2532,11 +4967,43 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Принтер Canon LASER SFP I-S LBP122', 
+                    engName: 'printer-canon-laser-sfp-i-s-lbp122',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/office/printers/canon front.webp', 
                     image2: '../assets/computers-notebooks/office/printers/canon.webp', 
-                    raiting: 4,
-                    reviews: 55,
+                    images: [
+                        {url: '../assets/computers-notebooks/office/printers/canon front.webp'},
+                        {url: '../assets/computers-notebooks/office/printers/canon.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Canon', text: 'Підвищуйте продуктивність за допомогою цього компактного лазерного принтера, який обладнаний дводіапазонним адаптером Wi-Fi й вирізняється найшвидшим двобічним друком серед пристроїв HP цього класу.'},
+                        {heading: 'Якість', text: 'Успішно справляйтеся з будь-якими проєктами завдяки простому настроюванню та зручності керування процесом друку за допомогою інтуїтивно зрозумілих інтелектуальних кнопок і підсвітки.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'Canon Series'},
+                        {heading: 'Графічний чип', text: 'Western RTX 4070'},
+                        {heading: 'Місткість накопичувача', text: '1ТБ'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Геннадій',
+                            date: new Date(),
+                            text: 'чудовий прінтер. свої функції виконує, нарікань немає.',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 10499, new: 9196}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2558,11 +5025,43 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Plustek OpticSlim 2610 Plus', 
+                    engName: 'plustek-opticslim-2610-plus',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/office/scanners/plustek front.webp', 
                     image2: '../assets/computers-notebooks/office/scanners/plustek.webp', 
-                    raiting: 4,
-                    reviews: 11,
+                    images: [
+                        {url: '../assets/computers-notebooks/office/scanners/plustek front.webp'},
+                        {url: '../assets/computers-notebooks/office/scanners/plustek.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Plustek', text: 'це простий у користуванні сканер для повсякденного сканування та спільного використання. Компактний дизайн робить його зручним для розміщення на робочому столі, він не займе багато місця і не виглядатиме громіздким. При необхідності ви можете взяти сканер з собою — низька вага, всього 1.4 кг, та невеликий розмір дозволяють це зробити.'},
+                        {heading: 'Якість', text: 'Кришка сканера з петлями дозволяє сканування об`ємних книг або документів. Програмне забезпечення Plustek DocAction допоможе здійснити необхідні налаштування. Натисканням однієї кнопки ви зможете сканувати пакет документів, надіслати його на принтер, електронну пошту, локальну папку, мережеву папку або FTP та зберегти у стандартних форматах зображень, включно з JPEG, TIFF та PDF. Присвоюйте документам заздалегідь запрограмовані назви та автоматично відсортовуйте їх у відповідні папки. Це забезпечить ефективне управління документами та підвищить продуктивність вашої праці.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'Plustek'},
+                        {heading: 'Графічний чип', text: 'Western RTX 4070'},
+                        {heading: 'Місткість накопичувача', text: '1ТБ'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Геннадій',
+                            date: new Date(),
+                            text: 'чудовий сканер.',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 4299, new: 3699}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2577,10 +5076,41 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Kodak i940', 
+                    engName: 'kodak-1940',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/office/scanners/kodak.webp', 
-                    raiting: 1,
-                    reviews: 4,
+                    images: [
+                        {url: '../assets/computers-notebooks/office/scanners/kodak.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Kodak', text: 'це простий у користуванні сканер для повсякденного сканування та спільного використання. Компактний дизайн робить його зручним для розміщення на робочому столі, він не займе багато місця і не виглядатиме громіздким. При необхідності ви можете взяти сканер з собою — низька вага, всього 1.4 кг, та невеликий розмір дозволяють це зробити.'},
+                        {heading: 'Якість', text: 'Кришка сканера з петлями дозволяє сканування об`ємних книг або документів. Програмне забезпечення Plustek DocAction допоможе здійснити необхідні налаштування. Натисканням однієї кнопки ви зможете сканувати пакет документів, надіслати його на принтер, електронну пошту, локальну папку, мережеву папку або FTP та зберегти у стандартних форматах зображень, включно з JPEG, TIFF та PDF. Присвоюйте документам заздалегідь запрограмовані назви та автоматично відсортовуйте їх у відповідні папки. Це забезпечить ефективне управління документами та підвищить продуктивність вашої праці.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'Kodak'},
+                        {heading: 'Графічний чип', text: 'Western RTX 4070'},
+                        {heading: 'Місткість накопичувача', text: '1ТБ'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Ресурс (при 5% заповненості аркуша)', text: '1600 сторінок'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Виктор',
+                            date: new Date(),
+                            text: 'среднее качество',
+                            rating: 3,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 14445, new: 12699}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2602,10 +5132,40 @@ export const categories: CategoryItem[] = [
             products: [
                 {
                     title: 'Panasonic KX-TG1611UAR Red', 
+                    engName: 'panasonic-kx-tg1611uar-red',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/office/phones/panasonic front.webp', 
-                    raiting: 4,
-                    reviews: 11,
+                    images: [
+                        {url: '../assets/computers-notebooks/office/phones/panasonic front.webp'},
+                        {url: '../assets/computers-notebooks/office/phones/panasonic.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'AВH, Caller ID (журнал на 50 викликів)', text: 'Телефонний довідник (50 записів)'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'Panasonic'},
+                        {heading: 'Графічний чип', text: 'Western RTX 4070'},
+                        {heading: 'Місткість накопичувача', text: '1ТБ'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Христина',
+                            date: new Date(),
+                            text: 'Чудовий телефон, купляла на роботу де багато дзвiнкiв.',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 1162}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2620,10 +5180,39 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Gigaset A116 Black', 
+                    engName: 'gigaset-a116-black',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/office/phones/gigaset.webp', 
-                    raiting: 5,
-                    reviews: 8,
+                    images: [
+                        {url: '../assets/computers-notebooks/office/phones/gigaset.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'AВH, Caller ID (журнал на 110 викликів)', text: 'Телефонний довідник (110 записів)'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'Gigaset'},
+                        {heading: 'Графічний чип', text: 'Western RTX 4070'},
+                        {heading: 'Місткість накопичувача', text: '1ТБ'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Майя Романюк',
+                            date: new Date(),
+                            text: 'Телефони - супер! Просто налаштувати, дуже відмінна якість звуку, і ти чуєш добре і тебе чують добре! Усім задоволена!',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 945, new: 719}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2637,11 +5226,40 @@ export const categories: CategoryItem[] = [
                     date: 8
                 },
                 {
-                    title: 'Дротовий телефон 2E AP-210B', 
+                    title: 'Дротовий телефон 2E AP-210B',
+                    engName: 'drotovij-telefon-2e-ap-210b', 
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/computers-notebooks/office/phones/2e front.webp', 
-                    raiting: 4,
-                    reviews: 14,
+                    images: [
+                        {url: '../assets/computers-notebooks/office/phones/2e front.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'AВH, Caller ID (журнал на 200 викликів)', text: 'Телефонний довідник (200 записів)'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: '2E'},
+                        {heading: 'Графічний чип', text: 'Western RTX 4070'},
+                        {heading: 'Місткість накопичувача', text: '1ТБ'},
+                        {heading: 'Інтерфейс', text: 'USB адаптер 2.4 ГГц'},
+                        {heading: 'Сімейство процесора', text: 'AMD Pantum 5'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Арсений',
+                            date: new Date(),
+                            text: 'Отличный телефон. Качественный , надёжный. Беру такой уже не первый раз. Все работают годами без замечаний',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 380}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2692,8 +5310,6 @@ export const categories: CategoryItem[] = [
                 {name: 'Холодильники', engName: 'refrigerators', id: 'c80125'}, 
                 {name: 'Морозильні камери', engName: 'freezers', id: 'c80203'}, 
                 {name: 'Пральні машини', engName: 'washing_machines', id: 'c80124'}, 
-                {name: 'Посудомийні машини', engName: 'dishwashers', id: 'c80123'}, 
-                {name: 'Мікрохвильові печі', engName: 'microwaves', id: 'c80162'}, 
               ], 
               subitems: [
                 {name: 'Холодильники', engName: 'refrigerators', id: 'c80125', img: '../assets/household-appliances/fridges.jpg'}, 
@@ -2702,11 +5318,59 @@ export const categories: CategoryItem[] = [
               products: [
                 {
                     title: 'Холодильник INDESIT LI6 S1E W', 
+                    engName: 'holodilnik-indesit-li6-s1e-w',
                     id: Math.floor(Math.random() * 1000), 
                     image: '../assets/household-appliances/large household appliances/indesit front.webp', 
                     image2: '../assets/household-appliances/large household appliances/indesit.webp', 
-                    raiting: 4,
-                    reviews: 23,
+                    images: [
+                        {url: '../assets/household-appliances/large household appliances/indesit front.webp'},
+                        {url: '../assets/household-appliances/large household appliances/indesit.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Великий та об’ємний ящик для овочів та фруктів', text: ''},
+                        {heading: '', text: 'У холодильній камері розташування полиць можна коригувати кожні 5 см, тому не потрібно хвилюватися за розміщення різних за величиною і габаритами продуктів'},
+                        {heading: '', text: 'Сучасна статика гарантує підтримку оптимального рівня вологості у холодильнику (70%). Їжа не висихає, немає потреби у пакуванні овочів та фруктів'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'INDESIT'},
+                        {heading: 'Загальний об`єм холодильника', text: '272 л'},
+                        {heading: 'Система розморожування No Frost (Frost Free)', text: 'Без No Frost'},
+                        {heading: 'Тип холодильника', text: 'Двокамерний'},
+                        {heading: 'Корисний об`єм холодильної камери', text: '197 л.'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Христина',
+                            date: new Date(),
+                            text: 'Для батьків у село чудовий холодильник. Зібраний добре, працює тихо, якісне начиння - полички скляні. Світлодіодна лампа.',
+                            rating: 5,
+                            likes: 2,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Наталія',
+                            date: new Date(),
+                            text: 'Уже рік користуємось новим холодильником. Дуже гарні якість, дизайн, місткість. Не намерзає. Легко миється. Рекомендуємо для купівлі.',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Юлія',
+                            date: new Date(),
+                            text: 'У користуванні декілька днів. Дуже задоволені.',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 15399, new: 13399}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2721,11 +5385,59 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Вбудована посудомийна машина HOTPOINT', 
+                    engName: 'vbudovana-posudomijna-mashina-hotpoint',
                     id: Math.floor(Math.random() * 1000), 
                     image: '../assets/household-appliances/large household appliances/hotpoint front.webp', 
                     image2: '../assets/household-appliances/large household appliances/hotpoint.webp', 
-                    raiting: 5,
-                    reviews: 151,
+                    images: [
+                        {url: '../assets/household-appliances/large household appliances/hotpoint front.webp'},
+                        {url: '../assets/household-appliances/large household appliances/hotpoint.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Великий та об’ємний ящик для овочів та фруктів', text: ''},
+                        {heading: '', text: 'У холодильній камері розташування полиць можна коригувати кожні 5 см, тому не потрібно хвилюватися за розміщення різних за величиною і габаритами продуктів'},
+                        {heading: '', text: 'Сучасна статика гарантує підтримку оптимального рівня вологості у холодильнику (70%). Їжа не висихає, немає потреби у пакуванні овочів та фруктів'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'HOTPOINT'},
+                        {heading: 'Загальний об`єм холодильника', text: '272 л'},
+                        {heading: 'Система розморожування No Frost (Frost Free)', text: 'Без No Frost'},
+                        {heading: 'Тип холодильника', text: 'Двокамерний'},
+                        {heading: 'Корисний об`єм холодильної камери', text: '197 л.'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Христина',
+                            date: new Date(),
+                            text: 'Для батьків у село чудовий холодильник. Зібраний добре, працює тихо, якісне начиння - полички скляні. Світлодіодна лампа.',
+                            rating: 5,
+                            likes: 2,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Наталія',
+                            date: new Date(),
+                            text: 'Уже рік користуємось новим холодильником. Дуже гарні якість, дизайн, місткість. Не намерзає. Легко миється. Рекомендуємо для купівлі.',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Юлія',
+                            date: new Date(),
+                            text: 'У користуванні декілька днів. Дуже задоволені.',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 20399, new: 14099}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2740,11 +5452,59 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Плита комбінована GORENJE GK5C40WF', 
+                    engName: 'plita-kombinovana-gorenje-gk5c40wf',
                     id: Math.floor(Math.random() * 1000), 
                     image: '../assets/household-appliances/large household appliances/gorenje front.webp', 
                     image2: '../assets/household-appliances/large household appliances/gorenje.webp', 
-                    raiting: 5,
-                    reviews: 305,
+                    images: [
+                        {url: '../assets/household-appliances/large household appliances/gorenje front.webp'},
+                        {url: '../assets/household-appliances/large household appliances/gorenje.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Великий та об’ємний ящик для овочів та фруктів', text: ''},
+                        {heading: '', text: 'У холодильній камері розташування полиць можна коригувати кожні 5 см, тому не потрібно хвилюватися за розміщення різних за величиною і габаритами продуктів'},
+                        {heading: '', text: 'Сучасна статика гарантує підтримку оптимального рівня вологості у холодильнику (70%). Їжа не висихає, немає потреби у пакуванні овочів та фруктів'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'GORENJE'},
+                        {heading: 'Загальний об`єм холодильника', text: '272 л'},
+                        {heading: 'Система розморожування No Frost (Frost Free)', text: 'Без No Frost'},
+                        {heading: 'Тип холодильника', text: 'Двокамерний'},
+                        {heading: 'Корисний об`єм холодильної камери', text: '197 л.'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Христина',
+                            date: new Date(),
+                            text: 'Для батьків у село чудовий холодильник. Зібраний добре, працює тихо, якісне начиння - полички скляні. Світлодіодна лампа.',
+                            rating: 5,
+                            likes: 2,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Наталія',
+                            date: new Date(),
+                            text: 'Уже рік користуємось новим холодильником. Дуже гарні якість, дизайн, місткість. Не намерзає. Легко миється. Рекомендуємо для купівлі.',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Юлія',
+                            date: new Date(),
+                            text: 'У користуванні декілька днів. Дуже задоволені.',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 17499, new: 12499}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2759,11 +5519,59 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Двокамерний холодильник BEKO', 
+                    engName: 'dvokamernij-holodilnik-beko',
                     id: Math.floor(Math.random() * 1000), 
                     image: '../assets/household-appliances/large household appliances/beko front.webp', 
                     image2: '../assets/household-appliances/large household appliances/beko.webp', 
-                    raiting: 5,
-                    reviews: 100,
+                    images: [
+                        {url: '../assets/household-appliances/large household appliances/beko front.webp'},
+                        {url: '../assets/household-appliances/large household appliances/beko.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Великий та об’ємний ящик для овочів та фруктів', text: ''},
+                        {heading: '', text: 'У холодильній камері розташування полиць можна коригувати кожні 5 см, тому не потрібно хвилюватися за розміщення різних за величиною і габаритами продуктів'},
+                        {heading: '', text: 'Сучасна статика гарантує підтримку оптимального рівня вологості у холодильнику (70%). Їжа не висихає, немає потреби у пакуванні овочів та фруктів'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'BEKO'},
+                        {heading: 'Загальний об`єм холодильника', text: '272 л'},
+                        {heading: 'Система розморожування No Frost (Frost Free)', text: 'Без No Frost'},
+                        {heading: 'Тип холодильника', text: 'Двокамерний'},
+                        {heading: 'Корисний об`єм холодильної камери', text: '197 л.'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Христина',
+                            date: new Date(),
+                            text: 'Для батьків у село чудовий холодильник. Зібраний добре, працює тихо, якісне начиння - полички скляні. Світлодіодна лампа.',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Наталія',
+                            date: new Date(),
+                            text: 'Уже рік користуємось новим холодильником. Дуже гарні якість, дизайн, місткість. Не намерзає. Легко миється. Рекомендуємо для купівлі.',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Юлія',
+                            date: new Date(),
+                            text: 'У користуванні декілька днів. Дуже задоволені.',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 22499, new: 19499}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2778,11 +5586,58 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Пральна машина вузька SAMSUNG WW', 
+                    engName: 'pralna-mashina-vuzka-samsung-ww',
                     id: Math.floor(Math.random() * 1000), 
                     image: '../assets/household-appliances/large household appliances/samsung front.webp', 
                     image2: '../assets/household-appliances/large household appliances/samsung.webp', 
-                    raiting: 3,
-                    reviews: 40,
+                    images: [
+                        {url: '../assets/household-appliances/large household appliances/samsung front.webp'},
+                        {url: '../assets/household-appliances/large household appliances/samsung.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Менший рівень шуму та енергоспоживання', text: 'Цифровий інвертор. Насолоджуйтесь підвищеною енергоефективністю, зниженим рівнем шуму та тривалою службою. У технології цифрового інвертора використовуються сильні магніти збільшення потужності, але такий пристрій працює тихіше і споживає менше енергії, ніж універсальний електродвигун. Це забезпечує велику довговічність, що додатково підкріплюється 10-річною гарантією.'},
+                        {heading: 'Сила бульбашок', text: 'Економте гроші та захищайте свій одяг. Технологія Eco Bubble™ забезпечує ефективне та дбайливе прання навіть за низьких температур'},
+                        {heading: 'Інтенсивне чищення', text: 'Одяг бездоганно чистий, навіть якщо він дійсно брудний. Функція Bubble Soak допомагає видалити найвпертіші плями, такі як кров, чай, вино, макіяж та трава. Одяг ретельно просочується активними бульбашками, тому бруд та плями розпушуються і їх можна видалити ефективніше.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'WW'},
+                        {heading: 'Тип пральної машини', text: 'З фронтальним завантаженням'},
+                        {heading: 'Максимальне завантаження білизни', text: '6 кг'},
+                        {heading: 'Клас енергоспоживання', text: 'А+++'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Дмитро',
+                            date: new Date(),
+                            text: 'Повністю задоволені придбанням пральної машинки, перші враження - тільки позитивні.',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Наталія',
+                            date: new Date(),
+                            text: 'Машинка чудесная очень красивая!!!Мы очень довольны,стирали первую стирку на 15мин стирает тихо выстирала все хорошо',
+                            rating: 4,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                        {
+                            author: 'Ігор',
+                            date: new Date(),
+                            text: 'Розпакував пральну машинку, а вона вже з подряпиною. Трохи неприємно. Сподіваюсь це тільки єдиний недолік. Включив режим очищення барабану. Пере тихо.',
+                            rating: 5,
+                            likes: 0,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 22499, new: 19499}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Інші'},
@@ -2792,10 +5647,6 @@ export const categories: CategoryItem[] = [
                         {searchPosition: 'loyalty-program', title: 'Програма лояльності', option: 'З бонусами'},
                         {searchPosition: 'new', title: 'Новий - б/в', option: 'Новий'},
                         {searchPosition: 'sell_status', title: 'Статус товару', option: 'Є в наявності'},
-                    ],
-                    info: [
-                        {heading: 'Місткість комплектів', text: '13'},
-                        {heading: 'Витрата води за цикл/рік', text: '9.5/ 2090 л'},
                     ],
                     date: 8
                 },
@@ -2817,14 +5668,38 @@ export const categories: CategoryItem[] = [
               products: [
                 {
                     title: 'М`ясорубка BOSCH MFW3640A', 
+                    engName: 'myasorubka-bosch-mfw3640a',
                     id: Math.floor(Math.random() * 1000), 
                     image: '../assets/household-appliances/kitchen/bosch front.webp', 
                     image2: '../assets/household-appliances/kitchen/bosch.webp', 
-                    raiting: 4,
-                    reviews: 76,
+                    images: [
+                        {url: '../assets/household-appliances/kitchen/bosch front.webp'},
+                        {url: '../assets/household-appliances/kitchen/bosch.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Незамінний помічник на вашій кухні', text: 'М`ясорубка Bosch надзвичайно продуктивна та легка у використанні. Завдяки їй ви зможете приготувати безліч страв за лічені хвилини. І все, що вам потрібно — просто увімкнути прилад.'},
+                        {heading: 'Надзвичайно швидка робота завдяки потужному двигуну', text: 'Потужність — один із найголовніших критеріїв під час вибору м`ясорубки. Саме тому м`ясорубка Bosch MFW3640А обладнана потужним двигуном 1600 Вт, що дає змогу, завдяки великому вихідного отвору з діаметром у 8 см, переробити до 1.9 кг м`яса за хвилину.'},
+                        {heading: 'Функція «Реверс»', text: 'Погодьтеся, неприємно, коли робота приладу сповільнюється або зупиняється. Це відбувається тому, що шнек забивається жилами та волокнами, впливаючи на процес подрібнення. Функція реверс передбачає зворотну прокрутку шнека, внаслідок чого застрягле м`ясо виштовхується до завантажувального отвору. Після цього досить його видалити або заново прокрутити.'},
+                    ],
                     info: [
-                        {heading: 'Максимальна потужність, Вт', text: '1600'},
-                        {heading: 'Продуктивність, кг/хв', text: '1.8'},
+                        {heading: 'Серія', text: 'BOSCH'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Христина',
+                            date: new Date(),
+                            text: 'Пользуюсь почти год,это лучшее что на моей кухне из мелкой техники. Докупил крупную решетку для колбасок и шницелей,этот прибор только радует!',
+                            rating: 5,
+                            likes: 2,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 5899, new: 4699}},
@@ -2840,14 +5715,36 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Кавомашина KRUPS Essential EA816570', 
+                    engName: 'kavomashina-krups-essential-ea816570',
                     id: Math.floor(Math.random() * 1000), 
                     image: '../assets/household-appliances/kitchen/krups front.webp', 
                     image2: '../assets/household-appliances/kitchen/krups.webp', 
-                    raiting: 5,
-                    reviews: 576,
+                    images: [
+                        {url: '../assets/household-appliances/kitchen/krups front.webp'},
+                        {url: '../assets/household-appliances/kitchen/krups.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Функція «Улюблений рецепт»', text: 'Ви вже знаєте, чого хочете? Збережіть рецепт у пам`яті своєї кавомашини та тримайте під рукою напій, приготований за улюбленим рецептом. Збережіть два рецепти ідеальної чорної кави.'},
+                    ],
                     info: [
-                        {heading: 'Тип', text: 'Кавомашина'},
-                        {heading: 'Тип кави', text: 'Зернова'},
+                        {heading: 'Серія', text: 'KRUPS'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Сергей',
+                            date: new Date(),
+                            text: 'Чудова машинка... Брав в дарунок жінці, яка полюбляє капучино та латте... Доволі зручно, інтуітивно зрозуміле меню... Пройшов тиждень - політ нормальний... Кава смачна, пінка супер... І головне - доволі тиха, як для зернової кавамашини...',
+                            rating: 5,
+                            likes: 1,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 14199, new: 12099}},
@@ -2863,14 +5760,36 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Блендер TEFAL HB656838', 
+                    engName: 'blender-tefal-hb656838',
                     id: Math.floor(Math.random() * 1000), 
                     image: '../assets/household-appliances/kitchen/blender front.webp', 
                     image2: '../assets/household-appliances/kitchen/blender.webp', 
-                    raiting: 5,
-                    reviews: 36,
+                    images: [
+                        {url: '../assets/household-appliances/kitchen/blender front.webp'},
+                        {url: '../assets/household-appliances/kitchen/blender.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Функція «Улюблений рецепт»', text: 'Ви вже знаєте, чого хочете? Збережіть рецепт у пам`яті своєї кавомашини та тримайте під рукою напій, приготований за улюбленим рецептом. Збережіть два рецепти ідеальної чорної кави.'},
+                    ],
                     info: [
-                        {heading: 'Потужність, Вт', text: '1000'},
-                        {heading: 'Місткість склянки', text: '800 мл'},
+                        {heading: 'Серія', text: 'TEFAL'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Сергей',
+                            date: new Date(),
+                            text: 'Чудова машинка... Брав в дарунок жінці, яка полюбляє капучино та латте... Доволі зручно, інтуітивно зрозуміле меню... Пройшов тиждень - політ нормальний... Кава смачна, пінка супер... І головне - доволі тиха, як для зернової кавамашини...',
+                            rating: 5,
+                            likes: 1,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 2199, new: 1999}},
@@ -2886,11 +5805,37 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Електрочайник TEFAL LOFT KO250830', 
+                    engName: 'elektrochajnik-tefal-loft-ko250830',
                     id: Math.floor(Math.random() * 1000), 
                     image: '../assets/household-appliances/kitchen/tefal front.webp', 
                     image2: '../assets/household-appliances/kitchen/tefal.webp', 
-                    raiting: 3,
-                    reviews: 26,
+                    images: [
+                        {url: '../assets/household-appliances/kitchen/tefal front.webp'},
+                        {url: '../assets/household-appliances/kitchen/tefal.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Функція «Улюблений рецепт»', text: 'Ви вже знаєте, чого хочете? Збережіть рецепт у пам`яті своєї кавомашини та тримайте під рукою напій, приготований за улюбленим рецептом. Збережіть два рецепти ідеальної чорної кави.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'TEFAL'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Сергей',
+                            date: new Date(),
+                            text: 'Чудова машинка... Брав в дарунок жінці, яка полюбляє капучино та латте... Доволі зручно, інтуітивно зрозуміле меню... Пройшов тиждень - політ нормальний... Кава смачна, пінка супер... І головне - доволі тиха, як для зернової кавамашини...',
+                            rating: 5,
+                            likes: 1,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 1799, new: 1599}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -2905,11 +5850,37 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Кухонна машина Kenwood', 
+                    engName: 'kuhonna-mashina-kenwood',
                     id: Math.floor(Math.random() * 1000), 
                     image: '../assets/household-appliances/kitchen/kenwood front.webp', 
                     image2: '../assets/household-appliances/kitchen/kenwood.webp', 
-                    raiting: 4,
-                    reviews: 451,
+                    images: [
+                        {url: '../assets/household-appliances/kitchen/kenwood front.webp'},
+                        {url: '../assets/household-appliances/kitchen/kenwood.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Функція «Улюблений рецепт»', text: 'Ви вже знаєте, чого хочете? Збережіть рецепт у пам`яті своєї кавомашини та тримайте під рукою напій, приготований за улюбленим рецептом. Збережіть два рецепти ідеальної чорної кави.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'TEFAL'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Сергей',
+                            date: new Date(),
+                            text: 'Чудова машинка... Брав в дарунок жінці, яка полюбляє капучино та латте... Доволі зручно, інтуітивно зрозуміле меню... Пройшов тиждень - політ нормальний... Кава смачна, пінка супер... І головне - доволі тиха, як для зернової кавамашини...',
+                            rating: 5,
+                            likes: 1,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 20199}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Інші'},
@@ -2924,11 +5895,37 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Мультимейкер RUSSELL HOBBS', 
+                    engName: 'multimejker-russell-hobbs',
                     id: Math.floor(Math.random() * 1000), 
                     image: '../assets/household-appliances/kitchen/russel front.webp', 
                     image2: '../assets/household-appliances/kitchen/russel.webp', 
-                    raiting: 5,
-                    reviews: 492,
+                    images: [
+                        {url: '../assets/household-appliances/kitchen/russel front.webp'},
+                        {url: '../assets/household-appliances/kitchen/russel.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Функція «Улюблений рецепт»', text: 'Ви вже знаєте, чого хочете? Збережіть рецепт у пам`яті своєї кавомашини та тримайте під рукою напій, приготований за улюбленим рецептом. Збережіть два рецепти ідеальної чорної кави.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'RUSSELL'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Сергей',
+                            date: new Date(),
+                            text: 'Чудова машинка... Брав в дарунок жінці, яка полюбляє капучино та латте... Доволі зручно, інтуітивно зрозуміле меню... Пройшов тиждень - політ нормальний... Кава смачна, пінка супер... І головне - доволі тиха, як для зернової кавамашини...',
+                            rating: 5,
+                            likes: 1,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {new: 20199}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Інші'},
@@ -2954,13 +5951,36 @@ export const categories: CategoryItem[] = [
               products: [
                 {
                     title: 'Пилосос без мішка BOSCH BGC05AAA1', 
+                    engName: 'pilosos-bez-mishka-bosch-bgc05aaa1',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/household-appliances/cleaning/bosch front.webp', 
                     image2: '../assets/household-appliances/cleaning/bosch.webp',  
-                    raiting: 5,
-                    reviews: 14,
+                    images: [
+                        {url: '../assets/household-appliances/cleaning/bosch front.webp'},
+                        {url: '../assets/household-appliances/cleaning/bosch.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Відмінні результати прибирання при аналогічній потужності в 2400 Вт з виключно низьким споживанням електроенергії', text: 'Легке виймання контейнеру натисненням лише однієї кнопки. До того ж контейнер не має кутів, в яких може застрягти бруд, це робить процес очистки набагато простішим.'},
+                    ],
                     info: [
-                        {heading: 'Тип пилососа', text: 'Контейнерного типу (без мішка)'},
+                        {heading: 'Серія', text: 'BOSCH'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Андрій',
+                            date: new Date(),
+                            text: 'Користуємось вже рік, нарікань немає. Компактний та практичний.',
+                            rating: 5,
+                            likes: 1,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 7899, new: 5499}},
@@ -2976,12 +5996,34 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Прасувальна система TEFAL IXEO', 
+                    engName: 'prasuvalna-sistema-tefal-ixeo',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/household-appliances/cleaning/ixeo.webp', 
-                    raiting: 4,
-                    reviews: 230,
+                    images: [
+                        {url: '../assets/household-appliances/cleaning/ixeo.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Відмінні результати прибирання при аналогічній потужності в 2400 Вт з виключно низьким споживанням електроенергії', text: 'Легке виймання контейнеру натисненням лише однієї кнопки. До того ж контейнер не має кутів, в яких може застрягти бруд, це робить процес очистки набагато простішим.'},
+                    ],
                     info: [
-                        {heading: 'Паровий удар, г/хв', text: '200'},
+                        {heading: 'Серія', text: 'TEFAL'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Андрій',
+                            date: new Date(),
+                            text: 'Користуємось вже рік, нарікань немає. Компактний та практичний.',
+                            rating: 5,
+                            likes: 1,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 4899, new: 3399}},
@@ -3008,11 +6050,37 @@ export const categories: CategoryItem[] = [
               products: [
                 {
                     title: 'Електрична зубна щітка PHILIPS Sonicare', 
+                    engName: 'elektrichna-zubna-schitka-philips-sonicare',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/household-appliances/beauty/philips front.webp', 
                     image2: '../assets/household-appliances/beauty/philips.webp', 
-                    raiting: 4,
-                    reviews: 117,
+                    images: [
+                        {url: '../assets/household-appliances/beauty/philips front.webp'},
+                        {url: '../assets/household-appliances/beauty/philips.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Відмінні результати прибирання при аналогічній потужності в 2400 Вт з виключно низьким споживанням електроенергії', text: 'Легке виймання контейнеру натисненням лише однієї кнопки. До того ж контейнер не має кутів, в яких може застрягти бруд, це робить процес очистки набагато простішим.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'PHILIPS'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Андрій',
+                            date: new Date(),
+                            text: 'Користуємось вже рік, нарікань немає. Компактний та практичний.',
+                            rating: 5,
+                            likes: 1,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 4299, new: 3999}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -3027,11 +6095,37 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Фен PHILIPS 5000 series BHD512/00', 
+                    engName: 'fen-philips-5000-series-bhd512-00',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/household-appliances/beauty/fen front.webp', 
                     image2: '../assets/household-appliances/beauty/fen.webp', 
-                    raiting: 5,
-                    reviews: 32,
+                    images: [
+                        {url: '../assets/household-appliances/beauty/fen front.webp'},
+                        {url: '../assets/household-appliances/beauty/fen.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Відмінні результати прибирання при аналогічній потужності в 2400 Вт з виключно низьким споживанням електроенергії', text: 'Легке виймання контейнеру натисненням лише однієї кнопки. До того ж контейнер не має кутів, в яких може застрягти бруд, це робить процес очистки набагато простішим.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'PHILIPS'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Андрій',
+                            date: new Date(),
+                            text: 'Користуємось вже рік, нарікань немає. Компактний та практичний.',
+                            rating: 5,
+                            likes: 1,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 3299, new: 2199}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Інші'},
@@ -3046,11 +6140,37 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Лампа SUNUV 5SE UV/LED', 
+                    engName: 'lampa-sunuv-5se-uv-led',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/household-appliances/beauty/sunuv front.webp', 
                     image2: '../assets/household-appliances/beauty/sunuv.webp', 
-                    raiting: 3,
-                    reviews: 331,
+                    images: [
+                        {url: '../assets/household-appliances/beauty/sunuv front.webp'},
+                        {url: '../assets/household-appliances/beauty/sunuv.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Відмінні результати прибирання при аналогічній потужності в 2400 Вт з виключно низьким споживанням електроенергії', text: 'Легке виймання контейнеру натисненням лише однієї кнопки. До того ж контейнер не має кутів, в яких може застрягти бруд, це робить процес очистки набагато простішим.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'SUNUV'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Андрій',
+                            date: new Date(),
+                            text: 'Користуємось вже рік, нарікань немає. Компактний та практичний.',
+                            rating: 5,
+                            likes: 1,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 999, new: 599}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -3065,10 +6185,35 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Фен-щітка Rowenta KARL LAGERFELD', 
+                    engName: 'fen-schitka-rowenta-karl-lagerfeld',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/household-appliances/beauty/rowenta.webp', 
-                    raiting: 5,
-                    reviews: 64,
+                    images: [
+                        {url: '../assets/household-appliances/beauty/rowenta.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Відмінні результати прибирання при аналогічній потужності в 2400 Вт з виключно низьким споживанням електроенергії', text: 'Легке виймання контейнеру натисненням лише однієї кнопки. До того ж контейнер не має кутів, в яких може застрягти бруд, це робить процес очистки набагато простішим.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'Rowenta'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Андрій',
+                            date: new Date(),
+                            text: 'Користуємось вже рік, нарікань немає. Компактний та практичний.',
+                            rating: 5,
+                            likes: 1,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 3199, new: 2799}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -3083,14 +6228,36 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Електробритва Xiaomi MSN', 
+                    engName: 'elektrobritva-xiaomi-msn',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/household-appliances/beauty/xiaomi front.webp', 
                     image2: '../assets/household-appliances/beauty/xiaomi.webp', 
-                    raiting: 3,
-                    reviews: 45,
+                    images: [
+                        {url: '../assets/household-appliances/beauty/xiaomi front.webp'},
+                        {url: '../assets/household-appliances/beauty/xiaomi.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Відмінні результати прибирання при аналогічній потужності в 2400 Вт з виключно низьким споживанням електроенергії', text: 'Легке виймання контейнеру натисненням лише однієї кнопки. До того ж контейнер не має кутів, в яких може застрягти бруд, це робить процес очистки набагато простішим.'},
+                    ],
                     info: [
-                        {heading: 'Живлення', text: 'Акумулятор'},
-                        {heading: 'Тип гоління', text: 'сузе/вологе'}
+                        {heading: 'Серія', text: 'Xiaomi'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Андрій',
+                            date: new Date(),
+                            text: 'Користуємось вже рік, нарікань немає. Компактний та практичний.',
+                            rating: 5,
+                            likes: 1,
+                            dislikes: 0,
+                        },
                     ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 2015, new: 1842}},
@@ -3106,10 +6273,35 @@ export const categories: CategoryItem[] = [
                 },
                 {
                     title: 'Епілятор BRAUN SE 3170', 
+                    engName: 'epilyator-braun-se-3170',
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/household-appliances/beauty/braun.webp', 
-                    raiting: 3,
-                    reviews: 277,
+                    images: [
+                        {url: '../assets/household-appliances/beauty/braun.webp'},
+                    ],
+                    info_full: [
+                        {heading: 'Відмінні результати прибирання при аналогічній потужності в 2400 Вт з виключно низьким споживанням електроенергії', text: 'Легке виймання контейнеру натисненням лише однієї кнопки. До того ж контейнер не має кутів, в яких може застрягти бруд, це робить процес очистки набагато простішим.'},
+                    ],
+                    info: [
+                        {heading: 'Серія', text: 'BRAUN'},
+                        {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                        {heading: 'Інтегрована графіка', text: 'Немає'},
+                        {heading: 'Частота пам`яті', text: '3200 МГц'},
+                        {heading: 'Серія', text: 'StoreJet'},
+                        {heading: 'Тип панелі', text: 'Монокристалічна'},
+                        {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                        {heading: 'Тип матриці', text: 'LTPO'},
+                    ],
+                    reviews_data: [
+                        {
+                            author: 'Андрій',
+                            date: new Date(),
+                            text: 'Користуємось вже рік, нарікань немає. Компактний та практичний.',
+                            rating: 4,
+                            likes: 1,
+                            dislikes: 0,
+                        },
+                    ],
                     searchStatus: [
                         {searchPosition: 'price', title: 'Ціна', option: {old: 2399, new: 1599}},
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -3131,10 +6323,35 @@ export const categories: CategoryItem[] = [
                 products: [
                     {
                         title: 'Холодильник INDESIT LI7 S1E W', 
+                        engName: 'epilyator-braun-se-3170',
                         id: Math.floor(Math.random() * 1000),
                         image: '../assets/household-appliances/large household appliances/fridges/indesit.webp', 
-                        raiting: 5,
-                        reviews: 35,
+                        images: [
+                            {url: '../assets/household-appliances/large household appliances/fridges/indesit.webp'},
+                        ],
+                        info_full: [
+                            {heading: 'Відмінні результати прибирання при аналогічній потужності в 2400 Вт з виключно низьким споживанням електроенергії', text: 'Легке виймання контейнеру натисненням лише однієї кнопки. До того ж контейнер не має кутів, в яких може застрягти бруд, це робить процес очистки набагато простішим.'},
+                        ],
+                        info: [
+                            {heading: 'Серія', text: 'INDESIT'},
+                            {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                            {heading: 'Інтегрована графіка', text: 'Немає'},
+                            {heading: 'Частота пам`яті', text: '3200 МГц'},
+                            {heading: 'Серія', text: 'StoreJet'},
+                            {heading: 'Тип панелі', text: 'Монокристалічна'},
+                            {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                            {heading: 'Тип матриці', text: 'LTPO'},
+                        ],
+                        reviews_data: [
+                            {
+                                author: 'Саша',
+                                date: new Date(),
+                                text: 'Користуємось вже рік, нарікань немає. Компактний та практичний.',
+                                rating: 4,
+                                likes: 1,
+                                dislikes: 0,
+                            },
+                        ],
                         searchStatus: [
                             {searchPosition: 'price', title: 'Ціна', option: {old: 16199, new: 14999}},
                             {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -3148,12 +6365,38 @@ export const categories: CategoryItem[] = [
                         date: 8
                     },
                     {
-                        title: 'Холодильник BOSCH KGN36VL326', 
+                        title: 'Холодильник BOSCH KGN36VL326',
+                        engName: 'holodilnik-bosch-kgn36vl326', 
                         id: Math.floor(Math.random() * 1000),
                         image: '../assets/household-appliances/large household appliances/fridges/bosch front.webp', 
                         image2: '../assets/household-appliances/large household appliances/fridges/bosch.webp',
-                        raiting: 4,
-                        reviews: 72,
+                        images: [
+                            {url: '../assets/household-appliances/large household appliances/fridges/bosch front.webp'},
+                            {url: '../assets/household-appliances/large household appliances/fridges/bosch.webp'},
+                        ],
+                        info_full: [
+                            {heading: 'Відмінні результати прибирання при аналогічній потужності в 2400 Вт з виключно низьким споживанням електроенергії', text: 'Легке виймання контейнеру натисненням лише однієї кнопки. До того ж контейнер не має кутів, в яких може застрягти бруд, це робить процес очистки набагато простішим.'},
+                        ],
+                        info: [
+                            {heading: 'Серія', text: 'BOSCH'},
+                            {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                            {heading: 'Інтегрована графіка', text: 'Немає'},
+                            {heading: 'Частота пам`яті', text: '3200 МГц'},
+                            {heading: 'Серія', text: 'StoreJet'},
+                            {heading: 'Тип панелі', text: 'Монокристалічна'},
+                            {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                            {heading: 'Тип матриці', text: 'LTPO'},
+                        ],
+                        reviews_data: [
+                            {
+                                author: 'Саша',
+                                date: new Date(),
+                                text: 'Користуємось вже рік, нарікань немає. Компактний та практичний.',
+                                rating: 4,
+                                likes: 1,
+                                dislikes: 0,
+                            },
+                        ],
                         searchStatus: [
                             {searchPosition: 'price', title: 'Ціна', option: {old: 24699, new: 22799}},
                             {searchPosition: 'seller', title: 'Продавець', option: 'Інші'},
@@ -3175,11 +6418,58 @@ export const categories: CategoryItem[] = [
                 products: [
                     {
                         title: 'Пральна машина вузька BEKO WUE 5411', 
+                        engName: 'pralna-mashina-vuzka-beko-wue-5411',
                         id: Math.floor(Math.random() * 1000),
                         image: '../assets/household-appliances/large household appliances/washing machines/beko front.webp', 
                         image2: '../assets/household-appliances/large household appliances/washing machines/beko.webp', 
-                        raiting: 5,
-                        reviews: 135,
+                        images: [
+                            {url: '../assets/household-appliances/large household appliances/washing machines/beko front.webp'},
+                            {url: '../assets/household-appliances/large household appliances/washing machines/beko.webp'},
+                        ],
+                        info_full: [
+                            {heading: 'Менший рівень шуму та енергоспоживання', text: 'Цифровий інвертор. Насолоджуйтесь підвищеною енергоефективністю, зниженим рівнем шуму та тривалою службою. У технології цифрового інвертора використовуються сильні магніти збільшення потужності, але такий пристрій працює тихіше і споживає менше енергії, ніж універсальний електродвигун. Це забезпечує велику довговічність, що додатково підкріплюється 10-річною гарантією.'},
+                            {heading: 'Сила бульбашок', text: 'Економте гроші та захищайте свій одяг. Технологія Eco Bubble™ забезпечує ефективне та дбайливе прання навіть за низьких температур'},
+                            {heading: 'Інтенсивне чищення', text: 'Одяг бездоганно чистий, навіть якщо він дійсно брудний. Функція Bubble Soak допомагає видалити найвпертіші плями, такі як кров, чай, вино, макіяж та трава. Одяг ретельно просочується активними бульбашками, тому бруд та плями розпушуються і їх можна видалити ефективніше.'},
+                        ],
+                        info: [
+                            {heading: 'Серія', text: 'BEKO'},
+                            {heading: 'Тип пральної машини', text: 'З фронтальним завантаженням'},
+                            {heading: 'Максимальне завантаження білизни', text: '6 кг'},
+                            {heading: 'Клас енергоспоживання', text: 'А+++'},
+                            {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                            {heading: 'Інтегрована графіка', text: 'Немає'},
+                            {heading: 'Частота пам`яті', text: '3200 МГц'},
+                            {heading: 'Серія', text: 'StoreJet'},
+                            {heading: 'Тип панелі', text: 'Монокристалічна'},
+                            {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                            {heading: 'Тип матриці', text: 'LTPO'},
+                        ],
+                        reviews_data: [
+                            {
+                                author: 'Дмитро',
+                                date: new Date(),
+                                text: 'Повністю задоволені придбанням пральної машинки, перші враження - тільки позитивні.',
+                                rating: 5,
+                                likes: 0,
+                                dislikes: 0,
+                            },
+                            {
+                                author: 'Наталія',
+                                date: new Date(),
+                                text: 'Машинка чудесная очень красивая!!!Мы очень довольны,стирали первую стирку на 15мин стирает тихо выстирала все хорошо',
+                                rating: 4,
+                                likes: 0,
+                                dislikes: 0,
+                            },
+                            {
+                                author: 'Ігор',
+                                date: new Date(),
+                                text: 'Розпакував пральну машинку, а вона вже з подряпиною. Трохи неприємно. Сподіваюсь це тільки єдиний недолік. Включив режим очищення барабану. Пере тихо.',
+                                rating: 5,
+                                likes: 0,
+                                dislikes: 0,
+                            },
+                        ],
                         searchStatus: [
                             {searchPosition: 'price', title: 'Ціна', option: {old: 11199, new: 9999}},
                             {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -3194,11 +6484,58 @@ export const categories: CategoryItem[] = [
                     },
                     {
                         title: 'Пральна машина повногабаритна BOSCH', 
+                        engName: 'pralna-mashina-povnogabaritna-bosch',
                         id: Math.floor(Math.random() * 1000),
                         image: '../assets/household-appliances/large household appliances/washing machines/bosch front.webp', 
                         image2: '../assets/household-appliances/large household appliances/washing machines/bosch.webp', 
-                        raiting: 4,
-                        reviews: 72,
+                        images: [
+                            {url: '../assets/household-appliances/large household appliances/washing machines/bosch front.webp'},
+                            {url: '../assets/household-appliances/large household appliances/washing machines/bosch.webp'},
+                        ],
+                        info_full: [
+                            {heading: 'Менший рівень шуму та енергоспоживання', text: 'Цифровий інвертор. Насолоджуйтесь підвищеною енергоефективністю, зниженим рівнем шуму та тривалою службою. У технології цифрового інвертора використовуються сильні магніти збільшення потужності, але такий пристрій працює тихіше і споживає менше енергії, ніж універсальний електродвигун. Це забезпечує велику довговічність, що додатково підкріплюється 10-річною гарантією.'},
+                            {heading: 'Сила бульбашок', text: 'Економте гроші та захищайте свій одяг. Технологія Eco Bubble™ забезпечує ефективне та дбайливе прання навіть за низьких температур'},
+                            {heading: 'Інтенсивне чищення', text: 'Одяг бездоганно чистий, навіть якщо він дійсно брудний. Функція Bubble Soak допомагає видалити найвпертіші плями, такі як кров, чай, вино, макіяж та трава. Одяг ретельно просочується активними бульбашками, тому бруд та плями розпушуються і їх можна видалити ефективніше.'},
+                        ],
+                        info: [
+                            {heading: 'Серія', text: 'BOSCH'},
+                            {heading: 'Тип пральної машини', text: 'З фронтальним завантаженням'},
+                            {heading: 'Максимальне завантаження білизни', text: '6 кг'},
+                            {heading: 'Клас енергоспоживання', text: 'А+++'},
+                            {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                            {heading: 'Інтегрована графіка', text: 'Немає'},
+                            {heading: 'Частота пам`яті', text: '3200 МГц'},
+                            {heading: 'Серія', text: 'StoreJet'},
+                            {heading: 'Тип панелі', text: 'Монокристалічна'},
+                            {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                            {heading: 'Тип матриці', text: 'LTPO'},
+                        ],
+                        reviews_data: [
+                            {
+                                author: 'Дмитро',
+                                date: new Date(),
+                                text: 'Повністю задоволені придбанням пральної машинки, перші враження - тільки позитивні.',
+                                rating: 5,
+                                likes: 0,
+                                dislikes: 0,
+                            },
+                            {
+                                author: 'Наталія',
+                                date: new Date(),
+                                text: 'Машинка чудесная очень красивая!!!Мы очень довольны,стирали первую стирку на 15мин стирает тихо выстирала все хорошо',
+                                rating: 4,
+                                likes: 0,
+                                dislikes: 0,
+                            },
+                            {
+                                author: 'Ігор',
+                                date: new Date(),
+                                text: 'Розпакував пральну машинку, а вона вже з подряпиною. Трохи неприємно. Сподіваюсь це тільки єдиний недолік. Включив режим очищення барабану. Пере тихо.',
+                                rating: 5,
+                                likes: 0,
+                                dislikes: 0,
+                            },
+                        ],
                         searchStatus: [
                             {searchPosition: 'price', title: 'Ціна', option: {new: 20999}},
                             {searchPosition: 'seller', title: 'Продавець', option: 'Інші'},
@@ -3213,11 +6550,58 @@ export const categories: CategoryItem[] = [
                     },
                     {
                         title: 'Пральна машина вузька WHIRLPOOL WRSB', 
+                        engName: 'pralna-mashina-vuzka-whirlpool-wrsb',
                         id: Math.floor(Math.random() * 1000),
                         image: '../assets/household-appliances/large household appliances/washing machines/whirpool front.webp', 
                         image2: '../assets/household-appliances/large household appliances/washing machines/whirpool.webp', 
-                        raiting: 5,
-                        reviews: 3,
+                        images: [
+                            {url: '../assets/household-appliances/large household appliances/washing machines/whirpool front.webp'},
+                            {url: '../assets/household-appliances/large household appliances/washing machines/whirpool.webp'},
+                        ],
+                        info_full: [
+                            {heading: 'Менший рівень шуму та енергоспоживання', text: 'Цифровий інвертор. Насолоджуйтесь підвищеною енергоефективністю, зниженим рівнем шуму та тривалою службою. У технології цифрового інвертора використовуються сильні магніти збільшення потужності, але такий пристрій працює тихіше і споживає менше енергії, ніж універсальний електродвигун. Це забезпечує велику довговічність, що додатково підкріплюється 10-річною гарантією.'},
+                            {heading: 'Сила бульбашок', text: 'Економте гроші та захищайте свій одяг. Технологія Eco Bubble™ забезпечує ефективне та дбайливе прання навіть за низьких температур'},
+                            {heading: 'Інтенсивне чищення', text: 'Одяг бездоганно чистий, навіть якщо він дійсно брудний. Функція Bubble Soak допомагає видалити найвпертіші плями, такі як кров, чай, вино, макіяж та трава. Одяг ретельно просочується активними бульбашками, тому бруд та плями розпушуються і їх можна видалити ефективніше.'},
+                        ],
+                        info: [
+                            {heading: 'Серія', text: 'WHIRLPOOL'},
+                            {heading: 'Тип пральної машини', text: 'З фронтальним завантаженням'},
+                            {heading: 'Максимальне завантаження білизни', text: '6 кг'},
+                            {heading: 'Клас енергоспоживання', text: 'А+++'},
+                            {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                            {heading: 'Інтегрована графіка', text: 'Немає'},
+                            {heading: 'Частота пам`яті', text: '3200 МГц'},
+                            {heading: 'Серія', text: 'StoreJet'},
+                            {heading: 'Тип панелі', text: 'Монокристалічна'},
+                            {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                            {heading: 'Тип матриці', text: 'LTPO'},
+                        ],
+                        reviews_data: [
+                            {
+                                author: 'Дмитро',
+                                date: new Date(),
+                                text: 'Повністю задоволені придбанням пральної машинки, перші враження - тільки позитивні.',
+                                rating: 5,
+                                likes: 0,
+                                dislikes: 0,
+                            },
+                            {
+                                author: 'Наталія',
+                                date: new Date(),
+                                text: 'Машинка чудесная очень красивая!!!Мы очень довольны,стирали первую стирку на 15мин стирает тихо выстирала все хорошо',
+                                rating: 4,
+                                likes: 0,
+                                dislikes: 0,
+                            },
+                            {
+                                author: 'Ігор',
+                                date: new Date(),
+                                text: 'Розпакував пральну машинку, а вона вже з подряпиною. Трохи неприємно. Сподіваюсь це тільки єдиний недолік. Включив режим очищення барабану. Пере тихо.',
+                                rating: 5,
+                                likes: 0,
+                                dislikes: 0,
+                            },
+                        ],
                         searchStatus: [
                             {searchPosition: 'price', title: 'Ціна', option: {new: 18999}},
                             {searchPosition: 'seller', title: 'Продавець', option: 'Інші'},
@@ -3239,10 +6623,35 @@ export const categories: CategoryItem[] = [
                 products: [
                     {
                         title: 'Морозильна камера VESTFROST VD', 
+                        engName: 'morozilna-kamera-vestfrost-vd',
                         id: Math.floor(Math.random() * 1000),
                         image: '../assets/household-appliances/large household appliances/washing machines/vestfrost.webp', 
-                        raiting: 5,
-                        reviews: 135,
+                        images: [
+                            {url: '../assets/household-appliances/large household appliances/washing machines/vestfrost.webp'},
+                        ],
+                        info_full: [
+                            {heading: 'ЗАЩИТА ОТ ПЕРЕПАДОВ', text: 'Если напряжение в сети превысит допустимые параметры, Ваш прибор VESTFROST отключится от электросети и возобновит работу в заданном режиме, как только напряжение в сети стабилизируется. При этом параметры настроек возобновятся.'},
+                        ],
+                        info: [
+                            {heading: 'Серія', text: 'VESTFROST'},
+                            {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                            {heading: 'Інтегрована графіка', text: 'Немає'},
+                            {heading: 'Частота пам`яті', text: '3200 МГц'},
+                            {heading: 'Серія', text: 'StoreJet'},
+                            {heading: 'Тип панелі', text: 'Монокристалічна'},
+                            {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                            {heading: 'Тип матриці', text: 'LTPO'},
+                        ],
+                        reviews_data: [
+                            {
+                                author: 'Саша',
+                                date: new Date(),
+                                text: 'Користуємось вже рік, нарікань немає. Компактний та практичний.',
+                                rating: 4,
+                                likes: 1,
+                                dislikes: 0,
+                            },
+                        ],
                         searchStatus: [
                             {searchPosition: 'price', title: 'Ціна', option: {old: 23199, new: 18999}},
                             {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -3264,11 +6673,38 @@ export const categories: CategoryItem[] = [
                 products: [
                     {
                         title: 'Кавомашина PHILIPS Series 2200', 
+                        engName: 'kavomashina-philips-series-2200',
                         id: Math.floor(Math.random() * 1000),
                         image: '../assets/household-appliances/kitchen/coffee machines/philips front.webp', 
                         image2: '../assets/household-appliances/kitchen/coffee machines/philips.webp', 
-                        raiting: 4,
-                        reviews: 5,
+                        images: [
+                            {url: '../assets/household-appliances/kitchen/coffee machines/philips front.webp'},
+                            {url: '../assets/household-appliances/kitchen/coffee machines/philips.webp'},
+                        ],
+                        info_full: [
+                            {heading: 'Інтуїтивно зрозуміла чутлива панель управління', text: 'Кавомашина має надзвичайно простий у використанні сенсорний дисплей. Оберіть тип кави на панелі керування і торкніться відповідного зображення. Одразу почнеться приготування напою.'},
+                            {heading: 'My Coffee Choice', text: 'Легко вибирайте одне із трьох налаштувань відповідно до своїх уподобань. Кавомашина запам`ятає ваш вибір і наступного разу приготує напій ідеальної міцності та об`єму.'},
+                        ],
+                        info: [
+                            {heading: 'Серія', text: 'PHILIPS'},
+                            {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                            {heading: 'Інтегрована графіка', text: 'Немає'},
+                            {heading: 'Частота пам`яті', text: '3200 МГц'},
+                            {heading: 'Серія', text: 'StoreJet'},
+                            {heading: 'Тип панелі', text: 'Монокристалічна'},
+                            {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                            {heading: 'Тип матриці', text: 'LTPO'},
+                        ],
+                        reviews_data: [
+                            {
+                                author: 'Валентин Самойлов',
+                                date: new Date(),
+                                text: 'Рішення про покупку далося непросто, але зараз розумію: а що мене, власне, зупиняло?)',
+                                rating: 5,
+                                likes: 1,
+                                dislikes: 0,
+                            },
+                        ],
                         searchStatus: [
                             {searchPosition: 'price', title: 'Ціна', option: {old: 21199, new: 16499}},
                             {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -3283,11 +6719,38 @@ export const categories: CategoryItem[] = [
                     },
                     {
                         title: 'Кавомашина KRUPS Evidence Eco-design', 
+                        engName: 'kavomashina-krups-evidence-eco-design',
                         id: Math.floor(Math.random() * 1000),
                         image: '../assets/household-appliances/kitchen/coffee machines/krups front.webp', 
                         image2: '../assets/household-appliances/kitchen/coffee machines/krups.webp', 
-                        raiting: 3,
-                        reviews: 6,
+                        images: [
+                            {url: '../assets/household-appliances/kitchen/coffee machines/krups front.webp'},
+                            {url: '../assets/household-appliances/kitchen/coffee machines/krups.webp'},
+                        ],
+                        info_full: [
+                            {heading: 'Інтуїтивно зрозуміла чутлива панель управління', text: 'Кавомашина має надзвичайно простий у використанні сенсорний дисплей. Оберіть тип кави на панелі керування і торкніться відповідного зображення. Одразу почнеться приготування напою.'},
+                            {heading: 'My Coffee Choice', text: 'Легко вибирайте одне із трьох налаштувань відповідно до своїх уподобань. Кавомашина запам`ятає ваш вибір і наступного разу приготує напій ідеальної міцності та об`єму.'},
+                        ],
+                        info: [
+                            {heading: 'Серія', text: 'Krups'},
+                            {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                            {heading: 'Інтегрована графіка', text: 'Немає'},
+                            {heading: 'Частота пам`яті', text: '3200 МГц'},
+                            {heading: 'Серія', text: 'StoreJet'},
+                            {heading: 'Тип панелі', text: 'Монокристалічна'},
+                            {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                            {heading: 'Тип матриці', text: 'LTPO'},
+                        ],
+                        reviews_data: [
+                            {
+                                author: 'Альбіна',
+                                date: new Date(),
+                                text: 'Обожнюю молочні кавові напої і височезну пінку, тому зупинила свій вибір на цій машині. Вона коштує своїх грошей. Має багатий функціонал. Якісна, ще не було збоїв. Звісно, щоб вона довше прослужила треба за нею доглядати, але воно того варте.',
+                                rating: 5,
+                                likes: 1,
+                                dislikes: 0,
+                            },
+                        ],
                         searchStatus: [
                             {searchPosition: 'price', title: 'Ціна', option: {old: 23299, new: 19999}},
                             {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -3309,11 +6772,45 @@ export const categories: CategoryItem[] = [
                 products: [
                     {
                         title: 'Електробритва BRAUN Series 3 3020', 
+                        engName: 'elektrobritva-braun-series-3-3020',
                         id: Math.floor(Math.random() * 1000),
                         image: '../assets/household-appliances/beauty/brytvy/braun front.webp', 
                         image2: '../assets/household-appliances/beauty/brytvy/braun.webp', 
-                        raiting: 4,
-                        reviews: 5,
+                        images: [
+                            {url: '../assets/household-appliances/beauty/brytvy/braun front.webp'},
+                            {url: '../assets/household-appliances/beauty/brytvy/braun.webp'},
+                        ],
+                        info_full: [
+                            {heading: 'Технологія Microcomb допомагає направляти більше волосків до ріжучих деталей для більш швидкого гоління', text: 'З новою бритвою Braun Series 3 представляється технологія MicroComb. Мікрогребень містить два ряди дрібних гребенів, рівномірно розподілених навколо незалежного плаваючого тримера. Це дозволяє зловити і направити більше волосків з кожним рухом і забезпечує більш швидке гоління. Помітна різниця в порівнянні з іншими бритвами, особливо при випробуванні на 3х денний щетині.'},
+                        ],
+                        info: [
+                            {heading: 'Серія', text: 'BRAUN'},
+                            {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                            {heading: 'Інтегрована графіка', text: 'Немає'},
+                            {heading: 'Частота пам`яті', text: '3200 МГц'},
+                            {heading: 'Серія', text: 'StoreJet'},
+                            {heading: 'Тип панелі', text: 'Монокристалічна'},
+                            {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                            {heading: 'Тип матриці', text: 'LTPO'},
+                        ],
+                        reviews_data: [
+                            {
+                                author: 'Багнюк Богдан',
+                                date: new Date(),
+                                text: 'Чудова електробритва. Подразнень не має в порівнянні з ручним станком. Хоча вона перша, тому не має з чим рівняти.',
+                                rating: 5,
+                                likes: 1,
+                                dislikes: 0,
+                            },
+                            {
+                                author: 'Руслан Насадюк',
+                                date: new Date(),
+                                text: 'Хороша бритва. Давно користуюся бритвами фірми Braun.',
+                                rating: 5,
+                                likes: 1,
+                                dislikes: 0,
+                            },
+                        ],
                         searchStatus: [
                             {searchPosition: 'price', title: 'Ціна', option: {old: 5199, new: 3499}},
                             {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -3328,11 +6825,37 @@ export const categories: CategoryItem[] = [
                     },
                     {
                         title: 'Електробритва Xiaomi Enchen Steel 3S Shaver', 
+                        engName: 'elektrobritva-enchen-series',
                         id: Math.floor(Math.random() * 1000),
                         image: '../assets/household-appliances/beauty/brytvy/xiaomi front.webp', 
                         image2: '../assets/household-appliances/beauty/brytvy/xiaomi.webp', 
-                        raiting: 5,
-                        reviews: 26,
+                        images: [
+                            {url: '../assets/household-appliances/beauty/brytvy/xiaomi front.webp'},
+                            {url: '../assets/household-appliances/beauty/brytvy/xiaomi.webp'},
+                        ],
+                        info_full: [
+                            {heading: 'Технологія Microcomb допомагає направляти більше волосків до ріжучих деталей для більш швидкого гоління', text: 'З новою бритвою Braun Series 3 представляється технологія MicroComb. Мікрогребень містить два ряди дрібних гребенів, рівномірно розподілених навколо незалежного плаваючого тримера. Це дозволяє зловити і направити більше волосків з кожним рухом і забезпечує більш швидке гоління. Помітна різниця в порівнянні з іншими бритвами, особливо при випробуванні на 3х денний щетині.'},
+                        ],
+                        info: [
+                            {heading: 'Серія', text: 'Xiaomi'},
+                            {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                            {heading: 'Інтегрована графіка', text: 'Немає'},
+                            {heading: 'Частота пам`яті', text: '3200 МГц'},
+                            {heading: 'Серія', text: 'StoreJet'},
+                            {heading: 'Тип панелі', text: 'Монокристалічна'},
+                            {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                            {heading: 'Тип матриці', text: 'LTPO'},
+                        ],
+                        reviews_data: [
+                            {
+                                author: 'Багнюк Богдан',
+                                date: new Date(),
+                                text: 'Голить досить чисто, подразнень (в мене принаймні) не викликає.',
+                                rating: 4,
+                                likes: 1,
+                                dislikes: 0,
+                            },
+                        ],
                         searchStatus: [
                             {searchPosition: 'price', title: 'Ціна', option: {old: 1199, new: 899}},
                             {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -3354,10 +6877,35 @@ export const categories: CategoryItem[] = [
                 products: [
                     {
                         title: 'Робот-пилосос SAMSUNG VR05R5050WK/EV', 
+                        engName: 'robot-pilosos-samsung-vr05r5050wk-ev',
                         id: Math.floor(Math.random() * 1000),
                         image: '../assets/household-appliances/beauty/clean_robots/samsung.webp', 
-                        raiting: 5,
-                        reviews: 9,
+                        images: [
+                            {url: '../assets/household-appliances/beauty/clean_robots/samsung.webp'},
+                        ],
+                        info_full: [
+                            {heading: '2 в 1 Одночасно сухе та вологе прибирання', text: 'Заощадьте час і сили, здійснюючи сухе та вологе прибирання за один раз! Система пилососа 2 в 1 вловлює пил і бруд та ефективно миє підлогу. Пилосос визначає, чи встановлена подушечка для вологого прибирання, й автоматично перемикається в потрібний режим і регулює кількість води.'},
+                        ],
+                        info: [
+                            {heading: 'Серія', text: 'SAMSUNG'},
+                            {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                            {heading: 'Інтегрована графіка', text: 'Немає'},
+                            {heading: 'Частота пам`яті', text: '3200 МГц'},
+                            {heading: 'Серія', text: 'StoreJet'},
+                            {heading: 'Тип панелі', text: 'Монокристалічна'},
+                            {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                            {heading: 'Тип матриці', text: 'LTPO'},
+                        ],
+                        reviews_data: [
+                            {
+                                author: 'Багнюк Богдан',
+                                date: new Date(),
+                                text: 'Повернув даний пилосос. Виконує прибирання наосліп, карти не будує, на деяких ділянках прибирає по декілька разів, не запамʼятовує пройдені участки, не знає де знаходиться док станція, досить шумний. Такий функціонал не рекомндую',
+                                rating: 3,
+                                likes: 1,
+                                dislikes: 0,
+                            },
+                        ],
                         searchStatus: [
                             {searchPosition: 'price', title: 'Ціна', option: {old: 11199, new: 9999}},
                             {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -3372,10 +6920,35 @@ export const categories: CategoryItem[] = [
                     },
                     {
                         title: 'Робот-пилосос Xiaomi Robot Vacuum S10+', 
+                        engName: 'robot-pilosos-xiaomi-vr05r5050wk',
                         id: Math.floor(Math.random() * 1000),
                         image: '../assets/household-appliances/beauty/clean_robots/xiaomi.webp', 
-                        raiting: 4,
-                        reviews: 34,
+                        images: [
+                            {url: '../assets/household-appliances/beauty/clean_robots/xiaomi.webp'},
+                        ],
+                        info_full: [
+                            {heading: 'Безліч режимів прибирання', text: 'Виберіть найкращий спосіб прибирання в різних ситуаціях, використовуючи безліч режимів прибирання*. Він має 4 типи прибирання, включно з Auto (випадковий режим), "Зиґзаґ", "Уздовж стін" і "Місцеве забруднення". А режим планування також дає змогу вам налаштувати декілька режимів, тому він автоматично починає очищення в певні години щодня.'},
+                        ],
+                        info: [
+                            {heading: 'Серія', text: 'Xiaomi'},
+                            {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                            {heading: 'Інтегрована графіка', text: 'Немає'},
+                            {heading: 'Частота пам`яті', text: '3200 МГц'},
+                            {heading: 'Серія', text: 'StoreJet'},
+                            {heading: 'Тип панелі', text: 'Монокристалічна'},
+                            {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                            {heading: 'Тип матриці', text: 'LTPO'},
+                        ],
+                        reviews_data: [
+                            {
+                                author: 'Наталья',
+                                date: new Date(),
+                                text: '16 травня отримала цей пилосос, поки був заряджений то працював від пульта, а після того як розрядився на базу не їде самостійно, Wifi не підтримує і не можливо підключити до додатка.,',
+                                rating: 4,
+                                likes: 1,
+                                dislikes: 0,
+                            },
+                        ],
                         searchStatus: [
                             {searchPosition: 'price', title: 'Ціна', option: {old: 17199, new: 15999}},
                             {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
@@ -3392,18 +6965,363 @@ export const categories: CategoryItem[] = [
             },
         ],
     },
+    {
+        name: 'Товари для геймерів',
+        engName: 'game-zone',
+        id: 'c80255',
+        icon: 'sports_esports',
+        popular: [  
+            {name: 'PlayStation', engName: 'playstation-store', id: 'c800801', img: '../assets/game-zone/igrovye_pristavki.jpg'},
+        ],
+        banners: [
+            {url: '../assets/game-zone/banner1.jpg'},
+            {url: '../assets/game-zone/banner2.jpg'},
+            {url: '../assets/game-zone/banner3.jpg'},
+        ],
+        brands: [],
+        subCategories: [
+            {
+                name: 'PlayStation', 
+                img: '../assets/game-zone/igrovye_pristavki.jpg',
+                engName: 'playstation-store', 
+                id: 'c800801',  
+                popular: [
+                  {name: 'Ігрові приставки PlayStation 5', engName: 'playstation-5', id: 'k80126'}, 
+                  {name: 'Геймпади PlayStation', engName: 'gamepads-playstation', id: 'k80125'}, 
+                ], 
+                subitems: [
+                  {name: 'Ігрові приставки PlayStation 5', engName: 'playstation-5', id: 'k80126', img: '../assets/game-zone/igrovye_pristavki.jpg'}, 
+                  {name: 'Геймпади PlayStation', engName: 'gamepads-playstation', id: 'k80125', img: '../assets/game-zone/igrovye_pristavki2.jpg'}, 
+                ],
+                products: [
+                    {
+                        title: 'Ігрова приставка PS5 PlayStation 5', 
+                        engName: 'igrova-pristavka-ps5-playstation-5',
+                        id: Math.floor(Math.random() * 1000),
+                        image: '../assets/game-zone/playstation/ps5 front.webp', 
+                        image2: '../assets/game-zone/playstation/ps5.webp', 
+                        images: [
+                            {url: '../assets/game-zone/playstation/ps5 front.webp'},
+                            {url: '../assets/game-zone/playstation/ps5.webp'},
+                        ],
+                        info_full: [
+                            {heading: 'Play Has No Limits', text: 'Блискавична швидкість завантаження завдяки надшвидкісному накопичувачу SSD, неймовірний ефект занурення завдяки тактильному відбою, адаптивним спусковим кнопкам і 3D-звуку, а також приголомшливі ігри нового покоління для PlayStation®.'},
+                            {heading: 'Блискавична швидкість', text: 'Відчуйте всю міць спеціальних центрального та графічного процесорів і SSD з інтегрованою системою вводу/виводу, що повністю змінять ваше уявлення про можливості консолі PlayStation.'},
+                        ],
+                        info: [
+                            {heading: 'Процесор', text: '8-ядерний x86-64 AMD Ryzen Zen 2 (Частота: до 3.5 ГГц)'},
+                            {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                            {heading: 'Інтегрована графіка', text: 'Немає'},
+                            {heading: 'Частота пам`яті', text: '3200 МГц'},
+                            {heading: 'Серія', text: 'StoreJet'},
+                            {heading: 'Тип панелі', text: 'Монокристалічна'},
+                            {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                            {heading: 'Тип матриці', text: 'LTPO'},
+                        ],
+                        reviews_data: [
+                            {
+                                author: 'Богдан',
+                                date: new Date(),
+                                text: 'Порівнюючи з Xbox Series якість матеріалів і сама збірка так собі, проте все інше влаштовує.',
+                                rating: 4,
+                                likes: 1,
+                                dislikes: 0,
+                            },
+                        ],
+                        searchStatus: [
+                            {searchPosition: 'price', title: 'Ціна', option: {old: 22199, new: 19999}},
+                            {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
+                            {searchPosition: 'producer', title: 'Бренд', option: 'Sony '},
+                            {searchPosition: 'ready-to-depart', title: 'Готовий до відправлення', option: 'Готовий до відправлення'},
+                            {searchPosition: 'discount', title: 'Товари з акціями', option: false},
+                            {searchPosition: 'loyalty-program', title: 'Програма лояльності', option: false},
+                            {searchPosition: 'new', title: 'Новий - б/в', option: 'Новий'},
+                            {searchPosition: 'sell_status', title: 'Статус товару', option: 'Є в наявності'},
+                        ],
+                        date: 8
+                    },
+                    {
+                        title: 'Консоль Sony PlayStation 4 Slim 500GB Black', 
+                        engName: 'igrova-pristavka-ps4-playstation-4',
+                        id: Math.floor(Math.random() * 1000),
+                        image: '../assets/game-zone/playstation/ps4 front.webp', 
+                        image2: '../assets/game-zone/playstation/ps4.webp', 
+                        images: [
+                            {url: '../assets/game-zone/playstation/ps4 front.webp'},
+                            {url: '../assets/game-zone/playstation/ps4.webp'},
+                            {url: '../assets/game-zone/playstation/ps4-3.webp'},
+                        ],
+                        info_full: [
+                            {heading: 'Play Has No Limits', text: 'Блискавична швидкість завантаження завдяки надшвидкісному накопичувачу SSD, неймовірний ефект занурення завдяки тактильному відбою, адаптивним спусковим кнопкам і 3D-звуку, а також приголомшливі ігри нового покоління для PlayStation®.'},
+                            {heading: 'Блискавична швидкість', text: 'Відчуйте всю міць спеціальних центрального та графічного процесорів і SSD з інтегрованою системою вводу/виводу, що повністю змінять ваше уявлення про можливості консолі PlayStation.'},
+                        ],
+                        info: [
+                            {heading: 'Процесор', text: '8-ядерний x86-64 AMD Ryzen Zen 2 (Частота: до 3.5 ГГц)'},
+                            {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                            {heading: 'Інтегрована графіка', text: 'Немає'},
+                            {heading: 'Частота пам`яті', text: '3200 МГц'},
+                            {heading: 'Серія', text: 'StoreJet'},
+                            {heading: 'Тип панелі', text: 'Монокристалічна'},
+                            {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                            {heading: 'Тип матриці', text: 'LTPO'},
+                        ],
+                        reviews_data: [
+                            {
+                                author: 'Степан',
+                                date: new Date(),
+                                text: 'Оригінальна упаковка, повна комплектність. Все працює. Якість обслуговування на високому рівні.',
+                                rating: 3,
+                                likes: 1,
+                                dislikes: 0,
+                            },
+                        ],
+                        searchStatus: [
+                            {searchPosition: 'price', title: 'Ціна', option: {new: 13999}},
+                            {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
+                            {searchPosition: 'producer', title: 'Бренд', option: 'Sony '},
+                            {searchPosition: 'ready-to-depart', title: 'Готовий до відправлення', option: 'Готовий до відправлення'},
+                            {searchPosition: 'discount', title: 'Товари з акціями', option: 'Акція'},
+                            {searchPosition: 'loyalty-program', title: 'Програма лояльності', option: false},
+                            {searchPosition: 'new', title: 'Новий - б/в', option: 'Новий'},
+                            {searchPosition: 'sell_status', title: 'Статус товару', option: 'Є в наявності'},
+                        ],
+                        date: 8
+                    },
+                    {
+                        title: 'Окуляри віртуальної реальності Sony', 
+                        engName: 'okulyari-virtualnoyi-realnosti-sony',
+                        id: Math.floor(Math.random() * 1000),
+                        image: '../assets/game-zone/playstation/glasses front.webp', 
+                        images: [
+                            {url: '../assets/game-zone/playstation/glasses front.webp'},
+                        ],
+                        info_full: [
+                            {heading: 'Окуляри віртуальної реальності Sony PlayStation VR2', text: 'Перенесіться у світи, які здаються справді реальними - ігри у віртуальній реальності виходять на новий рівень.'},
+                        ],
+                        info: [
+                            {heading: 'Процесор', text: '8-ядерний x86-64 AMD Ryzen Zen 2 (Частота: до 3.5 ГГц)'},
+                            {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                            {heading: 'Інтегрована графіка', text: 'Немає'},
+                            {heading: 'Частота пам`яті', text: '3200 МГц'},
+                            {heading: 'Серія', text: 'StoreJet'},
+                            {heading: 'Тип панелі', text: 'Монокристалічна'},
+                            {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                            {heading: 'Тип матриці', text: 'LTPO'},
+                        ],
+                        reviews_data: [
+                            {
+                                author: 'Віктор',
+                                date: new Date(),
+                                text: 'Оригінальна упаковка, повна комплектність. Все працює. Якість обслуговування на високому рівні.',
+                                rating: 5,
+                                likes: 1,
+                                dislikes: 0,
+                            },
+                        ],
+                        searchStatus: [
+                            {searchPosition: 'price', title: 'Ціна', option: {new: 34999}},
+                            {searchPosition: 'seller', title: 'Продавець', option: 'Інші'},
+                            {searchPosition: 'producer', title: 'Бренд', option: 'Sony '},
+                            {searchPosition: 'ready-to-depart', title: 'Готовий до відправлення', option: 'Готовий до відправлення'},
+                            {searchPosition: 'discount', title: 'Товари з акціями', option: 'Акція'},
+                            {searchPosition: 'loyalty-program', title: 'Програма лояльності', option: false},
+                            {searchPosition: 'new', title: 'Новий - б/в', option: 'Новий'},
+                            {searchPosition: 'sell_status', title: 'Статус товару', option: 'Немає в наявності'},
+                        ],
+                        date: 8
+                    },
+                    {
+                        title: 'Бездротовий геймпад PlayStation 5 Dualsense', 
+                        engName: 'bezdrotovij-gejmpad-playstation-5-dualsense',
+                        id: 334,
+                        image: '../assets/game-zone/playstation/gamepad.webp',  
+                        images: [
+                            {url: '../assets/game-zone/playstation/gamepad.webp'},
+                        ],
+                        info_full: [
+                            {heading: 'Play Has No Limits', text: 'Блискавична швидкість завантаження завдяки надшвидкісному накопичувачу SSD, неймовірний ефект занурення завдяки тактильному відбою, адаптивним спусковим кнопкам і 3D-звуку, а також приголомшливі ігри нового покоління для PlayStation®.'},
+                            {heading: 'Блискавична швидкість', text: 'Відчуйте всю міць спеціальних центрального та графічного процесорів і SSD з інтегрованою системою вводу/виводу, що повністю змінять ваше уявлення про можливості консолі PlayStation.'},
+                        ],
+                        info: [
+                            {heading: 'Процесор', text: '8-ядерний x86-64 AMD Ryzen Zen 2 (Частота: до 3.5 ГГц)'},
+                            {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                            {heading: 'Інтегрована графіка', text: 'Немає'},
+                            {heading: 'Частота пам`яті', text: '3200 МГц'},
+                            {heading: 'Серія', text: 'StoreJet'},
+                            {heading: 'Тип панелі', text: 'Монокристалічна'},
+                            {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                            {heading: 'Тип матриці', text: 'LTPO'},
+                        ],
+                        reviews_data: [
+                            {
+                                author: 'Богдан',
+                                date: new Date(),
+                                text: 'Порівнюючи з Xbox Series якість матеріалів і сама збірка так собі, проте все інше влаштовує.',
+                                rating: 4,
+                                likes: 1,
+                                dislikes: 0,
+                            },
+                        ],
+                        searchStatus: [
+                            {searchPosition: 'price', title: 'Ціна', option: {new: 2629}},
+                            {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
+                            {searchPosition: 'producer', title: 'Бренд', option: 'Sony '},
+                            {searchPosition: 'ready-to-depart', title: 'Готовий до відправлення', option: 'Готовий до відправлення'},
+                            {searchPosition: 'discount', title: 'Товари з акціями', option: false},
+                            {searchPosition: 'loyalty-program', title: 'Програма лояльності', option: false},
+                            {searchPosition: 'new', title: 'Новий - б/в', option: 'Новий'},
+                            {searchPosition: 'sell_status', title: 'Статус товару', option: 'Є в наявності'},
+                        ],
+                        date: 8
+                    },
+                    {
+                        title: 'Sony PlayStation 5 White 825Gb + DualSense', 
+                        engName: 'sony-playstation-5-white-825gb---dualsense',
+                        id: 335,
+                        image: '../assets/game-zone/playstation/ps5 white front.webp',  
+                        images: [
+                            {url: '../assets/game-zone/playstation/ps5 white front.webp'},
+                        ],
+                        info_full: [
+                            {heading: 'Play Has No Limits', text: 'Блискавична швидкість завантаження завдяки надшвидкісному накопичувачу SSD, неймовірний ефект занурення завдяки тактильному відбою, адаптивним спусковим кнопкам і 3D-звуку, а також приголомшливі ігри нового покоління для PlayStation®.'},
+                            {heading: 'Блискавична швидкість', text: 'Відчуйте всю міць спеціальних центрального та графічного процесорів і SSD з інтегрованою системою вводу/виводу, що повністю змінять ваше уявлення про можливості консолі PlayStation.'},
+                        ],
+                        info: [
+                            {heading: 'Процесор', text: '8-ядерний x86-64 AMD Ryzen Zen 2 (Частота: до 3.5 ГГц)'},
+                            {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                            {heading: 'Інтегрована графіка', text: 'Немає'},
+                            {heading: 'Частота пам`яті', text: '3200 МГц'},
+                            {heading: 'Серія', text: 'StoreJet'},
+                            {heading: 'Тип панелі', text: 'Монокристалічна'},
+                            {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                            {heading: 'Тип матриці', text: 'LTPO'},
+                        ],
+                        reviews_data: [
+                            {
+                                author: 'Богдан',
+                                date: new Date(),
+                                text: 'Порівнюючи з Xbox Series якість матеріалів і сама збірка так собі, проте все інше влаштовує.',
+                                rating: 4,
+                                likes: 1,
+                                dislikes: 0,
+                            },
+                        ],
+                        searchStatus: [
+                            {searchPosition: 'price', title: 'Ціна', option: {old: 26199, new: 24799}},
+                            {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
+                            {searchPosition: 'producer', title: 'Бренд', option: 'Sony '},
+                            {searchPosition: 'ready-to-depart', title: 'Готовий до відправлення', option: 'Готовий до відправлення'},
+                            {searchPosition: 'discount', title: 'Товари з акціями', option: false},
+                            {searchPosition: 'loyalty-program', title: 'Програма лояльності', option: false},
+                            {searchPosition: 'new', title: 'Новий - б/в', option: 'Новий'},
+                            {searchPosition: 'sell_status', title: 'Статус товару', option: 'Є в наявності'},
+                        ],
+                        date: 8
+                    },
+                ]
+            },
+            {
+                name: 'Ігрові приставки PlayStation 5', 
+                engName: 'playstation-5', 
+                id: 'k80126', 
+                products: [
+                    {
+                        title: 'Sony PlayStation 5 White 825Gb + DualSense', 
+                        engName: 'sony-playstation-5-white-825gb---dualsense',
+                        id: 335,
+                        image: '../assets/game-zone/playstation/ps5 white front.webp',  
+                        images: [
+                            {url: '../assets/game-zone/playstation/ps5 white front.webp'},
+                        ],
+                        info_full: [
+                            {heading: 'Play Has No Limits', text: 'Блискавична швидкість завантаження завдяки надшвидкісному накопичувачу SSD, неймовірний ефект занурення завдяки тактильному відбою, адаптивним спусковим кнопкам і 3D-звуку, а також приголомшливі ігри нового покоління для PlayStation®.'},
+                            {heading: 'Блискавична швидкість', text: 'Відчуйте всю міць спеціальних центрального та графічного процесорів і SSD з інтегрованою системою вводу/виводу, що повністю змінять ваше уявлення про можливості консолі PlayStation.'},
+                        ],
+                        info: [
+                            {heading: 'Процесор', text: '8-ядерний x86-64 AMD Ryzen Zen 2 (Частота: до 3.5 ГГц)'},
+                            {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                            {heading: 'Інтегрована графіка', text: 'Немає'},
+                            {heading: 'Частота пам`яті', text: '3200 МГц'},
+                            {heading: 'Серія', text: 'StoreJet'},
+                            {heading: 'Тип панелі', text: 'Монокристалічна'},
+                            {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                            {heading: 'Тип матриці', text: 'LTPO'},
+                        ],
+                        reviews_data: [
+                            {
+                                author: 'Богдан',
+                                date: new Date(),
+                                text: 'Порівнюючи з Xbox Series якість матеріалів і сама збірка так собі, проте все інше влаштовує.',
+                                rating: 4,
+                                likes: 1,
+                                dislikes: 0,
+                            },
+                        ],
+                        searchStatus: [
+                            {searchPosition: 'price', title: 'Ціна', option: {old: 26199, new: 24799}},
+                            {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
+                            {searchPosition: 'producer', title: 'Бренд', option: 'Sony '},
+                            {searchPosition: 'ready-to-depart', title: 'Готовий до відправлення', option: 'Готовий до відправлення'},
+                            {searchPosition: 'discount', title: 'Товари з акціями', option: false},
+                            {searchPosition: 'loyalty-program', title: 'Програма лояльності', option: false},
+                            {searchPosition: 'new', title: 'Новий - б/в', option: 'Новий'},
+                            {searchPosition: 'sell_status', title: 'Статус товару', option: 'Є в наявності'},
+                        ],
+                        date: 8
+                    },
+                ]
+            },
+            {
+                name: 'Геймпади PlayStation', 
+                engName: 'gamepads-playstation', 
+                id: 'k80125', 
+                products: [
+                    {
+                        title: 'Бездротовий геймпад PlayStation 5 Dualsense', 
+                        engName: 'bezdrotovij-gejmpad-playstation-5-dualsense',
+                        id: 334,
+                        image: '../assets/game-zone/playstation/gamepad.webp',  
+                        images: [
+                            {url: '../assets/game-zone/playstation/gamepad.webp'},
+                        ],
+                        info_full: [
+                            {heading: 'Play Has No Limits', text: 'Блискавична швидкість завантаження завдяки надшвидкісному накопичувачу SSD, неймовірний ефект занурення завдяки тактильному відбою, адаптивним спусковим кнопкам і 3D-звуку, а також приголомшливі ігри нового покоління для PlayStation®.'},
+                            {heading: 'Блискавична швидкість', text: 'Відчуйте всю міць спеціальних центрального та графічного процесорів і SSD з інтегрованою системою вводу/виводу, що повністю змінять ваше уявлення про можливості консолі PlayStation.'},
+                        ],
+                        info: [
+                            {heading: 'Процесор', text: '8-ядерний x86-64 AMD Ryzen Zen 2 (Частота: до 3.5 ГГц)'},
+                            {heading: 'Тип роз`єму', text: 'Socket AM4'},
+                            {heading: 'Інтегрована графіка', text: 'Немає'},
+                            {heading: 'Частота пам`яті', text: '3200 МГц'},
+                            {heading: 'Серія', text: 'StoreJet'},
+                            {heading: 'Тип панелі', text: 'Монокристалічна'},
+                            {heading: 'Тип сенсора дисплея', text: 'Ємнісний'},
+                            {heading: 'Тип матриці', text: 'LTPO'},
+                        ],
+                        reviews_data: [
+                            {
+                                author: 'Богдан',
+                                date: new Date(),
+                                text: 'Порівнюючи з Xbox Series якість матеріалів і сама збірка так собі, проте все інше влаштовує.',
+                                rating: 4,
+                                likes: 1,
+                                dislikes: 0,
+                            },
+                        ],
+                        searchStatus: [
+                            {searchPosition: 'price', title: 'Ціна', option: {new: 2629}},
+                            {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
+                            {searchPosition: 'producer', title: 'Бренд', option: 'Sony '},
+                            {searchPosition: 'ready-to-depart', title: 'Готовий до відправлення', option: 'Готовий до відправлення'},
+                            {searchPosition: 'discount', title: 'Товари з акціями', option: false},
+                            {searchPosition: 'loyalty-program', title: 'Програма лояльності', option: false},
+                            {searchPosition: 'new', title: 'Новий - б/в', option: 'Новий'},
+                            {searchPosition: 'sell_status', title: 'Статус товару', option: 'Є в наявності'},
+                        ],
+                        date: 8
+                    },
+                ]
+            }
+        ]
+    }
   ]
-
- 
-
-//   function getPrice(subcategoryName: string): number {
-//     console.log(ss)
-//     let s: any;
-
-//     // ss.forEach(category => {
-//     //     s = category.subCategories.filter(subcategory => subcategory.name === subcategoryName)
-//     // })
-//         // console.log(s[0].products)
-//     const startPrice = 11
-//     return startPrice
-//     }

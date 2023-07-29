@@ -118,10 +118,12 @@ export class SearchResultsService {
 
     // ф-ія для генерації параметрів пошуку на основі списку товарів
     createSearchParams(subcategory: any) {
+        // ось це додав, але треба умову... і тепер скасувати всі не працює 
+        this.currentSubcategory.products = [...categories[this.currentCategoryIndex].subCategories[this.currentSubcategoryIndex].products] 
+
         this.searchParams = []
 
         this.createPriceSearchParams(subcategory)
-
         subcategory.products.map((product: any) => {
           product.searchStatus.map((searchItem: any) => {
             if (searchItem.option === false) {return}
@@ -190,19 +192,13 @@ export class SearchResultsService {
     removeAll() {
         this.selectedInputs = []
         this.baseInput = ''
-        if (this.currentSubcategory && this.currentSubcategory.products && this.currentCategoryIndex && this.currentSubcategoryIndex) {
-            this.currentSubcategory.products = [...categories[this.currentCategoryIndex].subCategories[this.currentSubcategoryIndex].products] 
-          }
+
+        // if (this.currentCategoryIndex) {
+        //     this.currentSubcategory.products = [...categories[this.currentCategoryIndex].subCategories[this.currentSubcategoryIndex].products] 
+        // }
+
+        this.currentSubcategory.products = [...categories[this.currentCategoryIndex].subCategories[this.currentSubcategoryIndex].products] 
           
-        // скидаємо на початкові дані 
-        // if (this.selectedInputs.length > 0) {
-        //     this.selectedInputs = []
-        // }
-        // else if (this.baseInput) {
-        //     this.baseInput = ''
-        // } else if (this.currentSubcategory && this.currentSubcategory.products.length>0) {
-        //     this.currentSubcategory.products = [...categories[this.currentCategoryIndex].subCategories[this.currentSubcategoryIndex].products]    
-        // }
         this.resetPriceValue.next(true)
 
         this.sortType = this.optionsToSort[0]

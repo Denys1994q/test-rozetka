@@ -12,6 +12,19 @@ export class ProductService {
     raiting: number = 0
     comments!: any
     sortType: string = 'З фото і відео'
+    newProds: any = categories[0].subCategories[0].products.slice(0,5)
+    moreProds: any = categories[1].subCategories[0].products.slice(0,5)
+    recommendedProds: any = categories[2].subCategories[0].products.slice(0,5)
+
+    setNewProds(type: string) {
+      if (type === 'Гарячі новинки') {
+        this.newProds = categories[0].subCategories[0].products.slice(0,15)
+      } else if (type === 'Більше товарів для вибору') {
+        this.moreProds = categories[1].subCategories[0].products.slice(0,15)
+      } else if (type === 'Рекомендовані') {
+        this.recommendedProds = categories[2].subCategories[0].products.slice(0,15)
+      }
+    }
 
     constructor(private SearchResultsService: SearchResultsService) {}
 
@@ -70,4 +83,19 @@ export class ProductService {
     resetSortType() {
       this.sortType = 'З фото і відео'
     }
+
+    findProduct(name: string): any {
+      let foundedProduct;
+      categories.map(prod => {
+        prod.subCategories.map(subcategory => {
+          subcategory.products.map((prod: any) => {
+            if (prod.title.toLowerCase().indexOf(name.toLowerCase()) > -1) {
+              foundedProduct = prod
+            }
+          })
+        })
+      })
+      return foundedProduct
+    }
+    
 }

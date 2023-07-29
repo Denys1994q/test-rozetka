@@ -14,8 +14,10 @@ export class SearchResultBtnComponent {
   constructor(private SearchResultsService: SearchResultsService, private ProductService: ProductService) {}
 
   cancelAll() {
-    this.ProductService.resetSortType()
-    this.ProductService.filterProdComments()
+    if (this.ProductService.comments) {
+      this.ProductService.resetSortType()
+      this.ProductService.filterProdComments()
+    }
     this.SearchResultsService.removeAll()
   }
 

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import {filter} from 'rxjs/operators';
 import { productsRoutes } from 'src/app/app-routing.module';
 // services
 import { ProductService } from '../../services/product.service';
 import { SearchResultsService } from 'src/app/search/services/search-results.service';
+import { categories } from 'src/app/data';
 
 @Component({
   selector: 'app-product',
@@ -19,41 +20,56 @@ export class ProductComponent {
   seller!: string
   video!: any[]
   routes!: any
+  urlId!: any
 
-  constructor(private router: Router, public ProductService: ProductService, public SearchResultsService: SearchResultsService ) {
-    router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    )
-      .subscribe((event: any) => {
-        const lastLetterBeforeId = event.url.lastIndexOf('/')
-        const urlId = event.url.slice(lastLetterBeforeId+1, lastLetterBeforeId+event.url.length-1)
+  constructor(private router: Router, public route:ActivatedRoute, public ProductService: ProductService, public SearchResultsService: SearchResultsService ) {}
 
-        this.ProductService.getCurrentProduct(urlId)
-
-        this.price = this.ProductService.currentProduct.searchStatus.find((status: any) => status.searchPosition === 'price').option
-        this.sellStatus = this.ProductService.currentProduct.searchStatus.find((status: any) => status.searchPosition === 'sell_status').option
-        this.seller = this.ProductService.currentProduct.searchStatus.find((status: any) => status.searchPosition === 'seller').option
-        this.video = this.ProductService.currentProduct.video
-
-          
-        // розділ відео, якщо відео є, по іншим хз
-        const allRoutes = [
-          {name: 'Усе про товар', link: ''}, 
-          {name: 'Характеристики', link: 'characteristics'},
-          {name: 'Відгуки', link: 'comments'},
-          {name: 'Фото', link: 'photos'},
-          this.video ? {name: 'Відео', link: 'video'} : null ,
-        ]
-
-        this.routes = allRoutes.filter(route => route)
-
-        // якщо відкрита основна сторінка товару без переходу на таби
-        if (productsRoutes.find(route => route.id == urlId && (route.id.toString().length + route.title.length == event.url.length-2))) {
-          this.baseView = true
-        } else {
-          this.baseView = false
-        }
-      });
+  ngOnInit() {
+    window.scrollTo({
+      top: 1000,
+      behavior: "smooth"
+    });
+    this.route.url.subscribe(route => {
+      // айді товару
+      const lastLetterBeforeId = this.router.url.lastIndexOf('/')
+      this.urlId = this.router.url.slice(lastLetterBeforeId+1, lastLetterBeforeId+this.router.url.length-1)
+      // на основі юрл сторінки визначаємо вигляд компоненту
+      if (productsRoutes.find(route => route.id == this.urlId && (route.id.toString().length + route.title.length == this.router.url.length-2))) {
+        this.baseView = true
+      } else {
+        this.baseView = false
+      }
+      // отримуємо з сервісу інфо щодо товару по його айді
+      this.ProductService.getCurrentProduct(this.urlId)
+      // для верстки отримуємо додаткову інфо щодо товару (ціна, статус продажі, продавець, чи є відео)
+      this.price = this.ProductService.currentProduct.searchStatus.find((status: any) => status.searchPosition === 'price').option
+      this.sellStatus = this.ProductService.currentProduct.searchStatus.find((status: any) => status.searchPosition === 'sell_status').option
+      this.seller = this.ProductService.currentProduct.searchStatus.find((status: any) => status.searchPosition === 'seller').option
+      this.video = this.ProductService.currentProduct.video
+        
+      // створюємо роути у форматі табів 
+      const allRoutes = [
+        {name: 'Усе про товар', link: ''}, 
+        {name: 'Характеристики', link: 'characteristics'},
+        {name: 'Відгуки', link: 'comments'},
+        {name: 'Фото', link: 'photos'},
+        this.video ? {name: 'Відео', link: 'video'} : null ,
+      ]
+      this.routes = allRoutes.filter(route => route)
+  
+      // для юрл сторінки товару
+      let categoryId!: string;
+      categories.map(item => {
+        item.subCategories.map(sub => {
+          sub.products.map((prod: any) => {
+            if (prod.id == this.urlId) {
+              categoryId = sub.id
+            }
+          })
+        })
+      })
+      this.SearchResultsService.getCurrentCategory(categoryId)
+    })
   }
 
 

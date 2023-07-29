@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './pages/home/home.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { ProductModule } from '../product/product.module';
+import { ProductService } from '../product/services/product.service';
 
 @NgModule({
   declarations: [

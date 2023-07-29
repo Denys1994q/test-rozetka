@@ -84,21 +84,24 @@
     <main class="products__list prodlist">
         <app-carousel [slidesArr]="slides"></app-carousel>
         <app-cards
+            (cardsChange)="onCardsChange($event)"
             [data]="{
-                category: 'Гарячі новинки', 
-                products: data[0].subCategories[0].products.slice(0,5)
+                category: 'Гарячі новинки',
+                products: ProductService.newProds
             }">
         </app-cards>
         <app-cards
+            (cardsChange)="onCardsChange($event)"
             [data]="{
                 category: 'Більше товарів для вибору',
-                products: data[1].subCategories[1].products.slice(0, 5)
+                products: ProductService.moreProds
             }">
         </app-cards>
         <app-cards
+            (cardsChange)="onCardsChange($event)"
             [data]="{
                 category: 'Рекомендовані',
-                products: data[2].subCategories[1].products.slice(0, 5)
+                products: ProductService.recommendedProds
             }">
         </app-cards>
         <app-video-cards></app-video-cards>

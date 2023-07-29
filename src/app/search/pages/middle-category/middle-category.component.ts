@@ -19,7 +19,6 @@ export class MiddleCategoryComponent {
     // тут мав би йти запит на сервер по цьому id
     ngOnInit(): void {
         this.route.url.subscribe(route => {
-          // console.log('hello from middleCategoryPage')
             window.scrollTo({
               top: 1000,
               behavior: "smooth"
