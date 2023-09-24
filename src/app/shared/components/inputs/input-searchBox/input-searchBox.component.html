@@ -1,0 +1,43 @@
+<div class="header-search">
+    <div class="header-search__wrapper">
+        <mat-icon class="header-search__icon">search</mat-icon>
+        <input
+            type="text"
+            [(ngModel)]="searchInpValue"
+            placeholder="Я шукаю..."
+            class="header-search__input"
+            (input)="findProd()" />
+        <button
+            mat-button
+            *ngIf="searchInpValue"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            class="closeBtn"
+            (click)="closeAndReset()">
+            <mat-icon class="close-icon">close</mat-icon>
+        </button>
+        <ul
+            *ngIf="showOverlay"
+            class="overlay-content">
+            <a *ngFor="let prod of ProductService.foundedProducts.slice(0,5)" routerLink="{{ '/' + prod.engName + '/' + prod.id }}">
+                <li>
+                    <img class="overlay-content__image" src={{prod.image}} alt="prod-image">
+                    {{prod.title}}
+                </li>
+            </a>
+
+            <p *ngIf="ProductService.foundedProducts.length === 0">По вашому запиту нічого не знайдено. Уточніть свій запит</p>
+        </ul>
+    </div>
+    <div
+        *ngIf="showOverlay"
+        (click)="showOverlay = false"
+        class="overlay">
+    </div>
+    <button
+        (click)="findProd()"
+        class="btn-search">
+        Знайти
+    </button>
+</div>

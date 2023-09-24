@@ -12,7 +12,7 @@ export class ProductPhotosComponent {
   constructor(public ProductService: ProductService) {}
 
   ngOnInit() {
-    this.photos = this.ProductService.currentProduct.images.filter((image: any) => image.url)
+    this.photos = this.ProductService.product.images.filter((image: any) => image.url)
   }
 
 }

@@ -38,7 +38,6 @@ export class SearchPanelComponent {
   }
 
   onCheckboxChange(changedInput: string) {
-    console.log(changedInput)
     this.searchPanelChange.emit(changedInput)
   }
 

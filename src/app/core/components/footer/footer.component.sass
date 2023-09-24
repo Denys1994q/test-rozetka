@@ -1,5 +1,6 @@
 @import "variables"
-@import '../side-menu/side-menu.component.sass'
+@import 'mixins'
+@import '../../../shared/components/side-menu/side-menu.component'
 
 .app-footer
     margin-top: 3rem
@@ -8,13 +9,19 @@
         background-color: #00a046
     &__main
         padding: 0 32px
+        @include respond(phoneXXL)
+            padding: 0 8px
 
 // store
 .store
     padding: 16px 24px
     display: flex
+    flex-wrap: wrap
     align-items: center
     width: 100%
+    @include respond(phoneXXL)
+        justify-content: center
+        gap: 1rem
     &__title
         flex-grow: 1
         text-align: center
@@ -28,7 +35,10 @@
     &__top
         padding: 16px 0 24px 0
         display: flex
+        flex-wrap: wrap
         justify-content: flex-end
+        @include respond(phoneXXL)
+            gap: 2rem
     &__bottom
         border-top: 1px solid #d2d2d2
         display: flex
@@ -42,6 +52,14 @@
             font-size: 1.2rem
     &__social
         width: 25%
+        @include respond(phoneXXL)
+            width: 100%
+            display: flex
+            justify-content: center
+            flex-direction: column
+            align-items: center
+            border-bottom: 1px solid #d2d2d2
+            padding-bottom: 1rem
         a
             margin: 0 16px 16px 0
             display: flex
@@ -52,6 +70,9 @@
     &__links
         display: flex
         flex-grow: 1
+        @include respond(phoneXXL)
+            flex-direction: column
+            gap: 2rem
 //
 .footer-infoBlock
     padding: 0

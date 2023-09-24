@@ -1,6 +1,7 @@
 @import '../product/product.component.sass'
 @import 'btns'
 @import 'typography'
+@import 'mixins'
 
 // characteristics
 .characteristic
@@ -8,6 +9,8 @@
     margin-top: 2rem
     max-height: 28rem
     overflow: hidden
+    @include respond(phoneL)
+        max-height: none
     &:not(:first-child)
         margin-top: 4.8rem
     &-full
@@ -62,7 +65,22 @@
         width: 60%
         color: $main-blue
 
+.price-buy-panel
+    display: flex
+    flex-wrap: wrap
+    &__btn
+        @include respond(phoneXXL)
+            order: 1
+            width: 100%
+            button
+                width: 100%
+
 :host
     ::ng-deep app-carousel
         .video-slide
             padding: 0 14%
+    ::ng-deep app-comments-panel
+        .btn-send-comment
+            width: 100%
+            margin-top: 2rem
+    

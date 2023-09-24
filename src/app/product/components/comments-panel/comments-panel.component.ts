@@ -3,6 +3,7 @@ import { Comment } from '../../../shared/components/comment/comment.component';
 import { ModalService } from 'src/app/shared/components/modal/modal.service';
 import { SearchResultsService } from 'src/app/search/services/search-results.service';
 import { ProductService } from '../../services/product.service';
+import { CommentsService } from '../../services/comments.service';
 
 @Component({
   selector: 'app-comments-panel',
@@ -11,7 +12,11 @@ import { ProductService } from '../../services/product.service';
 })
 export class CommentsPanelComponent {
 
-  constructor(private modalService: ModalService, public SearchResultsService: SearchResultsService, public ProductService: ProductService) {}
+  constructor(
+    private modalService: ModalService, 
+    public SearchResultsService: SearchResultsService, 
+    public ProductService: ProductService,
+    public CommentsService: CommentsService) {}
 
   @Input() comments!: Comment[]
   @Input() withFilters: boolean = false
@@ -19,7 +24,7 @@ export class CommentsPanelComponent {
 
   ngOnInit() {
     this.SearchResultsService.removeAll()
-    this.ProductService.sortProdComments('З фото і відео')
+    this.CommentsService.sortProdComments('З фото і відео')
   }
 
   openDialog(type: string) {
@@ -27,7 +32,7 @@ export class CommentsPanelComponent {
   }
 
   onSelectChange(sortType: string) {
-    this.ProductService.sortProdComments(sortType)
+    this.CommentsService.sortProdComments(sortType)
   }
   
 }

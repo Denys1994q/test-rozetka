@@ -14,9 +14,7 @@ export class passAllowedNamesValidatorDirective implements Validator, OnInit {
   }
  
   validate(c: FormControl) {
- 
     let inpValue: string = c.value;
- 
     if (inpValue === this.passValName || inpValue === this.passValMail) {
       return { 'forbiddenPassword': true }
     }

@@ -2,22 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './pages/home/home.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { ProductModule } from '../product/product.module';
-import { ProductService } from '../product/services/product.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    SideMenuComponent,
     HomeComponent,
     ErrorComponent
   ],
   imports: [
+    HttpClientModule,
     CommonModule,
     ProductModule,
     SharedModule,
@@ -25,7 +24,6 @@ import { ProductService } from '../product/services/product.service';
   exports: [
     HeaderComponent,
     FooterComponent,
-    SideMenuComponent,
     HomeComponent,
     ErrorComponent
   ]

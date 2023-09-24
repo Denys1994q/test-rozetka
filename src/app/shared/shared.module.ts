@@ -19,7 +19,12 @@ import { SelectComponent } from './components/inputs/select/select.component';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 import { InputNumberComponent } from './components/inputs/input-number/input-number.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
-// import { ModalModule } from './components/modal/modal.module';
+import { InputSearchBoxComponent } from './components/inputs/input-searchBox/input-searchBox.component';
+import { SideMenuComponent } from './components/side-menu/side-menu.component';
+import { PricePanelComponent } from './components/price-panel/price-panel.component';
+import { ErrorComponent } from './components/error/error.component';
+import { AsideComponent } from './components/aside/aside.component';
+import { UserInfopanelComponent } from './components/user-infopanel/user-infopanel.component';
 
 @NgModule({
   declarations: [
@@ -36,12 +41,19 @@ import { SearchResultComponent } from './components/search-result/search-result.
     SelectComponent,
     BreadcrumbsComponent,
     InputNumberComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    InputSearchBoxComponent,
+    SideMenuComponent,
+    PricePanelComponent,
+    ErrorComponent,
+    UserInfopanelComponent,
+    AsideComponent
     // ModalModule
   ],
   imports: [
     CommonModule, 
     MatIconModule, 
+    MatSliderModule,
     MatDialogModule, 
     FormsModule,
     AppRoutingModule,
@@ -65,7 +77,13 @@ import { SearchResultComponent } from './components/search-result/search-result.
     SocialMediaComponent,
     SelectComponent,
     BreadcrumbsComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    InputSearchBoxComponent,
+    SideMenuComponent,
+    PricePanelComponent,
+    ErrorComponent,
+    UserInfopanelComponent,
+    AsideComponent
     // ModalModule
   ]
 })

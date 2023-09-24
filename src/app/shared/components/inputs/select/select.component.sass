@@ -1,4 +1,5 @@
 @import 'variables'
+@import 'mixins'
 
 .select-wrapper
     position: relative
@@ -14,6 +15,8 @@
     appearance: none
     position: relative
     z-index: 2
+    @include respond(tab-port)
+        width: 100%
     &:hover
         border: 1px solid #a3a3a3
     &:focus

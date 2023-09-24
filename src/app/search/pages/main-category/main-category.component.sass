@@ -1,19 +1,35 @@
 @import 'variables'
+@import 'mixins'
 
 .category
     &__title
         font-size: 3.6rem
         margin: 2rem 0 3.4rem 0
+        @include respond(phoneXL)
+            font-size: 2.4rem
+            font-weight: 700
+            margin: 2rem 0 2.4rem 0
     &__widget
         margin: 5rem 0
+        @include respond(phoneXL)
+            margin: 0 0 3rem 0
 // widget
 .widget
     display: flex
+    flex-wrap: wrap
     justify-content: space-between
+    @include respond(tab-land)
+        gap: 2rem
     &__slider
         width: 50%
+        @include respond(tab-land)
+            margin: 0 auto
+        @include respond(tab-port)
+            width: 100%
     &__categories
         width: 48%
+        @include respond(tab-land)
+            width: 100%
     &__subtitle
         margin-bottom: 24px
         font-size: 16px
@@ -28,6 +44,8 @@
             border-bottom: 1px solid #e9e9e9
             padding: 8px
             cursor: pointer
+            @include respond(tab-land)
+                width: 100%
             &:hover
                 a
                     color: red
@@ -45,6 +63,8 @@
     &__list
         display: flex
         align-items: center
+        overflow-x: auto
+        white-space: nowrap
         li
             padding-left: 20px
             padding-right: 20px
@@ -54,6 +74,8 @@
             justify-content: center
             height: 48px
             cursor: pointer
+            @include respond(tab-land)
+                min-width: 13rem
     &__image
         opacity: .5
         object-fit: contain
@@ -66,8 +88,13 @@
     flex-wrap: wrap
     &__item
         width: 25%
+        @include respond(tab-port)
+            width: 50%
+        @include respond(phoneXL)
+            width: 100%
         &:not(:last-child)
             border-right: 1px solid #e9e9e9
+
 // infoBlock
 .infoBlock
     p, ul

@@ -26,7 +26,7 @@
             </ul>
         </div>
         <!-- Інфо по вибраній позиції -->
-        <div class="modall-prod__products products">
+        <div class="modall-prod__products products" *ngIf="products">
             <div
                 *ngFor="let subcategory of getSubcategories()"
                 class="products__item product">

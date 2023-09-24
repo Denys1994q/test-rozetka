@@ -7,18 +7,18 @@ import { Directive, OnInit } from '@angular/core';
     { provide: NG_VALIDATORS, useExisting: passBigLettersValidatorDirective, multi: true }
   ]
 })
-export class passBigLettersValidatorDirective implements Validator, OnInit {
-  ngOnInit() {
-  }
+export class passBigLettersValidatorDirective implements Validator {
  
   validate(c: FormControl) {
- 
     let inpValue: string = c.value;
- 
-    if (inpValue.search(/(?=.*[A-Z])/)) {
-      return { 'noBigLettersInPass': true }
+    if (!inpValue) {
+      return null
+    } else {
+      if (inpValue.search(/(?=.*[A-Z])/)) {
+        return { 'noDigitsInPass': true }
+      }
     }
-
     return null;
   }
+
 }

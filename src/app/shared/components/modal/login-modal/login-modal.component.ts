@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ModalService } from 'src/app/shared/components/modal/modal.service';
 import { NgForm } from '@angular/forms';
+import { AuthService } from 'src/app/core/services/auth.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login-modal',
@@ -8,30 +10,75 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login-modal.component.sass']
 })
 export class LoginModalComponent {
-  inputType = 'password'
-  email = ''
-  password: any = ''
+    inputType = 'password'
+    emailPhone = ''
+    password: any = ''
+    error: string = ''
 
-  constructor(private modalService: ModalService) {}
+    constructor(private modalService: ModalService, public authService: AuthService, private http: HttpClient) {}
 
-  register (myForm: NgForm) {
-    console.log(111)
-  }
+    login (myForm: NgForm) {
+        if (myForm.valid) {
+        this.authService.login({emailPhone: this.emailPhone, password: this.password}).subscribe({
+            next: response => this.modalService.closeDialog(),
+            error: error => {
+            if (error.error.message) {
+                this.error = error.error.message
+            } else {
+                this.error = 'Щось пішло не так. Будь ласка, спробуйте пізніше'
+            }
+            }
+        });
+        } 
+    }
 
-  closeDialog() {
-    this.modalService.closeDialog()
-  }
+    authWindow!: any
+    loginWithGmail() {
+        const width = 600;
+        const height = 500;
+        const right = window.innerWidth - width;
+        const top = 0;
+        const windowFeatures = `width=${width},height=${height},right=${right},top=${top}`;
+        this.authWindow = window.open('http://localhost:4444/auth/google', '_blank', windowFeatures);
+    }
 
-  openRegisterDialog() {
-    this.modalService.closeDialog()
-    this.modalService.openDialog('register')
-  }
+    ngOnInit() {
+        // Очікуємо подію message від вікна авторизації
+        window.addEventListener('message', (event) => {
+            if (event.origin === 'http://localhost:4444') {
+                // Перевіряємо, чи повідомлення вказує на успішну авторизацію
+                if (event.data === 'authSuccess') {
+                    this.authWindow.close()
+                    this.modalService.closeDialog()
+                    if (this.authWindow) {
+                        this.authService.getUser().subscribe({
+                        next: () => {},
+                        error: err => console.log(err)
+                        })
+                    }
+                }
+            }
+        });
+    }
 
-  showPassword() {
-    this.inputType = 'text'
-  }
+    loginWithFb() {
+        window.open('http://localhost:4444/auth/facebook', '_self');
+    }
 
-  hidePassword() {
-    this.inputType = 'password'
-  }
+    closeDialog() {
+        this.modalService.closeDialog()
+    }
+
+    openRegisterDialog() {
+        this.modalService.closeDialog()
+        this.modalService.openDialog('register')
+    }
+
+    showPassword() {
+        this.inputType = 'text'
+    }
+
+    hidePassword() {
+        this.inputType = 'password'
+    }
  }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ModalService } from 'src/app/shared/components/modal/modal.service';
 import { ProductService } from 'src/app/product/services/product.service';
 import { SearchResultsService } from 'src/app/search/services/search-results.service';
+import { CommentsService } from 'src/app/product/services/comments.service';
 
 @Component({
   selector: 'app-filters-modal',
@@ -18,7 +19,11 @@ export class FiltersModalComponent {
   ]
   selectedRaitingIndex!: number 
 
-  constructor(private modalService: ModalService, public ProductService: ProductService, public SearchResultsService: SearchResultsService) {}
+  constructor(
+    private modalService: ModalService, 
+    public ProductService: ProductService, 
+    public CommentsService: CommentsService, 
+    public SearchResultsService: SearchResultsService) {}
 
   setRaiting(selectedRaitingIndex: number) {
     this.selectedRaitingIndex = this.items[selectedRaitingIndex].icons[selectedRaitingIndex]
@@ -26,8 +31,8 @@ export class FiltersModalComponent {
 
   filterProducts() {
     this.modalService.closeDialog()
-    this.ProductService.filterProdComments(this.selectedRaitingIndex)
-    this.SearchResultsService.addInput(`Оцінка користувачів: ${this.selectedRaitingIndex}`, this.selectedRaitingIndex)
+    this.CommentsService.filterProdComments(this.selectedRaitingIndex)
+    this.SearchResultsService.addInputComment(`Оцінка користувачів: ${this.selectedRaitingIndex}`, this.selectedRaitingIndex)
   }
 
   closeDialog() {

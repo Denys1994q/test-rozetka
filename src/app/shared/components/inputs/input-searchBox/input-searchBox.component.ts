@@ -1,28 +1,43 @@
 import { Component, Input, Output, EventEmitter, SimpleChanges} from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { ProductService } from 'src/app/product/services/product.service';
 
 @Component({
-  selector: 'app-input-text',
+  selector: 'app-input-searchBox',
   templateUrl: './input-searchBox.component.html',
   styleUrls: ['./input-searchBox.component.sass']
 })
-export class InputTextComponent {
-//   @Input() inpVal: string = ''
-//   @Output() inputValue = new EventEmitter<string>();
+export class InputSearchBoxComponent {
+  searchInpValue: string = ''
+  showOverlay: boolean = false
 
-//   resetValue() {
-//     this.inpVal = ''
-//     this.getValue()
-//   }
+  constructor(private router: Router,  public ProductService: ProductService) {}
 
-//   getValue() {
-//     this.inputValue.emit(this.inpVal);
-//   }
+  ngOnInit(): void {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.closeAndReset()
+        this.showOverlay = false
+      }
+    });
+  }
 
-//   ngOnInit() {
-//     this.getValue()
-//   }
+  findProd() {
+    if (!this.searchInpValue) {
+      this.closeAndReset()
+    } else {
+      this.showOverlay = true
+      this.ProductService.findProduct(this.searchInpValue)
+    }
+    
+    // const {engName, id} = this.ProductService.findProduct(this.searchInpValue)
+    // if (engName && id) {
+    //   this.router.navigateByUrl(`/${engName}/${id}`);
+    // }
+  }
 
-//   ngOnChanges(changes: SimpleChanges): void {
-//     this.getValue()
-//   }
+  closeAndReset() {
+    this.searchInpValue = ''
+    this.ProductService.resetFoundedProducts()
+  }
 }

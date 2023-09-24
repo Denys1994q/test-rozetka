@@ -1,4 +1,5 @@
 @import 'variables'
+@import 'mixins'
 
 // breadcrumbs
 .breadcrumbs
@@ -8,6 +9,8 @@
     align-items: center
     margin-top: 16px
     margin-bottom: 8px
+    @include respond(phoneL)
+        margin-top: 0
     &__homeIcon
         display: flex
         color: $main-blue
@@ -19,3 +22,5 @@
         display: flex
         align-items: center
         margin-left: .8rem
+        @include respond(phoneL)
+            width: 100%

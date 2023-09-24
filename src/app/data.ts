@@ -2678,7 +2678,7 @@ export const categories: CategoryItem[] = [
                     id: Math.floor(Math.random() * 1000),
                     image: '../assets/telefony-tv-i-ehlektronika/powerbanks/solar-panels/risen front.webp', 
                     images: [
-                        {url: '../assets/telefony-tv-i-ehlektronika/electronics/risen front.webp'},
+                        {url: '../assets/telefony-tv-i-ehlektronika/powerbanks/solar-panels/risen front.webp'},
                     ],
                     info_full: [
                         {heading: 'Основні переваги сонячних батарей Risen:', text: 'найменший у галузі температурний коефіцієнт – 0,34%; торгова марка входить до списку  Tier 1  із незалежним сертифікованим сучасним автоматизованим виробництвом; висока стійкість до деградації PID'},
@@ -3191,7 +3191,7 @@ export const categories: CategoryItem[] = [
                         {searchPosition: 'seller', title: 'Продавець', option: 'Rozetka'},
                         {searchPosition: 'producer', title: 'Бренд', option: 'Acer'},
                         {searchPosition: 'ready-to-depart', title: 'Готовий до відправлення', option: 'Готовий до відправлення'},
-                        {searchPosition: 'discount', title: 'Товари з акціями', option: getMatIconFailedToSanitizeUrlError},
+                        // {searchPosition: 'discount', title: 'Товари з акціями', option: getMatIconFailedToSanitizeUrlError},
                         {searchPosition: 'loyalty-program', title: 'Програма лояльності', option: 'З бонусами'},
                         {searchPosition: 'new', title: 'Новий - б/в', option: 'Б/в'},
                         {searchPosition: 'sell_status', title: 'Статус товару', option: 'Є в наявності'},

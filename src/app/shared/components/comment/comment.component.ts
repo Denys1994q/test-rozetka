@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 
 export interface Comment {
   author: string,
-  date: Date,
+  date: any,
   text: string,
   rating?: number, 
   advantages?: string,

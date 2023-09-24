@@ -1,4 +1,5 @@
 @import 'variables'
+@import 'mixins'
 
 .video-cards
     margin-top: 5rem
@@ -8,6 +9,7 @@
         justify-content: space-between
         align-items: center
         margin-bottom: 1.6rem
+        width: 100%
     &__heading
         margin-bottom: 16px
         font-size: 20px
@@ -22,12 +24,17 @@
         width: 9rem
     &__list
         display: flex
+        flex-wrap: wrap
         background-color: #4d4b4b
     &__item
         padding: 1.6rem
 // video
 .video
     width: 25%
+    @include respond(tab-port)
+        width: 50%
+    @include respond(phoneXXL)
+        width: 100%
     &__title
         margin-bottom: 8px
         margin-top: 1rem
@@ -41,6 +48,8 @@
     position: relative
     // width: 192px
     height: 125px
+    @include respond(phoneXXL)
+        height: auto
     &__btn
         position: absolute
         left: 0

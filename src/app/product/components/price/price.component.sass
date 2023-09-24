@@ -1,3 +1,5 @@
+@import 'mixins'
+
 .price-panel
     &__old
         display: block
@@ -11,9 +13,13 @@
         font-size: 2.4rem
         &-big
             font-size: 3.6rem
+        @include respond(phoneL)
+            font-size: 2rem
     &__regular
         display: block
         color: #333
         font-size: 2.4rem
         &-big
             font-size: 3.6rem
+        @include respond(phoneL)
+            font-size: 2rem

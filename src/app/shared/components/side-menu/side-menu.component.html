@@ -1,0 +1,226 @@
+<div
+    class="side-menu"
+    [class.side-menu-active]="menuService.open | async"
+    [ngSwitch]="menuService.openedMenu | async">
+    <!-- бокова панель для авторизації -->
+    <div *ngSwitchCase="'auth'">
+        <div class="side-menu__header">
+            <a href="#">
+                <img
+                    class="side-menu__logo"
+                    src="../../../../assets/rozetka.svg"
+                    alt="rozetka-logo" />
+            </a>
+            <button>
+                <mat-icon
+                    class="side-menu__close header-icon"
+                    (click)="menuService.closeMenu()"
+                    >close
+                </mat-icon>
+            </button>
+        </div>
+        <!-- інфопанель користувача -->
+        <app-user-infopanel></app-user-infopanel>
+        <!-- банер -->
+        <a class="side-menu__banner banner">
+            <img
+                class="banner__icon"
+                src="../../../../assets/war_icon.svg"
+                alt="Повернись_живим_лого" />
+            Повернись живим
+            <mat-icon>chevron_right</mat-icon>
+        </a>
+        <ul class="side-menu__list">
+            <li class="side-menu__item">
+                <div class="side-menu__item-innerWrapper">
+                    <button
+                        class="textBtn"
+                        (click)="openProductsDialog()">
+                        <mat-icon class="textBtn__icon">dashboard</mat-icon>
+                        Каталог товарів
+                    </button>
+                </div>
+            </li>
+            <li class="side-menu__item">
+                <div class="side-menu__item-innerWrapper">
+                    <button class="textBtn">
+                        <mat-icon class="textBtn__icon">help_outline</mat-icon>
+                        Довідковий центр
+                    </button>
+                </div>
+            </li>
+            <li class="side-menu__item">
+                <div class="side-menu__item-innerWrapper">
+                    <button class="textBtn">
+                        <mat-icon class="textBtn__icon">shopping_cart</mat-icon>
+                        Кошик
+                    </button>
+                </div>
+            </li>
+        </ul>
+        <div class="side-menu__infoBlock infoBlock">
+            <p class="infoBlock__title">Інформація про компанію</p>
+            <ul class="infoBlock__list">
+                <li class="infoBlock__item">Про нас</li>
+                <li class="infoBlock__item">Умови використання сайту</li>
+                <li class="infoBlock__item">Вакансії</li>
+                <li class="infoBlock__item">Контакти</li>
+                <li class="infoBlock__item">Усі категорії</li>
+            </ul>
+        </div>
+        <div class="side-menu__infoBlock infoBlock">
+            <p class="infoBlock__title">Допомога</p>
+            <ul class="infoBlock__list">
+                <li class="infoBlock__item">Доставка та оплата</li>
+                <li class="infoBlock__item">Кредит</li>
+                <li class="infoBlock__item">Гарантія</li>
+                <li class="infoBlock__item">Повернення товару</li>
+                <li class="infoBlock__item">Сервісні центри</li>
+            </ul>
+        </div>
+        <div class="side-menu__infoBlock infoBlock">
+            <p class="infoBlock__title">Ми в соціальних мережах</p>
+            <app-social-media></app-social-media>
+        </div>
+        <div *ngIf="authService.isAuthenticated()" class="side-menu__item">
+            <div class="side-menu__item-innerWrapper logout">
+                <button class="textBtn" (click)="logout()">
+                    Вийти з аккаунта
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- бокова панель для пошуку -->
+    <div
+        *ngSwitchCase="'search'"
+        class="search search-wrapper">
+        <header class="search__header">
+            <div class="search__titleIcon">
+                <mat-icon
+                    class="breadcrumbs__chevronIcon"
+                    (click)="menuService.closeMenu()"
+                    >chevron_left</mat-icon
+                >
+                <h3>Фільтри</h3>
+            </div>
+            <button
+                *ngIf="showCancelBtn()"
+                (click)="resetAll()"
+                class="reset-btn">
+                Скасувати все
+            </button>
+        </header>
+        <ul class="main">
+            <li
+                class="main__item"
+                *ngFor="let searchParam of searchResultsService.searchParams">
+                <span>{{ searchParam.title }}</span>
+                <div class="main__item-right">
+                    <span class="main__item-all">
+                        <ng-container *ngIf="getSelectedPositions(searchParam); else all">
+                            <span *ngFor="let searchPar of getSelectedPositions(searchParam)" class="respond-label">{{ searchPar.label }}</span>
+                        </ng-container>
+                        <ng-template #all><span class="label-all">Усі</span></ng-template>
+                    </span>
+                    <mat-icon
+                        class="breadcrumbs__chevronIcon"
+                        (click)="closePrev(searchParam)">
+                        chevron_right
+                    </mat-icon>
+                </div>
+            </li>
+        </ul>
+        <footer class="main__footer">
+            <p 
+                *ngIf="searchResultsService.selectedInputs.length > 0" 
+                class="result-info">
+                Знайдено {{searchResultsService.currentSubcategory.products.length}} товари
+            </p>
+            <button 
+                *ngIf="searchResultsService.selectedInputs.length > 0; else backBtn"
+                class="main__footer-btn footer-showbtn footer-showbtn-simple"
+                (click)="menuService.closeMenu()">
+                Показати
+            </button>
+            <ng-template #backBtn>
+                <button 
+                    class="main__footer-btn"
+                    (click)="menuService.closeMenu()">
+                    Назад
+                </button>
+            </ng-template>
+        </footer>
+    </div>
+
+    <!-- бокова панель для пошуку в критеріях -->
+    <div
+        *ngSwitchCase="'search-deep'"
+        class="search search-wrapper">
+        <header class="search__header">
+            <div class="title-icon">
+                <mat-icon
+                    class="breadcrumbs__chevronIcon"
+                    (click)="menuService.openMenu('search')">
+                    chevron_left
+                </mat-icon>
+                <h4
+                    *ngIf="
+                        showCancelBtn() && activeSearchParam.title.length > 14;
+                        else normal
+                    ">
+                    {{ activeSearchParam.title | slice : 0 : 14 }}{{ "..." }}
+                </h4>
+                <ng-template #normal
+                    ><h4>{{ activeSearchParam.title }}</h4></ng-template
+                >
+            </div>
+            <button
+                *ngIf="showCancelBtn()"
+                (click)="resetOne(activeSearchParam)"
+                class="reset-btn">
+                Скасувати: {{ getNumActiveOptions(activeSearchParam) }}
+            </button>
+        </header>
+        <ul class="search-options">
+            <li *ngIf="activeSearchParam.title === 'Ціна'; else others">
+                <app-price-panel
+                    [startStaticPrice]="activeSearchParam.options[0].start"
+                    [endStaticPrice]="activeSearchParam.options[0].end"
+                    (pricePanelChange)="onPricePanelChange($event)" />
+            </li>
+            <ng-template #others>
+                <li *ngFor="let option of activeSearchParam.options">
+                    <app-checkbox
+                        [search]="true"
+                        [label]="option.label"
+                        [searchId]="option.id" />
+                </li>
+            </ng-template>
+        </ul>
+        <footer class="main__footer">
+            <p 
+                *ngIf="searchResultsService.selectedInputs.length > 0" 
+                class="result-info">
+                Знайдено {{searchResultsService.currentSubcategory.products.length}} товари
+            </p>
+            <div class="footer-btnwrapper">
+                <button
+                    class="main__footer-btn"
+                    (click)="menuService.openMenu('search')">
+                    Назад
+                </button>
+                <button
+                    class="main__footer-btn footer-showbtn"
+                    (click)="menuService.closeMenu()">
+                    Показати
+                </button>
+            </div>
+        </footer>
+    </div>
+    <!-- дефолтна -->
+    <div *ngSwitchDefault></div>
+</div>
+<div
+    class="overlay"
+    [class.overlay-active]="menuService.open | async"
+    (click)="menuService.closeMenu()"></div>

@@ -1,0 +1,57 @@
+<div
+    class="side-menu__auth auth-panel"
+    *ngIf="!authService.isAuthenticated(); else logged">
+    <div class="auth-panel__user">
+        <mat-icon class="auth-panel__icon">person</mat-icon>
+    </div>
+    <div class="auth-panel__enter">
+        <div>
+            <button
+                class="auth-panel__enter-in"
+                (click)="openDialog()">
+                Вхід
+            </button>
+            <button
+                class="auth-panel__enter-register"
+                (click)="openRegisterDialog()">
+                Реєстрація
+            </button>
+        </div>
+        <p class="auth-panel__text">
+            Авторизуйтесь для отримання розширених можливостей
+        </p>
+    </div>
+</div>
+
+<ng-template #logged>
+    <div class="side-menu__auth auth-panel">
+        <div class="auth-panel__user">
+            <p class="auth-panel__icon auth-panel__icon-texted">
+                <span *ngIf="(authService.userData$ | async)?.displayName; else name">
+                    {{ (authService.userData$ | async)?.displayName | slice : 0 : 1 }}
+                </span>
+                <ng-template #name>
+                    {{ (authService.userData$ | async)?.name | slice : 0 : 1 }}
+                </ng-template>
+            </p>
+        </div>
+        <div class="auth-panel__enter">
+            <p *ngIf="(authService.userData$ | async)?.displayName; else nameSurname">
+                {{ (authService.userData$ | async)?.displayName }}
+            </p>
+            <ng-template #nameSurname>
+                <p *ngIf="(authService.userData$ | async)?.name">
+                    {{ (authService.userData$ | async)?.name }}
+                </p>
+                <p *ngIf="(authService.userData$ | async)?.surname">
+                    {{ (authService.userData$ | async)?.surname }}
+                </p>
+            </ng-template>
+            <p
+                *ngIf="(authService.userData$ | async)?.email"
+                class="auth-panel__text">
+                {{ (authService.userData$ | async)?.email }}
+            </p>
+        </div>
+    </div>
+</ng-template>

@@ -1,26 +1,9 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-
-interface CardInfo {
-  heading: string,
-  text: string
-}
-
-interface Card {
-  title: string,
-  image: string,
-  image2?: string,
-  id?: number,
-  engName?: string,
-  reviews_data?: any,
-  // price: any,
-  raiting?: number,
-  reviews?: number,
-  info?: CardInfo[]
-}
+import { ProductInterface } from 'src/app/core/services/api-response-types';
 
 interface Cards {
   category?: string,
-  products: Card[]
+  products: ProductInterface[] 
 }
 
 @Component({
@@ -31,16 +14,16 @@ interface Cards {
 export class CardsComponent {
   activeIndex!: number | boolean
   @Input() full: boolean = false 
-  @Input() data!: Cards 
+  @Input() data!: Cards
   @Input() size: string = 'small'
-  @Input() notAvailableProducts!: any
+  @Input() notAvailableProducts!: string[]
   showBtn: boolean = true
   raiting!: any
+  endVal: number = 5
   @Output() cardsChange = new EventEmitter<any>();
 
-
   getPriceObject(prod: any) {
-    return prod.searchStatus.find((status: any) => status.searchPosition === 'price').option
+      return prod.searchStatus.find((status: any) => status.searchPosition === 'price').option
   }
 
   getRaiting(prod: any) {
@@ -62,6 +45,7 @@ export class CardsComponent {
   }
 
   showMoreCards(type: string) {
+    this.endVal = this.endVal + 15
     this.cardsChange.emit(type)
     this.showBtn = false
   }

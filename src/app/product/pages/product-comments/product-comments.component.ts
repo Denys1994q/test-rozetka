@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild, Input } from '@angular/core';
 import { Comment } from 'src/app/shared/components/comment/comment.component';
 import { ModalService } from 'src/app/shared/components/modal/modal.service';
 import { ProductService } from '../../services/product.service';
+import { CommentsService } from '../../services/comments.service';
 
 @Component({
   selector: 'app-product-comments',
@@ -9,11 +10,9 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./product-comments.component.sass']
 })
 export class ProductCommentsComponent {
-  // ширину слайдЛіста поділити ширину одного айтема і тоді вийде число скільки показується зараз, додати 1 і буде потрібний i 
-  constructor(private modalService: ModalService, public ProductService: ProductService ) {}
+  constructor(private modalService: ModalService, public CommentsService: CommentsService ) {}
 
-  // фільтрувати в продакт сервісі після того як обрано фільтр і натиснуто ок (запускати продакт сервіс з сервісу модалки)
-
+  commentsWithPhotoVideo: any = []
   sliderWidth!: number
   slideWidth!: number
   // moreIndex!: number
@@ -26,7 +25,9 @@ export class ProductCommentsComponent {
     // this.moreIndex = Math.round((this.sliderWidth / this.slideWidth)-1)
   }
 
-  commentsWithPhotoVideo = this.ProductService.currentProduct.reviews_data.filter((item: any) => item.photo || item.video)
+  ngOnInit() {
+    this.commentsWithPhotoVideo = this.CommentsService.comments.filter((item: any) => item.photo || item.video)
+  }
 
   openDialog(type: string, i: number = 0) {
     this.modalService.getData({slides: this.commentsWithPhotoVideo, startSlideIndex: i})

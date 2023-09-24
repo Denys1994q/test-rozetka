@@ -3,70 +3,141 @@
         <header class="modal-login__header header">
             <h3 class="header__title">Вхід</h3>
             <button>
-                <mat-icon class="modal-login__close" (click)="closeDialog()">close</mat-icon>
+                <mat-icon
+                    class="modal-login__close"
+                    (click)="closeDialog()"
+                    >close</mat-icon
+                >
             </button>
         </header>
         <div class="modal-login__content">
-            <form 
-                action="#" 
-                #userForm="ngForm" 
-                (ngSubmit)="register(userForm)" 
+            <form
+                action="#"
+                #userForm="ngForm"
+                (ngSubmit)="login(userForm)"
                 class="modal-login__form form">
                 <div class="form__item">
-                    <label for="auth_email" class="form__label">Ел. пошта або телефон</label>
-                    <input 
+                    <label
+                        for="auth_email"
+                        class="form__label"
+                        >Ел. пошта або телефон</label
+                    >
+                    <input
                         type="email"
-                        required 
+                        required
                         pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$|^((0|380)+(97|95|67|50|63|68|91|92|98|99)\d{3}\d{2}\d{2})+$"
-                        name="email" 
-                        #userEmail="ngModel" 
-                        [(ngModel)]="email"
-                        id="auth_email" 
-                        [class.is-invalid]="userEmail.invalid && (userForm.submitted || userEmail.dirty)" 
-                        class="form__input">
-                    <small class="is-invalid__text" [class.is-invalid__text-show]="userEmail.invalid && (userForm.submitted || userEmail.dirty)">Введено невірну адресу ел. пошти або номер телефону</small>
+                        name="email"
+                        #userEmail="ngModel"
+                        [(ngModel)]="emailPhone"
+                        (input)="error = ''"
+                        id="auth_email"
+                        [class.is-invalid]="
+                            userEmail.invalid &&
+                            (userForm.submitted || userEmail.dirty)
+                        "
+                        class="form__input" />
+                    <small
+                        class="is-invalid__text"
+                        [class.is-invalid__text-show]="
+                            userEmail.invalid &&
+                            (userForm.submitted || userEmail.dirty)
+                        "
+                        >Введено невірну адресу ел. пошти або номер
+                        телефону</small
+                    >
+                    <small
+                        class="is-invalid__text"
+                        [class.is-invalid__text-show]="
+                            error === 'Користувача не знайдено'
+                        "
+                        >Користувач з логіном {{ emailPhone }} не
+                        зареєстрований</small
+                    >
                 </div>
                 <div class="form__item input-icon">
-                    <label for="auth_password" class="form__label">Пароль</label>
+                    <label
+                        for="auth_password"
+                        class="form__label"
+                        >Пароль</label
+                    >
                     <div class="input-icon__wrapper">
-                        <input 
-                            type={{inputType}} 
-                            required 
-                            name="password" 
-                            #userPassword="ngModel" 
+                        <input
+                            type="{{ inputType }}"
+                            required
+                            name="password"
+                            #userPassword="ngModel"
                             [(ngModel)]="password"
-                            id="auth_password" 
-                            [class.is-invalid]="userPassword.invalid && (userForm.submitted || userPassword.dirty)" 
-                            class="form__input">
+                            id="auth_password"
+                            [class.is-invalid]="
+                                userPassword.invalid &&
+                                (userForm.submitted || userPassword.dirty)
+                            "
+                            (input)="error = ''"
+                            class="form__input" />
                         <button *ngIf="inputType === 'password'; else visible">
-                            <mat-icon class="visibility-icon" (click)="showPassword()">visibility_off</mat-icon>
+                            <mat-icon
+                                class="visibility-icon"
+                                (click)="showPassword()"
+                                >visibility_off</mat-icon
+                            >
                         </button>
                         <ng-template #visible>
-                            <button >
-                                <mat-icon class="visibility-icon" (click)="hidePassword()">visibility</mat-icon>
+                            <button>
+                                <mat-icon
+                                    class="visibility-icon"
+                                    (click)="hidePassword()"
+                                    >visibility</mat-icon
+                                >
                             </button>
                         </ng-template>
                     </div>
                 </div>
+                <!-- помилка авторизації  -->
+                <ng-container *ngIf="error === 'Неправильний пароль'">
+                    <app-error
+                        text="Введено невірний пароль!"
+                        subtext="Перевірте розкладу клавіатури і CapsLock"></app-error>
+                </ng-container>
+                <ng-container
+                    *ngIf="
+                        error ===
+                        'Щось пішло не так. Будь ласка, спробуйте пізніше'
+                    ">
+                    <app-error
+                        subtext="Щось пішло не так. Будь ласка, спробуйте пізніше"></app-error>
+                </ng-container>
                 <div class="form__item">
-                    <app-checkbox [auth]="true" [label]="'Запам`ятати мене'"></app-checkbox>
+                    <app-checkbox
+                        [auth]="true"
+                        [label]="'Запам`ятати мене'"></app-checkbox>
                 </div>
                 <div class="form__item-send">
-                    <button type="submit" class="btn-large">Увійти</button>
-                    <button class="btn-link" (click)="openRegisterDialog()">Зареєструватися</button>
+                    <button
+                        type="submit"
+                        class="btn-large">
+                        Увійти
+                    </button>
+                    <button
+                        class="btn-link"
+                        (click)="openRegisterDialog()">
+                        Зареєструватися
+                    </button>
                 </div>
                 <span class="modal-login__divider">або</span>
             </form>
             <div class="modal-login__platforms platforms">
-               <p class="platforms__title">Увійти як користувач</p>
-               <button class="platforms__fb">
+                <p class="platforms__title">Увійти як користувач</p>
+                <button class="platforms__fb" (click)="loginWithFb()">
                     <mat-icon class="platforms__icon">facebook</mat-icon>
                     Facebook
                 </button>
-               <button class="platforms__google">
-                    <mat-icon class="platforms__icon">email</mat-icon>
-                    Google
-                </button>
+                <!-- <a href="http://localhost:4444/auth/google"> -->
+                    <button class="platforms__google" (click)="loginWithGmail()">
+                        <mat-icon class="platforms__icon">email</mat-icon>
+                        Google
+                    </button>
+                    <!-- <button (click)="authService.getUserFromToken()">Check</button> -->
+                <!-- </a> -->
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { ModalService } from 'src/app/shared/components/modal/modal.service';
 import { Slide } from 'src/app/shared/components/carousel/carousel.component';
-import { categories } from 'src/app/data';
+import { ApiService } from '../../services/api.service';
 import { ProductService } from 'src/app/product/services/product.service';
 
 @Component({
@@ -12,15 +12,23 @@ import { ProductService } from 'src/app/product/services/product.service';
 export class HomeComponent {
   data!: any
   
-  constructor(private modalService: ModalService, public ProductService: ProductService) {}
+  constructor(public modalService: ModalService, public productService: ProductService, public apiService: ApiService) {}
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    if (window.innerWidth < 700) {
+      this.productService.setValueSlice(2)
+    }
+  }
 
   ngOnInit() {
-    this.data = categories
+    this.apiService.getAllCategories().subscribe({
+      next: (data) => {this.data = data},
+      error: (err) => {console.log(err)}
+    })
+    this.productService.getSomeProducts()
   }
 
-  onCardsChange(type: string) {
-    this.ProductService.setNewProds(type)
-  }
 
   slides: Slide[] = [
       {url: '../../../../assets/slide1.jpg'},

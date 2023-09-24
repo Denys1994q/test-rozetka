@@ -30,4 +30,8 @@ export class TabsComponent {
         }
     });
   }
+
+  ngOnInit() {
+    this.data = this.data.filter(route => route)
+  }
 }

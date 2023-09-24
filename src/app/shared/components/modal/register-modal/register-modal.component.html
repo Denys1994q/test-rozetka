@@ -19,9 +19,9 @@
                 <div class="form__item">
                     <label
                         for="auth_name"
-                        class="form__label"
-                        >Ім'я</label
-                    >
+                        class="form__label">
+                        Ім'я
+                    </label>
                     <input
                         type="text"
                         required
@@ -29,10 +29,7 @@
                         minlength="2"
                         #userName="ngModel"
                         id="auth_name"
-                        [class.is-invalid]="
-                            userName.invalid &&
-                            (userForm.submitted || userName.dirty)
-                        "
+                        [class.is-invalid]="userName.invalid && (userForm.submitted || userName.dirty)"
                         class="form__input"
                         name="userName"
                         [(ngModel)]="name" />
@@ -40,17 +37,16 @@
                         class="is-invalid__text"
                         [class.is-invalid__text-show]="
                             userName.invalid &&
-                            (userForm.submitted || userName.dirty)
-                        "
-                        >Введіть своє ім'я кирилицею</small
-                    >
+                            (userForm.submitted || userName.dirty)">
+                        Введіть своє ім'я кирилицею
+                    </small>
                 </div>
                 <div class="form__item">
                     <label
                         for="auth_surname"
-                        class="form__label"
-                        >Прізвище</label
-                    >
+                        class="form__label">
+                        Прізвище
+                    </label>
                     <input
                         type="text"
                         required
@@ -58,28 +54,22 @@
                         minlength="2"
                         #userSurname="ngModel"
                         id="auth_surname"
-                        [class.is-invalid]="
-                            userSurname.invalid &&
-                            (userForm.submitted || userSurname.dirty)
-                        "
+                        [class.is-invalid]="userSurname.invalid && (userForm.submitted || userSurname.dirty)"
                         class="form__input"
                         name="userSurname"
                         [(ngModel)]="surname" />
                     <small
                         class="is-invalid__text"
-                        [class.is-invalid__text-show]="
-                            userSurname.invalid &&
-                            (userForm.submitted || userSurname.dirty)
-                        "
-                        >Введіть своє прізвище кирилицею</small
-                    >
+                        [class.is-invalid__text-show]="userSurname.invalid && (userForm.submitted || userSurname.dirty)">
+                        Введіть своє прізвище кирилицею
+                    </small>
                 </div>
                 <div class="form__item">
                     <label
                         for="auth_phone"
-                        class="form__label"
-                        >Номер телефону</label
-                    >
+                        class="form__label">
+                        Номер телефону
+                    </label>
                     <input
                         type="text"
                         required
@@ -89,29 +79,23 @@
                         minlength="10"
                         #userPhone="ngModel"
                         id="auth_phone"
-                        [class.is-invalid]="
-                            userPhone.invalid &&
-                            (userForm.submitted || userPhone.dirty)
-                        "
+                        [class.is-invalid]="userPhone.invalid && (userForm.submitted || userPhone.dirty)"
                         class="form__input"
                         name="userPhone"
                         [showMaskTyped]="true"
                         [(ngModel)]="phone" />
                     <small
                         class="is-invalid__text"
-                        [class.is-invalid__text-show]="
-                            userPhone.invalid &&
-                            (userForm.submitted || userPhone.dirty)
-                        "
-                        >Введіть номер мобільного телефону</small
-                    >
+                        [class.is-invalid__text-show]="userPhone.invalid && (userForm.submitted || userPhone.dirty)">
+                        Введіть номер мобільного телефону
+                    </small>
                 </div>
                 <div class="form__item">
                     <label
                         for="auth_email"
-                        class="form__label"
-                        >Ел. пошта</label
-                    >
+                        class="form__label">
+                        Ел. пошта
+                    </label>
                     <input
                         type="email"
                         required
@@ -119,28 +103,22 @@
                         email
                         #userEmail="ngModel"
                         id="auth_email"
-                        [class.is-invalid]="
-                            userEmail.invalid &&
-                            (userForm.submitted || userEmail.dirty)
-                        "
+                        [class.is-invalid]="userEmail.invalid && (userForm.submitted || userEmail.dirty)"
                         class="form__input"
                         name="userEmail"
                         [(ngModel)]="email" />
                     <small
                         class="is-invalid__text"
-                        [class.is-invalid__text-show]="
-                            userEmail.invalid &&
-                            (userForm.submitted || userEmail.dirty)
-                        "
-                        >Введіть свою ел. пошту</small
-                    >
+                        [class.is-invalid__text-show]="userEmail.invalid && (userForm.submitted || userEmail.dirty)">
+                        Введіть свою ел. пошту
+                    </small>
                 </div>
                 <div class="form__item input-icon">
                     <label
                         for="auth_password"
-                        class="form__label"
-                        >Придумайте пароль</label
-                    >
+                        class="form__label">
+                        Придумайте пароль
+                    </label>
                     <div class="input-icon__wrapper">
                         <input
                             passAllowedNamesValidator
@@ -154,43 +132,32 @@
                             pattern="[a-zA-Z 0-9 ]*"
                             id="auth_password"
                             #userPassword="ngModel"
-                            [class.is-invalid]="
-                                userPassword.invalid &&
-                                (userForm.submitted || userPassword.dirty)
-                            "
+                            [class.is-invalid]="userPassword.invalid && (userForm.submitted || userPassword.dirty)"
                             class="form__input"
                             name="userPassword"
                             [(ngModel)]="password" />
                         <button *ngIf="inputType === 'password'; else visible">
                             <mat-icon
                                 class="visibility-icon"
-                                (click)="showPassword()"
-                                >visibility_off</mat-icon
-                            >
+                                (click)="showPassword()">
+                                visibility_off
+                            </mat-icon>
                         </button>
                         <ng-template #visible>
                             <button>
                                 <mat-icon
                                     class="visibility-icon"
-                                    (click)="hidePassword()"
-                                    >visibility</mat-icon
-                                >
+                                    (click)="hidePassword()">
+                                    visibility
+                                </mat-icon>
                             </button>
                         </ng-template>
                     </div>
                     <div
-                        *ngIf="
-                            userPassword.errors &&
-                            userPassword.dirty &&
-                            password
-                        ">
+                        *ngIf="userPassword.errors && userPassword.dirty && password">
                         <small
                             class="is-invalid__password"
-                            [class.is-invalid__password-error]="
-                                userPassword &&
-                                userPassword.errors &&
-                                userPassword.errors['forbiddenPassword']
-                            ">
+                            [class.is-invalid__password-error]="userPassword && userPassword.errors && userPassword.errors['forbiddenPassword']">
                             Не співпадати з іменем та ел. поштою
                         </small>
                         <small
@@ -231,6 +198,9 @@
                         </small>
                     </div>
                 </div>
+                <ng-container *ngIf="error">
+                    <app-error text="{{error}}"></app-error>
+                </ng-container>
                 <div class="form__item">
                     <p class="agreement">
                         Реєструючись, ви погоджуєтесь з умовами
