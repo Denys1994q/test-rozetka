@@ -2,6 +2,8 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Slide } from 'src/app/shared/components/carousel/carousel.component';
 import { Comment } from 'src/app/shared/components/comment/comment.component';
 import { ProductService } from '../../services/product.service';
+import { CartService } from 'src/app/cart/services/cart.service';
+import { ModalService } from 'src/app/shared/components/modal/modal.service';
 
 @Component({
   selector: 'app-product-all',
@@ -21,7 +23,7 @@ export class ProductAllComponent {
   @ViewChild('videoBlock') videoBlock!: ElementRef;
   @ViewChild('characteristicsAndReviewsBlock') characteristicsAndReviewsBlock!: ElementRef;
 
-  constructor(public ProductService: ProductService ) {}
+  constructor(public ProductService: ProductService, public cartService: CartService, public modalService: ModalService) {}
 
   newProds = {
     category: 'Гарячі новинки',
@@ -56,4 +58,9 @@ export class ProductAllComponent {
       });
     }
   }
+
+  addToCart() {
+    this.cartService.addToShoppingCart({...this.ProductService.product, amount: 1})  
+  }
+  
 }

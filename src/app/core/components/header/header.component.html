@@ -4,9 +4,9 @@
             <button>
                 <mat-icon
                     class="burger-icon header-icon"
-                    (click)="menuService.openMenu('auth')"
-                    >menu</mat-icon
-                >
+                    (click)="menuService.openMenu('auth')">
+                    menu
+                </mat-icon>
             </button>
         </div>
         <a
@@ -54,15 +54,17 @@
                     person
                 </mat-icon>
                 <ng-template #logged>
-                    <a routerLink="cabinet/orders">
+                    <a routerLink="cabinet/personal-information">
                         <mat-icon class="header-icon header-icon-user">
                             list_alt
                         </mat-icon>
                     </a>
                 </ng-template>
             </li>
-            <li class="header-actions__item">
-                <mat-icon class="header-icon">shopping_cart</mat-icon>
+            <li class="header-actions__item" (click)="modalService.openDialog('cart')">
+                <button matBadge="{{cartService.totalProductsNumber > 0 ? cartService.totalProductsNumber : ''}}" matBadgePosition="above after" class="custom-badge">
+                    <mat-icon class="header-icon">shopping_cart</mat-icon>
+                </button>
             </li>
         </ul>
     </div>

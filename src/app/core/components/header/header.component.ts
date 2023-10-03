@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MenuService } from 'src/app/shared/components/side-menu/menu.service';
 import { ModalService } from 'src/app/shared/components/modal/modal.service';
 import { AuthService } from '../../services/auth.service';
+import { CartService } from 'src/app/cart/services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -14,13 +15,15 @@ export class HeaderComponent {
   constructor(
     public menuService: MenuService, 
     public modalService: ModalService, 
-    public authService: AuthService 
+    public authService: AuthService,
+    public cartService: CartService 
   ) {}
 
   ngOnInit() {
     this.modalService.openedDialog.subscribe(data=>{
       this.openedDialog = data;
     });
+    this.cartService.getCart()
   }
   
 }

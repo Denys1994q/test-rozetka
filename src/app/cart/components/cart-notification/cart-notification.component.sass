@@ -1,0 +1,46 @@
+@import 'variables'
+
+.cart-notification
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 12px 17px
+    margin-bottom: 24px
+    border: 1px solid #e9e9e9
+    border-radius: 8px
+    &__icon
+        color: $main-green
+    &__number
+        display: flex
+        align-items: center
+        gap: 1rem
+    &__heading
+        span
+            font-weight: 700
+    &__image
+        width: 4rem
+        height: 4rem
+        object-fit: contain
+    &__list
+        display: flex
+        gap: 1rem
+.order-btn
+    font-size: 16px
+    height: 40px
+    line-height: 40px
+    background-color: #00a046
+    color: #fff
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 8px
+    padding: 0 1.6rem
+    &:hover
+        background: #0abe58
+        transition: all .4s ease-in-out
+.custom-badge
+    position: relative
+    & .mat-badge-content
+        background-color: #e5f5ec
+        color: $main-black
+

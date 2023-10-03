@@ -12,7 +12,6 @@ export class SelectComponent {
   @Output() selectChangeEvent = new EventEmitter<any>();
 
   selectChange() {
-    console.log(this.activeOption)
     this.selectChangeEvent.emit(this.activeOption)
   }
 }

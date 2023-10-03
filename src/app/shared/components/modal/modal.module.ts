@@ -8,6 +8,7 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
 import { ProductsModalComponent } from './products-modal/products-modal.component';
 import { RegisterModalComponent } from './register-modal/register-modal.component';
 import { ServicesModalComponent } from './services-modal/services-modal.component';
+import { CartModalComponent } from './cart-modal/cart-modal.component';
 
 import { passAllowedNamesValidatorDirective } from './pass-allowed-names-validator.directive';
 import { passBigLettersValidatorDirective } from './pass-bigLetters-validator.directive';
@@ -23,6 +24,7 @@ import { NgxMaskPipe, NgxMaskDirective, provideNgxMask } from 'ngx-mask';
     ProductsModalComponent,
     RegisterModalComponent,
     ServicesModalComponent,
+    CartModalComponent,
     passAllowedNamesValidatorDirective,
     passDigitsValidatorDirective,
     passBigLettersValidatorDirective,
@@ -40,7 +42,8 @@ import { NgxMaskPipe, NgxMaskDirective, provideNgxMask } from 'ngx-mask';
     LoginModalComponent,
     ProductsModalComponent,
     RegisterModalComponent,
-    ServicesModalComponent
+    ServicesModalComponent,
+    CartModalComponent
   ]
 })
 export class ModalModule { }

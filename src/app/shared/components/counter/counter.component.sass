@@ -1,0 +1,32 @@
+@import 'variables'
+
+.counter
+    display: flex
+.counter-icon
+    width: 4rem
+    height: 4rem
+    font-size: 3rem
+    display: flex
+    justify-content: center
+    align-items: center
+    color: $main-blue
+.counter-input
+    width: 5.6rem
+    height: 4rem
+    background-color: #fff
+    padding-left: 12px
+    padding-right: 12px
+    border: 1px solid #d2d2d2
+    border-radius: 8px
+    font-size: 16px
+    text-align: center
+    transition: border .2s ease-in-out
+    &:hover
+        border: 1px solid #a3a3a3
+    &:focus
+        box-shadow: 0 0 0 2px #6fc4e5
+.counter-btn[disabled]
+    pointer-events: none
+    opacity: 0.6
+    .counter-icon
+        color: #a6a5a5

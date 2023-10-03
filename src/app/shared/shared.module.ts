@@ -5,6 +5,7 @@ import {MatSliderModule} from '@angular/material/slider'
 import { CachedSrcDirective } from './iframe.directive';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
+// форми
 import { FormsModule } from '@angular/forms';
 import { CommentComponent } from './components/comment/comment.component';
 import { CheckboxComponent } from './components/inputs/checkbox/checkbox.component';
@@ -25,6 +26,8 @@ import { PricePanelComponent } from './components/price-panel/price-panel.compon
 import { ErrorComponent } from './components/error/error.component';
 import { AsideComponent } from './components/aside/aside.component';
 import { UserInfopanelComponent } from './components/user-infopanel/user-infopanel.component';
+import { CounterComponent } from './components/counter/counter.component';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -47,14 +50,15 @@ import { UserInfopanelComponent } from './components/user-infopanel/user-infopan
     PricePanelComponent,
     ErrorComponent,
     UserInfopanelComponent,
-    AsideComponent
-    // ModalModule
+    AsideComponent,
+    CounterComponent,
   ],
   imports: [
     CommonModule, 
     MatIconModule, 
     MatSliderModule,
     MatDialogModule, 
+    MatBadgeModule,
     FormsModule,
     AppRoutingModule,
   ],
@@ -65,6 +69,7 @@ import { UserInfopanelComponent } from './components/user-infopanel/user-infopan
     InputTextComponent,
     MatIconModule, 
     MatSliderModule, 
+    MatBadgeModule,
     CachedSrcDirective, 
     MatDialogModule, 
     CommentComponent,
@@ -83,7 +88,8 @@ import { UserInfopanelComponent } from './components/user-infopanel/user-infopan
     PricePanelComponent,
     ErrorComponent,
     UserInfopanelComponent,
-    AsideComponent
+    AsideComponent,
+    CounterComponent
     // ModalModule
   ]
 })

@@ -50,10 +50,21 @@
                 </p>
             </div>
             <div class="trade__buy price-buy-panel__btn">
-                <button class="btn iconed-btn btn-medium btn-green">
-                    <mat-icon class="iconed-btn__icon">shopping_cart</mat-icon>
-                    Купити
-                </button>
+                <div *ngIf="cartService.productInCart; else buy">
+                    <div class="inCart-block">
+                        <mat-icon class="inCart-icon">shopping_cart</mat-icon>
+                        <button class="btn btn-link btn-inCart" (click)="modalService.openDialog('cart')">
+                            В кошику
+                        </button>
+                    </div>
+                </div>
+                <ng-template #buy>
+                    <button class="btn iconed-btn btn-medium btn-green width100"
+                    (click)="addToCart()">
+                        <mat-icon class="iconed-btn__icon">shopping_cart</mat-icon>
+                        Купити
+                    </button>
+                </ng-template>
             </div>
             <div class="trade__btns">
                 <button class="btn btn-icon btn-icon-grey">

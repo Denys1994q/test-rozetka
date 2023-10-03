@@ -41,5 +41,6 @@ export interface ProductInterface {
     info: Info[],
     reviews_data: Review[],
     date: Date,
-    searchStatus: Status[]
+    searchStatus: Status[],
+    amount?: number
 }

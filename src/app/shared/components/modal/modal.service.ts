@@ -7,7 +7,7 @@ import { RegisterModalComponent } from './register-modal/register-modal.componen
 import { ServicesModalComponent } from './services-modal/services-modal.component';
 import { CommentsModalComponent } from './comments-modal/comments-modal.component';
 import { FiltersModalComponent } from './filters-modal/filters-modal.component';
-
+import { CartModalComponent } from './cart-modal/cart-modal.component';
 
 @Injectable({ providedIn: 'root' })
 
@@ -77,6 +77,14 @@ export class ModalService {
                     modalVariant = FiltersModalComponent
                     modalStyles = {
                       panelClass: 'modal-filters',
+                    }
+                }
+                break
+            case 'cart': 
+                if (variant == 'cart') {
+                    modalVariant = CartModalComponent
+                    modalStyles = {
+                      panelClass: 'modal-cart',
                     }
                 }
                 break

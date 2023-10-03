@@ -26,8 +26,14 @@ export class ProductService {
     recommendedProds: ProductInterface[] = []
     // знайдені продукти
     foundedProducts: any = []
+    // 
+    loading: boolean = false
 
-    constructor(private CommentsService: CommentsService, private apiService: ApiService) {}
+    constructor(
+      private CommentsService: CommentsService, 
+      private searchResultsService: SearchResultsService,
+      private apiService: ApiService) 
+    {}
 
     setValueSlice(newValue: number) {
       this.newProds = categories[0].subCategories[0].products.slice(0, newValue);
@@ -80,18 +86,18 @@ export class ProductService {
 
     findProduct(name: string): any {
       this.resetFoundedProducts()
-      let foundedProduct;
-      categories.map(prod => {
-        prod.subCategories.map(subcategory => {
-          subcategory.products.map((prod: any) => {
-            if (prod.title.toLowerCase().includes(name.toLowerCase())) {
-              foundedProduct = prod
-              this.foundedProducts.push(prod)
-            }
+      this.loading = true
+      this.apiService.getAllProducts().subscribe({
+        next: products => {
+          products.map((prod: any) => {
+              this.loading = false
+                if (prod.title.toLowerCase().includes(name.toLowerCase())) {
+                  this.foundedProducts.push(prod)
+                }
           })
-        })
+        },
+        error: err => console.log(err)
       })
-      return foundedProduct
     }
 
     resetFoundedProducts() {

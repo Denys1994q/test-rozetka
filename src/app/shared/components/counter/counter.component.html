@@ -1,0 +1,11 @@
+<div class="counter-wrapper">
+    <div class="counter">
+        <button class="counter-btn" [disabled]="startValue === 1" (click)="decrease()">
+            <mat-icon class="counter-icon">remove</mat-icon>
+        </button>
+        <input class="counter-input" type="number" [(ngModel)]="startValue" />
+        <button class="counter-btn" (click)="increase()">
+            <mat-icon class="counter-icon">add</mat-icon>
+        </button>
+    </div>
+</div>

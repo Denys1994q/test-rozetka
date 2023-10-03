@@ -6,10 +6,10 @@ import { SearchModule } from './search/search.module';
 import { CoreModule } from './core/core.module';
 import { ModalModule } from './shared/components/modal/modal.module';
 import { CabinetModule } from './cabinet/cabinet.module';
+import { CartModule } from './cart/cart.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import { AppComponent } from './app.component';
     SearchModule,
     CoreModule,
     ModalModule,
-    CabinetModule
+    CabinetModule,
+    CartModule
   ],
   providers: [
     {

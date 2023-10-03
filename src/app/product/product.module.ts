@@ -40,7 +40,8 @@ import { SearchModule } from '../search/search.module';
   exports: [
     CharacteristicsBlockComponent,
     CardsComponent,
-    VideoCardsComponent
+    VideoCardsComponent,
+    PriceComponent
   ]
 })
 export class ProductModule { }

@@ -28,12 +28,8 @@ export class InputSearchBoxComponent {
     } else {
       this.showOverlay = true
       this.ProductService.findProduct(this.searchInpValue)
-    }
+    } 
     
-    // const {engName, id} = this.ProductService.findProduct(this.searchInpValue)
-    // if (engName && id) {
-    //   this.router.navigateByUrl(`/${engName}/${id}`);
-    // }
   }
 
   closeAndReset() {

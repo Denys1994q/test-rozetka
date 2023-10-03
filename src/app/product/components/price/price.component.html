@@ -1,9 +1,23 @@
-<div *ngIf="price.old; else onePrice" class="price-panel">
-    <span *ngIf="price.old" class="price-panel__old">{{price.old}} &#x20b4;</span>
-    <span [class.price-panel__new-big]="big" class="price-panel__new">{{price.new}} &#x20b4;</span>
+<div
+    *ngIf="price.old; else onePrice"
+    class="price-panel">
+    <span
+        *ngIf="price.old"
+        class="price-panel__old"
+        >{{ price.old }} &#x20b4;</span
+    >
+    <span
+        [class.price-panel__new-big]="big"
+        class="price-panel__new"
+        >{{ price.new }} &#x20b4;</span
+    >
 </div>
 <ng-template #onePrice>
     <div class="price-panel">
-        <span [class.price-panel__new-big]="big" class="price-panel__regular">{{price.new}} &#x20b4;</span>
-    </div>            
+        <span
+            [class.price-panel__new-big]="big"
+            class="price-panel__regular"
+            >{{ price.new }} &#x20b4;</span
+        >
+    </div>
 </ng-template>

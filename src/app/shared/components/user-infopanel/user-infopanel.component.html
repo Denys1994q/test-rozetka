@@ -40,12 +40,12 @@
                 {{ (authService.userData$ | async)?.displayName }}
             </p>
             <ng-template #nameSurname>
-                <p *ngIf="(authService.userData$ | async)?.name">
+                <span *ngIf="(authService.userData$ | async)?.name">
                     {{ (authService.userData$ | async)?.name }}
-                </p>
-                <p *ngIf="(authService.userData$ | async)?.surname">
+                </span>
+                <span *ngIf="(authService.userData$ | async)?.surname">
                     {{ (authService.userData$ | async)?.surname }}
-                </p>
+                </span>
             </ng-template>
             <p
                 *ngIf="(authService.userData$ | async)?.email"

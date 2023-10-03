@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { ModalService } from '../modal/modal.service';
 import { MenuService } from '../side-menu/menu.service';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-user-infopanel',
@@ -9,6 +10,7 @@ import { MenuService } from '../side-menu/menu.service';
   styleUrls: ['./user-infopanel.component.sass']
 })
 export class UserInfopanelComponent {
+    @Input() cabinet: boolean = false
 
     constructor( 
         public authService: AuthService, 

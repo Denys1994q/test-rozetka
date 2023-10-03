@@ -1,0 +1,118 @@
+<div class="personalInfo">
+    <!-- назва категорії -->
+    <h2 class="personalInfo__title">Особисті дані</h2>
+    <!-- пункти категорії -->
+    <ul class="personalInfo__list">
+        <!-- кожен пункт -->
+        <li
+            class="personalInfo__item"
+            *ngFor="let item of data; let i = index">
+            <!-- іконка пункту -->
+            <div class="limitedInfo" (click)="showInfo(i)">
+                <button>
+                    <mat-icon>{{ item.icon }}</mat-icon>
+                </button>
+                <!-- заголовок пункту -->
+                <p class="personalInfo__itemHeading">{{ item.heading }}</p>
+                <!-- стрілка відкрити більше чи менше -->
+                <button class="arrow">
+                    <mat-icon *ngIf="selectedIdxs.indexOf(i) === -1; else show">
+                        expand_more
+                    </mat-icon>
+                    <ng-template #show>
+                        <mat-icon>expand_less</mat-icon>
+                    </ng-template>
+                </button>
+            </div>
+            <!-- додатковий блок пункту -->
+            <div
+                *ngIf="selectedIdxs.indexOf(i) > -1"
+                class="fullInfo">
+                <ul class="fullInfo__list">
+                    <li
+                        *ngFor="let info of item.list"
+                        class="fullInfo__item">
+                        <!-- заголовок -->
+                        <p class="fullInfo__title">{{ info.title }}</p>
+                        <!-- опис -->
+                        <!-- інпут для редагування -->
+                        <div
+                            *ngIf="selectedIdxsToEdit.indexOf(i) > -1; else text">
+                            <div *ngIf="info.title === 'Стать'; else others">
+                                <app-select
+                                    [name]="'user-sex'"
+                                    [options]="['Чоловіча', 'Жіноча']"
+                                    [activeOption]="sex"
+                                    (selectChangeEvent)="onFilterChange($event)">
+                                </app-select>
+                            </div>
+                            <ng-template #others>
+                                <div *ngIf="info.title === 'Дата народження'; else textInputs">
+                                    <input 
+                                        type="date" 
+                                        [ngModel] ="dateOfBirth | date:'yyyy-MM-dd'" 
+                                        (ngModelChange)="updateDate($event)"
+                                        class="edit-input" />
+                                </div>
+                                <ng-template #textInputs>
+                                    <input *ngIf="info.inputName === 'name'"
+                                        type="text"
+                                        [(ngModel)]="name"
+                                        class="edit-input" />
+                                    <input *ngIf="info.inputName === 'surname'"
+                                        type="text"
+                                        [(ngModel)]="surname"
+                                        class="edit-input" />
+                                    <input *ngIf="info.inputName === 'middleName'"
+                                        type="text"
+                                        [(ngModel)]="middleName"
+                                        class="edit-input" />
+                                    <input *ngIf="info.inputName === 'phone'"
+                                        type="phone"
+                                        [(ngModel)]="phone"
+                                        class="edit-input" />
+                                    <input *ngIf="info.inputName === 'email'"
+                                        type="email"
+                                        [(ngModel)]="email"
+                                        class="edit-input" />
+                                </ng-template>
+                            </ng-template>
+                        </div>
+                        <!-- текст -->
+                        <ng-template #text>
+                            <p *ngIf="info.title === 'Дата народження'; else otherTitles">
+                                {{ dateOfBirth | date: 'dd.MM.yyyy' }}
+                            </p>
+                            <ng-template #otherTitles>
+                                <p class="fullInfo__text">{{ info.text }}</p>
+                            </ng-template>
+                        </ng-template>
+                    </li>
+                </ul>
+                <!-- кнопка редагувати -->
+                <div *ngIf="selectedIdxsToEdit.indexOf(i) > -1; else editBtn">
+                    <button
+                        class="btn-search btn-info save-btn"
+                        [disabled]="disableBtn(item.heading)"
+                        (click)="updateUser()">
+                        Зберегти
+                    </button>
+                    <button
+                        class="btn-link cancel-btn"
+                        (click)="editInfo(i)">
+                        Скасувати
+                    </button>
+                </div>
+                <ng-template #editBtn>
+                    <button
+                        class="btn-search btn-info"
+                        (click)="editInfo(i)">
+                        Редагувати
+                    </button>
+                </ng-template>
+            </div>
+        </li>
+    </ul>
+    <button class="btn-link del-btn" (click)="deleteAccount()">Видалити акаунт</button>
+    <button class="btn-link exit-btn" (click)="logout()">Вихід</button>
+</div>

@@ -11,7 +11,7 @@
         </li>
     </ul>
     <!-- кнопка "ласкаво просимо" -->
-    <div class="side-menu__infoBlock infoBlock welcome-block">
+    <div class="side-menu__infoBlock infoBlock welcome-block" *ngIf="!authService.isAuthenticated()">
         <h3 class="welcome-block__title">Ласкаво просимо!</h3>
         <p class="welcome-block__text">
             Увійдіть, щоб отримувати рекомендації, персональні бонуси і
@@ -19,7 +19,7 @@
         </p>
         <button
             class="welcome-block__btn"
-            (click)="openDialog()">
+            (click)="modalService.openDialog('login')">
             Увійдіть в особистий кабінет
         </button>
     </div>
@@ -80,34 +80,51 @@
 </aside>
 
 <aside class="products__catalog" *ngIf="cabinet">
-    <div class="side-menu__infoBlock infoBlock">
-        <app-user-infopanel />
-    </div>
-    <div class="side-menu__infoBlock infoBlock">
+    <div class="side-menu__infoBlock infoBlock infoBlock-cabinet">
         <ul class="side-menu__list">
             <li class="side-menu__item">
-                <div class="side-menu__item-innerWrapper">
-                    <button
-                        class="textBtn">
-                        <mat-icon class="textBtn__icon">list_alt</mat-icon>
-                        Мої замовлення
-                    </button>
-                </div>
-                <div class="side-menu__item-innerWrapper">
-                    <button
-                        class="textBtn">
-                        <mat-icon class="textBtn__icon">favorite_border</mat-icon>
-                        Список бажань
-                    </button>
-                </div>
-                <div class="side-menu__item-innerWrapper">
-                    <button
-                        class="textBtn">
-                        <mat-icon class="textBtn__icon">visibility</mat-icon>
-                        Переглянуті товари
-                    </button>
-                </div>
-            </li> 
+                <a routerLink="/cabinet/personal-information" >
+                    <div 
+                        class="side-menu__item-innerWrapper cabinet-itemWrapper" routerLinkActive="active">
+                        <button class="textBtn">
+                            <mat-icon class="textBtn__icon">person</mat-icon>
+                            <div class="user-name">
+                                <p>Den Rybachok</p>
+                                <p class="user-email">drybachok@gmail.com</p>
+                            </div>
+                        </button>
+                    </div>
+                </a>
+            </li>
+            <!-- <li class="side-menu__item">
+                <a routerLink="/cabinet/orders">
+                    <div class="side-menu__item-innerWrapper" routerLinkActive="active">
+                        <button
+                            class="textBtn">
+                            <mat-icon class="textBtn__icon">list_alt</mat-icon>
+                            Мої замовлення
+                        </button>
+                    </div>
+                </a>
+                <a routerLink="/cabinet/wishlist">
+                    <div class="side-menu__item-innerWrapper" routerLinkActive="active">
+                        <button
+                            class="textBtn">
+                            <mat-icon class="textBtn__icon">favorite_border</mat-icon>
+                            Список бажань
+                        </button>
+                    </div>
+                </a>
+                <a routerLink="/cabinet/recently-viewed">
+                    <div class="side-menu__item-innerWrapper" routerLinkActive="active">
+                        <button
+                            class="textBtn">
+                            <mat-icon class="textBtn__icon">visibility</mat-icon>
+                            Переглянуті товари
+                        </button>
+                    </div>
+                </a>
+            </li>  -->
         </ul>
     </div>
 </aside>

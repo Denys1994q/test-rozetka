@@ -3,6 +3,7 @@
     <app-aside [data]="data" [full]="true"></app-aside>
     <!-- основна частина сторінки -->
     <main class="products__list prodlist">
+        <app-cart-notification></app-cart-notification>
         <app-carousel
             class="custom-carousel"
             [slidesArr]="slides">

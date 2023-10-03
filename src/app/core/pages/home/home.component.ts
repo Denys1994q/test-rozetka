@@ -3,6 +3,7 @@ import { ModalService } from 'src/app/shared/components/modal/modal.service';
 import { Slide } from 'src/app/shared/components/carousel/carousel.component';
 import { ApiService } from '../../services/api.service';
 import { ProductService } from 'src/app/product/services/product.service';
+import { CartService } from 'src/app/cart/services/cart.service';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,12 @@ import { ProductService } from 'src/app/product/services/product.service';
 export class HomeComponent {
   data!: any
   
-  constructor(public modalService: ModalService, public productService: ProductService, public apiService: ApiService) {}
+  constructor(
+    public modalService: ModalService, 
+    public productService: ProductService, 
+    public apiService: ApiService,
+    public cartService: CartService) 
+  {}
 
   @HostListener('window:resize', ['$event'])
   onResize() {
@@ -27,6 +33,7 @@ export class HomeComponent {
       error: (err) => {console.log(err)}
     })
     this.productService.getSomeProducts()
+    this.cartService.getCart()
   }
 
 

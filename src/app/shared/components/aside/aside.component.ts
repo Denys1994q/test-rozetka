@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { ModalService } from '../modal/modal.service';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-aside',
@@ -6,12 +8,16 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./aside.component.sass']
 })
 export class AsideComponent {
-  @Input() data!: any[]
-  @Input() full!: boolean
-  @Input() cabinet!: boolean
+    @Input() data!: any[]
+    @Input() full!: boolean
+    @Input() cabinet!: boolean
 
-  openDialog() {
+    constructor(
+        public modalService: ModalService,
+        public authService: AuthService
+    ) {}
 
-  }
+    ngOnInit() {
+    }
 
 }

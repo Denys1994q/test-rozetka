@@ -1,3 +1,8 @@
 <div class="cabinet">
-    <app-aside [cabinet]="true"></app-aside>
+    <div class="cabinet__aside">
+        <app-aside [cabinet]="true" />
+    </div>
+    <div class="cabinet__main">
+        <router-outlet></router-outlet>
+    </div>
 </div>

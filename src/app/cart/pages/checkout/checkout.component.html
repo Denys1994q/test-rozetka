@@ -1,0 +1,46 @@
+<div class="checkout">
+    <header class="checkout__header">
+        <a routerLink="/">
+            <img class="rozetka-logo" src="../../../../assets/rozetka-logo.svg" alt="rozetka-logo" />
+        </a>
+    </header>
+    <h1 *ngIf="orderConfirmed; else notConfirmed" class="order__subtitle thanks-title">
+        Дякуємо, ваше замовлення прийнято. 
+    </h1>
+    <ng-template #notConfirmed>
+        <div class="checkout__main">
+            <div class="order">
+                <h1 class="order__title">Замовлення</h1>
+                <div class="order__subtitleWrapper">
+                    <h2 class="order__subtitle">Товари</h2>
+                    <button class="btn-link edit-btn" (click)="modalService.openDialog('cart')">
+                        <mat-icon class="burger-icon header-icon">
+                            edit
+                        </mat-icon>
+                        Редагувати
+                    </button>
+                </div>
+                <ul class="order__list">
+                    <li class="order__item" *ngFor="let product of cartService.productsFromStorage">
+                        <img class="order__img" src={{product.image}} alt="product-image">
+                        <h3 class="order__productTitle">{{product.title}}</h3>
+                        <div>{{getPrice(product).option.new}} &#x20b4; X {{product.amount}} од.</div>
+                        <div class="order__totalPrice" *ngIf="product.amount">{{getPrice(product).option.new * product.amount}} &#x20b4;</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="total">
+                <h2 class="order__title">Разом</h2>
+                <div class="total__item">
+                    <p>3 товари на суму</p>
+                    <p>{{cartService.totalPrice}} &#x20b4;</p>
+                </div>
+                <div class="total__item">
+                    <p>До сплати</p>
+                    <p class="total__price">{{cartService.totalPrice}} &#x20b4;</p>
+                </div>
+                <button class="order-btn" (click)="confirmOrder()">Замовлення підтверджую</button>
+            </div>
+        </div>
+    </ng-template>
+</div>

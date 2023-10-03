@@ -3,7 +3,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../services/product.service';
 import { SearchResultsService } from 'src/app/search/services/search-results.service';
 import { ApiService } from 'src/app/core/services/api.service';
+import { CartService } from 'src/app/cart/services/cart.service';
 import { ProductInterface } from 'src/app/core/services/api-response-types';
+import { ModalService } from 'src/app/shared/components/modal/modal.service';
 
 @Component({
   selector: 'app-product',
@@ -24,7 +26,9 @@ export class ProductComponent {
     public route:ActivatedRoute, 
     public ProductService: ProductService, 
     public SearchResultsService: SearchResultsService,
-    public apiService: ApiService
+    public apiService: ApiService,
+    public cartService: CartService,
+    public modalService: ModalService
   ) {}
 
   ngOnInit() {
@@ -52,6 +56,7 @@ export class ProductComponent {
                     if (prod._id === this.urlId) {
                       this.category = category
                       this.subCategory = sub
+                      this.cartService.getCart()
                     }
                   })
                 })
@@ -63,6 +68,10 @@ export class ProductComponent {
         this.baseView = false
       }
     })
+  }
+
+  addToCart() {
+    this.cartService.addToShoppingCart({...this.ProductService.product, amount: 1})  
   }
  
 }

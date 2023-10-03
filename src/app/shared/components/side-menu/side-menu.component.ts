@@ -3,6 +3,7 @@ import { MenuService } from 'src/app/shared/components/side-menu/menu.service';
 import { ModalService } from 'src/app/shared/components/modal/modal.service';
 import { SearchResultsService } from 'src/app/search/services/search-results.service';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-side-menu',
@@ -16,7 +17,8 @@ export class SideMenuComponent {
     public menuService: MenuService, 
     private modalService: ModalService,
     public searchResultsService: SearchResultsService,
-    public authService: AuthService
+    public authService: AuthService,
+    private router: Router
   ) {}
 
   openProductsDialog() {

@@ -14,6 +14,13 @@ import { Router } from '@angular/router';
 import { ApiService } from './core/services/api.service';
 import { SubCategoryItem } from './data';
 import { CabinetPage } from './cabinet/pages/cabinet/cabinet.component';
+import { CabinetPersonalInfoPage } from './cabinet/pages/cabinet-personalInfo/cabinet-personalInfo.component';
+import { CabinetRecentlyViewedPage } from './cabinet/pages/cabinet-recently-viewed/cabinet-recently-viewed.component';
+import { CabinetOrdersPage } from './cabinet/pages/cabinet-orders/cabinet-orders.component';
+import { CabinetWishlistPage } from './cabinet/pages/cabinet-wishlist/cabinet-wishlist.component';
+import { CheckoutPage } from './cart/pages/checkout/checkout.component';
+// authGuard
+import { AuthGuard } from './core/services/auth.guard';
 
 interface IRoute {
   title: string,
@@ -77,7 +84,29 @@ const routes: Routes = [
     // },
     // ],
     // },
-    {path: 'cabinet/orders', component: CabinetPage},
+    {path: 'cabinet', component: CabinetPage, canActivate: [AuthGuard], children: [
+        {
+          path: 'personal-information',
+          canActivate: [AuthGuard],
+          component: CabinetPersonalInfoPage,
+        },
+        {
+            path: 'orders',
+            canActivate: [AuthGuard],
+            component: CabinetOrdersPage,
+        },
+        {
+            path: 'wishlist',
+            canActivate: [AuthGuard],
+            component: CabinetWishlistPage,
+        },
+        {
+            path: 'recently-viewed',
+            canActivate: [AuthGuard],
+            component: CabinetRecentlyViewedPage,
+        },
+    ]},
+    {path: 'checkout', component: CheckoutPage},
     {path: 'error', component: ErrorComponent},
     {path: '**', redirectTo: '/error'},
 ];

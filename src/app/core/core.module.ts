@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { ProductModule } from '../product/product.module';
 import { HttpClientModule } from '@angular/common/http';
+import { CartModule } from '../cart/cart.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     ProductModule,
     SharedModule,
+    CartModule
   ],
   exports: [
     HeaderComponent,
