@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import {filter} from 'rxjs/operators';
+import { ProductService } from '../../services/product.service';
+import { Router } from '@angular/router';
+import { NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-tabs',
@@ -9,11 +11,14 @@ import {filter} from 'rxjs/operators';
 })
 export class TabsComponent {
   @Input() data!: any[]
-  @Input() route!: string
-  activeTab: number = 0
+  @Input() startRoute!: string
 
-  constructor(private router: Router) {
-    router.events.pipe(
+  constructor(public productService: ProductService, private router: Router) {}
+
+  ngOnInit() {
+    // this.data = this.data.filter(route => route)
+
+    this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     )
       .subscribe((event: any) => {
@@ -22,16 +27,20 @@ export class TabsComponent {
         if (this.data) {
           this.data.map((item, index) => {
             if (item.link === tabName) {
-              this.activeTab = index
+              this.productService.setTab(index)
+              // this.activeTab = index
+              // console.log('this.activeTab', this.activeTab)
+              // console.log('index', index)
             } else if (item.link === '') {
-              this.activeTab = 0
+              this.productService.setTab(0)
+              // this.activeTab = 0
             }
           })
         }
     });
   }
 
-  ngOnInit() {
-    this.data = this.data.filter(route => route)
+  makeActive(i: number) {
+    // this.productService.setTab(i)
   }
 }

@@ -14,7 +14,6 @@ export type Slide = {
   styleUrls: ['./carousel.component.sass']
 })
 export class CarouselComponent implements AfterViewInit, OnDestroy {
-  constructor() { }
 
   @Input() slidesArr!: Slide[]
   @Input() show_btns: boolean = true
@@ -23,6 +22,7 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
   @Input() extendedBig: boolean = false
   @Input() extendedBigWide: boolean = false
   @Input() startSlideIndex: any
+  @Input() autoSlidesOpening: boolean = false
 
   @Output() activeSlideEvent = new EventEmitter<any>()
 
@@ -39,7 +39,7 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
     }
     this.counter--
     this.val = this.res * this.counter
-    this.scrollRow(this.counter)
+    // this.scrollRow(this.counter)
 
     this.activeSlideEvent.emit(this.counter)
   }
@@ -50,7 +50,7 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
     }
     this.counter++
     this.val = this.res * this.counter
-    this.scrollRow(this.counter)
+    // this.scrollRow(this.counter)
 
     this.activeSlideEvent.emit(this.counter)
   }
@@ -59,9 +59,11 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
     this.res = - this.slideImg.nativeElement.offsetWidth;
     this.slideWidth = this.slideImg.nativeElement.offsetWidth;
     this.slideHeight = this.slideImg.nativeElement.offsetHeight;
-    // this.int = setInterval(() => {
-    //   this.showNext()
-    // }, 4000)
+    if (this.autoSlidesOpening) {
+      this.int = setInterval(() => {
+        this.showNext()
+      }, 4000)
+    }
   }
 
   ngAfterViewInit() {

@@ -2,11 +2,13 @@
     <ul class="tabs__list">
         <li
             class="tabs__item"
-            [class.tabs__item-active]="i === activeTab"
             *ngFor="let item of data; let i = index">
             <a
+                (click)="makeActive(i)"
                 *ngIf="item"
-                routerLink="/{{ route }}/{{ item.link }}">
+                class="tab-link"
+                [class.activeLink]="i === productService.tab"
+                routerLink="/{{ startRoute }}/{{ item.link }}">
                 {{ item.name }}
             </a>
         </li>

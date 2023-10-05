@@ -2,8 +2,9 @@
     class="product"
     *ngIf="ProductService.product">
     <!-- url товару: категорія, підкатегорія... -->
-    <ng-container *ngIf="category && subCategory">
-        <app-breadcrumbs [data]="[category.name, subCategory.name]">
+    <ng-container *ngIf="ProductService.category && ProductService.subCategory">
+        <app-breadcrumbs 
+        [data]="[ProductService.category.name, ProductService.subCategory.name]">
         </app-breadcrumbs>
     </ng-container>
     <!-- назва товару -->
@@ -27,18 +28,8 @@
     </div>
     <!-- таби: коментарі, відгуки, фото, відео -->
     <app-tabs
-        [data]="[
-            { name: 'Усе про товар', link: '' },
-            { name: 'Характеристики', link: 'characteristics' },
-            { name: 'Відгуки', link: 'comments' },
-            { name: 'Фото', link: 'photos' },
-            this.ProductService.prodWithVideo
-                ? { name: 'Відео', link: 'video' }
-                : null
-        ]"
-        [route]="
-            ProductService.product.engName + '/' + ProductService.product._id
-        ">
+        [data]="ProductService.tabs"
+        [startRoute]="ProductService.product.engName + '/' + ProductService.product._id">
     </app-tabs>
     <!-- контент для табів з роутер-аутлету -->
     <ng-container *ngIf="baseView; else tabsView">

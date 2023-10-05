@@ -16,7 +16,6 @@ import { ProductVideoComponent } from './pages/product-video/product-video.compo
 import { TabsComponent } from './components/tabs/tabs.component';
 import { SearchModule } from '../search/search.module';
 
-
 @NgModule({
   declarations: [
     CharacteristicsBlockComponent,

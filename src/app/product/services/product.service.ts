@@ -8,6 +8,10 @@ import { CommentsService } from './comments.service';
 @Injectable({ providedIn: 'root' })
 
 export class ProductService {
+    tab: number = 0
+    tabs: any = []
+    category!: any 
+    subCategory!: any
     // весь продукт 
     product!: any
     // ціна 
@@ -18,8 +22,7 @@ export class ProductService {
     seller!: any
     // рейтинг
     raiting: number = 0
-    // відео
-    prodWithVideo: boolean = false
+
     // нові, улюблені, рекомендовані продукти
     newProds: ProductInterface[] = []
     moreProds: ProductInterface[] = []
@@ -31,7 +34,6 @@ export class ProductService {
 
     constructor(
       private CommentsService: CommentsService, 
-      private searchResultsService: SearchResultsService,
       private apiService: ApiService) 
     {}
 
@@ -53,21 +55,42 @@ export class ProductService {
       })
     }
 
-    getCurrentProduct(id: string) {
+    getCurrentProduct(id: string, urlId?: any) {
       this.apiService.getOneProduct(id).subscribe({
         next: (response) => {
           this.product = response
+          console.log(response)
           this.setProductPrice()
           this.CommentsService.setComments(this.product.reviews_data)
           if (this.product.video) {
-            this.prodWithVideo = true
+            this.tabs = [
+              { name: 'Усе про товар', link: '' },
+              { name: 'Характеристики', link: 'characteristics' },
+              { name: 'Відгуки', link: 'comments' },
+              { name: 'Фото', link: 'photos' },
+              { name: 'Відео', link: 'video' }
+            ]
           } else {
-            this.prodWithVideo = false
+            this.tabs = [
+              { name: 'Усе про товар', link: '' },
+              { name: 'Характеристики', link: 'characteristics' },
+              { name: 'Відгуки', link: 'comments' },
+              { name: 'Фото', link: 'photos' }
+            ]
           }
           this.setProductRaiting()
+          this.checkActiveTab(urlId)
         },
         error: err => console.log(err)
       })
+    }
+
+    checkActiveTab(urlId: any) {
+      this.tabs.map((tab: any, index: any) => {
+        if (tab && tab.link === urlId) {
+            this.setTab(index)
+        }
+    })
     }
 
     setProductPrice() {
@@ -102,6 +125,18 @@ export class ProductService {
 
     resetFoundedProducts() {
       this.foundedProducts = []
+    }
+
+    setCategory(category: any) {
+      this.category = category
+    }
+
+    setSubcategory(subcategory: any) {
+      this.subCategory = subcategory
+    }
+
+    setTab(i: number) {
+      this.tab = i
     }
     
 }

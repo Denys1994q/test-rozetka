@@ -17,21 +17,33 @@ export class CartService {
         const cartData: any = localStorage.getItem('shoppingCart');
         this.productsFromStorage = JSON.parse(cartData) 
         this.getTotal()
-        this.checkIfProductInCart(this.productService.product._id)
+        if (this.productService.product && this.productService.product._id) {
+            this.checkIfProductInCart(this.productService.product._id)
+        }
     }
 
     getTotal() {
         const cartData: any = localStorage.getItem('shoppingCart');
         this.productsFromStorage = JSON.parse(cartData) 
-        const totalAmount = this.productsFromStorage.reduce((accumulator: number, product: any) => accumulator + product.amount, 0);
-        this.totalProductsNumber = totalAmount
+        // видалити не працюэ 
+        let totalAmount = 0
+        if ((this.productsFromStorage && this.productsFromStorage.length > 0)) {
+            totalAmount  = this.productsFromStorage.reduce((accumulator: number, product: any) => accumulator + product.amount, 0);
+            this.totalProductsNumber = totalAmount
+        } else {
+            this.totalProductsNumber = 0
+        }
         this.getTotalPrice()
     }
 
     getTotalPrice() {
         const cartData: any = localStorage.getItem('shoppingCart');
         this.productsFromStorage = JSON.parse(cartData) 
-        this.totalPrice = this.productsFromStorage.reduce((accumulator: number, product: any) => accumulator + product.amount * product.searchStatus.find((item: any) => item.searchPosition === 'price').option.new, 0);
+        if (this.productsFromStorage && this.productsFromStorage.length > 0) {
+            this.totalPrice = this.productsFromStorage.reduce((accumulator: number, product: any) => accumulator + product.amount * product.searchStatus.find((item: any) => item.searchPosition === 'price').option.new, 0);
+        } else {
+            this.totalPrice = 0
+        }
     }
 
     addToShoppingCart(product: any): void {
@@ -75,7 +87,7 @@ export class CartService {
     checkIfProductInCart(id: string) {
         const cartData: any = localStorage.getItem('shoppingCart');
         this.productsFromStorage = JSON.parse(cartData) 
-        if (this.productsFromStorage.find(product => product._id === id)) {
+        if (this.productsFromStorage && this.productsFromStorage.find(product => product._id === id)) {
             this.productInCart = true
         } else {
             this.productInCart = false
@@ -89,7 +101,9 @@ export class CartService {
         localStorage.setItem('shoppingCart', JSON.stringify(newData));
         this.getCart()
         this.getTotal()
-        this.checkIfProductInCart(this.productService.product._id)
+        if (this.productService.product && this.productService.product._id) {
+            this.checkIfProductInCart(this.productService.product._id)
+        }
     }
 
     // Очистити корзину

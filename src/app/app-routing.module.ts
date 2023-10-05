@@ -22,68 +22,10 @@ import { CheckoutPage } from './cart/pages/checkout/checkout.component';
 // authGuard
 import { AuthGuard } from './core/services/auth.guard';
 
-interface IRoute {
-  title: string,
-  id: string
-}
-
-// роути категорій: смартфони, тв і електроніка, ноутбуки та комп'ютери, побутова техніка ...
-const categoriesRoutes: IRoute[] = []
-// роути підкатегорій: смартфони, тв і електроніка (телефони, телевізори, аудіотехніка) ...
-const middleCategoriesRoutes: IRoute[] = []
-// всі продукти
-// export const productsRoutes: IRoute[] = []
-
-// categories.map(item => {
-//   categoriesRoutes.push({title: item.engName, id: item.id})
-//   item.subCategories.map((middleCat: SubCategoryItem) => {
-//       middleCategoriesRoutes.push({title: middleCat.engName, id: middleCat.id})
-//       middleCat.products.map((product: any) => {
-//         productsRoutes.push({title: product.engName, id: product.id})
-//       })
-//   })
-// })
-
 // ці масиви даних мають приходити з беку, щоб при появі нового товару не треба було вручну тут код міняти нижче.
 // для продуктів зробити схожий матчер, бо зараз навіть помилка в категорії буде вести не на ерор, а на сторінку Товару
 const routes: Routes = [
     {path: '', component: HomeComponent},
-    // {path: 'mobilnij-telefon-samsung-galaxy/6500037245d997489bf91596', component: HomeComponent},
-    // {
-    //     matcher: (url: any) => { 
-    //         for (let i = 0; i < productsRoutes.length; i++) {
-    //             if (url[0] && url[1]) {
-    //                 if (url.length === 2 && url[0].path == productsRoutes[i].title && url[1].path == productsRoutes[i].id) {
-    //                     return {consumed: url}
-    //                 } else if (url.length === 3) {
-    //                     return {consumed: url.slice(0, 2)}
-    //                 }
-    //             }
-    //         }
-    //         return null
-    //     }, component: ProductComponent, children: [
-    // {
-    //   path: '',
-    //   component: ProductAllComponent,
-    // },
-    // {
-    //   path: 'characteristics',
-    //   component: ProductCharacteristicsComponent,
-    // },
-    // {
-    //   path: 'comments',
-    //   component: ProductCommentsComponent,
-    // },
-    // {
-    //   path: 'video',
-    //   component: ProductVideoComponent,
-    // },
-    // {
-    //   path: 'photos',
-    //   component: ProductPhotosComponent,
-    // },
-    // ],
-    // },
     {path: 'cabinet', component: CabinetPage, canActivate: [AuthGuard], children: [
         {
           path: 'personal-information',
@@ -124,6 +66,25 @@ export class AppRoutingModule {
         let middleCategoriesRoutes: any = []
         let productsRoutes: any = []
 
+        if (localStorage.getItem('categoriesRoutes')) {
+            const st: any = localStorage.getItem('categoriesRoutes')
+            const data = JSON.parse(st)
+            categoriesRoutes = data
+            this.addRoute(categoriesRoutes, MainCategoryComponent)
+        } 
+        if (localStorage.getItem('middleCategoriesRoutes')) {
+            const st: any = localStorage.getItem('middleCategoriesRoutes')
+            const data = JSON.parse(st)
+            middleCategoriesRoutes = data
+            this.addRoute(middleCategoriesRoutes, MiddleCategoryComponent)
+        }  
+        if (localStorage.getItem('productsRoutes')) {
+            const st: any = localStorage.getItem('productsRoutes')
+            const data = JSON.parse(st)
+            productsRoutes = data
+            this.addProductRoute(productsRoutes)
+        }
+
         this.apiService.getAllCategories().subscribe({
             next: response => {
                 response.map((category: any) => {
@@ -132,6 +93,14 @@ export class AppRoutingModule {
                         middleCategoriesRoutes.push({title: middleCat.engName, id: middleCat.id})
                     })
                 })
+                if (!localStorage.getItem('categoriesRoutes')) {
+                    localStorage.setItem('categoriesRoutes', JSON.stringify(categoriesRoutes));
+                }
+                if (!localStorage.getItem('middleCategoriesRoutes')) {
+                    localStorage.setItem('middleCategoriesRoutes', JSON.stringify(middleCategoriesRoutes));
+                }
+                this.addRoute(categoriesRoutes, MainCategoryComponent)
+                this.addRoute(middleCategoriesRoutes, MiddleCategoryComponent)
             },
             error: err => console.log(err)
         })
@@ -140,13 +109,13 @@ export class AppRoutingModule {
                 response.map((product: any) => {
                     productsRoutes.push({title: product.engName, id: product._id})
                 })
+                if (!localStorage.getItem('productsRoutes')) {
+                    localStorage.setItem('productsRoutes', JSON.stringify(productsRoutes));
+                } 
+                this.addProductRoute(productsRoutes)
             },
             error: err => console.log(err)
         })
-
-        this.addRoute(categoriesRoutes, MainCategoryComponent)
-        this.addRoute(middleCategoriesRoutes, MiddleCategoryComponent)
-        this.addProductRoute(productsRoutes)
     }
 
     addRoute(data: any, component: any) {

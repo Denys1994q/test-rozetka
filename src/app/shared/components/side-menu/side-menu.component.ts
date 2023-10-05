@@ -15,7 +15,7 @@ export class SideMenuComponent {
 
   constructor(
     public menuService: MenuService, 
-    private modalService: ModalService,
+    public modalService: ModalService,
     public searchResultsService: SearchResultsService,
     public authService: AuthService,
     private router: Router
@@ -75,6 +75,11 @@ export class SideMenuComponent {
         console.error('Помилка при виконанні запиту:', error);
       }
     })
+  }
+
+  openCart() {
+    this.modalService.openDialog('cart')
+    this.menuService.closeMenu()
   }
 
 }

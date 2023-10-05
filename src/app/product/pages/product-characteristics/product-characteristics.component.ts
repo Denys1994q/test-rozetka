@@ -9,5 +9,5 @@ import { ProductService } from '../../services/product.service';
 export class ProductCharacteristicsComponent {
 
   constructor(public ProductService: ProductService ) {}
-    
+
 }
