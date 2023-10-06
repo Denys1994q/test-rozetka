@@ -9,7 +9,6 @@ import { Router, Route } from '@angular/router';
 })
 export class ApiService {
     private backendUrl = 'https://rozetka-server.onrender.com';
-    // private backendUrl = 'http://localhost:4444';
 
     constructor(private http: HttpClient, private router: Router) { }
 

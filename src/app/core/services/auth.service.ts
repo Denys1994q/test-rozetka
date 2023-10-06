@@ -26,7 +26,7 @@ interface UserResponse extends UserData {
   providedIn: 'root'
 })
 export class AuthService {
-    private backendUrl = 'http://localhost:4444';
+    private backendUrl = 'https://rozetka-server.onrender.com';
 
     public userDataSubject = new BehaviorSubject<UserData | null>(null);
     public userData$ = this.userDataSubject.asObservable();
@@ -70,7 +70,6 @@ export class AuthService {
     }
     
     getUser(): Observable<any> {
-        console.log('getUser')
         const token = localStorage.getItem('authToken');
         const headers = new HttpHeaders({ Authorization: `Bearer ${token}` });
         const url = `${this.backendUrl}/auth/me`;
