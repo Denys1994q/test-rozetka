@@ -26,7 +26,8 @@ interface UserResponse extends UserData {
   providedIn: 'root'
 })
 export class AuthService {
-    private backendUrl = 'https://rozetka-server.onrender.com';
+    // private backendUrl = 'https://rozetka-server.onrender.com';
+    private backendUrl = 'https://evergreen-purrfect-agenda.glitch.me';
 
     public userDataSubject = new BehaviorSubject<UserData | null>(null);
     public userData$ = this.userDataSubject.asObservable();
