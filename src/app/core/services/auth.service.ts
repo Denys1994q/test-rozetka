@@ -74,8 +74,8 @@ export class AuthService {
         const headers = new HttpHeaders({ Authorization: `Bearer ${token}` });
         const url = `${this.backendUrl}/auth/me`;
         const options = {
-        headers,
-        withCredentials: true
+            headers,
+            withCredentials: true
         };
         return this.http.get<any>(url, options).pipe(
         tap(response => {

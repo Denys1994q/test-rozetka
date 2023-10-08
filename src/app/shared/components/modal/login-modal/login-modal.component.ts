@@ -39,13 +39,13 @@ export class LoginModalComponent {
         const right = window.innerWidth - width;
         const top = 0;
         const windowFeatures = `width=${width},height=${height},right=${right},top=${top}`;
-        this.authWindow = window.open('https://rozetka-server.onrender.com/auth/google', '_blank', windowFeatures);
+        this.authWindow = window.open('https://evergreen-purrfect-agenda.glitch.me/auth/google', '_blank', windowFeatures);
     }
 
     ngOnInit() {
         // Очікуємо подію message від вікна авторизації
         window.addEventListener('message', (event) => {
-            if (event.origin === 'https://rozetka-server.onrender.com') {
+            if (event.origin === 'https://evergreen-purrfect-agenda.glitch.me') {
                 // Перевіряємо, чи повідомлення вказує на успішну авторизацію
                 if (event.data === 'authSuccess') {
                     this.authWindow.close()
@@ -62,7 +62,7 @@ export class LoginModalComponent {
     }
 
     loginWithFb() {
-        window.open('https://rozetka-server.onrender.com/auth/facebook', '_self');
+        window.open('https://evergreen-purrfect-agenda.glitch.me/auth/facebook', '_self');
     }
 
     closeDialog() {
