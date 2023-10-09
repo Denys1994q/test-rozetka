@@ -26,7 +26,11 @@
             class="header-catalog"
             (click)="modalService.openDialog('product')">
             <button aria-label="Відкрити каталог товарів">
-                <mat-icon *ngIf="openedDialog === 'product'; else catalog" class="icon">close</mat-icon>
+                <mat-icon
+                    *ngIf="openedDialog === 'product'; else catalog"
+                    class="icon"
+                    >close</mat-icon
+                >
                 <ng-template #catalog>
                     <mat-icon class="icon">dashboard</mat-icon>
                 </ng-template>
@@ -59,12 +63,25 @@
                     </a>
                 </ng-template>
             </li>
-            <li class="header-actions__item" (click)="modalService.openDialog('cart')">
-                <button matBadge="{{cartService.totalProductsNumber > 0 ? cartService.totalProductsNumber : ''}}" matBadgePosition="above after" class="custom-badge" aria-label="Відкрити корзину">
-                    <mat-icon class="header-icon">shopping_cart</mat-icon>
+            <li
+                class="header-actions__item"
+                (click)="modalService.openDialog('cart')">
+                <button
+                    matBadge="{{
+                        cartService.totalProductsNumber > 0
+                            ? cartService.totalProductsNumber
+                            : ''
+                    }}"
+                    matBadgePosition="above after"
+                    class="custom-badge"
+                    aria-label="Відкрити корзину">
+                    <mat-icon
+                        class="header-icon"
+                        aria-label="Відкрити корзину"
+                        >shopping_cart</mat-icon
+                    >
                 </button>
             </li>
         </ul>
     </div>
 </header>
-
