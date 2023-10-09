@@ -26,11 +26,9 @@
             class="header-catalog"
             (click)="modalService.openDialog('product')">
             <button>
-                <mat-icon *ngIf="openedDialog === 'product'; else catalog"
-                    >close</mat-icon
-                >
+                <mat-icon *ngIf="openedDialog === 'product'; else catalog" class="icon">close</mat-icon>
                 <ng-template #catalog>
-                    <mat-icon>dashboard</mat-icon>
+                    <mat-icon class="icon">dashboard</mat-icon>
                 </ng-template>
             </button>
             <span>Каталог</span>
