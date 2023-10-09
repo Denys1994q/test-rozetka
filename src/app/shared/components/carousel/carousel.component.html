@@ -46,10 +46,10 @@
     </div>
   </div>
   <div class="btnWrap" *ngIf="show_btns">
-    <button class="controller controller__prev" (click)="showPrev()">
+    <button class="controller controller__prev" (click)="showPrev()" aria-label="Попереднє фото">
       <mat-icon class="controller__prev-icon">chevron_left</mat-icon>
     </button>
-    <button class="controller controller__next" (click)="showNext()">
+    <button class="controller controller__next" (click)="showNext()" aria-label="Наступне фото">
       <mat-icon class="controller__next-icon">chevron_right</mat-icon>
     </button>
   </div>

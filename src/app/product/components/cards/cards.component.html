@@ -23,7 +23,7 @@
                     class="card-innerWrapper"
                     [class.card-innerWrapper-big]="size === 'big'">
                     <!-- Кнопка додати до улюблених товарів -->
-                    <button class="card__btn btn-icon btn-icon--small">
+                    <button class="card__btn btn-icon btn-icon--small"  aria-label="Додати до улюблених">
                         <mat-icon class="btn-icon__img"
                             >favorite_border</mat-icon
                         >
@@ -49,7 +49,7 @@
                     <!-- Ціна і корзина для товару -->
                     <div class="card__price">
                         <app-price [price]="getPriceObject(prod)"></app-price>
-                        <button class="btn-icon btn-icon--small">
+                        <button class="btn-icon btn-icon--small" aria-label="Відкрити корзину">
                             <mat-icon class="shopping-cart">
                                 add_shopping_cart
                             </mat-icon>
@@ -65,7 +65,7 @@
                     class="card-innerWrapper"
                     [class.card-innerWrapper-big]="size === 'big'">
                     <!-- Кнопка додати до улюблених товарів -->
-                    <button class="card__btn btn-icon btn-icon--small">
+                    <button class="card__btn btn-icon btn-icon--small" aria-label="Додати до улюблених">
                         <mat-icon class="btn-icon__img"
                             >favorite_border</mat-icon
                         >

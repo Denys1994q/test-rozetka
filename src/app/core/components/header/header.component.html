@@ -1,7 +1,7 @@
 <header class="header">
     <div class="header__layout">
         <div class="header-menu">
-            <button>
+            <button aria-label="Відкрити меню">
                 <mat-icon
                     class="burger-icon header-icon"
                     (click)="menuService.openMenu('auth')">
@@ -25,7 +25,7 @@
         <div
             class="header-catalog"
             (click)="modalService.openDialog('product')">
-            <button>
+            <button aria-label="Відкрити каталог товарів">
                 <mat-icon *ngIf="openedDialog === 'product'; else catalog" class="icon">close</mat-icon>
                 <ng-template #catalog>
                     <mat-icon class="icon">dashboard</mat-icon>
