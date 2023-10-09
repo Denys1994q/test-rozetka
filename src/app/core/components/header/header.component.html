@@ -60,7 +60,7 @@
                 </ng-template>
             </li>
             <li class="header-actions__item" (click)="modalService.openDialog('cart')">
-                <button matBadge="{{cartService.totalProductsNumber > 0 ? cartService.totalProductsNumber : ''}}" matBadgePosition="above after" class="custom-badge">
+                <button matBadge="{{cartService.totalProductsNumber > 0 ? cartService.totalProductsNumber : ''}}" matBadgePosition="above after" class="custom-badge" aria-label="Відкрити корзину">
                     <mat-icon class="header-icon">shopping_cart</mat-icon>
                 </button>
             </li>
