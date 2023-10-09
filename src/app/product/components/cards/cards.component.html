@@ -15,7 +15,9 @@
             (mouseenter)="setshowExtendedCard(i)"
             (mouseleave)="hideExtendedCard()"
             [class.card-big]="size === 'big'"
-            [class.card-withOpacity]="notAvailableProducts.indexOf(prod._id) > -1"
+            [class.card-withOpacity]="
+                notAvailableProducts.indexOf(prod._id) > -1
+            "
             [class.card-hiddenBorder]="activeIndex === i">
             <!-- передня сторона карточки -->
             <div [ngStyle]="{ opacity: activeIndex === i ? '0' : '1' }">
@@ -23,10 +25,14 @@
                     class="card-innerWrapper"
                     [class.card-innerWrapper-big]="size === 'big'">
                     <!-- Кнопка додати до улюблених товарів -->
-                    <button class="card__btn btn-icon btn-icon--small"  aria-label="Додати до улюблених">
-                        <mat-icon class="btn-icon__img"
-                            >favorite_border</mat-icon
-                        >
+                    <button
+                        class="card__btn btn-icon btn-icon--small"
+                        aria-label="Додати до улюблених">
+                        <mat-icon
+                            class="btn-icon__img"
+                            aria-label="Додати до улюблених">
+                            favorite_border
+                        </mat-icon>
                     </button>
                     <!-- Зображення товару -->
                     <a routerLink="{{ '/' + prod.engName + '/' + prod._id }}">
@@ -49,7 +55,9 @@
                     <!-- Ціна і корзина для товару -->
                     <div class="card__price">
                         <app-price [price]="getPriceObject(prod)"></app-price>
-                        <button class="btn-icon btn-icon--small" aria-label="Відкрити корзину">
+                        <button
+                            class="btn-icon btn-icon--small"
+                            aria-label="Відкрити корзину">
                             <mat-icon class="shopping-cart">
                                 add_shopping_cart
                             </mat-icon>
@@ -65,8 +73,12 @@
                     class="card-innerWrapper"
                     [class.card-innerWrapper-big]="size === 'big'">
                     <!-- Кнопка додати до улюблених товарів -->
-                    <button class="card__btn btn-icon btn-icon--small" aria-label="Додати до улюблених">
-                        <mat-icon class="btn-icon__img"
+                    <button
+                        class="card__btn btn-icon btn-icon--small"
+                        aria-label="Додати до улюблених">
+                        <mat-icon
+                            class="btn-icon__img"
+                            aria-label="Додати до улюблених"
                             >favorite_border</mat-icon
                         >
                     </button>
@@ -129,8 +141,10 @@
         <ul class="cards__wrapper">
             <li
                 class="card"
-                *ngFor="let prod of data.products.slice(0,endVal)">
-                <button class="card__btn btn-icon">
+                *ngFor="let prod of data.products.slice(0, endVal)">
+                <button
+                    class="card__btn btn-icon"
+                    aria-label="Додати до улюблених">
                     <mat-icon class="btn-icon__img">favorite_border</mat-icon>
                 </button>
                 <a routerLink="{{ '/' + prod.engName + '/' + prod._id }}">
