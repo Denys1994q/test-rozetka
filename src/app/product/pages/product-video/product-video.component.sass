@@ -1,5 +1,3 @@
-@import '../../../shared/components/carousel/carousel.component.sass'
-@import '../product/product.component.sass'
 @import 'mixins'
 
 .video-wrapper
@@ -9,12 +7,16 @@
     @include respond(phoneL)
         height: 45rem
         padding: 0.5rem
-//
 .video__link
     margin: 1rem 0
+    color: #fff
     a
         img
             width: 3rem
+            height: 3rem
+.carousel-wrapper
+    @include respond(phoneL)
+        height: 40rem
 
 //    
 :host
@@ -36,6 +38,3 @@
                 height: 60%
         .iframe-wrapper
             height: 43rem
-.carousel-wrapper
-    @include respond(phoneL)
-        height: 40rem

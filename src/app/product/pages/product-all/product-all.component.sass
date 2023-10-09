@@ -1,4 +1,3 @@
-@import '../product/product.component.sass'
 @import 'btns'
 @import 'typography'
 @import 'mixins'
@@ -85,6 +84,119 @@
     color: $main-green
 .btn-link
     margin: 0
+// product info
+.info
+    display: flex
+    flex-wrap: wrap
+    &__main
+        width: 50%
+        @include respond(phoneXXL)
+            width: 100%
+        &-sticky
+            // display: flex
+            position: sticky
+            top: 120px
+            align-self: flex-start
+    &__image
+        height: 62rem
+        padding-right: 24px
+        @include respond(phoneL)
+            padding: 0
+            height: 45rem
+    &__videoBtn
+        color: #3e77aa
+        margin-bottom: 1.6rem
+    &__guarantee
+        width: 4.8rem
+        height: 4.8rem
+        margin-bottom: 2rem
+        img
+            width: 100%
+            height: 100%
+            object-fit: contain
+    &__desc
+        width: 50%
+        padding-left: 24px
+        @include respond(phoneXXL)
+            width: 100%
+            padding-left: 0
+            display: flex
+            flex-direction: column
+    &__item
+        border: 1px solid #e9e9e9
+        border-radius: 4px
+        padding: 1.6rem
+.stickyWrapper
+    height: 120rem
+    width: 50%
+    @include respond(phoneXXL)
+        width: 100%
+        margin-bottom: 2rem
+// characteristics
+.characteristics-top
+    margin-bottom: 2.4rem
+    &__item
+        &:not(:last-child)
+            margin-bottom: 1rem
+// info__desc
+.info__desc
+    &__colors
+        margin-bottom: 2.4rem
+        @include respond(phoneXXL)
+            order: -2
+// trade
+.trade
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    gap: 2rem
+    &__price
+        &-status
+            color: #00a046
+            margin-top: -.6rem
+    &__btns
+        display: flex
+        @include respond(phoneXXL)
+            margin-left: auto
+// documents
+.documents
+    &__item
+        display: flex
+        flex-wrap: wrap
+        padding: 16px
+        border: 1px solid #e9e9e9
+        border-radius: 4px
+        width: 100%
+        margin-bottom: 1.6rem
+    &__left
+        // background: red
+        display: flex
+        gap: 1.6rem
+        align-items: center
+        flex-grow: 1
+        p
+            display: inline-block
+    &__right
+        display: flex
+        align-items: center
+        gap: 1.6rem
+        span
+            color: #797878
+//
+.video
+    &__wrapper
+        max-width: 95%
+        height: 73rem
+        margin: 0 auto
+        padding-top: 1rem
+    &__link
+        color: $main-white
+        margin-left: 3.2rem
+        padding-bottom: 1rem
+        a
+            margin-left: 2rem
+            img
+                width: 50px
 
 :host
     ::ng-deep app-carousel

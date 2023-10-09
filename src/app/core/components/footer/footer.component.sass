@@ -1,6 +1,5 @@
 @import "variables"
 @import 'mixins'
-@import '../../../shared/components/side-menu/side-menu.component'
 
 .app-footer
     margin-top: 3rem
@@ -83,3 +82,21 @@
             color: $main-blue
             &:hover
                 text-decoration: none
+.side-menu
+    &__infoBlock
+        padding: 16px
+        color: #221f1f
+// infoBlock
+.infoBlock
+    border-bottom: 1px solid #e9e9e9
+    padding: 1rem 2rem
+    &__title
+        color: #797878
+        margin-bottom: 1rem
+    &__list
+    &__item
+        color: #221f1f
+        margin-bottom: .5rem
+        cursor: pointer
+        &:hover
+            text-decoration: underline
