@@ -29,8 +29,8 @@ export class HomeComponent {
 
   ngOnInit() {
     this.apiService.getAllCategories().subscribe({
-      next: (data) => {this.data = data},
-      error: (err) => {console.log(err)}
+      next: (data) => this.data = data,
+      error: (err) => console.log(err)
     })
     this.productService.getSomeProducts()
     this.cartService.getCart()

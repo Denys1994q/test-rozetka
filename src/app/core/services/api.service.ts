@@ -8,7 +8,6 @@ import { Router, Route } from '@angular/router';
   providedIn: 'root'
 })
 export class ApiService {
-    // private backendUrl = 'https://rozetka-server.onrender.com';
     private backendUrl = 'https://evergreen-purrfect-agenda.glitch.me';
 
     constructor(private http: HttpClient, private router: Router) { }

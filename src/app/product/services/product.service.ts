@@ -59,7 +59,6 @@ export class ProductService {
       this.apiService.getOneProduct(id).subscribe({
         next: (response) => {
           this.product = response
-          console.log(response)
           this.setProductPrice()
           this.CommentsService.setComments(this.product.reviews_data)
           if (this.product.video) {

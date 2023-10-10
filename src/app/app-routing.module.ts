@@ -66,56 +66,58 @@ export class AppRoutingModule {
         let middleCategoriesRoutes: any = []
         let productsRoutes: any = []
 
-        if (localStorage.getItem('categoriesRoutes')) {
+        if (localStorage.getItem('categoriesRoutes') && localStorage.getItem('middleCategoriesRoutes')) {
             const st: any = localStorage.getItem('categoriesRoutes')
             const data = JSON.parse(st)
             categoriesRoutes = data
             this.addRoute(categoriesRoutes, MainCategoryComponent)
-        } 
-        if (localStorage.getItem('middleCategoriesRoutes')) {
-            const st: any = localStorage.getItem('middleCategoriesRoutes')
-            const data = JSON.parse(st)
-            middleCategoriesRoutes = data
+
+            const middleCatData: any = localStorage.getItem('middleCategoriesRoutes')
+            const parsedMiddleCatData = JSON.parse(middleCatData)
+            middleCategoriesRoutes = parsedMiddleCatData
             this.addRoute(middleCategoriesRoutes, MiddleCategoryComponent)
-        }  
+        } else {
+            this.apiService.getAllCategories().subscribe({
+                next: response => {
+                    response.map((category: any) => {
+                        categoriesRoutes.push({title: category.engName, id: category.id})
+                        category.subCategories.map((middleCat: SubCategoryItem) => {
+                            middleCategoriesRoutes.push({title: middleCat.engName, id: middleCat.id})
+                        })
+                    })
+                    if (!localStorage.getItem('categoriesRoutes')) {
+                        localStorage.setItem('categoriesRoutes', JSON.stringify(categoriesRoutes));
+                    }
+                    if (!localStorage.getItem('middleCategoriesRoutes')) {
+                        localStorage.setItem('middleCategoriesRoutes', JSON.stringify(middleCategoriesRoutes));
+                    }
+                    this.addRoute(categoriesRoutes, MainCategoryComponent)
+                    this.addRoute(middleCategoriesRoutes, MiddleCategoryComponent)
+                },
+                error: err => console.log(err)
+            })
+        } 
+        
+
         if (localStorage.getItem('productsRoutes')) {
             const st: any = localStorage.getItem('productsRoutes')
             const data = JSON.parse(st)
             productsRoutes = data
             this.addProductRoute(productsRoutes)
-        }
-
-        this.apiService.getAllCategories().subscribe({
-            next: response => {
-                response.map((category: any) => {
-                    categoriesRoutes.push({title: category.engName, id: category.id})
-                    category.subCategories.map((middleCat: SubCategoryItem) => {
-                        middleCategoriesRoutes.push({title: middleCat.engName, id: middleCat.id})
+        } else {
+            this.apiService.getAllProducts().subscribe({
+                next: response => {
+                    response.map((product: any) => {
+                        productsRoutes.push({title: product.engName, id: product._id})
                     })
-                })
-                if (!localStorage.getItem('categoriesRoutes')) {
-                    localStorage.setItem('categoriesRoutes', JSON.stringify(categoriesRoutes));
-                }
-                if (!localStorage.getItem('middleCategoriesRoutes')) {
-                    localStorage.setItem('middleCategoriesRoutes', JSON.stringify(middleCategoriesRoutes));
-                }
-                this.addRoute(categoriesRoutes, MainCategoryComponent)
-                this.addRoute(middleCategoriesRoutes, MiddleCategoryComponent)
-            },
-            error: err => console.log(err)
-        })
-        this.apiService.getAllProducts().subscribe({
-            next: response => {
-                response.map((product: any) => {
-                    productsRoutes.push({title: product.engName, id: product._id})
-                })
-                if (!localStorage.getItem('productsRoutes')) {
-                    localStorage.setItem('productsRoutes', JSON.stringify(productsRoutes));
-                } 
-                this.addProductRoute(productsRoutes)
-            },
-            error: err => console.log(err)
-        })
+                    if (!localStorage.getItem('productsRoutes')) {
+                        localStorage.setItem('productsRoutes', JSON.stringify(productsRoutes));
+                    } 
+                    this.addProductRoute(productsRoutes)
+                },
+                error: err => console.log(err)
+            })
+        }
     }
 
     addRoute(data: any, component: any) {

@@ -18,11 +18,10 @@ export class ProductsModalComponent {
   constructor(public modalService: ModalService, public SearchResultsService: SearchResultsService, public router: Router,  public route:ActivatedRoute, public apiService: ApiService) {}
     
   ngOnInit() {
-    console.log('ngOnInit')
-    this.apiService.getAllCategories().subscribe({
-      next: (data) => this.products = data,
-      error: (err) => console.log(err)
-    })
+      this.apiService.getAllCategories().subscribe({
+        next: (data) => this.products = data,
+        error: (err) => console.log(err)
+      })
   }
 
   getSubcategories() {
