@@ -18,7 +18,8 @@ import { CabinetPersonalInfoPage } from './cabinet/pages/cabinet-personalInfo/ca
 import { CabinetRecentlyViewedPage } from './cabinet/pages/cabinet-recently-viewed/cabinet-recently-viewed.component';
 import { CabinetOrdersPage } from './cabinet/pages/cabinet-orders/cabinet-orders.component';
 import { CabinetWishlistPage } from './cabinet/pages/cabinet-wishlist/cabinet-wishlist.component';
-import { CheckoutPage } from './cart/pages/checkout/checkout.component';
+// import { CheckoutPage } from './cart/pages/checkout/checkout.component';
+// import { CartModule } from './cart/cart.module';
 // authGuard
 import { AuthGuard } from './core/services/auth.guard';
 
@@ -48,7 +49,10 @@ const routes: Routes = [
             component: CabinetRecentlyViewedPage,
         },
     ]},
-    {path: 'checkout', component: CheckoutPage},
+    {
+        path: 'checkout',
+        loadChildren: () => import('./cart/cart.module').then((m) => m.CartModule)
+    },
     {path: 'error', component: ErrorComponent},
     {path: '**', redirectTo: '/error'},
 ];

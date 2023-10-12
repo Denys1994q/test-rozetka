@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 import { CommentComponent } from './components/comment/comment.component';
 import { CheckboxComponent } from './components/inputs/checkbox/checkbox.component';
 import { RatingComponent } from './components/rating/rating.component';
-import { AppRoutingModule } from '../app-routing.module';
 import { InputTextComponent } from './components/inputs/input-text/input-text.component';
 import { LoadMoreBtnComponent } from './components/btns/load-more-btn/load-more-btn.component';
 import { SearchResultBtnComponent } from './components/btns/search-result-btn/search-result-btn.component';
@@ -28,6 +27,7 @@ import { AsideComponent } from './components/aside/aside.component';
 import { UserInfopanelComponent } from './components/user-infopanel/user-infopanel.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { MatBadgeModule } from '@angular/material/badge';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -60,11 +60,11 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatDialogModule, 
     MatBadgeModule,
     FormsModule,
-    AppRoutingModule,
+    RouterModule
   ],
   exports: [
     CommonModule,
-    AppRoutingModule,
+    RouterModule,
     CarouselComponent, 
     InputTextComponent,
     MatIconModule, 
@@ -90,7 +90,6 @@ import { MatBadgeModule } from '@angular/material/badge';
     UserInfopanelComponent,
     AsideComponent,
     CounterComponent
-    // ModalModule
   ]
 })
 export class SharedModule { }
