@@ -68,12 +68,34 @@ ul
     animation: loading 1.5s infinite
     height: 30rem
     margin-top: 1rem
-
+    padding: .5rem
 .skeleton-categories
     background: #f0f0f0
     animation: loading 1.5s infinite
-    height: 12rem
     margin: 1rem 0
+    ul
+        padding: 1rem
+.skeleton-row
+    height: 20px
+    background: #b7b6bd
+    animation: loading 1.5s infinite
+    width: 100%
+    &:not(:last-child)
+        margin-bottom: 1rem
+.skeletonProds
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 2rem
+    &__item
+        width: 17%
+        height: 20rem
+        background: #b7b6bd
+    &__title
+        background: #b7b6bd
+        height: 3rem
+        width: 25rem
+        margin: 2rem
 
 @keyframes loading
     0%

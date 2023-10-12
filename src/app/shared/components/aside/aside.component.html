@@ -1,4 +1,6 @@
-<aside class="products__catalog" *ngIf="full">
+<aside
+    class="products__catalog"
+    *ngIf="full">
     <!-- список категорій -->
     <ng-container *ngIf="data && data.length > 0; else skeleton">
         <ul class="categories__list">
@@ -13,14 +15,22 @@
         </ul>
     </ng-container>
     <ng-template #skeleton>
-        <div class="skeleton-categories">&nbsp;</div>
+        <div class="skeleton-categories">
+            <ul>
+                <li class="skeleton-row">&nbsp;</li>
+                <li class="skeleton-row">&nbsp;</li>
+                <li class="skeleton-row">&nbsp;</li>
+                <li class="skeleton-row">&nbsp;</li>
+            </ul>
+        </div>
     </ng-template>
     <!-- кнопка "ласкаво просимо" -->
-    <div class="side-menu__infoBlock infoBlock welcome-block" *ngIf="!authService.isAuthenticated()">
+    <div
+        class="side-menu__infoBlock infoBlock welcome-block"
+        *ngIf="!authService.isAuthenticated()">
         <h3 class="welcome-block__title">Ласкаво просимо!</h3>
         <p class="welcome-block__text">
-            Увійдіть, щоб отримувати рекомендації, персональні бонуси і
-            знижки.
+            Увійдіть, щоб отримувати рекомендації, персональні бонуси і знижки.
         </p>
         <button
             class="welcome-block__btn"
@@ -84,13 +94,16 @@
     </div>
 </aside>
 
-<aside class="products__catalog" *ngIf="cabinet">
+<aside
+    class="products__catalog"
+    *ngIf="cabinet">
     <div class="side-menu__infoBlock infoBlock infoBlock-cabinet">
         <ul class="side-menu__list">
             <li class="side-menu__item">
-                <a routerLink="/cabinet/personal-information" >
-                    <div 
-                        class="side-menu__item-innerWrapper cabinet-itemWrapper" routerLinkActive="active">
+                <a routerLink="/cabinet/personal-information">
+                    <div
+                        class="side-menu__item-innerWrapper cabinet-itemWrapper"
+                        routerLinkActive="active">
                         <button class="textBtn">
                             <mat-icon class="textBtn__icon">person</mat-icon>
                             <div class="user-name">
