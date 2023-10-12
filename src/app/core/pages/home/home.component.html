@@ -1,6 +1,12 @@
 <div class="products">
     <!-- бокова панель з категоріями товарів, додатками, соцмережами, інформацією про компанію -->
-    <app-aside [data]="data" [full]="true"></app-aside>
+    <app-aside
+        [data]="data"
+        [full]="true">
+    </app-aside>
+    <!-- <ng-template #skeletonCategories> -->
+        <!-- <div class="skeleton-categories">&nbsp;</div> -->
+    <!-- </ng-template> -->
     <!-- основна частина сторінки -->
     <main class="products__list prodlist">
         <app-cart-notification></app-cart-notification>
@@ -37,24 +43,40 @@
             Каталог товарів
         </button>
         <!-- картки -->
-        <app-cards
-            [data]="{
-                category: 'Гарячі новинки',
-                products: productService.newProds
-            }">
-        </app-cards>
-        <app-cards
-            [data]="{
-                category: 'Більше товарів для вибору',
-                products: productService.moreProds
-            }">
-        </app-cards>
-        <app-cards
-            [data]="{
-                category: 'Рекомендовані',
-                products: productService.recommendedProds
-            }">
-        </app-cards>
+        <ng-container *ngIf="productService.newProds && productService.newProds.length > 0; else skeleton">
+            <app-cards
+                [data]="{
+                    category: 'Гарячі новинки',
+                    products: productService.newProds
+                }">
+            </app-cards>
+        </ng-container>
+        <ng-template #skeleton>
+            <div class="skeleton">&nbsp;</div>
+        </ng-template>
+        <ng-container *ngIf="productService.moreProds && productService.moreProds.length > 0; else skeletonMoreProds">
+            <app-cards
+                [data]="{
+                    category: 'Більше товарів для вибору',
+                    products: productService.moreProds
+                }">
+            </app-cards>
+        </ng-container>
+        <ng-template #skeletonMoreProds>
+            <div class="skeleton">&nbsp;</div>
+        </ng-template>
+        <ng-container *ngIf="productService.recommendedProds && productService.recommendedProds.length > 0; else skeletonRecommendedProds">
+            <app-cards
+                [data]="{
+                    category: 'Рекомендовані',
+                    products: productService.recommendedProds
+                }">
+            </app-cards>
+        </ng-container>
+        <ng-template #skeletonRecommendedProds>
+            <div class="skeleton">&nbsp;</div>
+        </ng-template>
+
         <app-video-cards></app-video-cards>
     </main>
 </div>
