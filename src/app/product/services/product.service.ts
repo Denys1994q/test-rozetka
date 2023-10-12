@@ -45,11 +45,11 @@ export class ProductService {
 
     // нові, улюблені, рекомендовані товари 
     getSomeProducts() {
-      this.apiService.getAllProducts().subscribe({
+      this.apiService.getSomeProducts().subscribe({
         next: (response) => {
-          this.newProds = [response[3], response[5], response[53], response[25], response[11], response[13], response[85], response[105], response[99], response[88]] 
-          this.moreProds = [response[4], response[6], response[54], response[26], response[12], response[14], response[86], response[66]] 
-          this.recommendedProds = [response[2], response[4], response[52], response[24], response[10], response[12], response[84]] 
+          this.newProds = [response[1], response[20], response[21], response[9], response[11], response[13], response[17], response[19]] 
+          this.moreProds = [response[2], response[4], response[6], response[8], response[10], response[12], response[14], response[16]] 
+          this.recommendedProds = [response[3], response[18], response[5], response[7], response[22], response[23], response[0] ] 
         },
         error: err => console.log(err)
       })

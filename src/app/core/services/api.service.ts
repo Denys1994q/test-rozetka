@@ -32,4 +32,9 @@ export class ApiService {
         return this.http.get<any>(apiUrl);
     }
 
+    getSomeProducts(): Observable<any> {
+        const apiUrl = `${this.backendUrl}/someProducts` 
+        return this.http.get<any>(apiUrl);
+    }
+
 }
