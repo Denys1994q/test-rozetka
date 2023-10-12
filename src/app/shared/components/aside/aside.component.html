@@ -1,15 +1,20 @@
 <aside class="products__catalog" *ngIf="full">
     <!-- список категорій -->
-    <ul class="categories__list">
-        <li
-            class="categories__item categories__item-basic"
-            *ngFor="let product of data">
-            <mat-icon class="categories__icon">{{ product.icon }}</mat-icon>
-            <a routerLink="{{ product.engName + '/' + product.id }}">
-                {{ product.name }}
-            </a>
-        </li>
-    </ul>
+    <ng-container *ngIf="data && data.length > 0; else skeleton">
+        <ul class="categories__list">
+            <li
+                class="categories__item categories__item-basic"
+                *ngFor="let product of data">
+                <mat-icon class="categories__icon">{{ product.icon }}</mat-icon>
+                <a routerLink="{{ product.engName + '/' + product.id }}">
+                    {{ product.name }}
+                </a>
+            </li>
+        </ul>
+    </ng-container>
+    <ng-template #skeleton>
+        <div class="skeleton-categories">&nbsp;</div>
+    </ng-template>
     <!-- кнопка "ласкаво просимо" -->
     <div class="side-menu__infoBlock infoBlock welcome-block" *ngIf="!authService.isAuthenticated()">
         <h3 class="welcome-block__title">Ласкаво просимо!</h3>
