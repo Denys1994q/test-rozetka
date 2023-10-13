@@ -18,13 +18,8 @@ import { CabinetPersonalInfoPage } from './cabinet/pages/cabinet-personalInfo/ca
 import { CabinetRecentlyViewedPage } from './cabinet/pages/cabinet-recently-viewed/cabinet-recently-viewed.component';
 import { CabinetOrdersPage } from './cabinet/pages/cabinet-orders/cabinet-orders.component';
 import { CabinetWishlistPage } from './cabinet/pages/cabinet-wishlist/cabinet-wishlist.component';
-// import { CheckoutPage } from './cart/pages/checkout/checkout.component';
-// import { CartModule } from './cart/cart.module';
-// authGuard
 import { AuthGuard } from './core/services/auth.guard';
 
-// ці масиви даних мають приходити з беку, щоб при появі нового товару не треба було вручну тут код міняти нижче.
-// для продуктів зробити схожий матчер, бо зараз навіть помилка в категорії буде вести не на ерор, а на сторінку Товару
 const routes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'cabinet', component: CabinetPage, canActivate: [AuthGuard], children: [
