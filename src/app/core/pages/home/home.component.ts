@@ -38,12 +38,12 @@ export class HomeComponent {
 
 
   slides: Slide[] = [
-      {url: '../../../../assets/slide1.jpg'},
-      {url: '../../../../assets/slide2.jpg'},
-      {url: '../../../../assets/slide3.jpg'},
-      {url: '../../../../assets/slide4.jpg'},
-      {url: '../../../../assets/slide5.jpg'},
-      {url: '../../../../assets/slide6.jpg'},
+      {url: '../../../../assets/slide1.webp'},
+      {url: '../../../../assets/slide2.webp'},
+      {url: '../../../../assets/slide3.webp'},
+      {url: '../../../../assets/slide4.webp'},
+      {url: '../../../../assets/slide5.webp'},
+      {url: '../../../../assets/slide6.webp'},
   ]
 
   openDialog() {
