@@ -149,7 +149,8 @@
                 </button>
                 <a routerLink="{{ '/' + prod.engName + '/' + prod._id }}">
                     <img
-                        src="{{ prod.image }}"
+                        [src]="prod.image"
+                        [attr.loading]="'lazy'"
                         class="card__image"
                         alt="prod-image" />
                 </a>

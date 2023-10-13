@@ -2,7 +2,7 @@
     <div class="video-cards__header">
         <h2 class="video-cards__heading">Нові відео на каналі <a href="https://www.youtube.com/channel/UCr7r1-z79TYfqS2IPeRR47A" target="_blank" class="video-cards__heading-link">ROZETKA</a></h2>
         <a href="https://www.youtube.com/channel/UCr7r1-z79TYfqS2IPeRR47A" target="_blank">
-            <img class="video-cards__icon" src="../../../assets/youtube.webp" alt="youtube-logo">
+            <img class="video-cards__icon" [src]="'../../../assets/youtube.webp'" [attr.loading]="'lazy'" alt="youtube-logo">
         </a>
     </div>
     <ul class="video-cards__list">
@@ -17,7 +17,10 @@
                 </div>
                 <ng-template #base>
                     <button class="video-wrapper__btn">
-                        <img src="../../../assets/play_btn.svg" alt="play_btn">
+                        <img 
+                            [src]="'../../../assets/play_btn.svg'" 
+                            [attr.loading]="'lazy'"
+                            alt="play_btn">
                     </button>
                     <img class="video-wrapper__img" src={{video.img}} alt="video-screenshot">
                     <time class="video-wrapper__time">{{video.duration}}</time>
