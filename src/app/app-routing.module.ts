@@ -13,40 +13,16 @@ import { ProductPhotosComponent } from './product/pages/product-photos/product-p
 import { Router } from '@angular/router';
 import { ApiService } from './core/services/api.service';
 import { SubCategoryItem } from './data';
-import { CabinetPage } from './cabinet/pages/cabinet/cabinet.component';
-import { CabinetPersonalInfoPage } from './cabinet/pages/cabinet-personalInfo/cabinet-personalInfo.component';
-import { CabinetRecentlyViewedPage } from './cabinet/pages/cabinet-recently-viewed/cabinet-recently-viewed.component';
-import { CabinetOrdersPage } from './cabinet/pages/cabinet-orders/cabinet-orders.component';
-import { CabinetWishlistPage } from './cabinet/pages/cabinet-wishlist/cabinet-wishlist.component';
-import { AuthGuard } from './core/services/auth.guard';
 
 const routes: Routes = [
     {path: '', component: HomeComponent},
-    {path: 'cabinet', component: CabinetPage, canActivate: [AuthGuard], children: [
-        {
-          path: 'personal-information',
-          canActivate: [AuthGuard],
-          component: CabinetPersonalInfoPage,
-        },
-        {
-            path: 'orders',
-            canActivate: [AuthGuard],
-            component: CabinetOrdersPage,
-        },
-        {
-            path: 'wishlist',
-            canActivate: [AuthGuard],
-            component: CabinetWishlistPage,
-        },
-        {
-            path: 'recently-viewed',
-            canActivate: [AuthGuard],
-            component: CabinetRecentlyViewedPage,
-        },
-    ]},
     {
         path: 'checkout',
         loadChildren: () => import('./cart/cart.module').then((m) => m.CartModule)
+    },
+    {
+        path: 'cabinet',
+        loadChildren: () => import('./cabinet/cabinet.module').then((m) => m.CabinetModule)
     },
     {path: 'error', component: ErrorComponent},
     {path: '**', redirectTo: '/error'},

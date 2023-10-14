@@ -5,6 +5,33 @@ import { CabinetOrdersPage } from './pages/cabinet-orders/cabinet-orders.compone
 import { CabinetPersonalInfoPage } from './pages/cabinet-personalInfo/cabinet-personalInfo.component';
 import { CabinetRecentlyViewedPage } from './pages/cabinet-recently-viewed/cabinet-recently-viewed.component';
 import { CabinetWishlistPage } from './pages/cabinet-wishlist/cabinet-wishlist.component';
+import { RouterModule } from '@angular/router';
+import { AuthGuard } from '../core/services/auth.guard';
+
+const routes = [
+  {path: '', component: CabinetPage, canActivate: [AuthGuard], children: [
+    {
+      path: 'personal-information',
+      canActivate: [AuthGuard],
+      component: CabinetPersonalInfoPage,
+    },
+    {
+        path: 'orders',
+        canActivate: [AuthGuard],
+        component: CabinetOrdersPage,
+    },
+    {
+        path: 'wishlist',
+        canActivate: [AuthGuard],
+        component: CabinetWishlistPage,
+    },
+    {
+        path: 'recently-viewed',
+        canActivate: [AuthGuard],
+        component: CabinetRecentlyViewedPage,
+    },
+]},
+];
 
 @NgModule({
   declarations: [
@@ -15,6 +42,7 @@ import { CabinetWishlistPage } from './pages/cabinet-wishlist/cabinet-wishlist.c
     CabinetWishlistPage
   ],
   imports: [
+    RouterModule.forChild(routes),
     SharedModule
   ],
   exports: [],
