@@ -3,6 +3,7 @@ import { AfterViewInit, OnDestroy, Input, OnInit, OnChanges, SimpleChanges, View
 
 export type Slide = {
     url?: string,
+    url_mobile?: string,
     video_url?: string,
     video_youtubeUrl?: string,
     video_screen?: string
@@ -111,22 +112,13 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-  generateSrcset(imageUrl: string): string {
-    const imageId = imageUrl.substring(imageUrl.lastIndexOf('/') + 1, imageUrl.lastIndexOf('.webp'));
-    const widths = [376, 430, 770, 1400];
-    const srcset = widths.map((width) => {
-      if (width === 376) {
-        return `https://res.cloudinary.com/dw60kllwn/image/upload/w_340,h_228/v1697355535/${imageId}.webp ${width}w`;
-      } else if (width === 430) {
-        return `https://res.cloudinary.com/dw60kllwn/image/upload/w_390,h_130/v1697355535/${imageId}.webp ${width}w`;
-      } else if (width === 770) {
-        return `https://res.cloudinary.com/dw60kllwn/image/upload/w_700,h_235/v1697355535/${imageId}.webp ${width}w`;
-      } else {
-        return `https://res.cloudinary.com/dw60kllwn/image/upload/w_1270,h_400/v1697355535/${imageId}.webp ${width}w`;
-      }
-      
-    });
+  generateSrcset(slide: any): string {
+    const srcset = [
+      `${slide.url_mobile} 376w`,
+      `${slide.url_mobile} 430w`,
+      `${slide.url} 770w`,
+      `${slide.url} 1400w`,
+    ];
     return srcset.join(', ');
   }
-
 }

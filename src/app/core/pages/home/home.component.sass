@@ -77,13 +77,11 @@
         .carousel__image
             height: 340px
             width: 1019px
-            object-fit: cover
             @include respond(tab-land)
+                height: auto
                 object-fit: contain
             @include respond(tab-port)
                 padding: 0
-            @include respond(phoneL)
-                object-fit: cover
         .carousel__container
             @include respond(phoneM)
                 height: 25rem

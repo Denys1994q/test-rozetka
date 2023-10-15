@@ -15,7 +15,7 @@
         <img
           *ngIf="slide.url"
           src="{{ slide.url }}"
-          [srcset]="generateSrcset(slide.url)"
+          [srcset]="generateSrcset(slide)"
           alt="carousel__image"
           class="carousel__image"
         />

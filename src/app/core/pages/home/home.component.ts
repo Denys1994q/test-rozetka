@@ -36,14 +36,19 @@ export class HomeComponent {
     this.cartService.getCart()
   }
 
-
   slides: Slide[] = [
-      {url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697355535/slide1_jutdqd.webp'},
-      {url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697355660/slide2_f9o8yp.webp'},
-      {url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697355710/slide3_owiou0.webp'},
-      {url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697355772/slide4_sybqv5.webp'},
-      {url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697355772/slide5_yj13bw.webp'},
-      {url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697355772/slide6_bcrbch.webp'},
+    {
+      url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697368696/1_wr8rfn.jpg',
+      url_mobile: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697368822/1_mobile_kzbdul.jpg'
+    },
+    {
+      url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697369929/2_owyjyz.jpg',
+      url_mobile: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697369929/2_mobile_nyg67b.jpg'
+    },
+    {
+      url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697370141/3_gdtnqf.webp',
+      url_mobile: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697370141/3_mobile_ktmlvj.webp'
+    },
   ]
 
   openDialog() {
