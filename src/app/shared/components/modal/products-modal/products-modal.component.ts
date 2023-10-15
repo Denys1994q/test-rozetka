@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalService } from 'src/app/shared/components/modal/modal.service';
 import { SearchResultsService } from 'src/app/search/services/search-results.service';
-import { CategoryItem } from '../../../../data';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/core/services/api.service';
 
@@ -13,7 +12,7 @@ import { ApiService } from 'src/app/core/services/api.service';
 
 export class ProductsModalComponent {
   activeCategoryIndex: number = 0
-  products!: CategoryItem[]
+  products!: any[]
 
   constructor(public modalService: ModalService, public SearchResultsService: SearchResultsService, public router: Router,  public route:ActivatedRoute, public apiService: ApiService) {}
     

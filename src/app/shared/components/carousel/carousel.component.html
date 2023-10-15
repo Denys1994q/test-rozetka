@@ -15,7 +15,7 @@
         <img
           *ngIf="slide.url"
           src="{{ slide.url }}"
-          [srcset]="generateSrcset(slide)"
+          [srcset]="slide.url_mobile ? generateSrcset(slide) : ''"
           alt="carousel__image"
           class="carousel__image"
         />

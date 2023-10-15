@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { categories } from 'src/app/data';
-import { SearchResultsService } from 'src/app/search/services/search-results.service';
 import { ApiService } from 'src/app/core/services/api.service';
 import { ProductInterface } from 'src/app/core/services/api-response-types';
 import { CommentsService } from './comments.service';
@@ -37,11 +35,11 @@ export class ProductService {
       private apiService: ApiService) 
     {}
 
-    setValueSlice(newValue: number) {
-      this.newProds = categories[0].subCategories[0].products.slice(0, newValue);
-      this.moreProds = categories[1].subCategories[0].products.slice(0, newValue);
-      this.recommendedProds = categories[2].subCategories[0].products.slice(0, newValue);
-    }
+    // setValueSlice(newValue: number) {
+    //   this.newProds = categories[0].subCategories[0].products.slice(0, newValue);
+    //   this.moreProds = categories[1].subCategories[0].products.slice(0, newValue);
+    //   this.recommendedProds = categories[2].subCategories[0].products.slice(0, newValue);
+    // }
 
     // нові, улюблені, рекомендовані товари 
     getSomeProducts() {

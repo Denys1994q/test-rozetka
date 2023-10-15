@@ -12,7 +12,6 @@ import { ProductVideoComponent } from './product/pages/product-video/product-vid
 import { ProductPhotosComponent } from './product/pages/product-photos/product-photos.component';
 import { Router } from '@angular/router';
 import { ApiService } from './core/services/api.service';
-import { SubCategoryItem } from './data';
 
 const routes: Routes = [
     {path: '', component: HomeComponent},
@@ -56,7 +55,7 @@ export class AppRoutingModule {
                 next: response => {
                     response.map((category: any) => {
                         categoriesRoutes.push({title: category.engName, id: category.id})
-                        category.subCategories.map((middleCat: SubCategoryItem) => {
+                        category.subCategories.map((middleCat: any) => {
                             middleCategoriesRoutes.push({title: middleCat.engName, id: middleCat.id})
                         })
                     })

@@ -22,9 +22,9 @@ export class HomeComponent {
 
   @HostListener('window:resize', ['$event'])
   onResize() {
-    if (window.innerWidth < 700) {
-      this.productService.setValueSlice(2)
-    }
+    // if (window.innerWidth < 700) {
+    //   this.productService.setValueSlice(2)
+    // }
   }
 
   ngOnInit() {
