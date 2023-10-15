@@ -39,15 +39,17 @@ export class HomeComponent {
   slides: Slide[] = [
     {
       url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697371428/1_qswttk.webp',
-      url_mobile: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697371428/1_mobile_gsir7o.webp'
+      url_mobile: 'https://res.cloudinary.com/dw60kllwn/image/upload/w_400,h_300/v1697371428/1_mobile_gsir7o.webp'
+      // url_mobile: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697371428/1_mobile_gsir7o.webp'
     },
     {
       url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697371220/2_gtpdwv.webp',
-      url_mobile: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697371220/2_mobile_zagv2i.webp'
+      url_mobile: 'https://res.cloudinary.com/dw60kllwn/image/upload/w_400,h_300/v1697371220/2_mobile_zagv2i.webp'
+      // url_mobile: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697371220/2_mobile_zagv2i.webp'
     },
     {
       url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697370141/3_gdtnqf.webp',
-      url_mobile: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697370141/3_mobile_ktmlvj.webp'
+      url_mobile: 'https://res.cloudinary.com/dw60kllwn/image/upload/w_400,h_300/v1697370141/3_mobile_ktmlvj.webp'
     },
   ]
 
