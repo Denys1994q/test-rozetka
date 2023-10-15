@@ -17,7 +17,6 @@
           src="{{ slide.url }}"
           [srcset]="slide.url_mobile ? generateSrcset(slide) : ''"
           alt="carousel__image"
-          rel="preload"
           class="carousel__image"
         />
         <div>
@@ -104,7 +103,6 @@
         *ngIf="slide.url"
         class="dots-row__img"
         src="{{ slide.url }}"
-        rel="preload"
         alt="slide-image"
       />
       <img
