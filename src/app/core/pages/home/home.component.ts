@@ -42,8 +42,8 @@ export class HomeComponent {
       url_mobile: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697368822/1_mobile_kzbdul.jpg'
     },
     {
-      url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697369929/2_owyjyz.jpg',
-      url_mobile: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697369929/2_mobile_nyg67b.jpg'
+      url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697371220/2_gtpdwv.webp',
+      url_mobile: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697371220/2_mobile_zagv2i.webp'
     },
     {
       url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697370141/3_gdtnqf.webp',
