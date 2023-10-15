@@ -38,8 +38,8 @@ export class HomeComponent {
 
   slides: Slide[] = [
     {
-      url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697368696/1_wr8rfn.jpg',
-      url_mobile: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697368822/1_mobile_kzbdul.jpg'
+      url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697371428/1_qswttk.webp',
+      url_mobile: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697371428/1_mobile_gsir7o.webp'
     },
     {
       url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697371220/2_gtpdwv.webp',
