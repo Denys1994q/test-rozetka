@@ -50,4 +50,12 @@ export class CardsComponent {
     this.showBtn = false
   }
 
+  // generateSrcset(img: string): string {
+  //   const srcset = [
+  //     `${img} 376w`,
+  //     `${img} 430w`,
+  //   ];
+  //   return srcset.join(', ');
+  // }
+
 }

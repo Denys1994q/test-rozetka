@@ -34,6 +34,7 @@ export interface ProductInterface {
     title: string,
     engName: string,
     image: string,
+    image_mob?: string,
     image2: string,
     images: Img[],
     info_brief: string,

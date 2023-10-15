@@ -39,7 +39,9 @@
                         <img
                             class="card__image"
                             [class.card__image-big]="size === 'big'"
-                            src="{{ prod.image }}"
+                            src="{{
+                                prod.image_mob ? prod.image_mob : prod.image
+                            }}"
                             alt="prod-image" />
                     </a>
                     <!-- Заголовок товару -->
@@ -149,7 +151,7 @@
                 </button>
                 <a routerLink="{{ '/' + prod.engName + '/' + prod._id }}">
                     <img
-                        [src]="prod.image"
+                        [src]="prod.image_mob ? prod.image_mob : prod.image"
                         [attr.loading]="'lazy'"
                         class="card__image"
                         alt="prod-image" />
