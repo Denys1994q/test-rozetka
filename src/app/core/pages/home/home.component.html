@@ -6,6 +6,16 @@
     </app-aside>
     <main class="products__list prodlist">
         <app-cart-notification></app-cart-notification>
+        <!-- <img
+            src="https://res.cloudinary.com/dw60kllwn/image/upload/v1697355535/slide1_jutdqd.webp"
+            alt=""
+            srcset="
+                https://res.cloudinary.com/dw60kllwn/image/upload/w_340,h_228/v1697355535/slide1_jutdqd.webp    376w,
+                https://res.cloudinary.com/dw60kllwn/image/upload/w_390,h_130/v1697355535/slide1_jutdqd.webp    430w,
+                https://res.cloudinary.com/dw60kllwn/image/upload/w_700,h_235/v1697355535/slide1_jutdqd.webp    770w,
+                https://res.cloudinary.com/dw60kllwn/image/upload/w_1270,h_400/v1697355535/slide1_jutdqd.webp   1400w
+            " /> -->
+
         <app-carousel
             class="custom-carousel"
             [autoSlidesOpening]="true"
@@ -39,7 +49,11 @@
             Каталог товарів
         </button>
         <!-- картки -->
-        <ng-container *ngIf="productService.newProds && productService.newProds.length > 0; else skeleton">
+        <ng-container
+            *ngIf="
+                productService.newProds && productService.newProds.length > 0;
+                else skeleton
+            ">
             <app-cards
                 [data]="{
                     category: 'Гарячі новинки',
@@ -59,7 +73,11 @@
                 </ul>
             </div>
         </ng-template>
-        <ng-container *ngIf="productService.moreProds && productService.moreProds.length > 0; else skeletonMoreProds">
+        <ng-container
+            *ngIf="
+                productService.moreProds && productService.moreProds.length > 0;
+                else skeletonMoreProds
+            ">
             <app-cards
                 [data]="{
                     category: 'Більше товарів для вибору',
@@ -79,7 +97,12 @@
                 </ul>
             </div>
         </ng-template>
-        <ng-container *ngIf="productService.recommendedProds && productService.recommendedProds.length > 0; else skeletonRecommendedProds">
+        <ng-container
+            *ngIf="
+                productService.recommendedProds &&
+                    productService.recommendedProds.length > 0;
+                else skeletonRecommendedProds
+            ">
             <app-cards
                 [data]="{
                     category: 'Рекомендовані',
