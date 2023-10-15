@@ -14,7 +14,6 @@ import { ProductCommentsComponent } from './pages/product-comments/product-comme
 import { ProductPhotosComponent } from './pages/product-photos/product-photos.component';
 import { ProductVideoComponent } from './pages/product-video/product-video.component';
 import { TabsComponent } from './components/tabs/tabs.component';
-import { SearchModule } from '../search/search.module';
 
 @NgModule({
   declarations: [

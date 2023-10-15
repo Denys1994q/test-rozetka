@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { CartNotificationComponent } from './components/cart-notification/cart-notification.component';
 import { CheckoutPage } from './pages/checkout/checkout.component';
-
 import { RouterModule } from '@angular/router';
 
 const routes = [

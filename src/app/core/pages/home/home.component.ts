@@ -38,12 +38,12 @@ export class HomeComponent {
 
 
   slides: Slide[] = [
-      {url: '../../../../assets/slide1.webp'},
-      {url: '../../../../assets/slide2.webp'},
-      {url: '../../../../assets/slide3.webp'},
-      {url: '../../../../assets/slide4.webp'},
-      {url: '../../../../assets/slide5.webp'},
-      {url: '../../../../assets/slide6.webp'},
+      {url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697355535/slide1_jutdqd.webp'},
+      {url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697355660/slide2_f9o8yp.webp'},
+      {url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697355710/slide3_owiou0.webp'},
+      {url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697355772/slide4_sybqv5.webp'},
+      {url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697355772/slide5_yj13bw.webp'},
+      {url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697355772/slide6_bcrbch.webp'},
   ]
 
   openDialog() {

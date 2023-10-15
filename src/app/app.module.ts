@@ -5,7 +5,6 @@ import { ProductModule } from './product/product.module';
 import { SearchModule } from './search/search.module';
 import { CoreModule } from './core/core.module';
 import { ModalModule } from './shared/components/modal/modal.module';
-// import { CabinetModule } from './cabinet/cabinet.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -21,7 +20,6 @@ import { AppComponent } from './app.component';
     SearchModule,
     CoreModule,
     ModalModule,
-    // CabinetModule,
   ],
   providers: [
     {
