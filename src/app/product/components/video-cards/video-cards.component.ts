@@ -36,7 +36,7 @@ export class VideoCardsComponent {
     },
     {
       title: 'Новий Samsung Galaxy A54 ще більше... | Огляд Samsung Galaxy A54 (2023)',
-      img: '../../../assets/screen3.png',
+      img: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697457067/screen3_ughceo.webp',
       time: '27 квітня 2023 р.',
       url: 'https://youtube.com/embed/tN9HgYbLFSQ?autoplay=1&mute=1',
       duration: '09:14'
