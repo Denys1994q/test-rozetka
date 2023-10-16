@@ -4,6 +4,7 @@ import { AfterViewInit, OnDestroy, Input, OnInit, OnChanges, SimpleChanges, View
 export type Slide = {
     url?: string,
     url_mobile?: string,
+    url_tablet?: string,
     video_url?: string,
     video_youtubeUrl?: string,
     video_screen?: string
@@ -116,7 +117,7 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
     const srcset = [
       `${slide.url_mobile} 376w`,
       `${slide.url_mobile} 430w`,
-      `${slide.url} 770w`,
+      `${slide.url} 800w`,
       `${slide.url} 1400w`,
     ];
     return srcset.join(', ');
