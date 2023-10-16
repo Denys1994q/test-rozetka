@@ -61,11 +61,11 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
     this.res = - this.slideImg.nativeElement.offsetWidth;
     this.slideWidth = this.slideImg.nativeElement.offsetWidth;
     this.slideHeight = this.slideImg.nativeElement.offsetHeight;
-    if (this.autoSlidesOpening) {
-      this.int = setInterval(() => {
-        this.showNext()
-      }, 4000)
-    }
+    // if (this.autoSlidesOpening) {
+    //   this.int = setInterval(() => {
+    //     this.showNext()
+    //   }, 4000)
+    // }
   }
 
   ngAfterViewInit() {
