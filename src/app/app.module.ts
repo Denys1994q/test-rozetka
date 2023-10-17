@@ -1,6 +1,5 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { SharedModule } from './shared/shared.module';
 import { ProductModule } from './product/product.module';
 import { SearchModule } from './search/search.module';
 import { CoreModule } from './core/core.module';
@@ -15,7 +14,6 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule,
     ProductModule,
     SearchModule,
     CoreModule,
