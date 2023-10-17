@@ -117,7 +117,7 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
     const srcset = [
       `${slide.url_mobile} 376w`,
       `${slide.url_mobile} 430w`,
-      `${slide.url} 800w`,
+      `${slide.url_tablet ? slide.url_tablet : slide.url} 800w`,
       `${slide.url} 1400w`,
     ];
     return srcset.join(', ');

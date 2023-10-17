@@ -63,6 +63,16 @@
                 </ul>
             </div>
         </ng-template>
+        <div class="skeleton newProds">
+            <p class="skeletonProds__title">&nbsp;</p>
+            <ul class="skeletonProds">
+                <li class="skeletonProds__item">&nbsp;</li>
+                <li class="skeletonProds__item">&nbsp;</li>
+                <li class="skeletonProds__item">&nbsp;</li>
+                <li class="skeletonProds__item">&nbsp;</li>
+                <li class="skeletonProds__item">&nbsp;</li>
+            </ul>
+        </div>
         <ng-container
             *ngIf="productService.moreProds && productService.moreProds.length > 0; else skeletonMoreProds ">
             <div>

@@ -69,6 +69,8 @@ ul
     height: 30rem
     margin-top: 5rem
     padding: .5rem
+    @include respond(phoneM)
+        height: 24rem
 .skeleton-categories
     background: #f0f0f0
     animation: loading 1.5s infinite
@@ -87,15 +89,21 @@ ul
     align-items: center
     justify-content: center
     gap: 2rem
+    @include respond(phoneM)
+        gap: .7rem
     &__item
         width: 17%
         height: 20rem
         background: #b7b6bd
+        @include respond(phoneM)
+            height: 15rem
     &__title
         background: #b7b6bd
         height: 3rem
         width: 25rem
         margin: 2rem
+        @include respond(phoneM)
+            width: auto
 
 @keyframes loading
     0%
