@@ -52,7 +52,7 @@
             </app-cards>
         </ng-container>
         <ng-template #skeleton>
-            <div class="skeleton">
+            <div class="skeleton newProds">
                 <p class="skeletonProds__title">&nbsp;</p>
                 <ul class="skeletonProds">
                     <li class="skeletonProds__item">&nbsp;</li>
@@ -64,19 +64,18 @@
             </div>
         </ng-template>
         <ng-container
-            *ngIf="
-                productService.moreProds && productService.moreProds.length > 0;
-                else skeletonMoreProds
-            ">
-            <app-cards
-                [data]="{
-                    category: 'Більше товарів для вибору',
-                    products: productService.moreProds
-                }">
-            </app-cards>
+            *ngIf="productService.moreProds && productService.moreProds.length > 0; else skeletonMoreProds ">
+            <div>
+                <app-cards
+                    [data]="{
+                        category: 'Більше товарів для вибору',
+                        products: productService.moreProds
+                    }">
+                </app-cards>
+            </div>
         </ng-container>
         <ng-template #skeletonMoreProds>
-            <div class="skeleton">
+            <div class="skeleton moreProds">
                 <p class="skeletonProds__title">&nbsp;</p>
                 <ul class="skeletonProds">
                     <li class="skeletonProds__item">&nbsp;</li>
@@ -101,7 +100,7 @@
             </app-cards>
         </ng-container>
         <ng-template #skeletonRecommendedProds>
-            <div class="skeleton">
+            <div class="skeleton recommendedProds">
                 <p class="skeletonProds__title">&nbsp;</p>
                 <ul class="skeletonProds">
                     <li class="skeletonProds__item">&nbsp;</li>

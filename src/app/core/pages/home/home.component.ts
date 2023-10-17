@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, AfterViewInit, ElementRef   } from '@angular/core';
 import { ModalService } from 'src/app/shared/components/modal/modal.service';
 import { Slide } from 'src/app/shared/components/carousel/carousel.component';
 import { ApiService } from '../../services/api.service';
@@ -10,13 +10,14 @@ import { CartService } from 'src/app/cart/services/cart.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.sass']
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit {
   data!: any
   
   constructor(
     public modalService: ModalService, 
     public productService: ProductService, 
     public apiService: ApiService,
+    private elementRef: ElementRef,
     public cartService: CartService) 
   {}
 
@@ -27,12 +28,47 @@ export class HomeComponent {
     // }
   }
 
+  ngAfterViewInit() {
+    this.observeNewProds();
+  }
+
+  observeNewProds() {
+    const options = {
+      root: null, // null означає весь вікно браузера
+      rootMargin: '0px',
+      threshold: 0.5 
+    };
+
+    const callback = (entries: any, observer: any) => {
+      entries.forEach((entry: any) => {
+        if (entry.isIntersecting) {
+          if (entry.target.classList.contains('newProds')) {
+            this.productService.getNewProducts()
+          } else if (entry.target.classList.contains('moreProds')) {
+            this.productService.getMoreProducts()
+          } else if (entry.target.classList.contains('recommendedProds')) {
+            this.productService.getRecommendedProducts()
+          }
+          observer.unobserve(entry.target); 
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+    const target1 = this.elementRef.nativeElement.querySelector('.moreProds'); 
+    const target2 = this.elementRef.nativeElement.querySelector('.newProds'); 
+    const target3 = this.elementRef.nativeElement.querySelector('.recommendedProds'); 
+    observer.observe(target1);
+    observer.observe(target2);
+    observer.observe(target3);
+  }
+
   ngOnInit() {
     this.apiService.getAllCategories().subscribe({
       next: (data) => this.data = data,
       error: (err) => console.log(err)
     })
-    this.productService.getSomeProducts()
+    // this.productService.getSomeProducts()
     this.cartService.getCart()
   }
 
@@ -40,7 +76,6 @@ export class HomeComponent {
     {
       url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697442953/372219090-min_jciasj.webp',
       url_mobile: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697371428/1_mobile_gsir7o.webp',
-      // url_tablet: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697371428/1_qswttk.webp'
     },
     // {
     //   // url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697371220/2_gtpdwv.webp',
@@ -50,7 +85,6 @@ export class HomeComponent {
     {
       url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697438772/355962794-min_pmgsrr.webp',
       url_mobile: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697370141/3_mobile_ktmlvj.webp',
-      // url_tablet: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697371428/1_qswttk.webp'
     },
   ]
 

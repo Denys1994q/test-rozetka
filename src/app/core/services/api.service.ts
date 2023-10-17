@@ -37,4 +37,18 @@ export class ApiService {
         return this.http.get<any>(apiUrl);
     }
 
+    getNewProducts(): Observable<any> {
+        const apiUrl = `${this.backendUrl}/newProducts` 
+        return this.http.get<any>(apiUrl);
+    }
+
+    getMoreProducts(): Observable<any> {
+        const apiUrl = `${this.backendUrl}/moreProducts` 
+        return this.http.get<any>(apiUrl);
+    }
+
+    getRecommendedProducts(): Observable<any> {
+        const apiUrl = `${this.backendUrl}/recommendedProducts` 
+        return this.http.get<any>(apiUrl);
+    }
 }

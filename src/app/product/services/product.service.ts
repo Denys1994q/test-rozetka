@@ -42,12 +42,28 @@ export class ProductService {
     // }
 
     // нові, улюблені, рекомендовані товари 
-    getSomeProducts() {
-      this.apiService.getSomeProducts().subscribe({
+    getNewProducts() {
+      this.apiService.getNewProducts().subscribe({
         next: (response) => {
-          this.newProds = [response[1], response[20], response[21], response[9], response[11], response[13], response[17], response[19]] 
-          this.moreProds = [response[2], response[4], response[6], response[8], response[10], response[12], response[14], response[16]] 
-          this.recommendedProds = [response[3], response[18], response[5], response[7], response[22], response[23], response[0] ] 
+          this.newProds = response
+        },
+        error: err => console.log(err)
+      })
+    }
+
+    getMoreProducts() {
+      this.apiService.getMoreProducts().subscribe({
+        next: (response) => {
+          this.moreProds = response
+        },
+        error: err => console.log(err)
+      })
+    }
+
+    getRecommendedProducts() {
+      this.apiService.getRecommendedProducts().subscribe({
+        next: (response) => {
+          this.recommendedProds = response
         },
         error: err => console.log(err)
       })
