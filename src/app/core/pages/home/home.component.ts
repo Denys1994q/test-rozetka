@@ -68,7 +68,6 @@ export class HomeComponent implements AfterViewInit {
       next: (data) => this.data = data,
       error: (err) => console.log(err)
     })
-    // this.productService.getSomeProducts()
     this.cartService.getCart()
   }
 
