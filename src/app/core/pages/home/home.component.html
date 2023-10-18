@@ -1,7 +1,7 @@
 <div class="products">
     <!-- бокова панель з категоріями товарів, додатками, соцмережами, інформацією про компанію -->
     <app-aside
-        [data]="data"
+        [data]="productService.allCategories"
         [full]="true">
     </app-aside>
     <main class="products__list prodlist">
@@ -16,7 +16,7 @@
             <h2 class="categories-mini__title">Каталог товарів</h2>
             <ul class="categories-mini__list">
                 <li
-                    *ngFor="let product of data"
+                    *ngFor="let product of productService.allCategories"
                     class="categories-mini__item">
                     <mat-icon class="categories-mini__icon">{{
                         product.icon

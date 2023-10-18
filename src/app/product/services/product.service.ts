@@ -6,6 +6,9 @@ import { CommentsService } from './comments.service';
 @Injectable({ providedIn: 'root' })
 
 export class ProductService {
+    // all categories
+    allCategories!: any
+    // 
     tab: number = 0
     tabs: any = []
     category!: any 
@@ -138,6 +141,13 @@ export class ProductService {
 
     resetFoundedProducts() {
       this.foundedProducts = []
+    }
+
+    getAllCategories() {
+      this.apiService.getAllCategories().subscribe({
+        next: (data) => this.allCategories = data,
+        error: (err) => console.log(err)
+      })
     }
 
     setCategory(category: any) {

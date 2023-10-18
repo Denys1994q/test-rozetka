@@ -11,8 +11,7 @@ import { CartService } from 'src/app/cart/services/cart.service';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements AfterViewInit {
-  data!: any
-  
+
   constructor(
     public modalService: ModalService, 
     public productService: ProductService, 
@@ -34,7 +33,7 @@ export class HomeComponent implements AfterViewInit {
 
   observeNewProds() {
     const options = {
-      root: null, // null означає весь вікно браузера
+      root: null, 
       rootMargin: '0px',
       threshold: 0.5 
     };
@@ -53,7 +52,6 @@ export class HomeComponent implements AfterViewInit {
         }
       });
     };
-
     const observer = new IntersectionObserver(callback, options);
     const target1 = this.elementRef.nativeElement.querySelector('.moreProds'); 
     const target2 = this.elementRef.nativeElement.querySelector('.newProds'); 
@@ -64,10 +62,9 @@ export class HomeComponent implements AfterViewInit {
   }
 
   ngOnInit() {
-    this.apiService.getAllCategories().subscribe({
-      next: (data) => this.data = data,
-      error: (err) => console.log(err)
-    })
+    if (!this.productService.allCategories) {
+      this.productService.getAllCategories()
+    }
     this.cartService.getCart()
   }
 
