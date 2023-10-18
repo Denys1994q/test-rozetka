@@ -20,13 +20,6 @@ export class HomeComponent implements AfterViewInit {
     public cartService: CartService) 
   {}
 
-  @HostListener('window:resize', ['$event'])
-  onResize() {
-    // if (window.innerWidth < 700) {
-    //   this.productService.setValueSlice(2)
-    // }
-  }
-
   ngAfterViewInit() {
     this.observeNewProds();
   }

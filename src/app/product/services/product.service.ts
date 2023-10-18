@@ -38,13 +38,12 @@ export class ProductService {
       private apiService: ApiService) 
     {}
 
-    // setValueSlice(newValue: number) {
-    //   this.newProds = categories[0].subCategories[0].products.slice(0, newValue);
-    //   this.moreProds = categories[1].subCategories[0].products.slice(0, newValue);
-    //   this.recommendedProds = categories[2].subCategories[0].products.slice(0, newValue);
-    // }
+    setValueSlice(newValue: number) {
+      // this.newProds = this.newProds.slice(0, newValue);
+      // this.moreProds = this.moreProds.slice(0, newValue);
+      // this.recommendedProds = this.recommendedProds.slice(0, newValue);
+    }
 
-    // нові, улюблені, рекомендовані товари 
     getNewProducts() {
       this.apiService.getNewProducts().subscribe({
         next: (response) => {

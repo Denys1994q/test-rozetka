@@ -1,5 +1,5 @@
 import { Validator, NG_VALIDATORS, FormControl } from '@angular/forms'
-import { Directive, OnInit } from '@angular/core';
+import { Directive } from '@angular/core';
  
 @Directive({
   selector: '[passBigLetters]',
@@ -15,7 +15,7 @@ export class passBigLettersValidatorDirective implements Validator {
       return null
     } else {
       if (inpValue.search(/(?=.*[A-Z])/)) {
-        return { 'noDigitsInPass': true }
+        return { 'noBigLettersInPass': true }
       }
     }
     return null;

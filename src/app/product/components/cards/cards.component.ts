@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, HostListener, EventEmitter } from '@angular/core';
 import { ProductInterface } from 'src/app/core/services/api-response-types';
 
 interface Cards {
@@ -21,6 +21,13 @@ export class CardsComponent {
   raiting!: any
   endVal: number = 5
   @Output() cardsChange = new EventEmitter<any>();
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    if (window.innerWidth < 700) {
+      this.endVal = 2
+    }
+  }
 
   getPriceObject(prod: any) {
       return prod.searchStatus.find((status: any) => status.searchPosition === 'price').option
@@ -45,17 +52,9 @@ export class CardsComponent {
   }
 
   showMoreCards(type: string) {
-    this.endVal = this.endVal + 15
+    this.endVal = this.endVal + this.data.products.length
     this.cardsChange.emit(type)
     this.showBtn = false
   }
-
-  // generateSrcset(img: string): string {
-  //   const srcset = [
-  //     `${img} 376w`,
-  //     `${img} 430w`,
-  //   ];
-  //   return srcset.join(', ');
-  // }
 
 }
