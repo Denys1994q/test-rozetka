@@ -22,7 +22,6 @@ export class MiddleCategoryComponent {
       public menuService: MenuService
     ) {}
 
-    // тут мав би йти запит на сервер по цьому id
     ngOnInit(): void {
         this.route.url.subscribe(route => {
             window.scrollTo({

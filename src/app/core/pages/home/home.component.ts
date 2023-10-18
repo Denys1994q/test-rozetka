@@ -74,11 +74,6 @@ export class HomeComponent implements AfterViewInit {
       url_mobile: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697562141/1_mobile_11zon_wj2jjf.webp',
       url_tablet: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697555193/372219090-min_11zon_i3q2nd.webp'
     },
-    // {
-    //   // url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697371220/2_gtpdwv.webp',
-    //   // url_mobile: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697371220/2_mobile_zagv2i.webp',
-    //   // url_tablet: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697371220/2_gtpdwv.webp'
-    // },
     {
       url: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697438772/355962794-min_pmgsrr.webp',
       url_mobile: 'https://res.cloudinary.com/dw60kllwn/image/upload/v1697562054/3_mobile_11zon_yyt5rm.webp',

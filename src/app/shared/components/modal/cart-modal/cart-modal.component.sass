@@ -1,8 +1,11 @@
 @import '../login-modal/login-modal.component'
 @import 'variables'
+@import 'mixins'
 
 .modal-cart
     width: 96rem
+    @include respond(tab-land)
+        width: 90vw
 .cart-img
     display: block
     width: 24rem

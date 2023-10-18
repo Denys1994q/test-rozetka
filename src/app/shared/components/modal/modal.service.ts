@@ -85,6 +85,7 @@ export class ModalService {
                     modalVariant = CartModalComponent
                     modalStyles = {
                       panelClass: 'modal-cart',
+                      maxWidth: '90vw',
                     }
                 }
                 break
