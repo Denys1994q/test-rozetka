@@ -15,25 +15,30 @@
             (mouseenter)="setshowExtendedCard(i)"
             (mouseleave)="hideExtendedCard()"
             [class.card-big]="size === 'big'"
-            [class.card-withOpacity]="
-                notAvailableProducts.indexOf(prod._id) > -1
-            "
+            [class.card-withOpacity]="notAvailableProducts && notAvailableProducts.indexOf(prod._id) > -1"
             [class.card-hiddenBorder]="activeIndex === i">
+            <div class="checkboxWrapper"> 
+                <app-checkbox
+                    [search]="true"
+                    [searchId]="prod._id"
+                    (checkboxChange)="onCheckboxChange($event)" />
+            </div> 
             <!-- передня сторона карточки -->
             <div [ngStyle]="{ opacity: activeIndex === i ? '0' : '1' }">
                 <div
                     class="card-innerWrapper"
                     [class.card-innerWrapper-big]="size === 'big'">
                     <!-- Кнопка додати до улюблених товарів -->
-                    <button
-                        class="card__btn btn-icon btn-icon--small"
-                        aria-label="Додати до улюблених">
-                        <mat-icon
-                            class="btn-icon__img"
+                        <button
+                            *ngIf="!withCheckbox"
+                            class="card__btn btn-icon btn-icon--small"
                             aria-label="Додати до улюблених">
-                            favorite_border
-                        </mat-icon>
-                    </button>
+                            <mat-icon
+                                class="btn-icon__img"
+                                aria-label="Додати до улюблених">
+                                favorite_border
+                            </mat-icon>
+                        </button>
                     <!-- Зображення товару -->
                     <a routerLink="{{ '/' + prod.engName + '/' + prod._id }}">
                         <img
@@ -75,15 +80,16 @@
                     class="card-innerWrapper"
                     [class.card-innerWrapper-big]="size === 'big'">
                     <!-- Кнопка додати до улюблених товарів -->
-                    <button
-                        class="card__btn btn-icon btn-icon--small"
-                        aria-label="Додати до улюблених">
-                        <mat-icon
-                            class="btn-icon__img"
-                            aria-label="Додати до улюблених"
-                            >favorite_border</mat-icon
-                        >
-                    </button>
+                        <button
+                            *ngIf="!withCheckbox"
+                            class="card__btn btn-icon btn-icon--small"
+                            aria-label="Додати до улюблених">
+                            <mat-icon
+                                class="btn-icon__img"
+                                aria-label="Додати до улюблених">
+                                favorite_border
+                            </mat-icon>
+                        </button>
                     <!-- Зображення товару -->
                     <a routerLink="{{ '/' + prod.engName + '/' + prod._id }}">
                         <img

@@ -94,9 +94,7 @@
     </div>
 </aside>
 
-<aside
-    class="products__catalog"
-    *ngIf="cabinet">
+<aside class="products__catalog" *ngIf="cabinet">
     <div class="side-menu__infoBlock infoBlock infoBlock-cabinet">
         <ul class="side-menu__list">
             <li class="side-menu__item">
@@ -110,6 +108,35 @@
                                 <p>Den Rybachok</p>
                                 <p class="user-email">drybachok@gmail.com</p>
                             </div>
+                        </button>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/cabinet/orders">
+                    <div class="side-menu__item-innerWrapper" routerLinkActive="active">
+                        <button
+                            class="textBtn">
+                            <mat-icon class="textBtn__icon">list_alt</mat-icon>
+                            Мої замовлення
+                        </button>
+                    </div>
+                </a>
+                <a routerLink="/cabinet/wishlist">
+                    <div class="side-menu__item-innerWrapper" routerLinkActive="active">
+                        <button
+                            class="textBtn">
+                            <mat-icon class="textBtn__icon">favorite_border</mat-icon>
+                            Список бажань
+                        </button>
+                    </div>
+                </a>
+                <a routerLink="/cabinet/recently-viewed">
+                    <div class="side-menu__item-innerWrapper" routerLinkActive="active">
+                        <button
+                            class="textBtn">
+                            <mat-icon class="textBtn__icon">visibility</mat-icon>
+                            Переглянуті товари
                         </button>
                     </div>
                 </a>

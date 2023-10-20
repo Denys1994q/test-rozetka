@@ -1,1 +1,40 @@
-<div>wishlist</div>
+<div class="wishlist">
+    <!-- назва категорії -->
+    <h2 class="wishlist__title">Список бажань</h2>
+    <section class="wishlist__details details">
+        <div class="details__header">
+            <h3 class="details__title">Список <span class="caption">(За замовчуванням)</span></h3>
+        </div>
+        <ul class="details__params" *ngIf="productService.newProds.length > 0">
+            <li class="param">
+                <button>Вибрати все</button>
+            </li>
+            <li class="param">
+                <button>Видалити</button>
+            </li>
+        </ul>
+        <div class="details__main">
+            <ng-container *ngIf="productService.newProds.length > 0; else empty">
+                <app-cards
+                    [full]="true"
+                    [data]="{
+                        products: productService.newProds
+                    }"
+                    [withCheckbox]="true"
+                    [size]="'big'" >
+                </app-cards>
+            </ng-container>
+           <ng-template #empty>
+                <div class="emptyBlock">
+                    <img src="https://res.cloudinary.com/dw60kllwn/image/upload/v1697731684/cabinet-dummy-error_omrmml.svg" class="emptyBlock__img" alt="no-products-img">
+                    <h3 class="emptyBlock__text">Упс! Ваш список бажань пустий</h3>
+                    <p class="emptyBlock__subtitle">Наповніть його товарами</p>
+                    <a routerLink="/">
+                        <button class="emptyBlock__btn">Перейти на головну</button>
+                    </a>
+                </div>
+           </ng-template>
+
+        </div>
+    </section>
+</div>

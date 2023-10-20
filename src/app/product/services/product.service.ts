@@ -38,12 +38,6 @@ export class ProductService {
       private apiService: ApiService) 
     {}
 
-    setValueSlice(newValue: number) {
-      // this.newProds = this.newProds.slice(0, newValue);
-      // this.moreProds = this.moreProds.slice(0, newValue);
-      // this.recommendedProds = this.recommendedProds.slice(0, newValue);
-    }
-
     getNewProducts() {
       this.apiService.getNewProducts().subscribe({
         next: (response) => {

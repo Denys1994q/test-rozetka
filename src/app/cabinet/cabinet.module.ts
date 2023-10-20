@@ -7,6 +7,7 @@ import { CabinetRecentlyViewedPage } from './pages/cabinet-recently-viewed/cabin
 import { CabinetWishlistPage } from './pages/cabinet-wishlist/cabinet-wishlist.component';
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from '../core/services/auth.guard';
+import { ProductModule } from '../product/product.module';
 
 const routes = [
   {path: '', component: CabinetPage, canActivate: [AuthGuard], children: [
@@ -43,7 +44,8 @@ const routes = [
   ],
   imports: [
     RouterModule.forChild(routes),
-    SharedModule
+    SharedModule,
+    ProductModule
   ],
   exports: [],
 })

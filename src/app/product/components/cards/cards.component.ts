@@ -17,6 +17,7 @@ export class CardsComponent {
   @Input() data!: Cards
   @Input() size: string = 'small'
   @Input() notAvailableProducts!: string[]
+  @Input() withCheckbox: boolean = false
   showBtn: boolean = true
   raiting!: any
   endVal: number = 5
@@ -55,6 +56,10 @@ export class CardsComponent {
     this.endVal = this.endVal + this.data.products.length
     this.cardsChange.emit(type)
     this.showBtn = false
+  }
+
+  onCheckboxChange(e: any) {
+
   }
 
 }

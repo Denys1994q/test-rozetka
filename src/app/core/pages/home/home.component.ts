@@ -1,4 +1,4 @@
-import { Component, HostListener, AfterViewInit, ElementRef   } from '@angular/core';
+import { Component, AfterViewInit, ElementRef   } from '@angular/core';
 import { ModalService } from 'src/app/shared/components/modal/modal.service';
 import { Slide } from 'src/app/shared/components/carousel/carousel.component';
 import { ApiService } from '../../services/api.service';
