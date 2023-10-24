@@ -22,7 +22,6 @@ export class AuthGuard {
         return this.authService.getUser().pipe(
             switchMap(resp => {
                 if (this.authService.isAuthenticated()) {
-                    console.log('авторизований');
                     return [true]; // Користувач авторизований і має доступ до роуту
                 } else {
                     // Користувач не авторизований, перенаправляємо його на сторінку логіну
@@ -32,11 +31,9 @@ export class AuthGuard {
                 }
             }),
             catchError(error => {
-                this.router.navigate(['/']); // Замість '/login' вкажіть ваш шлях до сторінки логіну
+                this.router.navigate(['/']); 
                 this.modalService.openDialog('login');
-                // Обробка помилок, які можуть виникнути під час отримання даних користувача
                 console.error('Помилка під час отримання даних користувача:', error);
-                // Ви можете виконати певну логіку обробки помилок тут і повернути, наприклад, false
                 return of(false);
             })
         )

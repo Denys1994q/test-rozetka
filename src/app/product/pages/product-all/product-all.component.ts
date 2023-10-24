@@ -62,5 +62,15 @@ export class ProductAllComponent {
   addToCart() {
     this.cartService.addToShoppingCart({...this.ProductService.product, amount: 1})  
   }
+
+  checkIfProductInCart(id: string) {
+    const cartData: any = localStorage.getItem('shoppingCart');
+    const productsFromStorage = JSON.parse(cartData) 
+    if (productsFromStorage && productsFromStorage.find((product: any) => product._id === id)) {
+        return true
+    } else {
+        return false
+    }
+}
   
 }

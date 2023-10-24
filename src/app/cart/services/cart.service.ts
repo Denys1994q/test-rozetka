@@ -9,7 +9,7 @@ export class CartService {
     productsFromStorage: ProductInterface[] = []
     totalProductsNumber = 0
     totalPrice = 0
-    productInCart: boolean = false
+    productInCart!: boolean 
 
     constructor(private modalService: ModalService, private productService: ProductService) { }
 
@@ -63,7 +63,8 @@ export class CartService {
         }
         this.modalService.openDialog('cart')
         this.getTotal()
-        this.checkIfProductInCart(this.productService.product._id)
+        // this.checkIfProductInCart(this.productService.product._id)
+        this.checkIfProductInCart(product._id)
     }
 
     findAndUdpate(id: number, value: number) {
@@ -85,13 +86,23 @@ export class CartService {
     }
 
     checkIfProductInCart(id: string) {
-        const cartData: any = localStorage.getItem('shoppingCart');
-        this.productsFromStorage = JSON.parse(cartData) 
-        if (this.productsFromStorage && this.productsFromStorage.find(product => product._id === id)) {
-            this.productInCart = true
-        } else {
-            this.productInCart = false
-        }
+        // console.log('checkIfProductInCart')
+        // const cartData: any = localStorage.getItem('shoppingCart');
+        // this.productsFromStorage = JSON.parse(cartData) 
+        // if (this.productsFromStorage && this.productsFromStorage.find(product => product._id === id)) {
+        //     this.productInCart = true
+        //     console.log(1)
+        // } else {
+        //     this.productInCart = false
+        //     console.log(2)
+        // }
+        // const cartData: any = localStorage.getItem('shoppingCart');
+        // this.productsFromStorage = JSON.parse(cartData) 
+        // if (this.productsFromStorage && this.productsFromStorage.find(product => product._id === id)) {
+        //     return true
+        // } else {
+        //     return false
+        // }
     }
 
     removeFromCart(id: string) {

@@ -50,7 +50,7 @@
                 </p>
             </div>
             <div class="trade__buy price-buy-panel__btn">
-                <div *ngIf="cartService.productInCart; else buy">
+                <div *ngIf="checkIfProductInCart(ProductService.product._id); else buy">
                     <div class="inCart-block">
                         <mat-icon class="inCart-icon">shopping_cart</mat-icon>
                         <button class="btn btn-link btn-inCart" (click)="modalService.openDialog('cart')">

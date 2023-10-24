@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SearchResultsService } from 'src/app/search/services/search-results.service';
 import { Comment } from 'src/app/shared/components/comment/comment.component';
+// import { Observable, Subject, BehaviorSubject, tap, filter, map  } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 
@@ -9,6 +10,9 @@ export class CommentsService {
     comments!: Comment[]
     // відфільтровані відгуки
     filteredComments!: Comment[]
+    // filteredComments$: Subject<Comment[]> = new Subject()
+    // private filteredСommentsSubject: BehaviorSubject<Comment[]> = new BehaviorSubject<Comment[]>([]);
+    // filteredComments$ = this.filteredСommentsSubject.asObservable();
     // тип сортування
     sortType: string = 'З фото і відео'
 
@@ -17,13 +21,20 @@ export class CommentsService {
     setComments(comments: any) {
         this.comments = comments
         this.filteredComments = this.comments
+        // this.filteredСommentsSubject.next(comments);
     }
 
     filterProdComments(selectedRaiting?: number) {
         if (selectedRaiting) {
+          // const filteredComments = this.comments.filter((comment: any) => comment.rating === selectedRaiting)
+          // this.filteredСommentsSubject.next(filteredComments)
+          // this.filteredComments$.pipe(
+          //   tap((data: any) => console.log(data))
+          // ).subscribe()
           this.filteredComments = this.comments.filter((review: any) => review.rating === selectedRaiting)
           this.sortProdComments(this.sortType)
         } else {
+          // this.filteredСommentsSubject.next(this.comments)
           this.filteredComments = this.comments
           this.sortProdComments(this.sortType)
           // скидаємо значення selectedRaitingIndex, яке в іншому сервісі знаходиться 

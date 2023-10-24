@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
-import { BehaviorSubject, Observable, catchError, switchMap, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
@@ -26,7 +26,6 @@ interface UserResponse extends UserData {
   providedIn: 'root'
 })
 export class AuthService {
-    // private backendUrl = 'https://rozetka-server.onrender.com';
     private backendUrl = 'https://evergreen-purrfect-agenda.glitch.me';
 
     public userDataSubject = new BehaviorSubject<UserData | null>(null);

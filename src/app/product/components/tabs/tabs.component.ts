@@ -10,37 +10,28 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./tabs.component.sass']
 })
 export class TabsComponent {
-  @Input() data!: any[]
-  @Input() startRoute!: string
+    @Input() data!: any[]
+    @Input() startRoute!: string
 
-  constructor(public productService: ProductService, private router: Router) {}
+    constructor(public productService: ProductService, private router: Router) {}
 
-  ngOnInit() {
-    // this.data = this.data.filter(route => route)
-
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    )
-      .subscribe((event: any) => {
-        const lastLetterBeforeId = event.url.lastIndexOf('/')
-        const tabName = event.url.slice(lastLetterBeforeId+1, lastLetterBeforeId+event.url.length-1)
-        if (this.data) {
-          this.data.map((item, index) => {
-            if (item.link === tabName) {
-              this.productService.setTab(index)
-              // this.activeTab = index
-              // console.log('this.activeTab', this.activeTab)
-              // console.log('index', index)
-            } else if (item.link === '') {
-              this.productService.setTab(0)
-              // this.activeTab = 0
+    ngOnInit() {
+        this.router.events.pipe(
+            filter(event => event instanceof NavigationEnd)
+        )
+        .subscribe((event: any) => {
+            const lastLetterBeforeId = event.url.lastIndexOf('/')
+            const tabName = event.url.slice(lastLetterBeforeId+1, lastLetterBeforeId+event.url.length-1)
+            if (this.data) {
+                this.data.map((item, index) => {
+                    if (item.link === tabName) {
+                        this.productService.setTab(index)
+                    } else if (item.link === '') {
+                        this.productService.setTab(0)
+                    }
+                })
             }
-          })
-        }
-    });
-  }
+        });
+    }
 
-  makeActive(i: number) {
-    // this.productService.setTab(i)
-  }
 }

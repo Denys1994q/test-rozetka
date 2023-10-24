@@ -18,7 +18,7 @@ export class CommentsPanelComponent {
     public ProductService: ProductService,
     public CommentsService: CommentsService) {}
 
-  @Input() comments!: Comment[]
+  @Input() comments!: Comment[] | null
   @Input() withFilters: boolean = false
   @Input() link!: any 
 

@@ -1,5 +1,7 @@
 <div>
-    <div class="comments__item" *ngIf="commentsWithPhotoVideo.length > 0">
+    <div
+        class="comments__item"
+        *ngIf="commentsWithPhotoVideo.length > 0">
         <div class="comment__header comment__header-title">
             <p class="bold">Фотографії та відео покупців</p>
         </div>
@@ -26,7 +28,9 @@
         </div>
     </div>
     <div class="comments__item comment__leaveComment">
-        <p class="fs20 comment__leaveComment-title">Залиште свій відгук про цей товар</p>
+        <p class="fs20 comment__leaveComment-title">
+            Залиште свій відгук про цей товар
+        </p>
         <button
             class="btn btn-medium btn-grey comment__leaveComment-btn"
             (click)="openDialog('login')">
@@ -35,6 +39,6 @@
     </div>
     <app-comments-panel
         [withFilters]="true"
-        [comments]="CommentsService.filteredComments">
+        [comments]="commentsService.filteredComments">
     </app-comments-panel>
 </div>

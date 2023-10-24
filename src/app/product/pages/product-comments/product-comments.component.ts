@@ -10,29 +10,27 @@ import { CommentsService } from '../../services/comments.service';
   styleUrls: ['./product-comments.component.sass']
 })
 export class ProductCommentsComponent {
-  constructor(private modalService: ModalService, public CommentsService: CommentsService ) {}
+    constructor(private modalService: ModalService, public commentsService: CommentsService ) {}
 
-  commentsWithPhotoVideo: any = []
-  sliderWidth!: number
-  slideWidth!: number
-  // moreIndex!: number
-  @ViewChild('sliderList') sliderList!: ElementRef;
-  @ViewChild('sliderItem') sliderItem!: ElementRef;
+    commentsWithPhotoVideo: any = []
+    sliderWidth!: number
+    slideWidth!: number
+    // moreIndex!: number
+    @ViewChild('sliderList') sliderList!: ElementRef;
+    @ViewChild('sliderItem') sliderItem!: ElementRef;
 
-  ngAfterViewInit() {
-    this.sliderWidth = this.sliderList.nativeElement.offsetWidth;
-    this.slideWidth = this.sliderItem.nativeElement.offsetWidth;
-    // this.moreIndex = Math.round((this.sliderWidth / this.slideWidth)-1)
-  }
+    ngAfterViewInit() {
+        this.sliderWidth = this.sliderList.nativeElement.offsetWidth;
+        this.slideWidth = this.sliderItem.nativeElement.offsetWidth;
+        // this.moreIndex = Math.round((this.sliderWidth / this.slideWidth)-1)
+    }
 
-  ngOnInit() {
-    this.commentsWithPhotoVideo = this.CommentsService.comments.filter((item: any) => item.photo || item.video)
-  }
+    ngOnInit() {
+        this.commentsWithPhotoVideo = this.commentsService.comments.filter((item: any) => item.photo || item.video)
+    }
 
-  openDialog(type: string, i: number = 0) {
-    this.modalService.getData({slides: this.commentsWithPhotoVideo, startSlideIndex: i})
-    this.modalService.openDialog(type)
-  }
-
-
+    openDialog(type: string, i: number = 0) {
+        this.modalService.getData({slides: this.commentsWithPhotoVideo, startSlideIndex: i})
+        this.modalService.openDialog(type)
+    }
 }

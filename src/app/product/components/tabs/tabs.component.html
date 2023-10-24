@@ -4,7 +4,6 @@
             class="tabs__item"
             *ngFor="let item of data; let i = index">
             <a
-                (click)="makeActive(i)"
                 *ngIf="item"
                 class="tab-link"
                 [class.activeLink]="i === productService.tab"
