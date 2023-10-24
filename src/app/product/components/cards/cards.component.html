@@ -20,12 +20,12 @@
                 notAvailableProducts.indexOf(prod._id) > -1
             "
             [class.card-hiddenBorder]="activeIndex === i">
-            <div class="checkboxWrapper">
+            <!-- <div class="checkboxWrapper">
                 <app-checkbox
                     [search]="true"
                     [searchId]="prod._id"
                     (checkboxChange)="onCheckboxChange($event)" />
-            </div>
+            </div> -->
             <!-- передня сторона карточки -->
             <div [ngStyle]="{ opacity: activeIndex === i ? '0' : '1' }">
                 <div
@@ -157,6 +157,7 @@
                 class="card"
                 *ngFor="let prod of data.products.slice(0, endVal)">
                 <button
+                    *ngIf="!withCheckbox"
                     class="card__btn btn-icon"
                     aria-label="Додати до улюблених">
                     <mat-icon class="btn-icon__img">favorite_border</mat-icon>

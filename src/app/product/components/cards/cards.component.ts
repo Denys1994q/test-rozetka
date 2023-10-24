@@ -18,7 +18,7 @@ export class CardsComponent {
     @Input() data!: Cards
     @Input() size: string = 'small'
     @Input() notAvailableProducts!: string[]
-    @Input() withCheckbox: boolean = false
+    @Input() withCheckbox!: boolean 
     showBtn: boolean = true
     raiting!: any
     endVal: number = 5
