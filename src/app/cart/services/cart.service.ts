@@ -85,24 +85,15 @@ export class CartService {
         this.getTotal()
     }
 
+    
     checkIfProductInCart(id: string) {
-        // console.log('checkIfProductInCart')
-        // const cartData: any = localStorage.getItem('shoppingCart');
-        // this.productsFromStorage = JSON.parse(cartData) 
-        // if (this.productsFromStorage && this.productsFromStorage.find(product => product._id === id)) {
-        //     this.productInCart = true
-        //     console.log(1)
-        // } else {
-        //     this.productInCart = false
-        //     console.log(2)
-        // }
-        // const cartData: any = localStorage.getItem('shoppingCart');
-        // this.productsFromStorage = JSON.parse(cartData) 
-        // if (this.productsFromStorage && this.productsFromStorage.find(product => product._id === id)) {
-        //     return true
-        // } else {
-        //     return false
-        // }
+        const cartData: any = localStorage.getItem('shoppingCart');
+        const productsFromStorage = JSON.parse(cartData) 
+        if (productsFromStorage && productsFromStorage.find((product: any) => product._id === id)) {
+            return true
+        } else {
+            return false
+        }
     }
 
     removeFromCart(id: string) {

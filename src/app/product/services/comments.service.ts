@@ -45,19 +45,20 @@ export class CommentsService {
       sortProdComments(sortType: string) {
         this.sortType = sortType
         if (sortType === 'З фото і відео') {
-          this.filteredComments = [...this.filteredComments].sort((a,b) => {
-            if ( a.photo){
+          console.log(this.filteredComments)
+          this.filteredComments = [...this.comments].sort((a,b) => {
+            if (a.photo){
               return -1;
             }
-            if ( b.photo){
+            if (b.photo){
               return 1;
             }
             return 0;
           })
         } else if (sortType === 'За датою') {
-          this.filteredComments = [...this.filteredComments].sort((a,b) => a.date - b.date)
+          this.filteredComments = [...this.comments].sort((a,b) => a.date - b.date)
         } else if (sortType === 'Найкорисніші') {
-          this.filteredComments = [...this.filteredComments].sort((a,b) => (b.likes+b.dislikes) - (a.likes+a.dislikes))
+          this.filteredComments = [...this.comments].sort((a,b) => (b.likes+b.dislikes) - (a.likes+a.dislikes))
         }
       }
 
