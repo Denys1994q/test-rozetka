@@ -10,9 +10,6 @@ export class CommentsService {
     comments!: Comment[]
     // відфільтровані відгуки
     filteredComments!: Comment[]
-    // filteredComments$: Subject<Comment[]> = new Subject()
-    // private filteredСommentsSubject: BehaviorSubject<Comment[]> = new BehaviorSubject<Comment[]>([]);
-    // filteredComments$ = this.filteredСommentsSubject.asObservable();
     // тип сортування
     sortType: string = 'З фото і відео'
 
@@ -20,21 +17,15 @@ export class CommentsService {
     
     setComments(comments: any) {
         this.comments = comments
-        this.filteredComments = this.comments
-        // this.filteredСommentsSubject.next(comments);
+        // this.filteredComments = [...comments]
     }
 
     filterProdComments(selectedRaiting?: number) {
         if (selectedRaiting) {
-          // const filteredComments = this.comments.filter((comment: any) => comment.rating === selectedRaiting)
-          // this.filteredСommentsSubject.next(filteredComments)
-          // this.filteredComments$.pipe(
-          //   tap((data: any) => console.log(data))
-          // ).subscribe()
           this.filteredComments = this.comments.filter((review: any) => review.rating === selectedRaiting)
+          console.log(this.filteredComments)
           this.sortProdComments(this.sortType)
         } else {
-          // this.filteredСommentsSubject.next(this.comments)
           this.filteredComments = this.comments
           this.sortProdComments(this.sortType)
           // скидаємо значення selectedRaitingIndex, яке в іншому сервісі знаходиться 
@@ -43,10 +34,13 @@ export class CommentsService {
       }
   
       sortProdComments(sortType: string) {
+        if (!this.filteredComments) {
+          this.filteredComments = [...this.comments]
+        }
+       
         this.sortType = sortType
         if (sortType === 'З фото і відео') {
-          console.log(this.filteredComments)
-          this.filteredComments = [...this.comments].sort((a,b) => {
+          this.filteredComments = [...this.filteredComments].sort((a,b) => {
             if (a.photo){
               return -1;
             }
@@ -56,9 +50,9 @@ export class CommentsService {
             return 0;
           })
         } else if (sortType === 'За датою') {
-          this.filteredComments = [...this.comments].sort((a,b) => a.date - b.date)
+          this.filteredComments = [...this.filteredComments].sort((a,b) => a.date - b.date)
         } else if (sortType === 'Найкорисніші') {
-          this.filteredComments = [...this.comments].sort((a,b) => (b.likes+b.dislikes) - (a.likes+a.dislikes))
+          this.filteredComments = [...this.filteredComments].sort((a,b) => (b.likes+b.dislikes) - (a.likes+a.dislikes))
         }
       }
 

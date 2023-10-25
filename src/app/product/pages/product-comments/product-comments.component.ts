@@ -26,6 +26,7 @@ export class ProductCommentsComponent {
     }
 
     ngOnInit() {
+        this.commentsService.sortProdComments('З фото і відео')
         this.commentsWithPhotoVideo = this.commentsService.comments.filter((item: any) => item.photo || item.video)
     }
 
