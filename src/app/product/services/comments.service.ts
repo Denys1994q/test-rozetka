@@ -17,7 +17,6 @@ export class CommentsService {
     
     setComments(comments: any) {
         this.comments = comments
-        // this.filteredComments = [...comments]
     }
 
     filterProdComments(selectedRaiting?: number) {

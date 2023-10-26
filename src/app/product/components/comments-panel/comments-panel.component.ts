@@ -24,9 +24,6 @@ export class CommentsPanelComponent {
 
   ngOnInit() {
     this.SearchResultsService.removeAll()
-    // this.CommentsService.sortProdComments('З фото і відео')
-    console.log(this.CommentsService.filteredComments)
-    console.log(this.comments, 'comments')
   }
 
   openDialog(type: string) {

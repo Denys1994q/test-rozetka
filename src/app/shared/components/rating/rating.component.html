@@ -3,7 +3,7 @@
   <mat-icon class="raiting__icon" *ngFor="let item of icons; let i = index">
     {{ showIcon(i) }}
   </mat-icon>
-  <a *ngIf="numReviews > 0" href="#" class="reviews">{{ numReviews }} відгуків</a>
+  <span *ngIf="numReviews > 0" href="#" class="reviews">{{ numReviews }} відгуків</span>
 </div>
 
 <!-- Динамічний рейтинг з можливістю змінювати значення -->
