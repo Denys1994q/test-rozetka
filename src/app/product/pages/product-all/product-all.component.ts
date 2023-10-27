@@ -25,25 +25,11 @@ export class ProductAllComponent {
 
   constructor(public ProductService: ProductService, public cartService: CartService, public modalService: ModalService) {}
 
-  newProds = {
-    category: 'Гарячі новинки',
-    products: [
-      {
-        title: 'Набір для прибирання',
-        image: '../../../assets/vileda.webp',
-        price: { old: 2405, new: 1539 }
-      },
-      {
-        title: 'Шорти AVRORA сірі',
-        image: '../../../assets/shorts.webp',
-        price: { old: 480, new: 229 }
-      },
-      {
-        title: 'Ноутбук ASUS ROG',
-        image: '../../../assets/asus_rog.webp',
-        price: { old: null, new: 82199 }
-      },
-    ]
+  ngOnInit() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+  });
   }
 
   scrollToBlock(block: string) {

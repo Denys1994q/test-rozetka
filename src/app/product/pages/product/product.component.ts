@@ -53,7 +53,7 @@ export class ProductComponent {
 
     scrollToTop() {
         window.scrollTo({
-            top: 1000,
+            top: 0,
             behavior: "smooth"
         });
     }

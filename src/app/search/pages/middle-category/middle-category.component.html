@@ -1,109 +1,91 @@
-<div
-    class="subcategory"
-    *ngIf="
-    SearchResultsService.currentCategory && SearchResultsService.currentSubcategory; else skeleton
-    ">
-    <!-- breadcrumbs -->
-    <app-breadcrumbs
-        [data]="[
-            SearchResultsService.currentCategory.name,
-            SearchResultsService.currentSubcategory.name
-        ]">
-    </app-breadcrumbs>
-    <!-- назва субкатегорії -->
-    <h3 class="subcategory__title">
-        {{ SearchResultsService.currentSubcategory.name }}
-    </h3>
-    <ul class="subcategory__list">
-        <li
-            class="subcategory__item"
-            *ngFor="let category of SearchResultsService.currentSubcategory.subitems">
-            <app-category-card [data]="category"></app-category-card>
-        </li>
-    </ul>
-    <!-- ОСНОВНА ЧАСТИНА СТОРІНКИ -->
-    <div class="subcategory__catalog catalog">
-        <div class="catalog__settings settings">
-            <div class="settings__result">
-                <!-- адаптив: кнопка фільтрувати -->
-                <button
-                    class="btn btn-medium iconed-btn btn-blue filters-btn"
-                    (click)="menuService.openMenu('search')">
-                    <mat-icon class="iconed-btn__icon">filter_alt</mat-icon>
-                    Фільтри
-                </button>
-                <!-- результати пошуку -->
-                <app-search-result
-                    [dataLength]="SearchResultsService.currentSubcategory.products.length"
-                    [selectedInputs]="SearchResultsService.selectedInputs">
-                </app-search-result>
-            </div>
-            <div class="settings__options">
-                <!-- фільтри -->
-                <app-select
-                    [name]="'filters'"
-                    [options]="SearchResultsService.optionsToSort"
-                    [activeOption]="SearchResultsService.sortType"
-                    (selectChangeEvent)="onFilterChange($event)">
-                </app-select>
-                <!-- кнопки: великі, малі карточки + адаптив -->
-                <div class="btns-panel">
-                    <app-btns-grid-panel
-                        (btnsGridPanelChange)="onBtnsGridPanelChange($event)">
-                    </app-btns-grid-panel>
+<div *ngIf="SearchResultsService.productsLoading; else mainContent">
+    <app-skeleton [variant]="'search'"></app-skeleton>
+</div>
+<ng-template #mainContent>
+    <div class="subcategory"
+        *ngIf="SearchResultsService.currentCategory && SearchResultsService.currentSubcategory; else skeleton" >
+        <!-- breadcrumbs -->
+        <app-breadcrumbs
+            [data]="[
+                SearchResultsService.currentCategory.name,
+                SearchResultsService.currentSubcategory.name
+            ]">
+        </app-breadcrumbs>
+        <!-- назва субкатегорії -->
+        <h3 class="subcategory__title">
+            {{ SearchResultsService.currentSubcategory.name }}
+        </h3>
+        <ul class="subcategory__list">
+            <li
+                class="subcategory__item"
+                *ngFor="let category of SearchResultsService.currentSubcategory.subitems">
+                <app-category-card [data]="category"></app-category-card>
+            </li>
+        </ul>
+        <!-- ОСНОВНА ЧАСТИНА СТОРІНКИ -->
+        <div class="subcategory__catalog catalog">
+            <div class="catalog__settings settings">
+                <div class="settings__result">
+                    <!-- адаптив: кнопка фільтрувати -->
+                    <button
+                        class="btn btn-medium iconed-btn btn-blue filters-btn"
+                        (click)="menuService.openMenu('search')">
+                        <mat-icon class="iconed-btn__icon">filter_alt</mat-icon>
+                        Фільтри
+                    </button>
+                    <!-- результати пошуку -->
+                    <app-search-result
+                        [dataLength]="SearchResultsService.currentSubcategory.products.length"
+                        [selectedInputs]="SearchResultsService.selectedInputs">
+                    </app-search-result>
+                </div>
+                <div class="settings__options">
+                    <!-- фільтри -->
+                    <app-select
+                        [name]="'filters'"
+                        [options]="SearchResultsService.optionsToSort"
+                        [activeOption]="SearchResultsService.sortType"
+                        (selectChangeEvent)="onFilterChange($event)">
+                    </app-select>
+                    <!-- кнопки: великі, малі карточки + адаптив -->
+                    <div class="btns-panel">
+                        <app-btns-grid-panel
+                            (btnsGridPanelChange)="onBtnsGridPanelChange($event)">
+                        </app-btns-grid-panel>
+                    </div>
                 </div>
             </div>
-        </div>
-        <section class="catalog__main">
-            <!-- бокова панель з пошуком -->
-            <aside class="catalog__search-aside search-aside">
-                <app-search-panel
-                    [data]="SearchResultsService.searchParams"
-                    [priceDataStart]="SearchResultsService.priceDataStart"
-                    [priceDataEnd]="SearchResultsService.priceDataEnd"
-                    (searchPanelChange)="onSearchPanelChange($event)">
-                </app-search-panel>
-            </aside>
-            <!-- панель з карточками -->
-            <div class="catalog__cards">
-                <app-cards
-                    [full]="true"
-                    [data]="{
-                        products:
-                            SearchResultsService.currentSubcategory.products
-                    }"
-                    [notAvailableProducts]="SearchResultsService.notAvailableProducts"
-                    [size]="activeBtn">
-                </app-cards>
-                <!-- кнопка завантажити ще -->
-                <!-- <div class="catalog__btnWrapper" *ngIf="SearchResultsService.currentSubcategory.products.length > 0">
-                    <app-load-more-btn></app-load-more-btn>
-                </div> -->
-            </div>
-        </section>
-    </div>
-</div>
-<!-- скелетон -->
-<ng-template #skeleton>
-    <div class="skeleton newProds">
-        <div class="skeletonCategory__topwrapper">
-            <p class="skeletonCategory__title-small">&nbsp;</p>
-            <p class="skeletonCategory__title-small">&nbsp;</p>
-        </div>
-        <p class="skeletonCategory__title">&nbsp;</p>
-        <div class="skeletonCategory__flexList">
-            <div class="skeletonCategory__block">&nbsp;</div>
-            <div>
-                <div class="skeletonCategory__listTitle">&nbsp;</div>
-                <ul class="skeletonCategory__wrapper">
-                    <div class="skeletonCategory__listTitle skeletonCategory__listTitle-big">&nbsp;</div>
-                    <div class="skeletonCategory__listTitle skeletonCategory__listTitle-big">&nbsp;</div>
-                    <div class="skeletonCategory__listTitle skeletonCategory__listTitle-big">&nbsp;</div>
-                    <div class="skeletonCategory__listTitle skeletonCategory__listTitle-big">&nbsp;</div>
-                    <div class="skeletonCategory__listTitle skeletonCategory__listTitle-big">&nbsp;</div>
-                    <div class="skeletonCategory__listTitle skeletonCategory__listTitle-big">&nbsp;</div>
-                </ul>
-            </div>
+            <section class="catalog__main">
+                <!-- бокова панель з пошуком -->
+                <aside class="catalog__search-aside search-aside">
+                    <app-search-panel
+                        [data]="SearchResultsService.searchParams"
+                        [priceDataStart]="SearchResultsService.priceDataStart"
+                        [priceDataEnd]="SearchResultsService.priceDataEnd"
+                        (searchPanelChange)="onSearchPanelChange($event)">
+                    </app-search-panel>
+                </aside>
+                <!-- панель з карточками -->
+                <div class="catalog__cards">
+                    <app-cards
+                        [full]="true"
+                        [data]="{
+                            products:
+                                SearchResultsService.currentSubcategory.products
+                        }"
+                        [notAvailableProducts]="SearchResultsService.notAvailableProducts"
+                        [size]="activeBtn">
+                    </app-cards>
+                    <!-- кнопка завантажити ще -->
+                    <!-- <div class="catalog__btnWrapper" *ngIf="SearchResultsService.currentSubcategory.products.length > 0">
+                        <app-load-more-btn></app-load-more-btn>
+                    </div> -->
+                </div>
+            </section>
         </div>
     </div>
+    <!-- скелетон -->
+    <ng-template #skeleton>
+        <app-skeleton [variant]="'search'"></app-skeleton>
+    </ng-template>
 </ng-template>

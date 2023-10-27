@@ -26,6 +26,10 @@ export class ProductCommentsComponent {
     }
 
     ngOnInit() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
         this.commentsService.sortProdComments('З фото і відео')
         this.commentsWithPhotoVideo = this.commentsService.comments.filter((item: any) => item.photo || item.video)
     }

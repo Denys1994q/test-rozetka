@@ -1,0 +1,68 @@
+<ng-container [ngSwitch]="variant">
+    <!-- скелетон для сторінки пошуку продуктів -->
+    <div *ngSwitchCase="'search'" class="skeleton skeleton-search">
+        <div class="skeletonCategory__topwrapper">
+            <p class="skeletonCategory__title-small">&nbsp;</p>
+        </div>
+        <p class="skeletonCategory__title skeletonCategory__title-search">&nbsp;</p>
+        <div class="skeletonCategory__flexList">
+            <div>
+                <div class="skeletonCategory__block skeletonCategory__block-search">&nbsp;</div>
+                <div class="skeletonCategory__block skeletonCategory__block-search">&nbsp;</div>
+                <div class="skeletonCategory__block skeletonCategory__block-search">&nbsp;</div>
+                <div class="skeletonCategory__block skeletonCategory__block-search">&nbsp;</div>
+                <div class="skeletonCategory__block skeletonCategory__block-search">&nbsp;</div>
+                <div class="skeletonCategory__block skeletonCategory__block-search">&nbsp;</div>
+                <div class="skeletonCategory__block skeletonCategory__block-search">&nbsp;</div>
+                <div class="skeletonCategory__block skeletonCategory__block-search">&nbsp;</div>
+                <div class="skeletonCategory__block skeletonCategory__block-search">&nbsp;</div>
+            </div>
+            <div class="skeletonCategory__cards">
+                <div class="skeletonCategory__card">&nbsp;</div>
+                <div class="skeletonCategory__card">&nbsp;</div>
+                <div class="skeletonCategory__card">&nbsp;</div>
+                <div class="skeletonCategory__card">&nbsp;</div>
+                <div class="skeletonCategory__card">&nbsp;</div>
+            </div>
+        </div>
+    </div> 
+     <!-- скелетон для сторінки категорії -->
+     <div *ngSwitchCase="'category'" class="skeleton newProds">
+        <p class="skeletonCategory__title-small">&nbsp;</p>
+        <p class="skeletonCategory__title">&nbsp;</p>
+        <div class="skeletonCategory__flexList">
+            <div class="skeletonCategory__block">&nbsp;</div>
+            <div>
+                <div class="skeletonCategory__listTitle">&nbsp;</div>
+                <ul class="skeletonCategory__wrapper">
+                    <div class="skeletonCategory__listTitle skeletonCategory__listTitle-big">&nbsp;</div>
+                    <div class="skeletonCategory__listTitle skeletonCategory__listTitle-big">&nbsp;</div>
+                    <div class="skeletonCategory__listTitle skeletonCategory__listTitle-big">&nbsp;</div>
+                    <div class="skeletonCategory__listTitle skeletonCategory__listTitle-big">&nbsp;</div>
+                    <div class="skeletonCategory__listTitle skeletonCategory__listTitle-big">&nbsp;</div>
+                    <div class="skeletonCategory__listTitle skeletonCategory__listTitle-big">&nbsp;</div>
+                </ul>
+            </div>
+        </div>
+     </div>
+     <!-- скелетон для списку продуктів -->
+     <div *ngSwitchCase="'products'" class="skeleton newProds">
+        <p class="skeletonProds__title">&nbsp;</p>
+        <ul class="skeletonProds">
+            <li class="skeletonProds__item">&nbsp;</li>
+            <li class="skeletonProds__item">&nbsp;</li>
+            <li class="skeletonProds__item">&nbsp;</li>
+            <li class="skeletonProds__item">&nbsp;</li>
+            <li class="skeletonProds__item">&nbsp;</li>
+        </ul>
+    </div>
+    <!-- скелетон для списку категорій -->
+    <div *ngSwitchCase="'categories'" class="skeleton-categories">
+        <ul>
+            <li class="skeleton-row">&nbsp;</li>
+            <li class="skeleton-row">&nbsp;</li>
+            <li class="skeleton-row">&nbsp;</li>
+            <li class="skeleton-row">&nbsp;</li>
+        </ul>
+    </div>
+</ng-container>

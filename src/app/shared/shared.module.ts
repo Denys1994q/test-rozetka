@@ -28,6 +28,7 @@ import { UserInfopanelComponent } from './components/user-infopanel/user-infopan
 import { CounterComponent } from './components/counter/counter.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { RouterModule } from '@angular/router';
+import { SkeletonComponent } from './components/skeleton/skeleton.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { RouterModule } from '@angular/router';
     UserInfopanelComponent,
     AsideComponent,
     CounterComponent,
+    SkeletonComponent
   ],
   imports: [
     CommonModule, 
@@ -89,7 +91,8 @@ import { RouterModule } from '@angular/router';
     ErrorComponent,
     UserInfopanelComponent,
     AsideComponent,
-    CounterComponent
+    CounterComponent,
+    SkeletonComponent
   ]
 })
 export class SharedModule { }

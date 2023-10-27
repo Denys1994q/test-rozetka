@@ -7,12 +7,16 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./product-photos.component.sass']
 })
 export class ProductPhotosComponent {
-  photos!: any
+    photos!: any
 
-  constructor(public ProductService: ProductService) {}
+    constructor(public ProductService: ProductService) {}
 
-  ngOnInit() {
-    this.photos = this.ProductService.product.images.filter((image: any) => image.url)
-  }
+    ngOnInit() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+        this.photos = this.ProductService.product.images.filter((image: any) => image.url)
+    }
 
 }

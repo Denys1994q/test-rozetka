@@ -25,7 +25,7 @@ export class MiddleCategoryComponent {
     ngOnInit(): void {
         this.route.url.subscribe(route => {
             window.scrollTo({
-              top: 1000,
+              top: 0,
               behavior: "smooth"
             });
             const lastLetterBeforeId = this.router.url.lastIndexOf('/')

@@ -40,10 +40,7 @@
         </button>
         <!-- картки -->
         <ng-container
-            *ngIf="
-                productService.newProds && productService.newProds.length > 0;
-                else skeleton
-            ">
+            *ngIf="productService.newProds && productService.newProds.length > 0; else skeleton">
             <app-cards
                 [data]="{
                     category: 'Гарячі новинки',
@@ -52,15 +49,8 @@
             </app-cards>
         </ng-container>
         <ng-template #skeleton>
-            <div class="skeleton newProds">
-                <p class="skeletonProds__title">&nbsp;</p>
-                <ul class="skeletonProds">
-                    <li class="skeletonProds__item">&nbsp;</li>
-                    <li class="skeletonProds__item">&nbsp;</li>
-                    <li class="skeletonProds__item">&nbsp;</li>
-                    <li class="skeletonProds__item">&nbsp;</li>
-                    <li class="skeletonProds__item">&nbsp;</li>
-                </ul>
+            <div class="newProds">
+                <app-skeleton [variant]="'products'"></app-skeleton>
             </div>
         </ng-template>
         <ng-container
@@ -75,15 +65,8 @@
             </div>
         </ng-container>
         <ng-template #skeletonMoreProds>
-            <div class="skeleton moreProds">
-                <p class="skeletonProds__title">&nbsp;</p>
-                <ul class="skeletonProds">
-                    <li class="skeletonProds__item">&nbsp;</li>
-                    <li class="skeletonProds__item">&nbsp;</li>
-                    <li class="skeletonProds__item">&nbsp;</li>
-                    <li class="skeletonProds__item">&nbsp;</li>
-                    <li class="skeletonProds__item">&nbsp;</li>
-                </ul>
+            <div class="moreProds">
+                <app-skeleton [variant]="'products'"></app-skeleton>
             </div>
         </ng-template>
         <ng-container
@@ -100,15 +83,8 @@
             </app-cards>
         </ng-container>
         <ng-template #skeletonRecommendedProds>
-            <div class="skeleton recommendedProds">
-                <p class="skeletonProds__title">&nbsp;</p>
-                <ul class="skeletonProds">
-                    <li class="skeletonProds__item">&nbsp;</li>
-                    <li class="skeletonProds__item">&nbsp;</li>
-                    <li class="skeletonProds__item">&nbsp;</li>
-                    <li class="skeletonProds__item">&nbsp;</li>
-                    <li class="skeletonProds__item">&nbsp;</li>
-                </ul>
+            <div class="recommendedProds">
+                <app-skeleton [variant]="'products'"></app-skeleton>
             </div>
         </ng-template>
         <app-video-cards></app-video-cards>

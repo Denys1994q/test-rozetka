@@ -8,6 +8,7 @@ import { forkJoin, Observable } from 'rxjs';
 
 export class SearchResultsService {
     public resetPriceValue = new Subject();
+    productsLoading: boolean = false
     // всі можливі параметри пошуку на основі вибраних товарів
     searchParams: any = []
     // обрані параметри пошуку і їх опції 
@@ -89,6 +90,7 @@ export class SearchResultsService {
     }
 
     getCurrentCategory(id: string) {
+        this.productsLoading = true
         this.searchParams = []
         this.apiService.getAllCategories().subscribe({
             next: categoriesData => {
@@ -112,7 +114,8 @@ export class SearchResultsService {
                                 if (this.baseInput) {
                                     this.addInput(this.baseInput)
                                     this.createSearchParams();
-                                  }
+                                }
+                                this.productsLoading = false
                             },
                             error: err => console.log(err)
                         });
