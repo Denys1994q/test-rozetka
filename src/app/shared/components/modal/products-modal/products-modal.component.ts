@@ -47,18 +47,22 @@ export class ProductsModalComponent {
         // якщо перейшли на інший роут, а не в межах свого. 
         if (routerId !== id) {
         // якщо роут не такий як в головної підкатегорії 
-        if (id !== categoryId) {
-            this.SearchResultsService.removeAll()
-            this.SearchResultsService.getCurrentCategory(id)
-            this.modalService.closeDialog()
+            if (id !== categoryId) {
+                this.SearchResultsService.removeAll()
+                this.SearchResultsService.getCurrentCategory(id)
+                this.modalService.closeDialog()
+            } else {
+                this.SearchResultsService.removeAll()
+                this.SearchResultsService.setBaseInput(value)
+            }
         } else {
+            console.log(3)
             this.SearchResultsService.removeAll()
+            
             this.SearchResultsService.setBaseInput(value)
-        }
-        } else {
-        this.SearchResultsService.removeAll()
-        this.SearchResultsService.getCurrentCategory(id)
-        this.SearchResultsService.addInput(value)
+            this.SearchResultsService.getCurrentCategory(id)
+
+            // фільтрує правильно, але спочатку створює параметри, а потім фільтрує
         }
         this.modalService.closeDialog()
     }

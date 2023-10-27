@@ -1,7 +1,5 @@
-<section
-    class="category"
-    *ngIf="category">
-    <!--  -->
+<section class="category" *ngIf="category; else skeleton">
+    <!-- breadcrumbs -->
     <app-breadcrumbs [data]="[category.name]"></app-breadcrumbs>
     <!-- назва категорії -->
     <h1 class="category__title">{{ category.name }}</h1>
@@ -48,3 +46,24 @@
         </li>
     </ul>
 </section>
+<!-- скелетон -->
+<ng-template #skeleton>
+    <div class="skeleton newProds">
+        <p class="skeletonCategory__title-small">&nbsp;</p>
+        <p class="skeletonCategory__title">&nbsp;</p>
+        <div class="skeletonCategory__flexList">
+            <div class="skeletonCategory__block">&nbsp;</div>
+            <div>
+                <div class="skeletonCategory__listTitle">&nbsp;</div>
+                <ul class="skeletonCategory__wrapper">
+                    <div class="skeletonCategory__listTitle skeletonCategory__listTitle-big">&nbsp;</div>
+                    <div class="skeletonCategory__listTitle skeletonCategory__listTitle-big">&nbsp;</div>
+                    <div class="skeletonCategory__listTitle skeletonCategory__listTitle-big">&nbsp;</div>
+                    <div class="skeletonCategory__listTitle skeletonCategory__listTitle-big">&nbsp;</div>
+                    <div class="skeletonCategory__listTitle skeletonCategory__listTitle-big">&nbsp;</div>
+                    <div class="skeletonCategory__listTitle skeletonCategory__listTitle-big">&nbsp;</div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</ng-template>

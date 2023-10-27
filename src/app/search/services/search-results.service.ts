@@ -111,6 +111,7 @@ export class SearchResultsService {
                                 this.findUnavailableProducts()
                                 if (this.baseInput) {
                                     this.addInput(this.baseInput)
+                                    this.createSearchParams();
                                   }
                             },
                             error: err => console.log(err)
@@ -140,7 +141,6 @@ export class SearchResultsService {
 
     // ф-ія для генерації параметрів пошуку на основі списку товарів
     createSearchParams() {
-        // this.currentSubcategory.products = [...categories[this.currentCategoryIndex].subCategories[this.currentSubcategoryIndex].products] 
         this.searchParams = []
         this.createPriceSearchParams()
         this.currentSubcategory.products.map((product: ProductInterface) => {
@@ -195,7 +195,7 @@ export class SearchResultsService {
                         return prod
                     }
                 }
-            })  
+            }) 
         }
         this.sortData(this.sortType)
     }
@@ -215,6 +215,8 @@ export class SearchResultsService {
     removeAll() {
         if (this.currentSubcategoryCopy) {
             this.currentSubcategory = JSON.parse(JSON.stringify(this.currentSubcategoryCopy)) 
+            // додав нижче
+            this.createSearchParams()
         }
         this.selectedInputs = []
         this.baseInput = ''
@@ -239,6 +241,9 @@ export class SearchResultsService {
         })
         if (this.selectedInputs.length === 0 && !fromCommentsPanel) {     
             this.currentSubcategory = JSON.parse(JSON.stringify(this.currentSubcategoryCopy)) 
+             // додав нижче
+            this.createSearchParams()
+            // нижче було
             this.sortData(this.sortType)     
         }
         if (!fromCommentsPanel) {
