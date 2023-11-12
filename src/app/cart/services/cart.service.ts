@@ -116,4 +116,5 @@ export class CartService {
         this.totalPrice = 0
         this.productInCart = false
     }
+    
 }

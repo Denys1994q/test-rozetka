@@ -22,7 +22,7 @@ interface Price {
     old: number
 }
 
-interface Status {
+export interface ISearchStatus {
     searchPosition: string,
     title: string,
     option: string | Price | boolean
@@ -30,7 +30,7 @@ interface Status {
 
 export interface ProductInterface {
     _id: string,
-    id: string,
+    id?: string,
     title: string,
     engName: string,
     image: string,
@@ -42,6 +42,7 @@ export interface ProductInterface {
     info: Info[],
     reviews_data: Review[],
     date: Date,
-    searchStatus: Status[],
-    amount?: number
+    searchStatus: ISearchStatus[],
+    amount?: number,
+    addedDate?: Date,
 }

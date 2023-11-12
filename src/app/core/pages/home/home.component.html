@@ -40,21 +40,16 @@
         </button>
         <!-- картки -->
         <ng-container
-            *ngIf="productService.newProds && productService.newProds.length > 0; else skeleton">
+            *ngIf="productService.newProds && productService.newProds.length > 0">
             <app-cards
-                [data]="{
-                    category: 'Гарячі новинки',
-                    products: productService.newProds
-                }">
+                [data]="{category: 'Гарячі новинки', products: productService.newProds}">
             </app-cards>
         </ng-container>
-        <ng-template #skeleton>
-            <div class="newProds">
-                <app-skeleton [variant]="'products'"></app-skeleton>
-            </div>
-        </ng-template>
+        <div class="newProds" [hidden]="productService.newProds && productService.newProds.length !== 0">
+            <app-skeleton [variant]="'products'"></app-skeleton>
+        </div>
         <ng-container
-            *ngIf="productService.moreProds && productService.moreProds.length > 0; else skeletonMoreProds ">
+            *ngIf="productService.moreProds && productService.moreProds.length > 0">
             <div>
                 <app-cards
                     [data]="{
@@ -64,17 +59,11 @@
                 </app-cards>
             </div>
         </ng-container>
-        <ng-template #skeletonMoreProds>
-            <div class="moreProds">
-                <app-skeleton [variant]="'products'"></app-skeleton>
-            </div>
-        </ng-template>
+        <div class="moreProds" [hidden]="productService.moreProds && productService.moreProds.length !== 0">
+            <app-skeleton [variant]="'products'"></app-skeleton>
+        </div>
         <ng-container
-            *ngIf="
-                productService.recommendedProds &&
-                    productService.recommendedProds.length > 0;
-                else skeletonRecommendedProds
-            ">
+            *ngIf="productService.recommendedProds && productService.recommendedProds.length > 0">
             <app-cards
                 [data]="{
                     category: 'Рекомендовані',
@@ -82,11 +71,10 @@
                 }">
             </app-cards>
         </ng-container>
-        <ng-template #skeletonRecommendedProds>
-            <div class="recommendedProds">
-                <app-skeleton [variant]="'products'"></app-skeleton>
-            </div>
-        </ng-template>
+        <div class="recommendedProds" [hidden]="productService.recommendedProds &&
+        productService.recommendedProds.length !== 0">
+            <app-skeleton [variant]="'products'"></app-skeleton>
+        </div>
         <app-video-cards></app-video-cards>
     </main>
 </div>

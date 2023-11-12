@@ -9,21 +9,32 @@
         border: 1px solid #e9e9e9
         border-radius: 4px
 .details
+    min-height: 30rem
     &__header
         border-bottom: 1px solid #e9e9e9
         min-height: 5.6rem
         display: flex
         align-items: center
         padding: .8rem 1.6rem
-    &__params
+    &__paramsWrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
         border-bottom: 1px solid #e9e9e9
-        padding: .8rem 1.6rem
+        padding: .7rem 0
+    &__params
+        padding-left: 4rem
         display: flex
         flex-wrap: wrap
+    &__filters
+        margin-right: 1rem
     &__title
         font-size: 2.4rem
         font-weight: 700
     &__main
+    &__total
+        border-top: 1px solid #e9e9e9
+        padding: 0 1.6rem
 .caption
     color: #a6a5a5
     font-weight: 400
@@ -65,18 +76,67 @@
     justify-content: center
     border: none
     color: #3e77aa
-    cursor: pointer
     height: 3.2rem
     border-radius: 8px
     transition-duration: .2s
     transition-property: color,background-color,border-color
     transition-timing-function: ease-in-out
+    &-active
+        cursor: pointer
     &:hover
         color: #ff7878
+    button[disabled]
+        color: #a6a5a5
+.param-icon
+    font-size: 2rem
+    height: auto
+    width: auto
+    margin-right: 1rem
+    &--active
+        cursor: pointer
+.disabledIcon
+    color: #a6a5a5
+.spinner
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 1rem
+    min-height: 30rem
+.total
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    height: 6.4rem
+    &__quantity
+        margin-right: 3.2rem
+        text-align: right
+    &__btn
+        background-color: #00a046
+        color: #fff
+        font-size: 16px
+        height: 40px
+        border-radius: 8px
+        padding-left: 16px
+        padding-right: 16px
+        text-align: center
+        transition-duration: .2s
+        transition-property: color,background-color,border-color
+        transition-timing-function: ease-in-out
+        &:hover
+            background-color: #00bc52
+.quantity
+    &__amount
+        margin-bottom: .4rem
+        font-size: 1.2rem
+        color: #797878
+    &__price
+        font-size: 20px
 
 :host
     ::ng-deep app-cards
         .cards
             margin: 0
         .card-innerWrapper-big
-            height: auto
+            height: 38rem
+        .card__info
+            display: none

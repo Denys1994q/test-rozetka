@@ -11,26 +11,34 @@
     <ul class="cards__wrapper">
         <li
             class="card"
-            *ngFor="let prod of data.products; let i = index"
+            *ngFor="let prod of modData; let i = index"
             (mouseenter)="setshowExtendedCard(i)"
             (mouseleave)="hideExtendedCard()"
             [class.card-big]="size === 'big'"
-            [class.card-withOpacity]="
-                notAvailableProducts &&
-                notAvailableProducts.indexOf(prod._id) > -1
-            "
+            [class.card-withOpacity]="!prod.isAvailable"
             [class.card-hiddenBorder]="activeIndex === i">
-            <!-- <div class="checkboxWrapper">
+            <!-- чекбокс -->
+            <div *ngIf="withCheckbox" class="checkboxWrapper">
                 <app-checkbox
-                    [search]="true"
                     [searchId]="prod._id"
-                    (checkboxChange)="onCheckboxChange($event)" />
-            </div> -->
+                    [variant]="'cabinet'"
+                    [allChecked]="allCardsChecked"
+                    (checkboxChange)="onCheckboxChange(prod._id)" />
+            </div>
             <!-- передня сторона карточки -->
             <div [ngStyle]="{ opacity: activeIndex === i ? '0' : '1' }">
                 <div
                     class="card-innerWrapper"
                     [class.card-innerWrapper-big]="size === 'big'">
+                    <!-- Кнопка видалити -->
+                    <button 
+                        *ngIf="withDeleteOption" 
+                        class="delete-btn btn-icon btn-icon--small"
+                        (click)="onCardDeleteBtnClick(prod._id)">
+                        <mat-icon class="delete-icon" aria-label="Видалити товар зі списку">
+                        delete_outline
+                        </mat-icon>
+                    </button>
                     <!-- Кнопка додати до улюблених товарів -->
                     <button
                         *ngIf="!withCheckbox"
@@ -39,7 +47,7 @@
                         <mat-icon
                             class="btn-icon__img"
                             aria-label="Додати до улюблених">
-                            favorite_border
+                            {{checkIfProductInWishlist(prod._id) ? 'favorite' : 'favorite_border'}}
                         </mat-icon>
                     </button>
                     <!-- Зображення товару -->
@@ -47,9 +55,7 @@
                         <img
                             class="card__image"
                             [class.card__image-big]="size === 'big'"
-                            src="{{
-                                prod.image_mob ? prod.image_mob : prod.image
-                            }}"
+                            src="{{prod.image_mob ? prod.image_mob : prod.image}}"
                             alt="prod-image" />
                     </a>
                     <!-- Заголовок товару -->
@@ -59,7 +65,7 @@
                     <!-- Рейтинг товару -->
                     <app-rating
                         [fixed]="true"
-                        [activeIconIndex]="getRaiting(prod)"
+                        [activeIconIndex]="prod.sumRaiting"
                         [numReviews]="prod.reviews_data.length">
                     </app-rating>
                     <!-- Ціна і корзина для товару -->
@@ -83,15 +89,27 @@
                 <div
                     class="card-innerWrapper"
                     [class.card-innerWrapper-big]="size === 'big'">
+                    <!-- Кнопка видалити -->
+                    <button 
+                        *ngIf="withDeleteOption" 
+                        class="delete-btn"
+                        (click)="onCardDeleteBtnClick(prod._id)">
+                        <mat-icon 
+                            class="delete-icon btn-icon btn-icon--small" 
+                            aria-label="Видалити товар зі списку">
+                        delete_outline
+                        </mat-icon>
+                    </button>
                     <!-- Кнопка додати до улюблених товарів -->
                     <button
                         *ngIf="!withCheckbox"
+                        (click)="onAddToWishlist(prod._id)"
                         class="card__btn btn-icon btn-icon--small"
                         aria-label="Додати до улюблених">
                         <mat-icon
                             class="btn-icon__img"
                             aria-label="Додати до улюблених">
-                            favorite_border
+                            {{checkIfProductInWishlist(prod._id) ? 'favorite' : 'favorite_border'}}
                         </mat-icon>
                     </button>
                     <!-- Зображення товару -->
@@ -117,7 +135,7 @@
                     <!-- Рейтинг товару -->
                     <app-rating
                         [fixed]="true"
-                        [activeIconIndex]="getRaiting(prod)"
+                        [activeIconIndex]="prod.sumRaiting"
                         [numReviews]="prod.reviews_data.length">
                     </app-rating>
                     <!-- Ціна і корзина для товару -->
@@ -158,9 +176,12 @@
                 *ngFor="let prod of data.products.slice(0, endVal)">
                 <button
                     *ngIf="!withCheckbox"
-                    class="card__btn btn-icon"
+                    class="card__btn btn-icon btn-icon--small"
+                    (click)="onAddToWishlist(prod._id)"
                     aria-label="Додати до улюблених">
-                    <mat-icon class="btn-icon__img">favorite_border</mat-icon>
+                    <mat-icon class="btn-icon__img">
+                        {{checkIfProductInWishlist(prod._id) ? 'favorite' : 'favorite_border'}}
+                    </mat-icon>
                 </button>
                 <a routerLink="{{ '/' + prod.engName + '/' + prod._id }}">
                     <img

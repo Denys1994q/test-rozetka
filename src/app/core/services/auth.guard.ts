@@ -19,23 +19,29 @@ export class AuthGuard {
     }
 
     canActivate(): any {
-        return this.authService.getUser().pipe(
-            switchMap(resp => {
-                if (this.authService.isAuthenticated()) {
-                    return [true]; // Користувач авторизований і має доступ до роуту
-                } else {
-                    // Користувач не авторизований, перенаправляємо його на сторінку логіну
+        if (this.authService.isAuthenticated()) {
+            return of(true)
+        } else {
+            return this.authService.getUser().pipe(
+                switchMap(resp => {
+                    if (this.authService.isAuthenticated()) {
+                        return [true]; // Користувач авторизований і має доступ до роуту
+                    } else {
+                        // Користувач не авторизований, перенаправляємо його на сторінку логіну
+                        this.router.navigate(['/']); 
+                        this.modalService.openDialog('login');
+                        return [false]; 
+                    }
+                }),
+                catchError(error => {
                     this.router.navigate(['/']); 
                     this.modalService.openDialog('login');
-                    return [false]; 
-                }
-            }),
-            catchError(error => {
-                this.router.navigate(['/']); 
-                this.modalService.openDialog('login');
-                console.error('Помилка під час отримання даних користувача:', error);
-                return of(false);
-            })
-        )
+                    console.error('Помилка під час отримання даних користувача:', error);
+                    return of(false);
+                })
+            )
+        }
+
+
     }
 }

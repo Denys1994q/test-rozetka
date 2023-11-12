@@ -19,7 +19,7 @@ export class RatingComponent {
   }
 
   removeStar() {
-      this.activeIconIndex = this.clicked
+    this.activeIconIndex = this.clicked
   }
 
   fixStar(i: number) {
@@ -36,6 +36,6 @@ export class RatingComponent {
   }
 
   ngOnInit() {
-    this.activeIconIndex =this.activeIconIndex -1
+    this.activeIconIndex = this.activeIconIndex -1
   }
 }

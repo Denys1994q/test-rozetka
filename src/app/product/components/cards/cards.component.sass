@@ -130,12 +130,18 @@
         align-items: center
         color: $main-blue
         margin-right: 1rem
-
 .checkboxWrapper
     position: absolute
     top: 1.2rem
     right: 1.2rem
     z-index: 99
+.delete-icon
+    color: #797878
+    transition: all .2s ease
+.delete-btn
+    display: block
+    margin-left: auto
+    cursor: pointer
 
 :host
     ::ng-deep app-rating
@@ -146,3 +152,20 @@
         .reviews
             margin-left: 1rem
             font-size: 1.2rem
+    ::ng-deep app-checkbox
+        .checkbox-wrapper__label::before
+            width: 2.4rem
+            height: 2.4rem
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+        .checkbox-wrapper__label:hover::before
+            border: 1px solid black
+        .checkbox-wrapper
+            width: 3rem
+            height: 3rem
+            display: flex
+            justify-content: center
+            align-items: center
+        .checkbox-wrapper:hover
+            background: #f4faf6

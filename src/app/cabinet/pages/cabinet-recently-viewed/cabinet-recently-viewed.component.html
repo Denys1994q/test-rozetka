@@ -1,3 +1,42 @@
-<div>
-    recentlt viewed
+<div class="recentlyViewed">
+    <header class="recentlyViewed__header">
+        <h2 class="recentlyViewed__title">Переглянуті товари</h2>
+        <ng-container *ngIf="(recentlyViewedService.recentlyViewedtItems$ | async)?.length">
+            <app-search-result-btn
+                [cancelBtn]="true"
+                [text]="'Очистити все'"
+                (clearAllClicked)="handleClearAllClick()" />
+        </ng-container>
+    </header>
+    <div *ngIf="loading; else content">
+        <div class="spinner">
+            <mat-progress-spinner diameter="32" mode="indeterminate"></mat-progress-spinner>
+        </div>
+    </div>
+    <ng-template #content>
+        <section class="orders__details">
+            <ng-container *ngIf="(recentlyViewedService.recentlyViewedtItems$ | async)?.length; else empty">
+                <app-cards
+                    [full]="true"
+                    [withDeleteOption]="true"
+                    (cardDeleteBtnClick)="onCardDeleteBtnClick($event)"
+                    [data]="{products: (recentlyViewedService.recentlyViewedtItems$ | async) || []}"
+                    [size]="'big'">
+                </app-cards>
+            </ng-container>
+            <ng-template #empty>
+                <div class="emptyBlock">
+                    <img
+                        src="https://res.cloudinary.com/dw60kllwn/image/upload/v1697731684/cabinet-dummy-error_omrmml.svg"
+                        class="emptyBlock__img"
+                        alt="no-products-img" />
+                    <h3 class="emptyBlock__text">Упс! Ваш список переглянутих товарів пустий</h3>
+                    <p class="emptyBlock__subtitle">Наповніть його товарами</p>
+                    <a routerLink="/">
+                        <button class="emptyBlock__btn">Перейти на головну</button>
+                    </a>
+                </div>
+            </ng-template>
+        </section>
+    </ng-template>
 </div>

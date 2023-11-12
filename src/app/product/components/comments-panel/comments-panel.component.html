@@ -28,11 +28,11 @@
         </button>
         <div class="filters-select">
             <app-select
-            [name]="'filters'"
-            [options]="['З фото і відео', 'За датою', 'Найкорисніші']"
-            [activeOption]="CommentsService.sortType"
-            (selectChangeEvent)="onSelectChange($event)">
-        </app-select>
+                [name]="'filters'"
+                [options]="['З фото і відео', 'За датою', 'Найкорисніші']"
+                [activeOption]="CommentsService.sortType"
+                (selectChangeEvent)="onSelectChange($event)">
+            </app-select>
         </div>
     </div>
     <!-- результати пошуку -->

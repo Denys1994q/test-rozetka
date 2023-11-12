@@ -17,8 +17,6 @@ export class SearchResultsService {
     currentCategory!: any
     currentSubcategory!: any
     currentSubcategoryCopy!: any
-    // товари, яких немає в наявності
-    notAvailableProducts: string[] = []
     // ціна 
     priceDataStart!: any
     priceDataEnd!: any
@@ -110,7 +108,6 @@ export class SearchResultsService {
                                 this.currentSubcategoryCopy.products = JSON.parse(JSON.stringify(responses))
                                 this.sortData(this.sortType)
                                 this.createSearchParams();
-                                this.findUnavailableProducts()
                                 if (this.baseInput) {
                                     this.addInput(this.baseInput)
                                     this.createSearchParams();
@@ -275,14 +272,5 @@ export class SearchResultsService {
     resetRaitingValue() {
         this.selectedRaitingIndex = null
     }
-
-    findUnavailableProducts() {
-        this.currentSubcategory.products.map((prod: any) => {
-          const status = prod.searchStatus.find((searchStatus: any) => searchStatus.searchPosition === 'sell_status')
-          if (status.option === 'Немає в наявності') {
-            this.notAvailableProducts.push(prod._id)
-          }
-        })
-      }
 
 }

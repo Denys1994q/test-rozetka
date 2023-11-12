@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import {filter} from 'rxjs/operators';
 import { AuthService } from './core/services/auth.service';
+import { WishlistService } from './cabinet/services/wishlist.service';
 
 @Component({
   selector: 'app-root',
@@ -10,37 +11,37 @@ import { AuthService } from './core/services/auth.service';
 })
 
 export class AppComponent implements OnInit {
-  showFooter: boolean = true
-  showHeader: boolean = true
 
-  constructor(private router: Router, private authService: AuthService ) {
-    router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    )
-      .subscribe((event: any) => {
-        if (event.url === '/checkout') {
-          this.showFooter = false
-          this.showHeader = false
-        }
-        else if (event.url === '/') {
-          this.showFooter = false
-          this.showHeader = true
-        } else {
-          this.showFooter = true
-        }
-      });
-  }
+    constructor(
+        private router: Router, 
+        private wishlistService: WishlistService,
+        private authService: AuthService ) {
+        router.events.pipe(filter(event => event instanceof NavigationEnd))
+            .subscribe((event: any) => {
+                if (event.url === '/checkout') {
+                    this.showFooter = false
+                    this.showHeader = false
+                }
+                else if (event.url === '/') {
+                    this.showFooter = false
+                    this.showHeader = true
+                } else {
+                    this.showFooter = true
+                }
+            });
+    }
 
-  ngOnInit(): void {
-      this.authService.getUser().subscribe({
-        next: response => {
-          console.log(response)
-        },
-        error: (error) => {
-          console.log('Помилка при виконанні запиту:', error.error.message);
-        }
-      })
-  }
+    showFooter: boolean = true
+    showHeader: boolean = true
+
+    ngOnInit(): void {
+        this.authService.getUser().subscribe({
+            next: user => this.wishlistService.setWishlistItems(user.wishlist),
+            error: (error) => {
+                console.log('Помилка при виконанні запиту:', error.error.message);
+            }
+        })
+    }
 
 }
 

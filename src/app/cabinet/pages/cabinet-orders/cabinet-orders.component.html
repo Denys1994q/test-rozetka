@@ -1,3 +1,44 @@
-<div>
-    orders
+<div class="orders">
+    <h2 class="orders__title">Мої замовлення</h2>
+    <section class="orders__details">
+        <div *ngIf="loading; else content">
+            <div class="spinner">
+                <mat-progress-spinner diameter="32" mode="indeterminate"></mat-progress-spinner>
+            </div>
+        </div>
+        <ng-template #content>
+            <ul class="orders__list list" *ngIf="(ordersService.orderslistItems$ | async)?.length; else empty">
+                <li class="list__item order" *ngFor="let prod of ordersService.orderslistItems$ | async">
+                    <div class="order__status">
+                        <span> № {{prod.orderNumber}} від {{prod.orderDate | date: 'dd.MM.yy'}} </span>
+                        Виконано
+                    </div>
+                    <div class="order__price">
+                        <span> Сума замовлення </span>
+                        {{getPriceObject(prod.product)}} &#x20b4;
+                    </div>
+                    <div class="order__photo">
+                        <img src={{prod.product.image}} alt="product-photo">
+                    </div>
+                </li>
+            </ul>
+            <ng-template #empty>
+                <div class="emptyBlock">
+                    <img
+                        src="https://res.cloudinary.com/dw60kllwn/image/upload/v1697731684/cabinet-dummy-error_omrmml.svg"
+                        class="emptyBlock__img"
+                        alt="no-products-img" />
+                    <h3 class="emptyBlock__text">
+                        Упс! Ваш список замовлень пустий
+                    </h3>
+                    <p class="emptyBlock__subtitle">Наповніть його товарами</p>
+                    <a routerLink="/">
+                        <button class="emptyBlock__btn">
+                            Перейти на головну
+                        </button>
+                    </a>
+                </div>
+            </ng-template>
+        </ng-template>
+    </section>
 </div>

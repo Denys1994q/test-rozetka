@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { tap, map} from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 interface UserData {
@@ -12,7 +12,8 @@ interface UserData {
     email?: string;
     phone?: string;
     displayName?: string;
-    dateOfBirth?: any
+    dateOfBirth?: any,
+    wishlist?: any[]
 }
 
 interface UserResponse extends UserData {
@@ -69,6 +70,8 @@ export class AuthService {
         );
     }
     
+    // можу відразу тут записувати в вішліст некст, а не в двох компонентах, там тільки консоль лог
+    // через пайп зробити краще 
     getUser(): Observable<any> {
         const token = localStorage.getItem('authToken');
         const headers = new HttpHeaders({ Authorization: `Bearer ${token}` });
@@ -78,11 +81,20 @@ export class AuthService {
             withCredentials: true
         };
         return this.http.get<any>(url, options).pipe(
-        tap(response => {
-            if (response) {
-            this.userDataSubject.next(response);
-            } 
-        })
+            map(response => {
+                if (response && response.wishlist) {
+                  response.wishlist = response.wishlist.map((wishlistItem: any) => ({
+                    ...wishlistItem.product, 
+                    addedDate: wishlistItem.addedDate 
+                  }));
+                }
+                return response;
+              }),
+            tap(response => {
+                if (response) {
+                    this.userDataSubject.next(response);
+                } 
+            })
         )
     }
     

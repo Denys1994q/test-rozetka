@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/core/services/auth.service';
+import { OrdersService } from '../../services/orders.service';
+import { ProductInterface } from 'src/app/core/services/api-response-types';
+import { ISearchStatus } from 'src/app/core/services/api-response-types';
 
 @Component({
   selector: 'app-cabinet-orders',
@@ -6,5 +10,35 @@ import { Component } from '@angular/core';
   styleUrls: ['./cabinet-orders.component.sass']
 })
 export class CabinetOrdersPage {
+
+    constructor(
+        public authService: AuthService, 
+        public ordersService: OrdersService) {}
+
+    // завантаження списку продуктів
+    loading: boolean = false
+
+    ngOnInit() {
+        this.loading = true
+            this.ordersService.getOrdersProdsList().subscribe({
+                next: response => {
+                    if (response) {
+                        this.loading = false
+                        this.ordersService.setOrdersListItems(response.products)
+                    } 
+                },
+                error: err => this.loading = false
+            })
+    }
+
+    getPriceObject(prod: ProductInterface) {
+        if (prod.searchStatus && prod.searchStatus.length > 0) {
+            const priceStatus = prod.searchStatus.find((status: ISearchStatus) => status.searchPosition === 'price');
+            if (priceStatus && priceStatus.option && typeof priceStatus.option === 'object') {
+                return priceStatus.option.new;
+            }
+        }
+        return 0; 
+    }
 
 }

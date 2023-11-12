@@ -23,7 +23,6 @@ export class ProductService {
     seller!: any
     // рейтинг
     raiting: number = 0
-
     // нові, улюблені, рекомендовані продукти
     newProds: ProductInterface[] = []
     moreProds: ProductInterface[] = []

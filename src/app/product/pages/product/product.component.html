@@ -1,6 +1,6 @@
 <section
     class="product"
-    *ngIf="ProductService.product">
+    *ngIf="ProductService.product; else skeleton">
     <!-- url товару: категорія, підкатегорія... -->
     <ng-container *ngIf="ProductService.category && ProductService.subCategory">
         <app-breadcrumbs 
@@ -71,9 +71,12 @@
                                     >balance</mat-icon
                                 >
                             </button>
-                            <button class="btn btn-icon btn-icon-orange"  aria-label="Додати до улюблених">
+                            <button 
+                                class="btn btn-icon btn-icon-orange"
+                                (click)="onAddToWishlist(ProductService.product._id)"
+                                aria-label="Додати до улюблених">
                                 <mat-icon class="btn-icon__icon">
-                                    favorite_border
+                                    {{isInWishlist ? 'favorite' : 'favorite_border'}}
                                 </mat-icon>
                             </button>
                         </div>
@@ -141,3 +144,6 @@
         </div>
     </ng-template>
 </section>
+<ng-template #skeleton>
+    <app-skeleton [variant]="'products'"></app-skeleton>
+</ng-template>

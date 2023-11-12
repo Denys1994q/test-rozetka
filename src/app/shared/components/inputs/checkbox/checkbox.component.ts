@@ -12,8 +12,10 @@ export class CheckboxComponent {
   @Input() label!: string 
   @Input() auth!: boolean
   @Input() services!: boolean
+  @Input() variant!: string 
   @Input() search!: boolean
   @Input() searchId: string = ''
+  @Input() allChecked!: boolean
   @Output() checkboxChange = new EventEmitter<string>();
 
   service: boolean = false

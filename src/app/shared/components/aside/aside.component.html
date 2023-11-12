@@ -98,14 +98,26 @@
                         <button class="textBtn">
                             <mat-icon class="textBtn__icon">person</mat-icon>
                             <div class="user-name">
-                                <p>Den Rybachok</p>
-                                <p class="user-email">drybachok@gmail.com</p>
+                                <p *ngIf="(authService.userData$ | async)?.displayName; else nameSurname">
+                                    {{ (authService.userData$ | async)?.displayName }}
+                                </p>
+                                <ng-template #nameSurname>
+                                    <span *ngIf="(authService.userData$ | async)?.name">
+                                        {{ (authService.userData$ | async)?.name }}
+                                    </span>
+                                    <span *ngIf="(authService.userData$ | async)?.surname">
+                                        {{ (authService.userData$ | async)?.surname }}
+                                    </span>
+                                </ng-template>
+                                <p *ngIf="(authService.userData$ | async)?.email" class="user-email">
+                                    {{ (authService.userData$ | async)?.email }}
+                                </p>
                             </div>
                         </button>
                     </div>
                 </a>
             </li>
-            <!-- <li>
+            <li>
                 <a routerLink="/cabinet/orders">
                     <div class="side-menu__item-innerWrapper" routerLinkActive="active">
                         <button
@@ -133,7 +145,7 @@
                         </button>
                     </div>
                 </a>
-            </li> -->
+            </li>
         </ul>
     </div>
 </aside>

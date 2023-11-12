@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-type Price = {
+type Price  = {
   old?: null | number,
   new: number
 }

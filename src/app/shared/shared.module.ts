@@ -29,6 +29,9 @@ import { CounterComponent } from './components/counter/counter.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { RouterModule } from '@angular/router';
 import { SkeletonComponent } from './components/skeleton/skeleton.component';
+import { SnackBarComponent } from './components/snackBar/snack-bar.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 @NgModule({
   declarations: [
@@ -53,7 +56,8 @@ import { SkeletonComponent } from './components/skeleton/skeleton.component';
     UserInfopanelComponent,
     AsideComponent,
     CounterComponent,
-    SkeletonComponent
+    SkeletonComponent,
+    SnackBarComponent
   ],
   imports: [
     CommonModule, 
@@ -62,7 +66,7 @@ import { SkeletonComponent } from './components/skeleton/skeleton.component';
     MatDialogModule, 
     MatBadgeModule,
     FormsModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [
     CommonModule,
@@ -74,6 +78,7 @@ import { SkeletonComponent } from './components/skeleton/skeleton.component';
     MatBadgeModule,
     CachedSrcDirective, 
     MatDialogModule, 
+    MatProgressSpinnerModule,
     CommentComponent,
     CheckboxComponent,
     FormsModule,
@@ -92,7 +97,8 @@ import { SkeletonComponent } from './components/skeleton/skeleton.component';
     UserInfopanelComponent,
     AsideComponent,
     CounterComponent,
-    SkeletonComponent
+    SkeletonComponent,
+    SnackBarComponent
   ]
 })
 export class SharedModule { }

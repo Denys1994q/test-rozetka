@@ -40,12 +40,12 @@ const routes = [
     CabinetOrdersPage,
     CabinetPersonalInfoPage,
     CabinetRecentlyViewedPage,
-    CabinetWishlistPage
+    CabinetWishlistPage,
   ],
   imports: [
     RouterModule.forChild(routes),
     SharedModule,
-    ProductModule
+    ProductModule,
   ],
   exports: [],
 })
