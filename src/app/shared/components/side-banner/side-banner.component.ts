@@ -17,6 +17,7 @@ export class SideBannerComponent {
             }, 2000)
         }
     }
+    
 
     closeBanner() {
         this.showBanner = false
