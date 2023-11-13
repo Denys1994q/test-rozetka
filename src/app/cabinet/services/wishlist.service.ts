@@ -30,6 +30,7 @@ export class WishlistService {
     activeSortOption: string = this.sortOptions[0]
 
     setWishlistItems(data: ProductInterface[]) {
+        console.log('setWishlistItems starts')
         this.wishlistItemsSubject.next(data)
         this.sortWishlist(this.activeSortOption)
         this.calculateTotalPrice(data) 

@@ -43,12 +43,24 @@ export class CardsComponent {
     prodIdsInTheCart: string[] = [] 
     prodIdsInWishlist: string[] = [] 
     private wishlistSubscription!: Subscription;
+    private getUserSubscription!: Subscription;
 
     modData!: any
 
-    ngOnInit() {  
-        // для відзначення карточок, які позначені як бажані (wishlist)
-        this.authService.getUser().subscribe({
+    ngOnInit() { 
+        // для динамічного відзначення карточок, які позначені як бажані (wishlist). Наприклад, коли юзер відлогінюється
+        this.wishlistSubscription = this.wishlistService.wishlistItems$.subscribe({
+            next: data => {
+                if (data.length === 0) {
+                    this.prodIdsInWishlist = []
+                } else {
+                    data.map(item => this.prodIdsInWishlist.push(item._id)) 
+                }
+            },
+            error: err => console.log(err) 
+        })
+        // при першій ініціалізації: для початкового відзначення карточок, які позначені як бажані (wishlist)
+        this.getUserSubscription = this.authService.getUser().subscribe({
             next: user => {
                 if (user && user.wishlist) {
                     this.wishlistService.setWishlistItems(user.wishlist)
@@ -181,7 +193,8 @@ export class CardsComponent {
     }
 
     ngOnDestroy() {
-        // this.wishlistSubscription.unsubscribe();
+        this.wishlistSubscription.unsubscribe();
+        this.getUserSubscription.unsubscribe();
     }
 
 }

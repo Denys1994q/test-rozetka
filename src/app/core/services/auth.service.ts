@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { tap, map} from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { WishlistService } from 'src/app/cabinet/services/wishlist.service';
 
 interface UserData {
     name?: string;
@@ -32,7 +33,7 @@ export class AuthService {
     public userDataSubject = new BehaviorSubject<UserData | null>(null);
     public userData$ = this.userDataSubject.asObservable();
 
-    constructor(private http: HttpClient, private router: Router) {}
+    constructor(private http: HttpClient, private router: Router, private wishlistService: WishlistService) {}
 
     login({ emailPhone, password}: any): Observable<any> {
         const emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -46,15 +47,24 @@ export class AuthService {
                 phone: emailPhone,
             }
         }
-
         const loginUrl = `${this.backendUrl}/auth/login`;
         return this.http.post<any>(loginUrl, {...credentials, password: password}).pipe(
-        tap(response => {
-            if (response && response.token) {
-                localStorage.setItem('authToken', response.token);
-                this.userDataSubject.next(response);
-            }
-        })
+            map(response => {
+                if (response && response.wishlist) {
+                    response.wishlist = response.wishlist.map((wishlistItem: any) => ({
+                        ...wishlistItem.product, 
+                        addedDate: wishlistItem.addedDate 
+                      }));
+                }
+                return response;
+                }),
+            tap(response => {
+                if (response) {
+                    localStorage.setItem('authToken', response.token);
+                    this.wishlistService.setWishlistItems(response.wishlist)
+                    this.userDataSubject.next(response);
+                } 
+            }),
         );
     }
 
@@ -70,8 +80,6 @@ export class AuthService {
         );
     }
     
-    // можу відразу тут записувати в вішліст некст, а не в двох компонентах, там тільки консоль лог
-    // через пайп зробити краще 
     getUser(): Observable<any> {
         const token = localStorage.getItem('authToken');
         const headers = new HttpHeaders({ Authorization: `Bearer ${token}` });
@@ -89,7 +97,7 @@ export class AuthService {
                   }));
                 }
                 return response;
-              }),
+            }),
             tap(response => {
                 if (response) {
                     this.userDataSubject.next(response);
@@ -101,12 +109,13 @@ export class AuthService {
     logout(): Observable<any> {
         const url = `${this.backendUrl}/auth/logout`;
         const options = {
-        withCredentials: true
+            withCredentials: true
         };
         return this.http.get<any>(url,options).pipe(
             tap(response => {
                 this.userDataSubject.next(null);
                 localStorage.removeItem('authToken');
+                this.wishlistService.setWishlistItems([])
                 this.router.navigate(['/']);
             })
         )
