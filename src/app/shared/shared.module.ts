@@ -31,7 +31,7 @@ import { RouterModule } from '@angular/router';
 import { SkeletonComponent } from './components/skeleton/skeleton.component';
 import { SnackBarComponent } from './components/snackBar/snack-bar.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import { SideBannerComponent } from './components/side-banner/side-banner.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +57,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     AsideComponent,
     CounterComponent,
     SkeletonComponent,
-    SnackBarComponent
+    SnackBarComponent,
+    SideBannerComponent
   ],
   imports: [
     CommonModule, 
@@ -98,7 +99,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     AsideComponent,
     CounterComponent,
     SkeletonComponent,
-    SnackBarComponent
+    SnackBarComponent,
+    SideBannerComponent
   ]
 })
 export class SharedModule { }

@@ -1,0 +1,29 @@
+.side-banner
+    width: 40rem
+    height: 30rem
+    position: fixed
+    bottom: 2.4rem
+    right: 2rem
+    transform: translateX(110%)
+    border-radius: 4px
+    transition: all .5s ease-in-out
+    &--active
+        transform: translateX(0)
+    &__btn
+        width: 24px
+        height: 24px
+        cursor: pointer
+        transition: all .1s ease-in-out
+        &:hover
+            color: red
+    &__btnWrapper
+        position: absolute
+        right: .3rem
+        top: .3rem
+        width: 32px
+        height: 32px
+        background: rgba(255, 255, 255, 0.8)
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 50%

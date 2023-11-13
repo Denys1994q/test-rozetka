@@ -78,4 +78,5 @@ export class HomeComponent implements AfterViewInit {
     this.modalService.closeDialog()
     this.modalService.openDialog('login')
   }
+  
 }
