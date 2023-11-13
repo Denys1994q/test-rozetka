@@ -15,6 +15,21 @@ import { ProductPhotosComponent } from './pages/product-photos/product-photos.co
 import { ProductVideoComponent } from './pages/product-video/product-video.component';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { Routes, RouterModule } from '@angular/router';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: ProductComponent,
+    children: [
+      { path: '', component: ProductAllComponent },
+      { path: 'characteristics', component: ProductCharacteristicsComponent },
+      { path: 'comments', component: ProductCommentsComponent },
+      { path: 'photos', component: ProductPhotosComponent },
+      { path: 'video', component: ProductVideoComponent }
+    ]
+  }
+];
 
 @NgModule({
   declarations: [
@@ -35,13 +50,15 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   imports: [
     CommonModule,
     SharedModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    // [RouterModule.forChild(routes)],
   ], 
   exports: [
     CharacteristicsBlockComponent,
     CardsComponent,
     VideoCardsComponent,
-    PriceComponent
+    PriceComponent,
+    // [RouterModule]
   ]
 })
 export class ProductModule { }
