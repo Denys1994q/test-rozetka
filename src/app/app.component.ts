@@ -35,6 +35,7 @@ export class AppComponent implements OnInit {
     showHeader: boolean = true
 
     ngOnInit(): void {
+        console.log('cle')
         this.authService.getUser().subscribe({
             next: user => this.wishlistService.setWishlistItems(user.wishlist),
             error: (error) => {
