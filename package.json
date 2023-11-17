@@ -4,14 +4,15 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build-dev": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run angular-rozetka:serve-ssr",
     "serve:ssr": "node dist/angular-rozetka/server/main.js",
     "build:ssr": "ng build && ng run angular-rozetka:server",
     "prerender": "ng run angular-rozetka:prerender",
-    "prerender:static": "ng run angular-rozetka:prerender --no-guess-routes --routes /"
+    "prerender:static": "ng run angular-rozetka:prerender --no-guess-routes --routes /",
+    "vercel-build": "npm run build:ssr"
   },
   "private": true,
   "dependencies": {
