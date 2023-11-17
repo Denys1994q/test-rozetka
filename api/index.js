@@ -1,3 +1,3 @@
-const server = require("../dist/rozetka-clone/server/main");
+import { app } from "../dist/rozetka-clone/server/main";
 
-module.exports = server.app();
+export default app();
