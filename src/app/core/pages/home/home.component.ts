@@ -62,8 +62,8 @@ export class HomeComponent implements AfterViewInit {
     ngOnInit() {
         if (!this.productService.allCategories) {
             // console.log('getAllCategories')
-            console.log(126)
-            this.productService.getAllCategories()
+            console.log(12783)
+            // this.productService.getAllCategories()
         }
         this.cartService.getCart()
     }
